@@ -1,4 +1,4 @@
-package com.example.beforeget.Feature
+package beforeget.feature
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
