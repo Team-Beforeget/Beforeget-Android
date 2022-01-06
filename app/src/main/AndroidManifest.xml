@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beforeget">
         <activity
+            android:name="beforeget.feature.MyrecodActivity"
+            android:exported="false" />
+        <activity
             android:name="beforeget.feature.MainActivity"
             android:exported="true">
             <intent-filter>

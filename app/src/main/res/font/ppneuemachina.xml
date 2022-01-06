@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font android:font="@font/ppneuemachina_regular" />
+    <font android:font="@font/ppneuemachina_light" />
+    <font android:font="@font/ppneuemachinau_ltrabold" />
+
+
+</font-family>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Beforeget</string>
+    
+    
+    
+    <!--나의 기록뷰-->
+    <string name="record">Record</string>
+    <string name="term">기간</string>
+    <string name="media">미디어</string>
+    <string name="startcore">별점</string>
 </resources>
