@@ -9,20 +9,15 @@ class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>
 
     val recordlist = mutableListOf<MyrecordData>()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecordViewHolder {
         val binding = ItemRecordBinding.inflate(
-            LayoutInflater.from(
-                parent.context
-            ), parent, false
+            LayoutInflater.from(parent.context), parent, false
         )
         return MyRecordViewHolder(binding)
-
     }
 
     override fun onBindViewHolder(holder: MyRecordViewHolder, position: Int) {
         holder.onBind(recordlist[position])
-
     }
 
     override fun getItemCount(): Int = recordlist.size
@@ -32,7 +27,7 @@ class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>
 
         fun onBind(data: MyrecordData) {
             binding.myrecord = data
+            binding.tvStar.text = data.star.toString()
         }
-
     }
 }
