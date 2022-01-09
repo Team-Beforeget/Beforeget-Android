@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.2296875" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_filter_inactive_btn.xml" value="0.2296875" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_plus_btn.xml" value="0.2296875" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_serch_btn.xml" value="0.2296875" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/ppneuemachina.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/pretendard.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
