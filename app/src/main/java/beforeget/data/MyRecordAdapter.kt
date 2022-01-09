@@ -7,7 +7,7 @@ import com.example.beforeget.databinding.ItemRecordBinding
 
 class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>() {
 
-    private val recordList = mutableListOf<MyRecordData>()
+    val recordList = mutableListOf<MyRecordData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecordViewHolder {
         val binding = ItemRecordBinding.inflate(

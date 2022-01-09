@@ -58,12 +58,12 @@
                 tools:text="@string/test_title" />
 
             <TextView
-                android:id="@+id/tv_subtitle"
+                android:id="@+id/tv_review"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="22dp"
-                android:text="@{myrecord.subtitle}"
+                android:text="@{myrecord.review}"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
