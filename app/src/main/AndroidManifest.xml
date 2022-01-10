@@ -10,8 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beforeget">
         <activity
-            android:name="beforeget.feature.MyrecodActivity"
-            android:exported="false" />
+            android:name="beforeget.feature.MyRecordActivity"
+            android:exported="true" />
+      <activity
+            android:name="beforeget.feature.report.ReportActivity"
+            android:exported="true" />
         <activity
             android:name="beforeget.feature.MainActivity"
             android:exported="true">
