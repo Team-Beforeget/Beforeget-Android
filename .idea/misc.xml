@@ -20,11 +20,11 @@
         <entry key="app/src/main/res/drawable/tab_selector_report_insert.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/font/beforeget_font.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/activity_report.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/activity_report.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.1625" />
         <entry key="app/src/main/res/layout/fragment_report1.xml" value="0.15885416666666666" />
         <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.14114583333333333" />
-        <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_report_onepage.xml" value="0.3070652173913043" />
         <entry key="app/src/main/res/layout/fragment_report_ranking.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.21666666666666667" />

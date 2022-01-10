@@ -2,6 +2,7 @@ package beforeget.feature.report
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.beforeget.R
 import com.example.beforeget.databinding.ActivityReportBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -37,6 +38,7 @@ class ReportActivity : AppCompatActivity() {
 
     private fun initIndicator() {
         TabLayoutMediator(binding.tlReport, binding.vpReport) { _tab, _position ->
+            _tab.setIcon(R.drawable.tab_selector_report)
         }.attach()
     }
 }
