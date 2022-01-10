@@ -1,0 +1,87 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="beforeget.feature.FilterMediaFragment">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginTop="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_two_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="67dp"
+                android:paddingVertical="10dp"
+                android:text="@string/second_week"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/month"
+                android:textSize="14sp"
+                android:paddingHorizontal="62dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="@id/cl_btn"
+                app:layout_constraintTop_toTopOf="@id/btn_two_week" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_three_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="61dp"
+                android:paddingVertical="10dp"
+                android:text="@string/three_month"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_direct_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="53dp"
+                android:paddingVertical="10dp"
+                android:text="@string/direct_input"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/cl_btn"
+                app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <DatePicker
+            android:id="@+id/dp_dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            android:layout_marginTop="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_btn"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

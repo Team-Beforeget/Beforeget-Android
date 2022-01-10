@@ -10,4 +10,24 @@
     <string name="test_date">2022. 01. 03</string>
     <string name="test_title">내가 널 사랑할 수 없는 10가지 이유</string>
     <string name="test_subtitle">흥미진진한 줄거리</string>
+  
+    <!--나의기록 필터뷰-->
+    <string name="second_week">2주</string>
+    <string name="month">1개월</string>
+    <string name="three_month">3개월</string>
+    <string name="direct_input">직접입력</string>
+    <string name="select">선택해주세요.</string>
+    <string name="apply">적용</string>
+    <string name="movie">Movie</string>
+    <string name="book">Book</string>
+    <string name="music">Music</string>
+    <string name="youtube">Youtube</string>
+    <string name="webtoon">Webtoon</string>
+    <string name="tv">TV</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+
 </resources>
