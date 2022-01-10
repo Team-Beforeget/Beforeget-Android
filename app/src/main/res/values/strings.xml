@@ -10,4 +10,18 @@
     <string name="test_date">2022. 01. 03</string>
     <string name="test_title">내가 널 사랑할 수 없는 10가지 이유</string>
     <string name="test_subtitle">흥미진진한 줄거리</string>
+
+    <!-- 통계 -->
+    <string name="report">Report</string>
+    <string name="date">2021년 12월</string>
+    <string name="month">12</string>
+    <string name="month_sub">월의</string>
+    <string name="nickname">땅콩</string>
+    <string name="nick_sub">님은?</string>
+    <string name="report1_description">이번 달 나의 소비 유형을 알아보세요</string>
+    <string name="report1_title">티키타카 뮤지션</string>
+    <string name="report1_subtitle">하루의 시작과 끝을 음악과 함께하시는군요!\n12월의 음악 기록이 가장 많은 당신,\n
+        오늘은 어떤 음악이 당신의 하루를 채웠나요?\n다음 달, 나의 새로운 유형을 기대해 보세요.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

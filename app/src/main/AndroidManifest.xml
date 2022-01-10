@@ -12,6 +12,9 @@
         <activity
             android:name="beforeget.feature.MyRecordActivity"
             android:exported="true" />
+      <activity
+            android:name="beforeget.feature.report.ReportActivity"
+            android:exported="true" />
         <activity
             android:name="beforeget.feature.MainActivity"
             android:exported="true">

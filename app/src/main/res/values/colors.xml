@@ -13,4 +13,7 @@
     <color name="gray200">#CFCFCF</color>
     <color name="green100">#6EEC83</color>
     <color name="Background">#FAFAFA</color>
+
+    <!-- Beforeget Main Color -->
+    <color name="gray300">#CFCFCF</color>
 </resources>
