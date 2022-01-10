@@ -11,77 +11,92 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="21dp"
+            android:layout_marginStart="21dp"
             android:layout_marginTop="21dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_two_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="67dp"
-                android:paddingVertical="10dp"
-                android:text="@string/second_week"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/month"
-                android:textSize="14sp"
-                android:paddingHorizontal="62dp"
-                android:paddingVertical="10dp"
-                app:layout_constraintEnd_toEndOf="@id/cl_btn"
-                app:layout_constraintTop_toTopOf="@id/btn_two_week" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_three_month"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="61dp"
-                android:paddingVertical="10dp"
-                android:text="@string/three_month"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_direct_input"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="53dp"
-                android:paddingVertical="10dp"
-                android:text="@string/direct_input"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@id/cl_btn"
-                app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <DatePicker
-            android:id="@+id/dp_dp"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_movie"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:datePickerMode="spinner"
-            android:calendarViewShown="false"
-            android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_btn"
+            android:paddingVertical="15dp"
+            android:paddingStart="58dp"
+            android:paddingEnd="59dp"
+            android:text="@string/movie"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/cl_btn"
+            app:layout_constraintTop_toTopOf="@id/cl_btn" />
 
-            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="61dp"
+            android:paddingEnd="62dp"
+            android:text="@string/book"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/cl_btn"
+            app:layout_constraintTop_toTopOf="@id/btn_movie" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="58dp"
+            android:paddingEnd="59dp"
+            android:text="@string/music"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/cl_btn"
+            app:layout_constraintTop_toBottomOf="@id/btn_movie" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_youtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="49dp"
+            android:paddingEnd="52dp"
+            android:text="@string/youtube"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/cl_btn"
+            app:layout_constraintTop_toBottomOf="@id/btn_movie" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="49dp"
+            android:text="@string/webtoon"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/cl_btn"
+            app:layout_constraintTop_toBottomOf="@id/btn_music" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingStart="68dp"
+            android:paddingEnd="69dp"
+            android:text="@string/tv"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/cl_btn"
+            app:layout_constraintTop_toBottomOf="@id/btn_youtube" />
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
