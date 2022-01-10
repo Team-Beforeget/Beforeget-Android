@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="beforeget.feature.write.MediaSelectActivity">
+
+    <TextView
+        android:id="@+id/tv_media_intro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:gravity="center"
+        android:lineHeight="34dp"
+        android:text="오늘도 어떤 미디어를\n감상하셨나요?"
+        android:textColor="@color/black200"
+        android:textSize="23dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_media_close" />
+
+    <ImageView
+        android:id="@+id/iv_media_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_btn_close" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_media_movie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/selector_media_border"
+        app:layout_constraintEnd_toStartOf="@+id/cl_media_book"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_media_intro">
+
+        <ImageView
+            android:id="@+id/iv_media_movieicon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="9dp"
+            android:paddingLeft="65dp"
+            android:paddingRight="66dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_media_movie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_media_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="Movie"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_media_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/selector_media_border"
+        app:layout_constraintEnd_toStartOf="@+id/cl_media_music"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_media_movie">
+
+        <ImageView
+            android:id="@+id/iv_media_tvicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="9dp"
+            android:paddingLeft="65dp"
+            android:paddingRight="66dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_media_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_media_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="TV"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_media_webtoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/selector_media_border"
+        app:layout_constraintEnd_toStartOf="@+id/cl_media_youtube"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_media_tv">
+
+        <ImageView
+            android:id="@+id/iv_media_webtoonicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="9dp"
+            android:paddingLeft="65dp"
+            android:paddingRight="66dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_media_webtoon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_media_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="Webtoon"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_media_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/selector_media_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cl_media_movie"
+        app:layout_constraintTop_toBottomOf="@+id/tv_media_intro">
+
+        <ImageView
+            android:id="@+id/iv_media_bookicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="9dp"
+            android:paddingLeft="65dp"
+            android:paddingRight="66dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_media_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_media_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="Book"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_media_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/selector_media_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cl_media_tv"
+        app:layout_constraintTop_toBottomOf="@+id/cl_media_book">
+
+        <ImageView
+            android:id="@+id/iv_media_musicicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="9dp"
+            android:paddingLeft="65dp"
+            android:paddingRight="66dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_media_music"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_media_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="Music"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_media_youtube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="21dp"
+        android:background="@drawable/selector_media_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cl_media_webtoon"
+        app:layout_constraintTop_toBottomOf="@+id/cl_media_music">
+
+        <ImageView
+            android:id="@+id/iv_media_youtubeicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="9dp"
+            android:paddingLeft="65dp"
+            android:paddingRight="66dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_media_youtube"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_star" />
+
+        <TextView
+            android:id="@+id/tv_media_youtube"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="34dp"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="Youtube"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:background="@drawable/rectangle_button_selector"
+        android:text="다음"
+        android:textStyle="normal"
+        android:textSize="17dp"
+        android:lineHeight="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:paddingRight="145dp"
+        android:paddingLeft="145dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

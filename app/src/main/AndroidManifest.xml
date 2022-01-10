@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beforeget">
         <activity
+            android:name="beforeget.feature.write.MediaSelectActivity"
+            android:exported="false" />
+        <activity
             android:name="beforeget.feature.MyRecordActivity"
             android:exported="true" />
-      <activity
+        <activity
             android:name="beforeget.feature.report.ReportActivity"
             android:exported="true" />
         <activity
