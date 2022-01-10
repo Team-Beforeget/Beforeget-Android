@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/ic_back_btn.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/ic_serch_btn.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_border_black200_2px.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_border_gray_18.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_border_selector.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_button_selector.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_fill_green.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_fill_transparent.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_undercorner.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/selector_media_border.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/layout/activity_main.xml" value="0.3695652173913043" />
+        <entry key="..\:/Beforeget/app/src/main/res/layout/activity_media_select.xml" value="1.1" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/ppneuemachina.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/pretendard.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
