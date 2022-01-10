@@ -7,13 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
     <color name="black100">#000000</color>
     <color name="black200">#202020</color>
-    <color name="gray100">#AFAFAF</color>
-    <color name="gray200">#CFCFCF</color>
     <color name="green100">#6EEC83</color>
     <color name="Background">#FAFAFA</color>
 
+
     <!-- Beforeget Main Color -->
+    <color name="gray100">#656565</color>
+    <color name="gray200">#AFAFAF</color>
     <color name="gray300">#CFCFCF</color>
+
 </resources>
