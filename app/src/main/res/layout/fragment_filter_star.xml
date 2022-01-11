@@ -28,7 +28,7 @@
                 android:paddingEnd="63dp"
                 android:text="@string/one"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,7 +42,7 @@
                 android:paddingEnd="63dp"
                 android:text="@string/two"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/btn_one_star" />
 
@@ -58,7 +58,7 @@
                 android:paddingEnd="63dp"
                 android:text="@string/three"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_one_star" />
 
@@ -73,7 +73,7 @@
                 android:paddingEnd="63dp"
                 android:text="@string/four"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_two_star" />
 
@@ -88,7 +88,7 @@
                 android:paddingEnd="63dp"
                 android:text="@string/five"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_three_star" />
 

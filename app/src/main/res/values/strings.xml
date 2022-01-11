@@ -43,7 +43,7 @@
 
     <!--나의기록 필터뷰-->
     <string name="second_week">2주</string>
-    <string name="month">1개월</string>
+    <string name="month_one">1개월</string>
     <string name="three_month">3개월</string>
     <string name="direct_input">직접입력</string>
     <string name="select">선택해주세요.</string>

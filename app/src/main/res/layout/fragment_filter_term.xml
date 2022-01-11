@@ -27,7 +27,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/second_week"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,9 +38,9 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="62dp"
                 android:paddingVertical="10dp"
-                android:text="@string/month"
+                android:text="@string/month_one"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintEnd_toEndOf="@id/cl_btn"
                 app:layout_constraintTop_toTopOf="@id/btn_two_week" />
 
@@ -52,7 +52,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/three_month"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
 
@@ -65,7 +65,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/direct_input"
                 android:textSize="14sp"
-                android:background="@drawable/ic_filter_inactive_btn"
+                android:background="@drawable/ic_selector_btn_filter"
                 app:layout_constraintEnd_toEndOf="@id/cl_btn"
                 app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
         </androidx.constraintlayout.widget.ConstraintLayout>
