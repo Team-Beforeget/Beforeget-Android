@@ -1,4 +1,5 @@
-![리드미용비포켓](C:\Users\PS42\Desktop\SOPT\리드미용비포켓.jpg)
+
+![리드미용비포켓](https://user-images.githubusercontent.com/81518783/148996971-50997eef-38ab-4a01-96f6-9599bbce0854.jpg)
 
 # Beforeget
 
@@ -28,12 +29,17 @@
 
 ## 🔨 Package Structure폴더링
 
-* 📦
-      └─beforeget-android
-          ├─📂data
-          │  └─📂local
-  
-  ​        │  └─📂remote
-  
-  ​        ├─📂feature
-  ​        └─📂util
+
+## 
+
+```
+📦
+    └─beforeget-android
+        ├─📂data
+        │  └─📂local
+
+​        │  └─📂remote
+
+​        ├─📂feature
+​        └─📂util
+```
