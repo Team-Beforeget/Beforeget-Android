@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="beforeget.feature.main.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Background"
-        tools:context="beforeget.feature.MainActivity">
+        android:background="@color/Background">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_main_top"
@@ -16,11 +21,10 @@
             android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:context=".Feature.MainActivity">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/iv_beforeget"
+                android:id="@+id/iv_main_beforeget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -30,17 +34,17 @@
                 app:srcCompat="@drawable/ic_icn_logo_main" />
 
             <ImageView
-                android:id="@+id/iv_stats"
+                android:id="@+id/iv_main_stats"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="3dp"
-                app:layout_constraintEnd_toStartOf="@+id/iv_setting"
+                app:layout_constraintEnd_toStartOf="@+id/iv_main_setting"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_btn_stats" />
 
             <ImageView
-                android:id="@+id/iv_setting"
+                android:id="@+id/iv_main_setting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -48,7 +52,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_btn_setting" />
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_main_text"
@@ -66,7 +69,7 @@
                     android:lineHeight="16dp"
                     android:text="OO "
                     android:textColor="@color/black200"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     android:textStyle="normal"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -79,7 +82,7 @@
                     android:lineHeight="16dp"
                     android:text="님, 잊기 전에 기록해보세요."
                     android:textColor="@color/black200"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     android:textStyle="normal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_main_name"
@@ -95,12 +98,11 @@
                 android:lineHeight="34dp"
                 android:text="오늘은 어떤 미디어를\n감상하셨나요?"
                 android:textColor="@color/black200"
-                android:textSize="23dp"
+                android:textSize="23sp"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_main_record"
@@ -117,7 +119,7 @@
                 android:paddingBottom="13dp"
                 android:text="기록하기"
                 android:textColor="@color/black200"
-                android:textSize="17dp"
+                android:textSize="17sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -131,7 +133,7 @@
                 android:layout_marginTop="13dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_beforeget"
+                app:layout_constraintTop_toBottomOf="@+id/iv_main_beforeget"
                 tools:srcCompat="@tools:sample/avatars" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -145,7 +147,7 @@
             android:lineHeight="23dp"
             android:text="기록"
             android:textColor="@color/black200"
-            android:textSize="19dp"
+            android:textSize="19sp"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
@@ -155,30 +157,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
-            android:text="N개"
-            android:textStyle="normal"
-            android:textSize="19dp"
             android:lineHeight="23dp"
+            android:text="N개"
             android:textColor="@color/gray200"
+            android:textSize="19sp"
+            android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/tv_main_reportlabel"
             app:layout_constraintTop_toTopOf="@+id/tv_main_reportlabel" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_main_bottom"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_main_btnall"
-        tools:itemCount="6"
-        tools:listitem="@layout/item_content_list" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_main_bottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main_btnviewall"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_media_list" />
 
         <TextView
-            android:id="@+id/tv_main_btnall"
+            android:id="@+id/tv_main_btnviewall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
@@ -192,9 +194,11 @@
             android:paddingBottom="6dp"
             android:text="전체보기"
             android:textColor="@color/black200"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:textStyle="normal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

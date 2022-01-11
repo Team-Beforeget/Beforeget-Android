@@ -19,7 +19,7 @@
             android:name="beforeget.feature.report.ReportActivity"
             android:exported="true" />
         <activity
-            android:name="beforeget.feature.MainActivity"
+            android:name="beforeget.feature.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

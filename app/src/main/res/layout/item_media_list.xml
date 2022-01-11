@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="main"
+            type="beforeget.data.MainData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingRight="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black200">
+
+            <TextView
+                android:id="@+id/tv_main_rvcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="49dp"
+                android:lineHeight="42dp"
+                android:textColor="@color/white"
+                android:textSize="43sp"
+                android:textStyle="normal"
+                android:text="@{main.count}"
+                app:layout_constraintBottom_toTopOf="@+id/tv_main_rvmedia"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_main_rvicon" />
+
+            <TextView
+                android:id="@+id/tv_main_rvmedia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="15dp"
+                android:lineHeight="25dp"
+                android:text="@{main.media}"
+                android:textColor="@color/white"
+                android:textSize="17sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_main_rvicon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="80dp"
+                android:background="@{main.icon}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
