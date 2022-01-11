@@ -140,10 +140,6 @@
                     tools:listitem="@layout/item_record" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </ScrollView>
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

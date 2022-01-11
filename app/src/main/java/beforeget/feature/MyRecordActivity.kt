@@ -12,6 +12,7 @@ class MyRecordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        showBottomSheet()
         initMyRecordAdapter()
     }
 
@@ -36,5 +37,12 @@ class MyRecordActivity : AppCompatActivity() {
         )
 
         myRecordDataAdapter.notifyDataSetChanged()
+    }
+
+    private fun showBottomSheet() {
+        binding.btnMedia.setOnClickListener {
+            val filterBottomSheetFragment = FilterBottomSheetFragment()
+            filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
+        }
     }
 }

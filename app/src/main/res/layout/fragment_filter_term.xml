@@ -27,6 +27,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/second_week"
                 android:textSize="14sp"
+                android:background="@drawable/ic_filter_inactive_btn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,6 +40,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/month"
                 android:textSize="14sp"
+                android:background="@drawable/ic_filter_inactive_btn"
                 app:layout_constraintEnd_toEndOf="@id/cl_btn"
                 app:layout_constraintTop_toTopOf="@id/btn_two_week" />
 
@@ -50,6 +52,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/three_month"
                 android:textSize="14sp"
+                android:background="@drawable/ic_filter_inactive_btn"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
 
@@ -62,6 +65,7 @@
                 android:paddingVertical="10dp"
                 android:text="@string/direct_input"
                 android:textSize="14sp"
+                android:background="@drawable/ic_filter_inactive_btn"
                 app:layout_constraintEnd_toEndOf="@id/cl_btn"
                 app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
         </androidx.constraintlayout.widget.ConstraintLayout>

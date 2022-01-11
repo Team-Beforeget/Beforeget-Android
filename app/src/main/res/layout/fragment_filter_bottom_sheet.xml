@@ -1,7 +1,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="beforeget.feature.FilterBottomSheetFragment">
+    tools:context="beforeget.feature.FilterBottomSheetFragment"
+    app:behavior_hideable="true"
+    app:behavior_draggable="true"
+    app:behavior_peekHeight="591dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    >
 
     <data>
 
@@ -9,25 +14,26 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
 
-       <com.google.android.material.tabs.TabLayout
-           android:id="@+id/tl_menu"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_menu"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tl_menu"
-
-            />
-
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tl_menu" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

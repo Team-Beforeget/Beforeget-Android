@@ -6,13 +6,18 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.2296875" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_filter_inactive_btn.xml" value="0.2296875" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_plus_btn.xml" value="0.2296875" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_rectangle_fill_white_border_black.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_rectangle_fill_white_border_gray.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_selector_btn_filter.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_selector_littlestar.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_serch_btn.xml" value="0.2296875" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_test.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_test2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/ppneuemachina.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/pretendard.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.2" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.1" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.1" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_media.xml" value="0.264" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_star.xml" value="0.2" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.17552083333333332" />
