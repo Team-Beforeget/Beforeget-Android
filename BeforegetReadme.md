@@ -9,18 +9,19 @@
 
 # 📳 Specification
 
-| **Jetpack Components** | DataBinding, viewPager2        |
-| ---------------------- | ------------------------------ |
-| **Network**            | Retrofit2                      |
-| **Strategy**           | Git Flow                       |
-| Other Tool             | Notion, Slack, Gather, DisCord |
+| 종류               | 내용                           |
+| ------------------ | ------------------------------ |
+| Jetpack Components | DataBinding, viewPager2        |
+| Network            | Retrofit2                      |
+| Strategy           | Git Flow                       |
+| Other Tool         | Notion, Slack, Gather, Discord |
 
 
+# 👨‍👩‍👧‍👦 Role
 
-# 👨‍👩‍👧‍👦 Mock
-
-| 정화진 | 통계뷰                      |
+| 이름   | 담당                        |
 | ------ | --------------------------- |
+| 정화진 | 통계뷰                      |
 | 김송현 | 나의기록뷰, 나의기록 상세뷰 |
 | 김세훈 | 메인뷰, 글쓰기뷰            |
 | 박진수 | 로그인, 회원가입            |
