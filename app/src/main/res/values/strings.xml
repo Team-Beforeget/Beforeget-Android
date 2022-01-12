@@ -64,6 +64,6 @@
     <string name="five">5</string>
     <string name="term_refresh">기간 초기화</string>
     <string name="media_refresh">미디어 초기화</string>
-    <string name="start_score_refresh">별점\n초기화</string>
+    <string name="start_score_refresh">별점 초기화</string>
 
 </resources>

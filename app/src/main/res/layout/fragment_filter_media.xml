@@ -126,13 +126,43 @@
             app:layout_constraintStart_toEndOf="@+id/btn_webtoon"
             app:layout_constraintTop_toTopOf="@id/btn_webtoon" />
 
-
         <ImageView
-            android:id="@+id/btn_refesh_filter"
+            android:id="@+id/btn_refresh_term_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/ic_resfresh"
+            app:layout_constraintBottom_toTopOf="@id/tv_refresh_term_filter"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            />
+        <TextView
+            android:id="@+id/tv_refresh_term_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="@string/media_refresh"
+            android:textColor="@color/black200"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_apply_filter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:text="@string/apply"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:background="@drawable/selector_btn_apply_filter"
+            android:paddingVertical="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_refresh_term_filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_refresh_term_filter"
+            app:layout_constraintTop_toTopOf="@id/btn_refresh_term_filter" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

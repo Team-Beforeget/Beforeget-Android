@@ -15,16 +15,28 @@
         android:layout_height="0dp"
         android:background="@color/white">
 
+        <View
+            android:id="@+id/view_indicator"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginHorizontal="158dp"
+            android:layout_marginTop="9dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="83dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="83dp"
             android:theme="@style/TabLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_indicator"
             app:tabIndicator="@drawable/ic_tab_indicator"
             app:tabIndicatorColor="@color/black200"
             app:tabIndicatorHeight="2dp"
