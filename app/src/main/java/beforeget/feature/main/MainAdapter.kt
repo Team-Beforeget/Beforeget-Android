@@ -1,9 +1,12 @@
 package beforeget.data
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import beforeget.feature.MyRecordActivity
 import com.example.beforeget.databinding.ItemMediaListBinding
 import com.example.beforeget.databinding.ItemRecordBinding
 
@@ -20,20 +23,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     override fun onBindViewHolder(holder: MainViewHolder, position: Int) {
         holder.onBind(mediaList[position])
-        holder.itemView.setOnClickListener {
-            itemClickListener.onClick(it,position)
-        }
     }
-
-    interface OnItemClickListener {
-        fun onClick(v: View, position: Int)
-    }
-
-    fun setItemClickListener(onItemClickListener: OnItemClickListener) {
-        this.itemClickListener = onItemClickListener
-    }
-
-    private lateinit var itemClickListener : OnItemClickListener
 
     override fun getItemCount(): Int = mediaList.size
 
@@ -42,6 +32,11 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
+
+            itemView.setOnClickListener {
+
+            }
         }
     }
 }
+

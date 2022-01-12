@@ -22,25 +22,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         binding.ivMainStats.setOnClickListener {
+
             startActivity(Intent(this, ReportActivity::class.java))
         }
 
         binding.btnMainRecord.setOnClickListener {
+
             startActivity(Intent(this, MediaSelectActivity::class.java))
         }
 
         binding.tvMainBtnviewall.setOnClickListener {
+
             startActivity(Intent(this, MyRecordActivity::class.java))
         }
-
-
-        MainAdapter.setItemClickListener(object: MainAdapter.OnItemClickListener{
-            override fun onClick(v: View, position: Int) {
-                Toast.makeText(binding.root.context,
-                    "s",
-                    Toast.LENGTH_SHORT).show()
-            }
-        })
 
         setContentView(binding.root)
         initMainAdapter()
