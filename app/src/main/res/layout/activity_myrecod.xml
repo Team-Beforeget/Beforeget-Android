@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="beforeget.feature.MyRecordActivity">
+    tools:context="beforeget.feature.myrecord.MyRecordActivity">
 
     <data>
 
@@ -20,9 +20,10 @@
             android:layout_marginStart="140dp"
             android:layout_marginTop="57dp"
             android:layout_marginEnd="143dp"
+            android:fontFamily="@font/ppneuemachina_regular"
             android:text="Record"
             android:textColor="@color/black200"
-            android:textSize="22sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -62,6 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_filter_inactive_btn"
+                android:fontFamily="@font/pretendard_regular"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:paddingHorizontal="23dp"
@@ -79,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:background="@drawable/ic_filter_inactive_btn"
+                android:fontFamily="@font/pretendard_regular"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:paddingStart="16dp"
@@ -97,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:background="@drawable/ic_filter_inactive_btn"
+                android:fontFamily="@font/pretendard_regular"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:paddingStart="23dp"
@@ -113,33 +117,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <ScrollView
-            android:id="@+id/scv_rcv"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_myrecord"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
-            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_btn">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_rcv"
-                android:layout_width="match_parent"
-                android:layout_height="0dp">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcv_myrecord"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:listitem="@layout/item_record" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </ScrollView>
+            app:layout_constraintTop_toBottomOf="@id/cl_btn"
+            tools:listitem="@layout/item_record" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

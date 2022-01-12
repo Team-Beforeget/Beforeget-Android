@@ -1,4 +1,4 @@
-package beforeget.feature
+package beforeget.feature.filter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

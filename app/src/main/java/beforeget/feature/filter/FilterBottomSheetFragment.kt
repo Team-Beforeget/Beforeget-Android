@@ -1,4 +1,4 @@
-package beforeget.feature
+package beforeget.feature.filter
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater

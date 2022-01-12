@@ -1,7 +1,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="beforeget.feature.FilterMediaFragment">
+    tools:context="beforeget.feature.filter.FilterMediaFragment">
 
     <data>
 
@@ -9,100 +9,123 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="20dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_btn"
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_movie"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="21dp"
             android:layout_marginTop="21dp"
-            android:layout_marginEnd="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
+            android:paddingVertical="10dp"
+            android:text="@string/movie"
+            android:textColor="@color/selector_text_active_black_white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_book"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_movie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingVertical="15dp"
-            android:paddingStart="58dp"
-            android:paddingEnd="59dp"
-            android:text="@string/movie"
-            android:textSize="14sp"
-            android:background="@drawable/ic_selector_btn_filter"
-            app:layout_constraintStart_toStartOf="@id/cl_btn"
-            app:layout_constraintTop_toTopOf="@id/cl_btn" />
-
-        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_book"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
             android:paddingVertical="10dp"
-            android:paddingStart="61dp"
-            android:paddingEnd="62dp"
             android:text="@string/book"
+            android:textColor="@color/selector_text_active_black_white"
             android:textSize="14sp"
-            android:background="@drawable/ic_selector_btn_filter"
-            app:layout_constraintEnd_toEndOf="@id/cl_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_movie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_movie"
             app:layout_constraintTop_toTopOf="@id/btn_movie" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_music"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
             android:paddingVertical="10dp"
-            android:paddingStart="58dp"
-            android:paddingEnd="59dp"
             android:text="@string/music"
+            android:textColor="@color/selector_text_active_black_white"
             android:textSize="14sp"
-            android:background="@drawable/ic_selector_btn_filter"
-            app:layout_constraintStart_toStartOf="@id/cl_btn"
+            app:layout_constraintEnd_toStartOf="@+id/btn_youtube"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_movie" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_youtube"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
             android:paddingVertical="10dp"
-            android:paddingStart="49dp"
-            android:paddingEnd="52dp"
             android:text="@string/youtube"
+            android:textColor="@color/selector_text_active_black_white"
             android:textSize="14sp"
-            android:background="@drawable/ic_selector_btn_filter"
-            app:layout_constraintEnd_toEndOf="@id/cl_btn"
-            app:layout_constraintTop_toBottomOf="@id/btn_movie" />
+            app:layout_constraintBottom_toBottomOf="@id/btn_music"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_music"
+            app:layout_constraintTop_toTopOf="@id/btn_music" />
 
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_webtoon"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
             android:paddingVertical="10dp"
-            android:paddingHorizontal="49dp"
             android:text="@string/webtoon"
+            android:textColor="@color/selector_text_active_black_white"
             android:textSize="14sp"
-            android:background="@drawable/ic_selector_btn_filter"
-            app:layout_constraintStart_toStartOf="@id/cl_btn"
+            app:layout_constraintEnd_toStartOf="@+id/btn_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_music" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
             android:paddingVertical="10dp"
-            android:paddingStart="68dp"
-            android:paddingEnd="69dp"
             android:text="@string/tv"
+            android:textColor="@color/selector_text_active_black_white"
             android:textSize="14sp"
-            android:background="@drawable/ic_selector_btn_filter"
-            app:layout_constraintEnd_toEndOf="@id/cl_btn"
-            app:layout_constraintTop_toBottomOf="@id/btn_youtube" />
-
-
-
-
+            app:layout_constraintBottom_toBottomOf="@id/btn_webtoon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_webtoon"
+            app:layout_constraintTop_toTopOf="@id/btn_webtoon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>

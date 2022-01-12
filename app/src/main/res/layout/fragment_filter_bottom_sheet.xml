@@ -1,12 +1,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="beforeget.feature.FilterBottomSheetFragment"
-    app:behavior_hideable="true"
     app:behavior_draggable="true"
+    app:behavior_hideable="true"
     app:behavior_peekHeight="591dp"
     app:layout_behavior="@string/bottom_sheet_behavior"
-    >
+    tools:context="beforeget.feature.filter.FilterBottomSheetFragment">
 
     <data>
 
@@ -15,16 +14,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tl_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="83dp"
+            android:layout_marginEnd="83dp"
+            android:theme="@style/TabLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicator="@drawable/ic_tab_indicator"
+            app:tabIndicatorColor="@color/black200"
+            app:tabIndicatorHeight="2dp"
+            app:tabSelectedTextColor="@color/black200"
+            app:tabTextColor="@color/gray300"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.viewpager2.widget.ViewPager2

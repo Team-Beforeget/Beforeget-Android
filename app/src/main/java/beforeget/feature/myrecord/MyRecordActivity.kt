@@ -1,9 +1,8 @@
-package beforeget.feature
-
+package beforeget.feature.myrecord
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import beforeget.data.MyRecordAdapter
 import beforeget.data.MyRecordData
+import beforeget.feature.filter.FilterBottomSheetFragment
 import com.example.beforeget.databinding.ActivityMyrecodBinding
 
 class MyRecordActivity : AppCompatActivity() {
@@ -12,8 +11,22 @@ class MyRecordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        showBottomSheet()
+        initClickFilterButtonEvent()
         initMyRecordAdapter()
+    }
+
+    private fun initClickFilterButtonEvent() {
+        binding.btnMedia.setOnClickListener {
+            showBottomSheet()
+        }
+
+        binding.btnTerm.setOnClickListener {
+            showBottomSheet()
+        }
+
+        binding.btnScore.setOnClickListener {
+            showBottomSheet()
+        }
     }
 
     private fun initMyRecordAdapter() {
@@ -40,9 +53,7 @@ class MyRecordActivity : AppCompatActivity() {
     }
 
     private fun showBottomSheet() {
-        binding.btnMedia.setOnClickListener {
-            val filterBottomSheetFragment = FilterBottomSheetFragment()
-            filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
-        }
+        val filterBottomSheetFragment = FilterBottomSheetFragment()
+        filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
 }
