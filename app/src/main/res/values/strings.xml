@@ -10,4 +10,34 @@
     <string name="test_date">2022. 01. 03</string>
     <string name="test_title">내가 널 사랑할 수 없는 10가지 이유</string>
     <string name="test_subtitle">흥미진진한 줄거리</string>
+
+    <!-- 통계 -->
+    <string name="report">Report</string>
+    <string name="date">2021년 12월</string>
+    <string name="month">12</string>
+    <string name="month_sub">월의</string>
+    <string name="nickname">땅콩</string>
+    <string name="nick_sub">님은?</string>
+    <string name="report1_description">이번 달 나의 소비 유형을 알아보세요</string>
+    <string name="report1_title">티키타카 뮤지션</string>
+    <string name="report1_subtitle">하루의 시작과 끝을 음악과 함께하시는군요!\n12월의 음악 기록이 가장 많은 당신,\n
+        오늘은 어떤 음악이 당신의 하루를 채웠나요?\n다음 달, 나의 새로운 유형을 기대해 보세요.</string>
+
+    <string name="rank">유형별 랭킹</string>
+    <string name="rank_month">12</string>
+    <string name="rank_description">월 한 달 기록률이 가장 높은 top 3</string>
+    <string name="rank1_count">22</string>
+    <string name="rank1_name">Book</string>
+    <string name="rank2_count">10</string>
+    <string name="rank2_name">Music</string>
+    <string name="rank3_count">7</string>
+    <string name="rank3_name">Movie</string>
+    <string name="rank_comment">the best\nrecord</string>
+    <string name="rank_title_name">책</string>
+    <string name="rank_title">을 가장 많이 읽었어요</string>
+    <string name="rank_subtitle">12월 한 달간 22권의 책을 기록하셨네요!\n다음으로 많은 기록을 남긴 유형 음악과 영화는\n
+        각각 10개, 7개 기록했어요.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

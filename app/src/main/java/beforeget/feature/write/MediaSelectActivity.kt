@@ -1,12 +1,12 @@
-package beforeget.feature
+package beforeget.feature.write
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.example.beforeget.R
 
-class MainActivity : AppCompatActivity() {
+class MediaSelectActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_media_select)
     }
 }

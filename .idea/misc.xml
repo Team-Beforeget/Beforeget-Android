@@ -3,16 +3,48 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/ic_back_btn.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/ic_serch_btn.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_border_black200_2px.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_border_gray_18.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_border_selector.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_button_selector.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_fill_green.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_fill_transparent.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/rectangle_undercorner.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/drawable/selector_media_border.xml" value="0.40260416666666665" />
+        <entry key="..\:/Beforeget/app/src/main/res/layout/activity_main.xml" value="0.3695652173913043" />
+        <entry key="..\:/Beforeget/app/src/main/res/layout/activity_media_select.xml" value="1.1" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/ppneuemachina.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/pretendard.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.21197916666666666" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.5135135135135135" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/drawable/ic_btn_back.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/ic_btn_download.xml" value="0.175" />
+        <entry key="app/src/main/res/drawable/ic_icn_star.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_page1_active.xml" value="0.3574074074074074" />
+        <entry key="app/src/main/res/drawable/ic_page1_inactive.xml" value="0.3574074074074074" />
+        <entry key="app/src/main/res/drawable/ic_rectangle_5712.xml" value="0.3574074074074074" />
+        <entry key="app/src/main/res/drawable/rectangle_border_gray_18.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/selector_report_indicator.xml" value="0.33796296296296297" />
+        <entry key="app/src/main/res/drawable/tab_selector_report.xml" value="0.2328125" />
+        <entry key="app/src/main/res/drawable/tab_selector_report_insert.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/font/beforeget_font.xml" value="0.27447916666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_report.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.1625" />
+        <entry key="app/src/main/res/layout/fragment_report1.xml" value="0.15885416666666666" />
+        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.14114583333333333" />
+        <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_report_onepage.xml" value="0.3070652173913043" />
+        <entry key="app/src/main/res/layout/fragment_report_ranking.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.21666666666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
