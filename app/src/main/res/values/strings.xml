@@ -53,11 +53,17 @@
     <string name="music">Music</string>
     <string name="youtube">Youtube</string>
     <string name="webtoon">Webtoon</string>
+    <string name="start">시작</string>
+    <string name="end">끝</string>
+    <string name="select_date">날짜를 선택해주세요.</string>
     <string name="tv">TV</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
     <string name="four">4</string>
     <string name="five">5</string>
+    <string name="term_refresh">기간 초기화</string>
+    <string name="media_refresh">미디어 초기화</string>
+    <string name="start_score_refresh">별점\n초기화</string>
 
 </resources>
