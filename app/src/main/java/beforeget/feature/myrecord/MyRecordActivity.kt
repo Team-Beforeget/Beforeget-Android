@@ -1,7 +1,7 @@
 package beforeget.feature.myrecord
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import beforeget.data.MyRecordData
+import beforeget.data.local.MyRecordData
 import beforeget.feature.filter.FilterBottomSheetFragment
 import com.example.beforeget.databinding.ActivityMyrecodBinding
 

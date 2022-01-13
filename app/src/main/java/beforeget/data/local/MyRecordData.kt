@@ -1,4 +1,4 @@
-package beforeget.data
+package beforeget.data.local
 
 data class MyRecordData(
     val title: String,
