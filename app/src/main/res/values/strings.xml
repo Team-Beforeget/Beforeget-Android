@@ -40,6 +40,10 @@
     
     <string name="graph">월별 그래프</string>
     <string name="graph_description">가장 많은 기록은 한 달을 확인해보세요</string>
+    <string name="graph_month">12</string>
+    <string name="graph_month_unit">월</string>
+    <string name="graph_3_month">3M</string>
+    <string name="graph_5_month">5M</string>
     <string name="graph_title_count">13</string>
     <string name="graph_title">개의 기록을 남겼어요</string>
     <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
