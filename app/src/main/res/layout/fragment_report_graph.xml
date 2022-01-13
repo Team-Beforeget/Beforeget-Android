@@ -1,13 +1,91 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="beforeget.feature.report.ReportGraphFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/iv_graph_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_icn_star"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_graph_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="@string/graph"
+        android:textColor="@color/black200"
+        android:textSize="19sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_graph_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_graph_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/graph_description"
+        app:layout_constraintStart_toStartOf="@+id/iv_graph_icon"
+        app:layout_constraintTop_toBottomOf="@+id/iv_graph_icon" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bc_graph"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black200"
+        app:layout_constraintBottom_toTopOf="@+id/tv_graph_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_graph_description" />
+
+    <TextView
+        android:id="@+id/tv_graph_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="@string/graph_subtitle"
+        android:textSize="17sp"
+        android:textColor="@color/black200"
+        android:lineSpacingExtra="5sp"
+        android:fontFamily="@font/pretendard_regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_graph_icon" />
+
+    <TextView
+        android:id="@+id/tv_graph_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/graph_title_count"
+        android:textColor="@color/black200"
+        android:textSize="21sp"
+        android:fontFamily="@font/pretendard_semibold"
+        android:paddingTop="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_graph_subtitle"
+        app:layout_constraintStart_toStartOf="@+id/tv_graph_subtitle" />
+
+    <TextView
+        android:id="@+id/tv_graph_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/graph_title"
+        android:textColor="@color/black200"
+        android:textSize="21sp"
+        android:fontFamily="@font/pretendard_semibold"
+        android:paddingTop="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_graph_count"
+        app:layout_constraintStart_toEndOf="@+id/tv_graph_count"
+        app:layout_constraintTop_toTopOf="@+id/tv_graph_count" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
