@@ -27,19 +27,25 @@
         <entry key="app/src/main/res/drawable/ic_page1_active.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/drawable/ic_page1_inactive.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/drawable/ic_rectangle_5712.xml" value="0.3574074074074074" />
+        <entry key="app/src/main/res/drawable/rectangle_border_black200.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/rectangle_border_gray300.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/drawable/rectangle_border_gray_18.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rectangle_fill_black.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/rectangle_fill_green.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/selector_graph_month.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/drawable/selector_report_indicator.xml" value="0.33796296296296297" />
         <entry key="app/src/main/res/drawable/tab_selector_report.xml" value="0.2328125" />
         <entry key="app/src/main/res/drawable/tab_selector_report_insert.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/font/beforeget_font.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
-        <entry key="app/src/main/res/layout/activity_report.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_media_select.xml" value="0.19479166666666667" />
+        <entry key="app/src/main/res/layout/activity_report.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.1625" />
         <entry key="app/src/main/res/layout/fragment_report1.xml" value="0.15885416666666666" />
-        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.14114583333333333" />
-        <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.2593283582089552" />
+        <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_report_onepage.xml" value="0.3070652173913043" />
-        <entry key="app/src/main/res/layout/fragment_report_ranking.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/fragment_report_ranking.xml" value="0.17812173287756644" />
         <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.21666666666666667" />
       </map>
     </option>

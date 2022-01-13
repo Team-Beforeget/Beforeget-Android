@@ -35,19 +35,91 @@
         app:layout_constraintStart_toStartOf="@+id/iv_graph_icon"
         app:layout_constraintTop_toBottomOf="@+id/iv_graph_icon" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_graph_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/black200"
+        android:src="@drawable/rectangle_fill_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_graph_description">
+
+        <TextView
+            android:id="@+id/tv_graph_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/ppneuemachina_regular"
+            android:text="@string/graph_month"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_graph_month_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:fontFamily="@font/ppneuemachina_regular"
+            android:text="@string/graph_month_unit"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_graph_month"
+            app:layout_constraintStart_toEndOf="@+id/tv_graph_month"
+            app:layout_constraintTop_toTopOf="@+id/tv_graph_month" />
+
+        <TextView
+            android:id="@+id/tv_graph_5_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/ppneuemachina_regular"
+            android:padding="5dp"
+            android:text="@string/graph_5_month"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_graph_3_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/ppneuemachina_regular"
+            android:padding="5dp"
+            android:text="@string/graph_3_month"
+            android:textColor="@color/gray100"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_graph_5_month"
+            app:layout_constraintEnd_toStartOf="@+id/tv_graph_5_month"
+            app:layout_constraintTop_toTopOf="@+id/tv_graph_5_month"
+            app:layout_constraintVertical_bias="0.51" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/bc_graph"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@color/black200"
         app:layout_constraintBottom_toTopOf="@+id/tv_graph_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_graph_description" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_graph_title" />
 
     <TextView
         android:id="@+id/tv_graph_subtitle"
