@@ -37,6 +37,17 @@
     <string name="rank_title">을 가장 많이 읽었어요</string>
     <string name="rank_subtitle">12월 한 달간 22권의 책을 기록하셨네요!\n다음으로 많은 기록을 남긴 유형 음악과 영화는\n
         각각 10개, 7개 기록했어요.</string>
+    
+    <string name="graph">월별 그래프</string>
+    <string name="graph_description">가장 많은 기록은 한 달을 확인해보세요</string>
+    <string name="graph_month">12</string>
+    <string name="graph_month_unit">월</string>
+    <string name="graph_3_month">3M</string>
+    <string name="graph_5_month">5M</string>
+    <string name="graph_title_count">13</string>
+    <string name="graph_title">개의 기록을 남겼어요</string>
+    <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
+        10월로, 30개의 기록을 남겼어요!\n다음 달, 나의 그래프는 어떤 모양일까요?</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
