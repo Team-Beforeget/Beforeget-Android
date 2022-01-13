@@ -3,8 +3,6 @@ package beforeget.feature.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import beforeget.data.MainAdapter
 import beforeget.data.MainData
@@ -22,20 +20,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         binding.ivMainStats.setOnClickListener {
-
             startActivity(Intent(this, ReportActivity::class.java))
         }
 
         binding.btnMainRecord.setOnClickListener {
-
             startActivity(Intent(this, MediaSelectActivity::class.java))
         }
 
         binding.tvMainBtnviewall.setOnClickListener {
-
             startActivity(Intent(this, MyRecordActivity::class.java))
         }
-
         setContentView(binding.root)
         initMainAdapter()
     }
@@ -53,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                 MainData(R.drawable.ic_white, "9", "Music"),
                 MainData(R.drawable.ic_white, "5", "Webtoon"),
                 MainData(R.drawable.ic_white, "7", "Youtube")
-
             )
         )
         mainAdapter.notifyDataSetChanged()

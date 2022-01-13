@@ -2,13 +2,13 @@ package beforeget.data
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import beforeget.feature.MyRecordActivity
 import com.example.beforeget.databinding.ItemMediaListBinding
-import com.example.beforeget.databinding.ItemRecordBinding
+
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
@@ -32,11 +32,15 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
-
             itemView.setOnClickListener {
-
+                val media = binding.tvMainRvmedia.text.toString()
+                val mainToMyRecordIntent =
+                    Intent(itemView.context, MyRecordActivity::class.java)
+                mainToMyRecordIntent.putExtra("media", media)
+                startActivity(itemView.context, mainToMyRecordIntent, null)
             }
         }
     }
 }
+
 
