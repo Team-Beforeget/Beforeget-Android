@@ -1,4 +1,5 @@
 package beforeget.feature.filter
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,10 +22,22 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_filter_bottom_sheet, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_filter_bottom_sheet,
+            container,
+            false
+        )
         test()
         initAdapter()
         initTabLayout()
+
+        val filterMediaFragment = FilterMediaFragment()
+        filterMediaFragment.setCallbackButtonClickListener {
+            dismiss()
+            Log.d("콜백받음", "받긴받은걸까?")
+        }
+
         return binding.root
     }
 
@@ -39,11 +52,11 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
     private fun initTabLayout() {
         val menuNameList = listOf("기간", "미디어", "별점")
 
-        TabLayoutMediator(binding.tlMenu, binding.vpMenu) {
-            tab, position ->
+        TabLayoutMediator(binding.tlMenu, binding.vpMenu) { tab, position ->
             tab.text = menuNameList[position]
         }.attach()
     }
+
     private fun test() {
         val bottomSheetDialog = BottomSheetDialog(requireContext())
         bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED

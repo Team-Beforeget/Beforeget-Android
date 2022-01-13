@@ -48,12 +48,18 @@ class MyRecordActivity : AppCompatActivity() {
                 MyRecordData("내가 널 사랑할 수 없는 10가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
             )
         )
-
         myRecordDataAdapter.notifyDataSetChanged()
     }
 
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
+    }
+    private fun getMediaFromMainActivity() {
+        // 메인뷰 완성된거 풀받으면 실행하기
+        if (intent.hasExtra("media")) {
+            val media = intent.getStringExtra("media")
+            binding.btnMedia.text = media.toString()
+        }
     }
 }

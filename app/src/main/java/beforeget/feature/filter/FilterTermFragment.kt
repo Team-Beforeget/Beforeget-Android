@@ -28,18 +28,30 @@ class FilterTermFragment : Fragment() {
         binding.apply {
             btnMonth.setOnClickListener {
                 btnMonth.isSelected = !btnMonth.isSelected
+                btnTwoWeek.isSelected = false
+                btnThreeMonth.isSelected = false
+                btnDirectInput.isSelected = false
                 activateBtnApplyFilterTerm()
             }
             btnThreeMonth.setOnClickListener {
                 btnThreeMonth.isSelected = !btnThreeMonth.isSelected
+                btnTwoWeek.isSelected = false
+                btnMonth.isSelected = false
+                btnDirectInput.isSelected = false
                 activateBtnApplyFilterTerm()
             }
             btnTwoWeek.setOnClickListener {
                 btnTwoWeek.isSelected = !btnTwoWeek.isSelected
+                btnThreeMonth.isSelected = false
+                btnMonth.isSelected = false
+                btnDirectInput.isSelected = false
                 activateBtnApplyFilterTerm()
             }
             btnDirectInput.setOnClickListener {
                 btnDirectInput.isSelected = !btnDirectInput.isSelected
+                btnTwoWeek.isSelected = false
+                btnThreeMonth.isSelected = false
+                btnMonth.isSelected = false
             }
         }
     }

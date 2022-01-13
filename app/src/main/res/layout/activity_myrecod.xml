@@ -88,7 +88,7 @@
                 android:paddingTop="8dp"
                 android:paddingEnd="17dp"
                 android:paddingBottom="10dp"
-                android:text="@string/media"
+                tools:text="@string/media"
                 android:textColor="@color/black200"
                 android:textSize="17sp"
                 app:layout_constraintStart_toEndOf="@+id/btn_term"

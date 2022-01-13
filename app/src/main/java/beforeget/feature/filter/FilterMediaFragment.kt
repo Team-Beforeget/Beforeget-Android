@@ -1,6 +1,7 @@
 package beforeget.feature.filter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.example.beforeget.R
 import com.example.beforeget.databinding.FragmentFilterMediaBinding
 
 class FilterMediaFragment : Fragment() {
+    private var callbackButtonClickListener: (() -> Unit)? = null
     private lateinit var binding: FragmentFilterMediaBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,7 +24,6 @@ class FilterMediaFragment : Fragment() {
         clickMediaButtonEvent()
         checkEnableApplyBtn()
         refreshMediaFilter()
-        test()
         return binding.root
     }
 
@@ -52,6 +53,10 @@ class FilterMediaFragment : Fragment() {
                 btnYoutube.isSelected = !btnYoutube.isSelected
                 activateApplyBtn()
             }
+            btnApplyMediaFilter.setOnClickListener {
+                callbackButtonClickListener?.invoke()
+                Log.d("적용버튼 클릭리스너", "되긴함")
+            }
         }
     }
 
@@ -73,6 +78,7 @@ class FilterMediaFragment : Fragment() {
             filterBottomSheetFragment.dismiss()
         }
     }
+
     private fun refreshMediaFilter() {
         binding.btnRefreshMediaFilter.setOnClickListener {
             binding.apply {
@@ -85,5 +91,9 @@ class FilterMediaFragment : Fragment() {
                 btnApplyMediaFilter.isEnabled = false
             }
         }
+    }
+
+    fun setCallbackButtonClickListener(listener: () -> Unit) {
+        this.callbackButtonClickListener = listener
     }
 }

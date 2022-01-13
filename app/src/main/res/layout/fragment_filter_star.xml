@@ -16,9 +16,6 @@
             android:layout_marginTop="21dp"
             android:layout_marginEnd="6dp"
             android:background="@drawable/selector_btn_filter"
-            android:minHeight="0dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="11dp"
             app:layout_constraintEnd_toStartOf="@+id/btn_two_star"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -30,10 +27,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="7dp"
                 android:background="@drawable/selector_littlestar"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_one_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_one_filter"
-                app:layout_constraintTop_toTopOf="@+id/tv_one_filter" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_one_filter"
@@ -43,6 +42,8 @@
                 android:text="@string/one"
                 android:textColor="@color/selector_text_active_black_white"
                 android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,11 +55,9 @@
             android:id="@+id/btn_two_star"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
             android:background="@drawable/selector_btn_filter"
             android:minHeight="0dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="11dp"
             app:layout_constraintBottom_toBottomOf="@id/btn_one_star"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -70,10 +69,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="7dp"
                 android:background="@drawable/selector_littlestar"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_two_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_two_filter"
-                app:layout_constraintTop_toTopOf="@+id/tv_two_filter" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_two_filter"
@@ -83,6 +84,8 @@
                 android:text="@string/two"
                 android:textColor="@color/selector_text_active_black_white"
                 android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -94,12 +97,10 @@
             android:id="@+id/btn_three_star"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="6dp"
             android:background="@drawable/selector_btn_filter"
             android:minHeight="0dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="11dp"
             app:layout_constraintEnd_toStartOf="@+id/btn_four_star"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
@@ -111,10 +112,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="7dp"
                 android:background="@drawable/selector_littlestar"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_three_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_three_filter"
-                app:layout_constraintTop_toTopOf="@+id/tv_three_filter" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_three_filter"
@@ -124,6 +127,8 @@
                 android:text="@string/three"
                 android:textColor="@color/selector_text_active_black_white"
                 android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -135,11 +140,9 @@
             android:id="@+id/btn_four_star"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
             android:background="@drawable/selector_btn_filter"
             android:minHeight="0dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="11dp"
             app:layout_constraintBottom_toBottomOf="@id/btn_three_star"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -151,10 +154,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="7dp"
                 android:background="@drawable/selector_littlestar"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_four_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_four_filter"
-                app:layout_constraintTop_toTopOf="@+id/tv_four_filter" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_four_filter"
@@ -164,6 +169,8 @@
                 android:text="@string/four"
                 android:textColor="@color/selector_text_active_black_white"
                 android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -175,12 +182,9 @@
             android:id="@+id/btn_five_star"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="6dp"
+            android:layout_marginTop="12dp"
             android:background="@drawable/selector_btn_filter"
             android:minHeight="0dp"
-            android:paddingTop="9dp"
-            android:paddingBottom="11dp"
             app:layout_constraintEnd_toEndOf="@id/btn_three_star"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_three_star">
@@ -190,10 +194,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="7dp"
                 android:background="@drawable/selector_littlestar"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_five_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_five_filter"
-                app:layout_constraintTop_toTopOf="@+id/tv_five_filter" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_five_filter"
@@ -203,6 +209,8 @@
                 android:text="@string/five"
                 android:textColor="@color/selector_text_active_black_white"
                 android:textSize="14sp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="11dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
