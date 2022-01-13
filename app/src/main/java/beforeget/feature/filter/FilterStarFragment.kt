@@ -18,10 +18,12 @@ class FilterStarFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_filter_star, container, false)
         binding.btnApplyStarFilter.isEnabled = false
-        initClickEvent()
+        clickBtnStarEvent()
+        refreshStarFilter()
         return binding.root
     }
-    private fun initClickEvent() {
+
+    private fun clickBtnStarEvent() {
         binding.apply {
             btnOneStar.setOnClickListener {
                 btnOneStar.isSelected = !btnOneStar.isSelected
@@ -45,12 +47,29 @@ class FilterStarFragment : Fragment() {
             }
         }
     }
-    private fun checkBtnStarSelected() = binding.btnOneStar.isSelected || binding.btnTwoStar.isSelected || binding.btnThreeStar.isSelected || binding.btnFourStar.isSelected || binding.btnFiveStar.isSelected
+
+    private fun checkBtnStarSelected() =
+        binding.btnOneStar.isSelected || binding.btnTwoStar.isSelected || binding.btnThreeStar.isSelected || binding.btnFourStar.isSelected || binding.btnFiveStar.isSelected
+
     private fun checkBtnApplyFilterStarEnabled() {
         binding.btnApplyStarFilter.isEnabled = checkBtnStarSelected()
     }
+
     private fun activateBtnApplyFilterStarEnabled() {
         checkBtnStarSelected()
         checkBtnApplyFilterStarEnabled()
+    }
+
+    private fun refreshStarFilter() {
+        binding.apply {
+            btnRefreshStarFilter.setOnClickListener {
+                btnFiveStar.isSelected = false
+                btnFourStar.isSelected = false
+                btnThreeStar.isSelected = false
+                btnTwoStar.isSelected = false
+                btnOneStar.isSelected = false
+                btnApplyStarFilter.isEnabled = false
+            }
+        }
     }
 }

@@ -25,7 +25,6 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         test()
         initAdapter()
         initTabLayout()
-        Log.d("실행됨", "실행됨")
         return binding.root
     }
 

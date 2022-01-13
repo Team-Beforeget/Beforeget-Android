@@ -1,7 +1,6 @@
 package beforeget.feature.filter
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +19,14 @@ class FilterMediaFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_filter_media, container, false)
         binding.btnApplyMediaFilter.isEnabled = false
-        initClickEvent()
+        clickMediaButtonEvent()
         checkEnableApplyBtn()
+        refreshMediaFilter()
+        test()
         return binding.root
     }
 
-    private fun initClickEvent() {
+    private fun clickMediaButtonEvent() {
         binding.apply {
             btnBook.setOnClickListener {
                 btnBook.isSelected = !btnBook.isSelected
@@ -59,11 +60,30 @@ class FilterMediaFragment : Fragment() {
 
     private fun checkEnableApplyBtn() {
         binding.btnApplyMediaFilter.isEnabled = checkBtnSelected()
-        Log.d("checkBtnSelected() 값 : ", checkBtnSelected().toString())
     }
 
     private fun activateApplyBtn() {
         checkBtnSelected()
         checkEnableApplyBtn()
+    }
+
+    fun test() {
+        binding.btnApplyMediaFilter.setOnClickListener {
+            val filterBottomSheetFragment = FilterBottomSheetFragment()
+            filterBottomSheetFragment.dismiss()
+        }
+    }
+    private fun refreshMediaFilter() {
+        binding.btnRefreshMediaFilter.setOnClickListener {
+            binding.apply {
+                btnYoutube.isSelected = false
+                btnWebtoon.isSelected = false
+                btnTv.isSelected = false
+                btnBook.isSelected = false
+                btnMovie.isSelected = false
+                btnMusic.isSelected = false
+                btnApplyMediaFilter.isEnabled = false
+            }
+        }
     }
 }

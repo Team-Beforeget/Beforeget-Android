@@ -210,29 +210,35 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        <ImageView
-            android:id="@+id/btn_refresh_term_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/ic_resfresh"
-            app:layout_constraintBottom_toTopOf="@id/tv_refresh_term_filter"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_refresh_term_filter"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btn_refresh_star_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
-            android:fontFamily="@font/pretendard_semibold"
-            android:text="@string/start_score_refresh"
-            android:textColor="@color/black200"
-            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent">
 
+            <ImageView
+                android:id="@+id/iv_refresh_star_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/ic_resfresh"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_refresh_star_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_semibold"
+                android:text="@string/start_score_refresh"
+                android:textColor="@color/black200"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_refresh_star_filter" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_apply__star_filter"
@@ -245,10 +251,10 @@
             android:text="@string/apply"
             android:textColor="@color/white"
             android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="@id/tv_refresh_term_filter"
+            app:layout_constraintBottom_toBottomOf="@id/btn_refresh_star_filter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_refresh_term_filter"
-            app:layout_constraintTop_toTopOf="@id/btn_refresh_term_filter" />
+            app:layout_constraintStart_toEndOf="@id/btn_refresh_star_filter"
+            app:layout_constraintTop_toTopOf="@id/btn_refresh_star_filter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

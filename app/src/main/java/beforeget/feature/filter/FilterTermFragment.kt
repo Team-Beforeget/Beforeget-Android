@@ -1,4 +1,5 @@
 package beforeget.feature.filter
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,11 +19,12 @@ class FilterTermFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_filter_term, container, false)
         binding.btnApplyTermFilter.isEnabled = false
-        initClickEvent()
+        refreshTermFilter()
+        clickBtnTetmEvent()
         return binding.root
     }
 
-    private fun initClickEvent() {
+    private fun clickBtnTetmEvent() {
         binding.apply {
             btnMonth.setOnClickListener {
                 btnMonth.isSelected = !btnMonth.isSelected
@@ -36,16 +38,32 @@ class FilterTermFragment : Fragment() {
                 btnTwoWeek.isSelected = !btnTwoWeek.isSelected
                 activateBtnApplyFilterTerm()
             }
-            btnDirectInput.setOnClickListener { btnDirectInput.isSelected = !btnDirectInput.isSelected }
+            btnDirectInput.setOnClickListener {
+                btnDirectInput.isSelected = !btnDirectInput.isSelected
+            }
         }
     }
+
     private fun checkEnableApplyFilterTermBtn() {
         binding.btnApplyTermFilter.isEnabled = checkBtnTermSelected()
     }
-    private fun checkBtnTermSelected() = binding.btnMonth.isSelected || binding.btnThreeMonth.isSelected || binding.btnTwoWeek.isSelected
+
+    private fun checkBtnTermSelected() =
+        binding.btnMonth.isSelected || binding.btnThreeMonth.isSelected || binding.btnTwoWeek.isSelected
 
     private fun activateBtnApplyFilterTerm() {
         checkBtnTermSelected()
         checkEnableApplyFilterTermBtn()
+    }
+
+    private fun refreshTermFilter() {
+        binding.apply {
+            btnRefreshTermFilter.setOnClickListener {
+                btnTwoWeek.isSelected = false
+                btnThreeMonth.isSelected = false
+                btnMonth.isSelected = false
+                btnApplyTermFilter.isEnabled = false
+            }
+        }
     }
 }
