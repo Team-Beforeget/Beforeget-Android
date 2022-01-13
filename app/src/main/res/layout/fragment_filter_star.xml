@@ -1,0 +1,154 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="beforeget.feature.filter.FilterStarFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_one_star"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:drawableStart="@drawable/selector_littlestar"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="11dp"
+            android:text="@string/one"
+            android:textColor="@color/selector_text_active_black_white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_two_star"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_two_star"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:drawableLeft="@drawable/selector_littlestar"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="11dp"
+            android:text="@string/two"
+            android:textColor="@color/selector_text_active_black_white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_one_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_one_star"
+            app:layout_constraintTop_toTopOf="@id/btn_one_star" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_three_star"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/selector_btn_filter"
+            android:drawableLeft="@drawable/selector_littlestar"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="11dp"
+            android:text="@string/three"
+            android:textColor="@color/selector_text_active_black_white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/btn_four_star"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_one_star" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_four_star"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/selector_btn_filter"
+            android:drawableLeft="@drawable/selector_littlestar"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="11dp"
+            android:text="@string/four"
+            android:textColor="@color/selector_text_active_black_white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_three_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_three_star"
+            app:layout_constraintTop_toTopOf="@id/btn_three_star" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_five_star"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/selector_btn_filter"
+            android:drawableLeft="@drawable/selector_littlestar"
+            android:fontFamily="@font/pretendard_regular"
+            android:minHeight="0dp"
+            android:paddingTop="9dp"
+            android:paddingBottom="11dp"
+            android:text="@string/five"
+            android:textColor="@color/selector_text_active_black_white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/btn_three_star"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_three_star" />
+        <ImageView
+            android:id="@+id/btn_refresh_term_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/ic_resfresh"
+            app:layout_constraintBottom_toTopOf="@id/tv_refresh_term_filter"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_refresh_term_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="@string/start_score_refresh"
+            android:textColor="@color/black200"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_apply_filter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:text="@string/apply"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:background="@drawable/selector_btn_apply_filter"
+            android:paddingVertical="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_refresh_term_filter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_refresh_term_filter"
+            app:layout_constraintTop_toTopOf="@id/btn_refresh_term_filter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
