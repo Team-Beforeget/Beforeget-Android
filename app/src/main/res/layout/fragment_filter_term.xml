@@ -90,7 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_apply_filter"
+            app:layout_constraintBottom_toBottomOf="@id/btn_apply_term_filter"
             app:layout_constraintTop_toBottomOf="@id/btn_three_month">
 
             <View
@@ -215,7 +215,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_apply_filter"
+            android:id="@+id/btn_apply_term_filter"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"

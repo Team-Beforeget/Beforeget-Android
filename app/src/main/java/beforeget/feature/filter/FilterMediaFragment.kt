@@ -19,7 +19,7 @@ class FilterMediaFragment : Fragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_filter_media, container, false)
-        binding.btnApplyFilter.isEnabled = false
+        binding.btnApplyMediaFilter.isEnabled = false
         initClickEvent()
         checkEnableApplyBtn()
         return binding.root
@@ -58,7 +58,7 @@ class FilterMediaFragment : Fragment() {
         binding.btnBook.isSelected || binding.btnMovie.isSelected || binding.btnMusic.isSelected || binding.btnTv.isSelected || binding.btnWebtoon.isSelected || binding.btnYoutube.isSelected
 
     private fun checkEnableApplyBtn() {
-        binding.btnApplyFilter.isEnabled = checkBtnSelected()
+        binding.btnApplyMediaFilter.isEnabled = checkBtnSelected()
         Log.d("checkBtnSelected() 값 : ", checkBtnSelected().toString())
     }
 
