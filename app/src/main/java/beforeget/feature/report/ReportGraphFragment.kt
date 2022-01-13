@@ -1,7 +1,6 @@
 package beforeget.feature.report
 
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,7 +22,6 @@ class ReportGraphFragment : Fragment() {
     private var MAX_X_VALUE = 5 // 바 갯수 // TODO: 3,5 변경사항
     private var MAX_Y_VALUE = 0
     private var chart: BarChart? = null
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,7 +47,7 @@ class ReportGraphFragment : Fragment() {
         for (i in 0 until MAX_X_VALUE) {
             val x = i.toFloat()
             val y: Float = record_count[i].toFloat()
-            if(record_count[i].toInt()> MAX_Y_VALUE) MAX_Y_VALUE = record_count[i].toInt()
+            if (record_count[i].toInt()> MAX_Y_VALUE) MAX_Y_VALUE = record_count[i].toInt()
 
             values.add(BarEntry(x, y))
         }

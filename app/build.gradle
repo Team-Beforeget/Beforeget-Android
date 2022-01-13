@@ -1,15 +1,16 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk 31
+    compileSdk androidConfig.compileSdk
 
     defaultConfig {
         applicationId "com.example.beforeget"
-        minSdk 26
-        targetSdk 31
+        minSdk androidConfig.minSdk
+        targetSdk androidConfig.targetSdk
         versionCode 1
         versionName "1.0"
 
