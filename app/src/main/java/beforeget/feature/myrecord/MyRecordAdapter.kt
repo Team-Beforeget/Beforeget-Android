@@ -3,7 +3,7 @@ package beforeget.feature.myrecord
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import beforeget.data.MyRecordData
+import beforeget.data.local.MyRecordData
 import com.example.beforeget.databinding.ItemRecordBinding
 
 class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>() {
