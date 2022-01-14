@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Beforeget</string>
 
-
     <!--나의기록뷰-->
     <string name="record">Record</string>
     <string name="term">기간</string>
@@ -57,7 +56,6 @@
     <string name="main_reportlabel">기록</string>
     <string name="main_countlabel">N개</string>
     <string name="main_viewallbtn">전체보기</string>
-
 
     <!--유형선택뷰-->
     <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>

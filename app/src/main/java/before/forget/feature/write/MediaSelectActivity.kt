@@ -13,39 +13,46 @@ class MediaSelectActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMediaSelectBinding.inflate(layoutInflater)
 
-        binding.clMediaBook.setOnClickListener {
-            binding.clMediaBook.isSelected = true
-            media = binding.tvMediaBook.text.toString()
-        }
-        binding.clMediaMovie.setOnClickListener {
-            binding.clMediaMovie.isSelected = true
-            media = binding.tvMediaMovie.text.toString()
-        }
-        binding.clMediaMusic.setOnClickListener {
-            binding.clMediaMusic.isSelected = true
-            media = binding.tvMediaMusic.text.toString()
-        }
-        binding.clMediaTv.setOnClickListener {
-            binding.clMediaTv.isSelected = true
-            media = binding.tvMediaTv.text.toString()
-        }
-        binding.clMediaWebtoon.setOnClickListener {
-            binding.clMediaWebtoon.isSelected = true
-            media = binding.tvMediaWebtoon.text.toString()
-        }
-        binding.clMediaYoutube.setOnClickListener {
-            binding.clMediaYoutube.isSelected = true
-            media = binding.tvMediaYoutube.text.toString()
-        }
-        binding.btnMediaNext.setOnClickListener {
-            binding.btnMediaNext.isSelected = true
-            val intent = Intent(this, WriteActivity::class.java).apply {
-                putExtra("media", media)
-            }
-            startActivity(intent)
-        }
-        binding.ivMediaClose.setOnClickListener { finish() }
+        btnSetOnClickListener()
+
         setContentView(binding.root)
+    }
+
+    private fun btnSetOnClickListener() {
+        with(binding) {
+            clMediaBook.setOnClickListener {
+                binding.clMediaBook.isSelected = !binding.clMediaBook.isSelected
+                media = binding.tvMediaBook.text.toString()
+            }
+            clMediaMovie.setOnClickListener {
+                binding.clMediaMovie.isSelected = !binding.clMediaMovie.isSelected
+                media = binding.tvMediaMovie.text.toString()
+            }
+            clMediaMusic.setOnClickListener {
+                binding.clMediaMusic.isSelected = !binding.clMediaMusic.isSelected
+                media = binding.tvMediaMusic.text.toString()
+            }
+            clMediaTv.setOnClickListener {
+                binding.clMediaTv.isSelected = !binding.clMediaTv.isSelected
+                media = binding.tvMediaTv.text.toString()
+            }
+            clMediaWebtoon.setOnClickListener {
+                binding.clMediaWebtoon.isSelected = !binding.clMediaWebtoon.isSelected
+                media = binding.tvMediaWebtoon.text.toString()
+            }
+            clMediaYoutube.setOnClickListener {
+                binding.clMediaYoutube.isSelected = !binding.clMediaYoutube.isSelected
+                media = binding.tvMediaYoutube.text.toString()
+            }
+            btnMediaNext.setOnClickListener {
+                binding.btnMediaNext.isSelected = true
+                val intent = Intent(this@MediaSelectActivity, WriteActivity::class.java).apply {
+                    putExtra("media", media)
+                }
+                startActivity(intent)
+            }
+            binding.ivMediaClose.setOnClickListener { finish() }
+        }
     }
 
     override fun onStart() {
