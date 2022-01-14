@@ -8,7 +8,7 @@ android {
     compileSdk androidConfig.compileSdk
 
     defaultConfig {
-        applicationId "com.example.beforeget"
+        applicationId "before.forget"
         minSdk androidConfig.minSdk
         targetSdk androidConfig.targetSdk
         versionCode 1

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="beforeget.feature.report.ReportActivity">
+    tools:context="before.forget.feature.report.ReportActivity">
 
     <TextView
         android:id="@+id/tv_page_name"

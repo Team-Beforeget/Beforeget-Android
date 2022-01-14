@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.beforeget">
+    package="before.forget">
 
     <application
         android:allowBackup="true"
@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beforeget">
         <activity
-            android:name="beforeget.feature.write.WriteActivity"
+            android:name=".feature.write.WriteActivity"
             android:exported="false" />
         <activity
-            android:name="beforeget.feature.write.MediaSelectActivity"
+            android:name=".feature.write.MediaSelectActivity"
             android:exported="true" />
         <activity
-            android:name="beforeget.feature.myrecord.MyRecordActivity"
+            android:name=".feature.myrecord.MyRecordActivity"
             android:exported="true" />
         <activity
-            android:name="beforeget.feature.report.ReportActivity"
+            android:name=".feature.report.ReportActivity"
             android:exported="true" />
         <activity
-            android:name="beforeget.feature.main.MainActivity"
+            android:name=".feature.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

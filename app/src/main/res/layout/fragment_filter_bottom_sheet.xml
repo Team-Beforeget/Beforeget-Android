@@ -4,7 +4,7 @@
     app:behavior_draggable="true"
     app:behavior_hideable="true"
     app:layout_behavior="@string/bottom_sheet_behavior"
-    tools:context="beforeget.feature.filter.FilterBottomSheetFragment">
+    tools:context="before.forget.feature.filter.FilterBottomSheetFragment">
 
     <data>
 
