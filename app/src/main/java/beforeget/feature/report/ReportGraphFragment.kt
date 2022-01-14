@@ -1,10 +1,13 @@
 package beforeget.feature.report
 
 import android.graphics.Color
+import android.graphics.Insets.add
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.Insets.add
+import androidx.core.view.OneShotPreDrawListener.add
 import androidx.fragment.app.Fragment
 import com.example.beforeget.databinding.FragmentReportGraphBinding
 import com.github.mikephil.charting.charts.BarChart
@@ -19,9 +22,10 @@ class ReportGraphFragment : Fragment() {
     private var _binding: FragmentReportGraphBinding? = null
     private val binding get() = _binding ?: error("Binding이 초기화되지 않았습니다.")
 
-    private var MAX_X_VALUE = 5 // 바 갯수 // TODO: 3,5 변경사항
-    private var MAX_Y_VALUE = 0
     private var chart: BarChart? = null
+    private var MAX_X_VALUE = 5 // bar count
+    private var MAX_Y_VALUE = 0
+    private var COUNT_X_LABEL = 5
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,23 +36,46 @@ class ReportGraphFragment : Fragment() {
 
         chart = binding.bcGraph
 
-        val data: BarData = createChartData()
-        // set bar width
-        data.barWidth = 0.1f
-        configureChartAppearance()
-        prepareChartData(data)
+        initBarChart()
+        initMonthClickEvent()
 
         return binding.root
     }
 
-    private fun createChartData(): BarData {
+    private fun initBarChart() {
+        val data: BarData = createBarChartData()
+        // set bar width
+        data.barWidth = 0.1f
+        configureChartAppearance()
+        prepareChartData(data)
+    }
+
+    private fun initMonthClickEvent() {
+        with(binding) {
+            tvGraph3Month.setOnClickListener {
+                MAX_X_VALUE = 3
+                COUNT_X_LABEL = 3
+                tvGraph5Month.setTextColor(Color.GRAY)
+                tvGraph3Month.setTextColor(Color.WHITE)
+                initBarChart()
+            }
+            tvGraph5Month.setOnClickListener {
+                MAX_X_VALUE = 5
+                COUNT_X_LABEL = 5
+                tvGraph5Month.setTextColor(Color.WHITE)
+                tvGraph3Month.setTextColor(Color.GRAY)
+                initBarChart()
+            }
+        }
+    }
+
+    private fun createBarChartData(): BarData {
         val values: ArrayList<BarEntry> = ArrayList()
         val record_count = arrayOf("8", "21", "25", "15", "18") // TODO: Server에서 받아오기
         for (i in 0 until MAX_X_VALUE) {
             val x = i.toFloat()
             val y: Float = record_count[i].toFloat()
-            if (record_count[i].toInt()> MAX_Y_VALUE) MAX_Y_VALUE = record_count[i].toInt()
-
+            if (record_count[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = record_count[i].toInt()
             values.add(BarEntry(x, y))
         }
         val set1 = BarDataSet(values, "")
@@ -62,61 +89,71 @@ class ReportGraphFragment : Fragment() {
     }
 
     private fun configureChartAppearance() {
-        chart!!.description.isEnabled = false
-        chart!!.setDrawValueAboveBar(false)
-        // hiding the grey background of the chart, default false if not set
-        chart!!.setDrawGridBackground(false)
-        // x, y space
-        chart!!.extraLeftOffset = 20f
-        chart!!.extraBottomOffset = 20f
+        setChart()
+        setChartxAis()
+        setChartAxisLeftAndRight()
+    }
+
+    private fun setChart() {
+        chart!!.run {
+            description.isEnabled = false
+            setDrawValueAboveBar(false)
+            // hiding the grey background of the chart, default false if not set
+            setDrawGridBackground(false)
+            // x, y space
+            extraLeftOffset = 20f
+            extraBottomOffset = 20f
+
+            // X, Y 바의 애니메이션 효과
+            animateY(2000)
+            // bar background
+            setDrawBarShadow(true)
+            // bar touch
+            setTouchEnabled(false)
+            // chart label
+            getLegend().isEnabled = false
+        }
+    }
+
+    private fun setChartxAis() {
         val xAxis = chart!!.xAxis
         // xAxis position
-        xAxis.position = XAxis.XAxisPosition.BOTTOM
-        xAxis.textColor = Color.WHITE
-        xAxis.labelCount = 5 // TODO: 3,5 변경사항
-        xAxis.textSize = 14f
+        xAxis.run {
+            position = XAxis.XAxisPosition.BOTTOM
+            textColor = Color.WHITE
+            labelCount = COUNT_X_LABEL
+            textSize = 14f
 
-        xAxis.setDrawGridLines(false)
-        xAxis.valueFormatter = object : ValueFormatter() {
-            override fun getFormattedValue(value: Float): String {
-                val DAYS = arrayOf("8", "9", "10", "11", "12") // TODO: datepicker 기반으로 계산하기
-                return DAYS[value.toInt()] + "월"
+            setDrawGridLines(false)
+            valueFormatter = object : ValueFormatter() {
+                override fun getFormattedValue(value: Float): String {
+                    val DAYS = arrayOf("8", "9", "10", "11", "12") // TODO: datepicker 기반으로 계산하기
+                    return DAYS[value.toInt()] + "월"
+                }
             }
         }
+    }
 
-        // 왼쪽 축 (기록 갯수)
+    private fun setChartAxisLeftAndRight() {
         val axisLeft = chart!!.axisLeft
-        // axisLeft.axisMinimum = 0f
-        // TODO : 기록의 최대값 받아오기
-        axisLeft.setLabelCount(3, true)
-        axisLeft.textColor = Color.WHITE
-        axisLeft.axisLineColor = Color.TRANSPARENT
-        axisLeft.textSize = 14f
-        // axisleft max, min
-        axisLeft.axisMinimum = 0f
-        axisLeft.axisMaximum = MAX_Y_VALUE.toFloat()
-
+        // axisLeft
+        axisLeft.run {
+            setLabelCount(3, true)
+            textColor = Color.WHITE
+            axisLineColor = Color.TRANSPARENT
+            textSize = 14f
+            // axisleft max, min
+            axisMinimum = 0f
+            axisMaximum = MAX_Y_VALUE.toFloat()
+        }
         // y축 격자
         // TODO : 축 색상 axisLeft.gridColor = Color
-
         // 오른쪽 축 색상
         val axisRight = chart!!.axisRight
         axisRight.isEnabled = false
-
-        // X, Y 바의 애니메이션 효과
-        chart!!.animateY(2000)
-        // bar background
-        chart!!.setDrawBarShadow(true)
-        // bar touch
-        chart!!.setTouchEnabled(false)
-        // chart label
-        chart!!.getLegend().isEnabled = false
     }
 
     private fun prepareChartData(data: BarData) {
-        // data.setValueTextSize(12f)
-        // val tf = Typeface.createFromAsset(assetManager, "font/montserrat_regular.ttf")
-        // data.setValueTypeface(tf)
         chart!!.data = data
         chart!!.invalidate()
     }
