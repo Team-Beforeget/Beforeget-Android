@@ -1,7 +1,6 @@
 package beforeget.feature.filter
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,7 +54,6 @@ class FilterMediaFragment : Fragment() {
             }
             btnApplyMediaFilter.setOnClickListener {
                 callbackButtonClickListener?.invoke()
-                Log.d("적용버튼 클릭리스너", "되긴함")
             }
         }
     }

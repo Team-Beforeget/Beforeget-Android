@@ -4,241 +4,266 @@
     tools:context="beforeget.feature.filter.FilterTermFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_filter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="20dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_two_week"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/selector_btn_filter"
-            android:fontFamily="@font/pretendard_regular"
-            android:minHeight="0dp"
-            android:paddingVertical="10dp"
-            android:text="@string/second_week"
-            android:textColor="@color/selector_text_active_black_white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/btn_month"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_month"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:background="@drawable/selector_btn_filter"
-            android:fontFamily="@font/pretendard_regular"
-            android:minHeight="0dp"
-            android:paddingVertical="10dp"
-            android:text="@string/month_one"
-            android:textColor="@color/selector_text_active_black_white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_two_week"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_two_week"
-            app:layout_constraintTop_toTopOf="@id/btn_two_week" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_three_month"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="6dp"
-            android:background="@drawable/selector_btn_filter"
-            android:fontFamily="@font/pretendard_regular"
-            android:minHeight="0dp"
-            android:paddingVertical="10dp"
-            android:text="@string/three_month"
-            android:textColor="@color/selector_text_active_black_white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/btn_direct_input"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_direct_input"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:background="@drawable/selector_btn_filter"
-            android:fontFamily="@font/pretendard_regular"
-            android:minHeight="0dp"
-            android:paddingVertical="10dp"
-            android:text="@string/direct_input"
-            android:textColor="@color/selector_text_active_black_white"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_three_month"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_three_month"
-            app:layout_constraintTop_toTopOf="@id/btn_three_month" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_btn_start_date_filter"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_apply_term_filter"
-            app:layout_constraintTop_toBottomOf="@id/btn_three_month">
-
-            <View
-                android:id="@+id/view_line_filter"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray300"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_start_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pretendard_semibold"
-                android:text="@string/start"
-                android:textColor="@color/black200"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_line_filter" />
-
-            <TextView
-                android:id="@+id/tv_select_date_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="84dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:textColor="@color/black200"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/tv_start_filter"
-                app:layout_constraintStart_toEndOf="@id/tv_start_filter"
-                app:layout_constraintTop_toTopOf="@id/tv_start_filter"
-                tools:text="@string/select_date" />
-
-            <View
-                android:id="@+id/view_line2_filter"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="9dp"
-                android:background="@color/gray300"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_select_date_filter" />
-
-            <DatePicker
-                android:id="@+id/dp_datepiker_start_filter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:calendarTextColor="@color/black200"
-                android:calendarViewShown="false"
-                android:datePickerMode="spinner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_line2_filter" />
-
-            <TextView
-                android:id="@+id/tv_end_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="7dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/pretendard_semibold"
-                android:text="@string/end"
-                android:textColor="@color/black200"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dp_datepiker_start_filter" />
-
-            <TextView
-                android:id="@+id/tv_select_date2_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="84dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:textColor="@color/black200"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@id/tv_end_filter"
-                app:layout_constraintStart_toEndOf="@id/tv_end_filter"
-                app:layout_constraintTop_toTopOf="@id/tv_end_filter"
-                tools:text="@string/select_date" />
-
-            <View
-                android:id="@+id/view_line3_filter"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/gray300"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_end_filter" />
-
-            <DatePicker
-                android:id="@+id/dp_datepiker_end_filter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:calendarViewShown="false"
-                android:datePickerMode="spinner"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/view_line3_filter" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/btn_refresh_term_filter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-            <ImageView
-                android:id="@+id/iv_refresh_term_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:background="@drawable/ic_resfresh"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_refresh_term_filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/pretendard_semibold"
-                android:text="@string/term_refresh"
-                android:textColor="@color/black200"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_refresh_term_filter" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_apply_term_filter"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="17dp"
-            android:background="@drawable/selector_btn_apply_filter"
-            android:fontFamily="@font/pretendard_semibold"
-            android:paddingVertical="16dp"
-            android:text="@string/apply"
-            android:textColor="@color/white"
-            android:textSize="17sp"
-            app:layout_constraintBottom_toBottomOf="@id/btn_refresh_term_filter"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn_refresh_term_filter"
-            app:layout_constraintTop_toTopOf="@id/btn_refresh_term_filter" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_two_week"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/selector_btn_filter"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minHeight="0dp"
+                    android:paddingVertical="10dp"
+                    android:text="@string/second_week"
+                    android:textColor="@color/selector_text_active_black_white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_month"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/selector_btn_filter"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minHeight="0dp"
+                    android:paddingVertical="10dp"
+                    android:text="@string/month_one"
+                    android:textColor="@color/selector_text_active_black_white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_two_week"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_two_week"
+                    app:layout_constraintTop_toTopOf="@id/btn_two_week" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_three_month"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/selector_btn_filter"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minHeight="0dp"
+                    android:paddingVertical="10dp"
+                    android:text="@string/three_month"
+                    android:textColor="@color/selector_text_active_black_white"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_direct_input"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_two_week" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_direct_input"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/selector_btn_filter"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minHeight="0dp"
+                    android:paddingVertical="10dp"
+                    android:text="@string/direct_input"
+                    android:textColor="@color/selector_text_active_black_white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_three_month"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_three_month"
+                    app:layout_constraintTop_toTopOf="@id/btn_three_month" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_btn_start_date_filter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintBottom_toTopOf="@id/btn_apply_term_filter"
+                    app:layout_constraintTop_toBottomOf="@id/btn_three_month">
+
+                    <View
+                        android:id="@+id/view_line_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray300"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_start_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:text="@string/start"
+                        android:textColor="@color/black200"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_line_filter" />
+
+                    <TextView
+                        android:id="@+id/tv_select_start_date_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="84dp"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:textColor="@color/black200"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_start_filter"
+                        app:layout_constraintStart_toEndOf="@id/tv_start_filter"
+                        app:layout_constraintTop_toTopOf="@id/tv_start_filter"
+                        tools:text="@string/select_date" />
+
+                    <View
+                        android:id="@+id/view_line2_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/gray300"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_select_start_date_filter" />
+
+                    <DatePicker
+                        android:id="@+id/dp_datepiker_start_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:calendarTextColor="@color/black200"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_line2_filter" />
+
+                    <View
+                        android:id="@+id/view_line4_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray300"
+                        app:layout_constraintTop_toBottomOf="@id/dp_datepiker_start_filter"
+                        app:layout_constraintStart_toStartOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_end_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:text="@string/end"
+                        android:textColor="@color/black200"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dp_datepiker_start_filter" />
+
+                    <TextView
+                        android:id="@+id/tv_select_end_date_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="84dp"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:textColor="@color/black200"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_end_filter"
+                        app:layout_constraintStart_toEndOf="@id/tv_end_filter"
+                        app:layout_constraintTop_toTopOf="@id/tv_end_filter"
+                        tools:text="@string/select_date" />
+
+                    <View
+                        android:id="@+id/view_line3_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/gray300"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_end_filter" />
+
+                    <DatePicker
+                        android:id="@+id/dp_datepiker_end_filter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:calendarViewShown="false"
+                        android:datePickerMode="spinner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/view_line3_filter" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_refresh_term_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_refresh_term_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:background="@drawable/ic_resfresh"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_refresh_term_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/pretendard_semibold"
+                        android:text="@string/term_refresh"
+                        android:textColor="@color/black200"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_refresh_term_filter" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_apply_term_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:background="@drawable/selector_btn_apply_filter"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:paddingVertical="16dp"
+                    android:text="@string/apply"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_refresh_term_filter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_refresh_term_filter"
+                    app:layout_constraintTop_toTopOf="@id/btn_refresh_term_filter"
+                     />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

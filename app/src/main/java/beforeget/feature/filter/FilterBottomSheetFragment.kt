@@ -1,7 +1,6 @@
 package beforeget.feature.filter
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +15,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 class FilterBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentFilterBottomSheetBinding
     private lateinit var filterViewPagerAdapter: FilterViewPagerAdapter
+    private val filterMediaFragment = FilterMediaFragment()
+    private val filterTermFragment = FilterTermFragment()
+    private val filterStarFragment = FilterStarFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,21 +30,24 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
             container,
             false
         )
-        test()
-        initAdapter()
-        initTabLayout()
 
-        val filterMediaFragment = FilterMediaFragment()
         filterMediaFragment.setCallbackButtonClickListener {
             dismiss()
-            Log.d("콜백받음", "받긴받은걸까?")
         }
+        filterStarFragment.setCallbackButtonClickListener {
+            dismiss()
+        }
+        filterTermFragment.setCallbackButtonClickListener {
+            dismiss()
+        }
+        initAdapter()
+        initTabLayout()
 
         return binding.root
     }
 
     private fun initAdapter() {
-        val fragmentList = listOf(FilterTermFragment(), FilterMediaFragment(), FilterStarFragment())
+        val fragmentList = listOf(filterTermFragment, filterMediaFragment, filterStarFragment)
         filterViewPagerAdapter = FilterViewPagerAdapter(this)
         filterViewPagerAdapter.fragments.addAll(fragmentList)
 

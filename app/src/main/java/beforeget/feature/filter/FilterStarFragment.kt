@@ -11,6 +11,7 @@ import com.example.beforeget.databinding.FragmentFilterStarBinding
 
 class FilterStarFragment : Fragment() {
     private lateinit var binding: FragmentFilterStarBinding
+    private var callbackButtonClickListener: (() -> Unit)? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,6 +46,9 @@ class FilterStarFragment : Fragment() {
                 btnFiveStar.isSelected = !btnFiveStar.isSelected
                 activateBtnApplyFilterStarEnabled()
             }
+            btnApplyStarFilter.setOnClickListener {
+                callbackButtonClickListener?.invoke()
+            }
         }
     }
 
@@ -71,5 +75,8 @@ class FilterStarFragment : Fragment() {
                 btnApplyStarFilter.isEnabled = false
             }
         }
+    }
+    fun setCallbackButtonClickListener(listener: () -> Unit) {
+        this.callbackButtonClickListener = listener
     }
 }

@@ -1,18 +1,33 @@
 package beforeget.feature.myrecord
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import beforeget.data.local.MyRecordData
 import beforeget.feature.filter.FilterBottomSheetFragment
+import beforeget.feature.filter.FilterMediaFragment
+import beforeget.feature.filter.FilterStarFragment
+import beforeget.feature.filter.FilterTermFragment
 import com.example.beforeget.databinding.ActivityMyrecodBinding
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
+    private val filterTermFragment = FilterTermFragment()
+    private val filterStarFragment = FilterStarFragment()
+    private val filterMediaFragment = FilterMediaFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initClickFilterButtonEvent()
         initMyRecordAdapter()
+        filterTermFragment.setTermButtonClickListener { term ->
+            binding.btnTerm.text = term
+        }
+
+        filterStarFragment.setCallbackButtonClickListener {
+            binding.btnScore.text = "선택되었다"
+            Log.d("보내진걸까...?", "받았니?흑")
+        }
     }
 
     private fun initClickFilterButtonEvent() {
