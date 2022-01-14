@@ -21,37 +21,37 @@ class MediaSelectActivity : AppCompatActivity() {
     private fun btnSetOnClickListener() {
         with(binding) {
             clMediaBook.setOnClickListener {
-                binding.clMediaBook.isSelected = !binding.clMediaBook.isSelected
-                media = binding.tvMediaBook.text.toString()
+                clMediaBook.isSelected = !clMediaBook.isSelected
+                media = tvMediaBook.text.toString()
             }
             clMediaMovie.setOnClickListener {
-                binding.clMediaMovie.isSelected = !binding.clMediaMovie.isSelected
-                media = binding.tvMediaMovie.text.toString()
+                clMediaMovie.isSelected = !clMediaMovie.isSelected
+                media = tvMediaMovie.text.toString()
             }
             clMediaMusic.setOnClickListener {
-                binding.clMediaMusic.isSelected = !binding.clMediaMusic.isSelected
-                media = binding.tvMediaMusic.text.toString()
+                clMediaMusic.isSelected = !clMediaMusic.isSelected
+                media = tvMediaMusic.text.toString()
             }
             clMediaTv.setOnClickListener {
-                binding.clMediaTv.isSelected = !binding.clMediaTv.isSelected
-                media = binding.tvMediaTv.text.toString()
+                clMediaTv.isSelected = !clMediaTv.isSelected
+                media = tvMediaTv.text.toString()
             }
             clMediaWebtoon.setOnClickListener {
-                binding.clMediaWebtoon.isSelected = !binding.clMediaWebtoon.isSelected
-                media = binding.tvMediaWebtoon.text.toString()
+                clMediaWebtoon.isSelected = !clMediaWebtoon.isSelected
+                media = tvMediaWebtoon.text.toString()
             }
             clMediaYoutube.setOnClickListener {
-                binding.clMediaYoutube.isSelected = !binding.clMediaYoutube.isSelected
-                media = binding.tvMediaYoutube.text.toString()
+                clMediaYoutube.isSelected = !clMediaYoutube.isSelected
+                media = tvMediaYoutube.text.toString()
             }
             btnMediaNext.setOnClickListener {
-                binding.btnMediaNext.isSelected = true
+                btnMediaNext.isSelected = true
                 val intent = Intent(this@MediaSelectActivity, WriteActivity::class.java).apply {
                     putExtra("media", media)
                 }
                 startActivity(intent)
             }
-            binding.ivMediaClose.setOnClickListener { finish() }
+            ivMediaClose.setOnClickListener { finish() }
         }
     }
 
