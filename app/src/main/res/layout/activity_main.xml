@@ -65,9 +65,9 @@
                     android:layout_height="wrap_content"
                     android:lineHeight="16dp"
                     android:text="OO "
+                    android:fontFamily="@font/pretendard_semibold"
                     android:textColor="@color/black200"
-                    android:textSize="14dp"
-                    android:textStyle="normal"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -79,8 +79,8 @@
                     android:lineHeight="16dp"
                     android:text="님, 잊기 전에 기록해보세요."
                     android:textColor="@color/black200"
-                    android:textSize="14dp"
-                    android:textStyle="normal"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/pretendard_regular"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_main_name"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -95,8 +95,8 @@
                 android:lineHeight="34dp"
                 android:text="오늘은 어떤 미디어를\n감상하셨나요?"
                 android:textColor="@color/black200"
-                android:textSize="23dp"
-                android:textStyle="normal"
+                android:textSize="23sp"
+                android:fontFamily="@font/pretendard_medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -117,8 +117,8 @@
                 android:paddingBottom="13dp"
                 android:text="기록하기"
                 android:textColor="@color/black200"
-                android:textSize="17dp"
-                android:textStyle="normal"
+                android:textSize="17sp"
+                android:fontFamily="@font/pretendard_semibold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -145,8 +145,8 @@
             android:lineHeight="23dp"
             android:text="기록"
             android:textColor="@color/black200"
-            android:textSize="19dp"
-            android:textStyle="normal"
+            android:textSize="19sp"
+            android:fontFamily="@font/pretendard_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
 
@@ -156,8 +156,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="7dp"
             android:text="N개"
-            android:textStyle="normal"
-            android:textSize="19dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:textSize="19sp"
             android:lineHeight="23dp"
             android:textColor="@color/gray200"
             app:layout_constraintStart_toEndOf="@+id/tv_main_reportlabel"
@@ -192,8 +192,8 @@
             android:paddingBottom="6dp"
             android:text="전체보기"
             android:textColor="@color/black200"
-            android:textSize="13dp"
-            android:textStyle="normal"
+            android:textSize="13sp"
+            android:fontFamily="@font/ppneuemachina_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
 

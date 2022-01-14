@@ -22,8 +22,8 @@
         android:lineHeight="42dp"
         android:text="6"
         android:textColor="@color/white"
-        android:textSize="43dp"
-        android:textStyle="normal"
+        android:textSize="43sp"
+        android:fontFamily="@font/ppneuemachina_ultrabold"
         app:layout_constraintBottom_toTopOf="@+id/tv_main_medianame"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_main_icon" />
@@ -37,8 +37,8 @@
         android:lineHeight="25dp"
         android:text="Movie"
         android:textColor="@color/white"
-        android:textSize="17dp"
-        android:textStyle="normal"
+        android:textSize="17sp"
+        android:fontFamily="@font/pretendard_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
