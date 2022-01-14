@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import beforeget.data.MainAdapter
 import beforeget.data.MainData
-import beforeget.feature.MyRecordActivity
+import beforeget.feature.myrecord.MyRecordActivity
 import beforeget.feature.report.ReportActivity
 import beforeget.feature.write.MediaSelectActivity
 import com.example.beforeget.R

@@ -4,9 +4,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import beforeget.feature.MyRecordActivity
+import beforeget.feature.myrecord.MyRecordActivity
 import com.example.beforeget.databinding.ItemMediaListBinding
 
 
@@ -34,10 +33,11 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
             binding.main = data
             itemView.setOnClickListener {
                 val media = binding.tvMainRvmedia.text.toString()
-                val mainToMyRecordIntent =
-                    Intent(itemView.context, MyRecordActivity::class.java)
-                mainToMyRecordIntent.putExtra("media", media)
-                startActivity(itemView.context, mainToMyRecordIntent, null)
+                val mainToMyRecordintent =
+                    Intent(itemView?.context, MyRecordActivity::class.java).apply {
+                        putExtra("media", media)
+                    }
+                ContextCompat.startActivity(itemView.context, mainToMyRecordintent, null)
             }
         }
     }
