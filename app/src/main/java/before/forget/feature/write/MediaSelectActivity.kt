@@ -7,26 +7,54 @@ import before.forget.databinding.ActivityMediaSelectBinding
 
 class MediaSelectActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMediaSelectBinding
+    private lateinit var media: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMediaSelectBinding.inflate(layoutInflater)
 
         binding.clMediaBook.setOnClickListener {
-            initClickEvent()
             binding.clMediaBook.isSelected = true
+            media = binding.tvMediaBook.text.toString()
         }
-        binding.clMediaMovie.setOnClickListener { initClickEvent() }
-        binding.clMediaMusic.setOnClickListener { initClickEvent() }
-        binding.clMediaTv.setOnClickListener { initClickEvent() }
-        binding.clMediaWebtoon.setOnClickListener { initClickEvent() }
-        binding.clMediaYoutube.setOnClickListener { initClickEvent() }
+        binding.clMediaMovie.setOnClickListener {
+            binding.clMediaMovie.isSelected = true
+            media = binding.tvMediaMovie.text.toString()
+        }
+        binding.clMediaMusic.setOnClickListener {
+            binding.clMediaMusic.isSelected = true
+            media = binding.tvMediaMusic.text.toString()
+        }
+        binding.clMediaTv.setOnClickListener {
+            binding.clMediaTv.isSelected = true
+            media = binding.tvMediaTv.text.toString()
+        }
+        binding.clMediaWebtoon.setOnClickListener {
+            binding.clMediaWebtoon.isSelected = true
+            media = binding.tvMediaWebtoon.text.toString()
+        }
+        binding.clMediaYoutube.setOnClickListener {
+            binding.clMediaYoutube.isSelected = true
+            media = binding.tvMediaYoutube.text.toString()
+        }
+        binding.btnMediaNext.setOnClickListener {
+            binding.btnMediaNext.isSelected = true
+            val intent = Intent(this, WriteActivity::class.java).apply {
+                putExtra("media", media)
+            }
+            startActivity(intent)
+        }
         binding.ivMediaClose.setOnClickListener { finish() }
-        binding.btnMediaNext.setOnClickListener { initClickEvent() }
         setContentView(binding.root)
     }
 
-    private fun initClickEvent() {
-        startActivity(Intent(this, WriteActivity::class.java))
+    override fun onStart() {
+        binding.clMediaBook.isSelected = false
+        binding.clMediaYoutube.isSelected = false
+        binding.clMediaWebtoon.isSelected = false
+        binding.clMediaTv.isSelected = false
+        binding.clMediaMusic.isSelected = false
+        binding.clMediaMovie.isSelected = false
+        super.onStart()
     }
 }

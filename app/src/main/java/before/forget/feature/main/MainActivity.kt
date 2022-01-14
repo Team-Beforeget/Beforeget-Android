@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, MediaSelectActivity::class.java))
         }
 
-        binding.tvMainBtnviewall.setOnClickListener {
+        binding.tvMainViewallbtn.setOnClickListener {
             startActivity(Intent(this, MyRecordActivity::class.java))
         }
         setContentView(binding.root)

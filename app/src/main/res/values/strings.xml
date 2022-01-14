@@ -49,6 +49,30 @@
     <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
         10월로, 30개의 기록을 남겼어요!\n다음 달, 나의 그래프는 어떤 모양일까요?</string>
 
+    <!--메인뷰-->
+    <string name="main_name">세훈</string>
+    <string name="main_sublabel">님, 잊기 전에 기록해보세요.</string>
+    <string name="main_label">오늘은 어떤 미디어를\n감상하셨나요?</string>
+    <string name="main_record">기록하기</string>
+    <string name="main_reportlabel">기록</string>
+    <string name="main_countlabel">N개</string>
+    <string name="main_viewallbtn">전체보기</string>
+
+
+    <!--유형선택뷰-->
+    <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>
+    <string name="media_movie">Movie</string>
+    <string name="media_tv">TV</string>
+    <string name="media_webtoon">Webtoon</string>
+    <string name="media_book">Book</string>
+    <string name="media_music">Music</string>
+    <string name="media_youtube">Youtube</string>
+    <string name="media_next">다음</string>
+
+
+    <!--글쓰기뷰-->
+    <string name="write_done">완료</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
