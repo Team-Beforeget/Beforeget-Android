@@ -46,10 +46,10 @@ class MediaSelectActivity : AppCompatActivity() {
             }
             btnMediaNext.setOnClickListener {
                 btnMediaNext.isSelected = true
-                val intent = Intent(this@MediaSelectActivity, WriteActivity::class.java).apply {
+                val mediaToWriteIntent = Intent(this@MediaSelectActivity, WriteActivity::class.java).apply {
                     putExtra("media", media)
                 }
-                startActivity(intent)
+                startActivity(mediaToWriteIntent)
             }
             ivMediaClose.setOnClickListener { finish() }
         }
