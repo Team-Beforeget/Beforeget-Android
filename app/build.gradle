@@ -56,6 +56,8 @@ dependencies {
     testImplementation(deps.test.junit)
     androidTestImplementation(deps.test.extJunit)
     androidTestImplementation(deps.test.espresso)
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.3")
 
     // MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'

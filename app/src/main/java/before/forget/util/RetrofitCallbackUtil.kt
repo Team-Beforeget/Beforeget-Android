@@ -1,40 +1,81 @@
-/*
-package before.foreget.util
+package before.forget.util
 
-import before.foreget.data.remote.response.ResponseWrapper
+import android.text.TextUtils
+import android.util.Log
+import before.forget.data.remote.response.ResponseWrapper
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-fun <T> Call<ResponseWrapper<T>>.enqueueRequestCallback() {
-    val callback = object : Callback<ResponseWrapper<T>> {
-        override fun onResponse(
-            call: Call<ResponseWrapper<T>>,
-            response: Response<ResponseWrapper<T>>
-        ) {
-            TODO("Not yet implemented")
-        }
+val <T> Call<ResponseWrapper<T>>.callback: RequestInfoWrapper<T>
+    get() = RequestInfoWrapper<T>(this)
 
-        override fun onFailure(call: Call<ResponseWrapper<T>>, t: Throwable) {
-            TODO("Not yet implemented")
-        }
+class RequestInfoWrapper<T>(private val call: Call<ResponseWrapper<T>>) {
+    private var onSuccess: ((ResponseWrapper<T>) -> Unit)? = null
+    private var onError: ((ResponseWrapper<Unit>) -> Unit)? = null
+    private var onCallFailure: (() -> Unit)? = null
 
+    fun enqueue() {
+        call.enqueue(ResponseCallback<T>(onSuccess, onError, onCallFailure))
     }
-    this.enqueue()
+
+    fun onSuccess(action: (ResponseWrapper<T>) -> Unit): RequestInfoWrapper<T> {
+        this.onSuccess = action
+        return this
+    }
+
+    fun onError(action: (ResponseWrapper<Unit>) -> Unit): RequestInfoWrapper<T> {
+        this.onError = action
+        return this
+    }
+
+    fun onCallFailure(action: () -> Unit): RequestInfoWrapper<T> {
+        this.onCallFailure = action
+        return this
+    }
 }
 
-class RequestCallback<T>(
-    val callback: (ResponseWrapper<T>) -> Unit
-):Callback<ResponseWrapper<T>> {
+class ResponseCallback<T>(
+    private val onSuccess: ((ResponseWrapper<T>) -> Unit)?,
+    private val onError: ((ResponseWrapper<Unit>) -> Unit)?,
+    private val onCallFailure: (() -> Unit)?
+) : Callback<ResponseWrapper<T>> {
     override fun onResponse(
         call: Call<ResponseWrapper<T>>,
         response: Response<ResponseWrapper<T>>
     ) {
-        TODO("Not yet implemented")
+        if (response.isSuccessful) {
+            onSuccess?.invoke(response.body() ?: return)
+            return
+        }
+        val errorBody = response.errorBody()?.string() ?: return
+        val errorResponse = createErrorResponse(errorBody)
+        onError?.invoke(errorResponse)
+    }
+
+    private fun createErrorResponse(errorBody: String): ResponseWrapper<Unit> {
+        val responseType = object : TypeToken<ResponseWrapper<Unit>>() {}.type
+        return GsonBuilder().create()
+            .fromJson(errorBody, responseType)
     }
 
     override fun onFailure(call: Call<ResponseWrapper<T>>, t: Throwable) {
-        TODO("Not yet implemented")
+        loggingErrorMessage(
+            "Call OnFailure Error\n",
+            "${t.message}\n",
+            "${t.localizedMessage}\n",
+            TextUtils.join("\n", t.stackTrace)
+        )
+        onCallFailure?.invoke()
     }
 
-}*/
+    private fun loggingErrorMessage(vararg message: String) {
+        message.forEach { Log.d(ERROR_TAG, it) }
+    }
+
+    companion object {
+        private const val ERROR_TAG = "Response Fail"
+    }
+}
