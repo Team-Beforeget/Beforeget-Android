@@ -2,6 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     tools:context="before.forget.feature.write.WriteActivity">
 
     <data>
@@ -11,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <ImageView
             android:id="@+id/iv_write_backbtn"
@@ -22,25 +24,347 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_btn_back" />
 
+
         <TextView
             android:id="@+id/tv_write_medialabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Movie"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="94dp"
+            android:fontFamily="@font/ppneuemachina_regular"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:paddingBottom="16dp"
+            android:textColor="@color/black200"
+            android:textSize="20dp"
             app:layout_constraintEnd_toStartOf="@+id/tv_write_done"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toEndOf="@+id/iv_write_backbtn"
-            app:layout_constraintTop_toTopOf="@+id/tv_write_done" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Movie" />
 
         <TextView
             android:id="@+id/tv_write_done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginEnd="14dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:gravity="center"
+            android:lineHeight="24dp"
             android:text="@string/write_done"
-            android:textSize="17sp"
+            android:textColor="@color/black200"
+            android:textSize="17dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/tv_write_edit"
+            app:layout_constraintTop_toBottomOf="@+id/tv_write_medialabel">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_write_datepickerbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/write_datepickerselector"
+                    android:fontFamily="@font/ppneuemachina_regular"
+                    android:gravity="center"
+                    android:lineHeight="12dp"
+                    android:paddingLeft="19dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="19dp"
+                    android:paddingBottom="8dp"
+                    android:text="2022. 01. 08. SAT"
+                    android:textColor="@color/black200"
+                    android:textSize="13dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_write_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="24dp"
+                    android:text="@string/write_title"
+                    android:textColor="@color/black200"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_write_bar" />
+
+                <TextView
+                    android:id="@+id/tv_write_oneline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="24dp"
+                    android:text="@string/write_oneline"
+                    android:textColor="@color/black200"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_write_titleinput" />
+
+                <TextView
+                    android:id="@+id/tv_write_addonelinebtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/write_rectangle_1dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:gravity="center"
+                    android:lineHeight="16dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="9dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="9dp"
+                    android:text="@string/write_addonelinebtn"
+                    android:textColor="@color/black200"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline" />
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/til_write_titleinput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="20"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tv_write_titleinput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@color/white"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:hint="@string/write_titleinput"
+                        android:lineHeight="24dp"
+                        android:maxLength="20"
+                        android:textColor="@color/black200"
+                        android:textColorHint="@color/gray200"
+                        android:textSize="17dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/tv_write_ratinglabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/pretendard_medium"
+                    android:gravity="center"
+                    android:lineHeight="16dp"
+                    android:text="@string/write_ratinglabel"
+                    android:textColor="@color/gray300"
+                    android:textSize="13dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_write_star3" />
+
+                <ImageView
+                    android:id="@+id/iv_write_star1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="79dp"
+                    android:layout_marginTop="44dp"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_write_star2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
+                    app:srcCompat="@drawable/ic_icn_star_false" />
+
+                <ImageView
+                    android:id="@+id/iv_write_star2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_write_star3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/iv_write_star1"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
+                    app:srcCompat="@drawable/ic_icn_star_false" />
+
+                <ImageView
+                    android:id="@+id/iv_write_star5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginEnd="79dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/iv_write_star4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
+                    app:srcCompat="@drawable/ic_icn_star_false" />
+
+                <ImageView
+                    android:id="@+id/iv_write_star4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_write_star5"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/iv_write_star3"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
+                    app:srcCompat="@drawable/ic_icn_star_false" />
+
+                <ImageView
+                    android:id="@+id/iv_write_star3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    app:layout_constraintEnd_toStartOf="@+id/iv_write_star4"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/iv_write_star2"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
+                    app:srcCompat="@drawable/ic_icn_star_false" />
+
+
+                <ImageView
+                    android:id="@+id/iv_write_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_ratinglabel"
+                    app:srcCompat="@drawable/ic_bar" />
+
+                <ImageView
+                    android:id="@+id/iv_write_textstar"
+                    android:layout_width="8dp"
+                    android:layout_height="9dp"
+                    android:layout_marginStart="2dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_write_title"
+                    app:layout_constraintTop_toTopOf="@+id/tv_write_title"
+                    app:srcCompat="@drawable/ic_icn_text_star" />
+
+                <ImageView
+                    android:id="@+id/iv_write_textstar2"
+                    android:layout_width="8dp"
+                    android:layout_height="9dp"
+                    android:layout_marginStart="2dp"
+                    app:layout_constraintStart_toEndOf="@+id/tv_write_oneline"
+                    app:layout_constraintTop_toTopOf="@+id/tv_write_oneline"
+                    app:srcCompat="@drawable/ic_icn_text_star" />
+
+                <TextView
+                    android:id="@+id/tv_write_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="47dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:lineHeight="24dp"
+                    android:text="@string/write_comment"
+                    android:textColor="@color/black200"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_addonelinebtn" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_write_commentinput"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="100"
+                    app:hintAnimationEnabled="false"
+                    app:hintEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_comment">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tv_write_commentinput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:hint="@string/write_commentinput"
+                        android:lineHeight="24dp"
+                        android:maxLength="100"
+                        android:textColor="@color/black100"
+                        android:textColorHint="@color/gray200"
+                        android:textSize="15dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <ImageView
+            android:id="@+id/iv_write_additem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_icn_additem" />
+
+        <ImageView
+            android:id="@+id/iv_write_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_write_additem"
+            app:srcCompat="@drawable/ic_icn_edit" />
+
+        <TextView
+            android:id="@+id/tv_write_additem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:lineHeight="16dp"
+            android:text="@string/write_additem"
+            android:textColor="@color/black200"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_write_additem" />
+
+        <TextView
+            android:id="@+id/tv_write_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:gravity="center"
+            android:lineHeight="16dp"
+            android:paddingTop="12dp"
+            android:text="@string/write_edit"
+            android:textColor="@color/black200"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_write_edit" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
