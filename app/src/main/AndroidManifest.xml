@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Beforeget">
         <activity
             android:name=".feature.write.WriteActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".feature.write.MediaSelectActivity"
             android:exported="true" />
