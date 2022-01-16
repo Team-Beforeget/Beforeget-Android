@@ -9,15 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import before.forget.R
 import before.forget.databinding.FragmentFilterTermBinding
-import okhttp3.Interceptor.Companion.invoke
 import java.time.LocalDate
-import java.time.LocalDateTime
-import java.time.temporal.TemporalField
 
 class FilterTermFragment : Fragment() {
     private lateinit var binding: FragmentFilterTermBinding
-    private var termButtonClickListener: ((String) -> Unit)? = null
-    private var callbackButtonClickListener: (() -> Unit)? = null
+    private var callbackButtonClickListener: ((String) -> Unit)? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,9 +47,6 @@ class FilterTermFragment : Fragment() {
                 btnTwoWeek.isSelected = false
                 btnThreeMonth.isSelected = false
                 btnDirectInput.isSelected = false
-                if (btnMonth.isSelected) {
-                    termButtonClickListener?.invoke(btnMonth.text.toString())
-                }
             }
             btnThreeMonth.setOnClickListener {
                 btnThreeMonth.isSelected = !btnThreeMonth.isSelected
@@ -74,7 +67,10 @@ class FilterTermFragment : Fragment() {
                 btnMonth.isSelected = false
             }
             btnApplyTermFilter.setOnClickListener {
-                callbackButtonClickListener?.invoke()
+                if (binding.btnThreeMonth.isSelected) callbackButtonClickListener?.invoke(binding.btnThreeMonth.text.toString())
+                if (binding.btnTwoWeek.isSelected) callbackButtonClickListener?.invoke(binding.btnTwoWeek.text.toString())
+                if (binding.btnMonth.isSelected) callbackButtonClickListener?.invoke(binding.btnMonth.text.toString())
+                if (binding.btnDirectInput.isSelected) callbackButtonClickListener?.invoke("기간")
             }
         }
     }
@@ -90,7 +86,6 @@ class FilterTermFragment : Fragment() {
                 btnThreeMonth.isSelected = false
                 btnMonth.isSelected = false
                 btnDirectInput.isSelected = true
-                // 끝날짜는 오늘로 되기
                 dpDatepikerStartFilter.visibility = View.GONE
                 dpDatepikerEndFilter.visibility = View.GONE
                 tvSelectStartDateFilter.text = "날짜를 선택해주세요."
@@ -108,18 +103,6 @@ class FilterTermFragment : Fragment() {
     private fun showEndDatePicker() {
         binding.dpDatepikerEndFilter.visibility = View.VISIBLE
         binding.dpDatepikerStartFilter.visibility = View.GONE
-    }
-
-    private fun setDate() {
-        // 2주 ,1개월,  3개월일 경우에 빼기
-        // 직접 입력인 경우 그냥 선택하는대로? 분기문 처리해야
-        // 끝날짜는 오늘날짜, 시작날날짜는 끝날짜에서 한달빼기
-        // 끝날짜를 자유자재로 선택시 시작날짜도 그에 따라 바뀜
-
-        // 끝날짜는 최대 오늘로로
-
-        // int 형식
-        val dateNow = LocalDate.now()
     }
 
     private fun focusedStartDatePicker() {
@@ -197,19 +180,14 @@ class FilterTermFragment : Fragment() {
         }
     }
 
-    fun setCallbackButtonClickListener(listener: () -> Unit) {
+    fun setCallbackButtonClickListener(listener: (String) -> Unit) {
         this.callbackButtonClickListener = listener
-    }
-
-    fun setTermButtonClickListener(listener: (String) -> Unit) {
-        this.termButtonClickListener = listener
     }
 
     private fun checkDateData() =
         binding.tvSelectEndDateFilter.text != "날짜를 선택해주세요." && binding.tvSelectStartDateFilter.text != "날짜를 선택해주세요."
 
     private fun setStartDate(year: String, month: String, day: String) {
-        Log.d("setStartDate", "왜 실행이 갑자기 안되니 ㅜ")
         binding.tvSelectStartDateFilter.text =
             year + "년" + " " + month + "월" + " " + day + "일"
     }

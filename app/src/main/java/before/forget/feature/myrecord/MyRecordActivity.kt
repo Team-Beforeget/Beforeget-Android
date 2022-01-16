@@ -21,14 +21,6 @@ class MyRecordActivity : AppCompatActivity() {
         initClickFilterButtonEvent()
         initMyRecordAdapter()
         binding.btnScore.text = "별점"
-
-        filterTermFragment.setTermButtonClickListener {
-            binding.btnTerm.text = it
-        }
-        filterStarFragment.setCallbackButtonClickListener {
-            binding.btnScore.text = "선택되었다"
-            Log.d("보내진걸까...?", "받았니?흑")
-        }
     }
 
     private fun initClickFilterButtonEvent() {
@@ -72,8 +64,12 @@ class MyRecordActivity : AppCompatActivity() {
         filterBottomSheetFragment.setMediaCallback {
             binding.btnMedia.text = it
         }
-        filterBottomSheetFragment.startCallback {
+        filterBottomSheetFragment.setStarScoreCallback {
             binding.btnScore.isActivated = true
+        }
+        filterBottomSheetFragment.setTermCallback {
+            binding.btnTerm.text = it
+            binding.btnTerm.isActivated = true
         }
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
