@@ -1,18 +1,13 @@
 package before.forget.feature.myrecord
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.local.MyRecordData
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
-import before.forget.feature.filter.FilterStarFragment
-import before.forget.feature.filter.FilterTermFragment
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
-    private val filterTermFragment = FilterTermFragment()
-    private val filterStarFragment = FilterStarFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
@@ -20,7 +15,7 @@ class MyRecordActivity : AppCompatActivity() {
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        binding.btnScore.text = "별점"
+        getMediaFromMainActivity()
     }
 
     private fun initClickFilterButtonEvent() {
@@ -62,7 +57,9 @@ class MyRecordActivity : AppCompatActivity() {
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
         filterBottomSheetFragment.setMediaCallback {
-            binding.btnMedia.text = it
+            var mediaList = mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
+            binding.btnMedia.text = mediaList[it]
+            binding.btnMedia.isActivated = true
         }
         filterBottomSheetFragment.setStarScoreCallback {
             binding.btnScore.isActivated = true
