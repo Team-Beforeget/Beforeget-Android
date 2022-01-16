@@ -1,8 +1,14 @@
 package before.forget.feature.report
 
 import android.app.AlertDialog
+import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -11,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.databinding.ActivityReportBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import java.io.ByteArrayOutputStream
 import java.util.*
 
 class ReportActivity : AppCompatActivity() {
@@ -30,7 +37,6 @@ class ReportActivity : AppCompatActivity() {
 
         initAdapter()
         initBtnClickListener()
-
         setContentView(binding.root)
     }
 
@@ -40,6 +46,7 @@ class ReportActivity : AppCompatActivity() {
                 finish()
             }
             ivDownloadBtn.setOnClickListener {
+                initShareSheet()
             }
             btnDatePicker.setOnClickListener {
                 setDatePicker()
@@ -47,9 +54,52 @@ class ReportActivity : AppCompatActivity() {
         }
     }
 
+    private fun initShareSheet() {
+        val image: Bitmap = getBitmapFromView(binding.clReportArea)
+        // binding.imgResultImage.setImageBitmap(image)
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "image/*"
+        intent.putExtra(Intent.EXTRA_STREAM, getImageUri(this, image))
+        intent.setPackage("com.kakao.talk")
+        startActivity(Intent.createChooser(intent, "공유"))
+    }
+
+    private fun getImageUri(context: Context, inImage: Bitmap): Uri? {
+        val bytes = ByteArrayOutputStream()
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val path = MediaStore.Images.Media.insertImage(
+            context.getContentResolver(),
+            inImage,
+            "Title",
+            null
+        )
+        return Uri.parse(path)
+    }
+
+    private fun getBitmapFromView(view: View): Bitmap {
+        // Define a bitmap with the same size as the view
+        val returnedBitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+        // Bind a canvas to it
+        val canvas = Canvas(returnedBitmap)
+        // Get the view's background
+        val bgDrawable = view.background
+        if (bgDrawable != null) {
+            // has background drawable, then draw it on the canvas
+            bgDrawable.draw(canvas)
+        } else {
+            // does not have background drawable, then draw white background on the canvas
+            canvas.drawColor(Color.WHITE)
+        }
+        // draw the view on the canvas
+        view.draw(canvas)
+        // return the bitmap
+        return returnedBitmap
+    }
+
     private fun setDatePicker() {
         val dialog = AlertDialog.Builder(this).create()
-        val view: View = LayoutInflater.from(this).inflate(R.layout.layout_report_datepicker_dialog, null)
+        val view: View =
+            LayoutInflater.from(this).inflate(R.layout.layout_report_datepicker_dialog, null)
         val year: NumberPicker = view.findViewById(R.id.picker_year)
         val month: NumberPicker = view.findViewById(R.id.picker_month)
         val cancel: Button = view.findViewById(R.id.picker_cancel)
@@ -90,10 +140,10 @@ class ReportActivity : AppCompatActivity() {
         }
 
         confirm.setOnClickListener {
-            // TODO: date 전달
             selectMonth = month.value
             selectYear = year.value
-            binding.btnDatePicker.text = selectYear.toString() + "년 " + selectMonth.toString() + "월"
+            binding.btnDatePicker.text = "${selectYear}년 ${selectMonth}월"
+
             dialog.dismiss()
             dialog.cancel()
         }
