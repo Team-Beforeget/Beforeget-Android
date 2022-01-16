@@ -12,6 +12,10 @@ class MyRecordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnMedia.text = "미디어"
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
@@ -72,7 +76,6 @@ class MyRecordActivity : AppCompatActivity() {
     }
 
     private fun getMediaFromMainActivity() {
-        // 메인뷰 완성된거 풀받으면 실행하기
         if (intent.hasExtra("media")) {
             val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
