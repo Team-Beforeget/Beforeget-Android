@@ -11,7 +11,7 @@ import before.forget.databinding.FragmentFilterMediaBinding
 
 class FilterMediaFragment : Fragment() {
     private var mediaButtonClickListener: ((String) -> Unit)? = null
-    private var callbackButtonClickListener: (() -> Unit)? = null
+    private var callbackButtonClickListener: ((String) -> Unit)? = null
     private lateinit var binding: FragmentFilterMediaBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,7 +54,7 @@ class FilterMediaFragment : Fragment() {
                 activateApplyBtn()
             }
             btnApplyMediaFilter.setOnClickListener {
-                callbackButtonClickListener?.invoke()
+                callbackButtonClickListener?.invoke(btnMovie.text.toString())
             }
         }
     }
@@ -85,7 +85,7 @@ class FilterMediaFragment : Fragment() {
         }
     }
 
-    fun setCallbackButtonClickListener(listener: () -> Unit) {
+    fun setCallbackButtonClickListener(listener: (String) -> Unit) {
         this.callbackButtonClickListener = listener
     }
     fun setMediaButtonClickListener(listener: (String) -> Unit) {

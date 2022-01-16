@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.local.MyRecordData
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
-import before.forget.feature.filter.FilterMediaFragment
 import before.forget.feature.filter.FilterStarFragment
 import before.forget.feature.filter.FilterTermFragment
 
@@ -14,11 +13,11 @@ class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
     private val filterTermFragment = FilterTermFragment()
     private val filterStarFragment = FilterStarFragment()
-    private val filterMediaFragment = FilterMediaFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
         binding.btnScore.text = "별점"
@@ -29,10 +28,6 @@ class MyRecordActivity : AppCompatActivity() {
         filterStarFragment.setCallbackButtonClickListener {
             binding.btnScore.text = "선택되었다"
             Log.d("보내진걸까...?", "받았니?흑")
-        }
-        filterMediaFragment.setMediaButtonClickListener { media: String ->
-            binding.btnMedia.text = media
-            Log.d("미디어", "미디어 버튼 콜백")
         }
     }
 
@@ -74,6 +69,12 @@ class MyRecordActivity : AppCompatActivity() {
 
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
+        filterBottomSheetFragment.setMediaCallback {
+            binding.btnMedia.text = it
+        }
+        filterBottomSheetFragment.startCallback {
+            binding.btnScore.isActivated = true
+        }
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
 
@@ -83,5 +84,10 @@ class MyRecordActivity : AppCompatActivity() {
             val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
         }
+    }
+    private fun initButtonFilter() {
+        binding.btnMedia.isActivated = false
+        binding.btnScore.isActivated = false
+        binding.btnTerm.isActivated = false
     }
 }

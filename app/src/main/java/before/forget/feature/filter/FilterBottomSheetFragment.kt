@@ -18,6 +18,15 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
     private val filterMediaFragment = FilterMediaFragment()
     private val filterTermFragment = FilterTermFragment()
     private val filterStarFragment = FilterStarFragment()
+    private var startCallback: (() -> Unit)? = null
+    private var mediaCallback: ((String) -> Unit)? = null
+
+    fun setMediaCallback(listener : (String) -> Unit) {
+        this.mediaCallback = listener
+    }
+    fun startCallback(listener: () -> Unit) {
+        this.startCallback = listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,9 +41,11 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         )
 
         filterMediaFragment.setCallbackButtonClickListener {
+            mediaCallback?.invoke(it)
             dismiss()
         }
         filterStarFragment.setCallbackButtonClickListener {
+            startCallback?.invoke()
             dismiss()
         }
         filterTermFragment.setCallbackButtonClickListener {
