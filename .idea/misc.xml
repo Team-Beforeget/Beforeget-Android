@@ -27,21 +27,30 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/rectangle_border_black200_2px.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/rectangle_fill_black.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/selector_btn_apply_filter.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/selector_write_star.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/test_false.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/test_star.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/test_true.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_datepickerbtn.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_datepickerbtn_black.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_datepickerselector.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_onelineborder.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_rectangle_1dp.xml" value="0.26564102564102565" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_rectanglebuttonselector.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_rectanglefillblack.xml" value="0.26564102564102565" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.34392265193370164" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_media_select.xml" value="0.2" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_report.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write.xml" value="0.8" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_filter_media.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_filter_star.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_one_line_review.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_graph.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_labeling.xml" value="0.2246376811594203" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.8800000000000001" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_content_list.xml" value="0.2259963768115942" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_media_list.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_filter_inactive_btn.xml" value="0.1859375" />
