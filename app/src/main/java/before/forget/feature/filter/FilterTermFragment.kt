@@ -1,6 +1,7 @@
 package before.forget.feature.filter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,8 @@ import before.forget.R
 import before.forget.databinding.FragmentFilterTermBinding
 import okhttp3.Interceptor.Companion.invoke
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.temporal.TemporalField
 
 class FilterTermFragment : Fragment() {
     private lateinit var binding: FragmentFilterTermBinding
@@ -21,15 +24,7 @@ class FilterTermFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_filter_term, container, false)
-        binding.apply {
-            btnApplyTermFilter.isEnabled = false
-            tvSelectStartDateFilter.text = "날짜를 선택해주세요."
-            tvSelectEndDateFilter.text = "날짜를 선택해주세요."
-            dpDatepikerEndFilter.visibility = View.GONE
-            dpDatepikerStartFilter.visibility = View.GONE
-            btnDirectInput.isSelected = true
-            // 끝날짜 오늘날짜로 설정하기
-        }
+        initDate()
         binding.tvSelectStartDateFilter.setOnClickListener {
             showStartDatePicker()
         }
@@ -38,7 +33,8 @@ class FilterTermFragment : Fragment() {
             showEndDatePicker()
         }
         activateBtnApplyFilterTerm()
-        focusedDatePicker()
+        focusedEndDatePicker()
+        focusedStartDatePicker()
         refreshTermFilter()
         clickBtnTermEvent()
         return binding.root
@@ -58,8 +54,6 @@ class FilterTermFragment : Fragment() {
                 if (btnMonth.isSelected) {
                     termButtonClickListener?.invoke(btnMonth.text.toString())
                 }
-                // 끝날짜는 오늘날짜, 시작날날짜는 끝날짜에서 한달빼기
-                // 끝날짜를 자유자재로 선택시 시작날짜도 그에 따라 바뀜
             }
             btnThreeMonth.setOnClickListener {
                 btnThreeMonth.isSelected = !btnThreeMonth.isSelected
@@ -128,26 +122,49 @@ class FilterTermFragment : Fragment() {
         val dateNow = LocalDate.now()
     }
 
-    private fun focusedDatePicker() {
-        binding.dpDatepikerEndFilter.init(
-            LocalDate.now().year,
-            LocalDate.now().monthValue,
-            LocalDate.now().dayOfMonth
-        ) { _, year, month, day ->
-            setEndDate(year.toString(), "${month + 1}", day.toString())
-            checkDateData()
-            activateBtnApplyFilterTerm()
-        }
+    private fun focusedStartDatePicker() {
         binding.dpDatepikerStartFilter.setOnDateChangedListener { _, year, month, day ->
 
             setStartDate(year.toString(), "${month + 1}", day.toString())
+
+            if (binding.btnMonth.isSelected) {
+                if (month == 12) {
+                    setEndDate("${year + 1}", "1", day.toString())
+                } else {
+                    setEndDate(year.toString(), "${month + 2}", day.toString())
+                }
+            }
+
+            if (binding.btnTwoWeek.isSelected) {
+                if (day >= 18) {
+                    setEndDate(year.toString(), "${month + 2}", "${day + 14 - 30}")
+                    if (month == 11) {
+                        setEndDate("${year + 1}", "1", "${day + 14 - 30}")
+                    }
+                } else if (month == 11) {
+                    setEndDate("${year + 1}", "1", "${day + 14}")
+                } else {
+                    setEndDate(year.toString(), "${month + 1}", "${day + 14}")
+                }
+            }
+            if (binding.btnThreeMonth.isSelected) {
+                if (month >= 9) {
+                    setEndDate("${year + 1}", "${month + 3 - 10}", day.toString())
+                } else {
+                    setEndDate(year.toString(), "${month + 4}", day.toString())
+                }
+            }
             checkDateData()
             activateBtnApplyFilterTerm()
         }
+    }
+
+    private fun focusedEndDatePicker() {
         binding.dpDatepikerEndFilter.setOnDateChangedListener { _, year, month, day ->
             setEndDate(year.toString(), "${month + 1}", day.toString())
 
             if (binding.btnMonth.isSelected) {
+                Log.d("focusedEndDatePicker", "month")
                 if (month == 0) {
                     setStartDate("${year - 1}", "12", day.toString())
                 } else {
@@ -156,6 +173,7 @@ class FilterTermFragment : Fragment() {
             }
 
             if (binding.btnThreeMonth.isSelected) {
+                Log.d("focusedEndDatePicker", "threemonth")
                 if (month <= 3) {
                     setStartDate("${year - 1}", "${month - 2 + 12}", day.toString())
                 } else {
@@ -163,6 +181,7 @@ class FilterTermFragment : Fragment() {
                 }
             }
             if (binding.btnTwoWeek.isSelected) {
+                Log.d("focusedEndDatePicker", "twoweek")
                 if (day <= 14) {
                     if (month == 0) {
                         setStartDate("${year - 1}", "12", "${day - 14 + 31}")
@@ -190,11 +209,25 @@ class FilterTermFragment : Fragment() {
         binding.tvSelectEndDateFilter.text != "날짜를 선택해주세요." && binding.tvSelectStartDateFilter.text != "날짜를 선택해주세요."
 
     private fun setStartDate(year: String, month: String, day: String) {
+        Log.d("setStartDate", "왜 실행이 갑자기 안되니 ㅜ")
         binding.tvSelectStartDateFilter.text =
             year + "년" + " " + month + "월" + " " + day + "일"
     }
+
     private fun setEndDate(year: String, month: String, day: String) {
         binding.tvSelectEndDateFilter.text =
             year + "년" + " " + month + "월" + " " + day + "일"
+    }
+    private fun initDate() {
+        binding.apply {
+            btnApplyTermFilter.isEnabled = false
+            dpDatepikerEndFilter.maxDate = System.currentTimeMillis()
+            val dateNow = LocalDate.now()
+            setEndDate(dateNow.year.toString(), dateNow.monthValue.toString(), dateNow.dayOfMonth.toString())
+            tvSelectStartDateFilter.text = "날짜를 선택해주세요."
+            dpDatepikerEndFilter.visibility = View.GONE
+            dpDatepikerStartFilter.visibility = View.GONE
+            btnDirectInput.isSelected = true
+        }
     }
 }
