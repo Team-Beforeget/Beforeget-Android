@@ -109,4 +109,18 @@
     <string name="media_refresh">미디어 초기화</string>
     <string name="start_score_refresh">별점 초기화</string>
 
+
+    <!--나의기록 상세뷰-->
+    <string name="one_review">한 줄 리뷰</string>
+    <string name="review_1">흥미진진한 줄거리</string>
+    <string name="review_2">연기가 일품이에요!</string>
+    <string name="review_3">인생영화</string>
+    <string name="review_4">아름다운 영상미</string>
+    <string name="review_5">마음이 따듯해져요</string>
+    <string name="review_6">최고의 반전!</string>
+    <string name="comment_title">코멘트</string>
+    <string name="comment">꽤나 폭력적인 장면을 폭죽이 터진다거나, 슬로우\n모션 등으로 표현하여 폭력성을 영상미로 승화시\n킨 점이 인상깊다. 또한 영화 전반적으로 풍기는\n앤틱한 분위기가 내 취향을 저격해서 눈이 즐거웠\n던 영화다.</string>
+    <string name="kingsman">킹스맨</string>
+    <string name="date_detail">2022. 01. 10. MON</string>
+
 </resources>
