@@ -110,7 +110,7 @@
     <string name="start_score_refresh">별점 초기화</string>
 
 
-    <!--나의기록 상세뷰-->
+    <!--나의기록 상세뷰, 고정뷰-->
     <string name="one_review">한 줄 리뷰</string>
     <string name="review_1">흥미진진한 줄거리</string>
     <string name="review_2">연기가 일품이에요!</string>
@@ -123,4 +123,18 @@
     <string name="kingsman">킹스맨</string>
     <string name="date_detail">2022. 01. 10. MON</string>
 
+    <!--나의기록 상세뷰- 영화뷰-->
+    <string name="poster">포스터</string>
+    <string name="famous_line_title">명대사</string>
+    <string name="famous_line">Manners maketh man.</string>
+    <string name="genre_tilte">장르</string>
+    <string name="genre">액션, SF, 범죄, 스릴러, 코미디, 모험</string>
+    <string name="story_tilt">줄거리</string>
+    <string name="story">세상에서 가장 위험한 면접이 시작된다! 높은 IQ, 주\n니어 체조대회 2년 연속 우승! 그러나 학교 중퇴, 해\n병대 중도 하차.동네 패싸움에 직장은 가져본 적도\n없이 별볼일 없는 루저로 낙인 찍혔던 ‘그’가 ‘젠틀맨\n스파이’로 전격 스카우트 됐다!</string>
+    <string name="ost_tilte">OST</string>
+    <string name="ost">OST 이름</string>
+    <string name="director">감독</string>
+    <string name="director_name">매슈 본</string>
+    <string name="actor">배우</string>
+    <string name="actor_name">콜린 퍼스, 태런 에저튼, 마크\n스트롱, 마이클 케인, 사무엘 L. 잭슨</string>
 </resources>
