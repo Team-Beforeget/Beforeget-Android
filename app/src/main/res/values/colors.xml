@@ -13,10 +13,13 @@
     <color name="green100">#6EEC83</color>
     <color name="Background">#FAFAFA</color>
 
+
     <!-- Beforeget Main Color -->
     <color name="gray100">#656565</color>
     <color name="gray200">#AFAFAF</color>
     <color name="gray300">#CFCFCF</color>
     <color name="gray400">#F3F3F3</color>
+    <color name="yellow100">#FEE500</color>
+
 
 </resources>
