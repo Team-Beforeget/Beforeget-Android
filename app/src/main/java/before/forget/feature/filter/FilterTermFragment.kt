@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import before.forget.R
 import before.forget.databinding.FragmentFilterTermBinding
+import okhttp3.Interceptor.Companion.invoke
 import java.time.LocalDate
 
 class FilterTermFragment : Fragment() {

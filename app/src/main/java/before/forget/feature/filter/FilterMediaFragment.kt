@@ -10,6 +10,7 @@ import before.forget.R
 import before.forget.databinding.FragmentFilterMediaBinding
 
 class FilterMediaFragment : Fragment() {
+    private var mediaButtonClickListener: ((String) -> Unit)? = null
     private var callbackButtonClickListener: (() -> Unit)? = null
     private lateinit var binding: FragmentFilterMediaBinding
     override fun onCreateView(
@@ -70,13 +71,6 @@ class FilterMediaFragment : Fragment() {
         checkEnableApplyBtn()
     }
 
-    fun test() {
-        binding.btnApplyMediaFilter.setOnClickListener {
-            val filterBottomSheetFragment = FilterBottomSheetFragment()
-            filterBottomSheetFragment.dismiss()
-        }
-    }
-
     private fun refreshMediaFilter() {
         binding.btnRefreshMediaFilter.setOnClickListener {
             binding.apply {
@@ -93,5 +87,8 @@ class FilterMediaFragment : Fragment() {
 
     fun setCallbackButtonClickListener(listener: () -> Unit) {
         this.callbackButtonClickListener = listener
+    }
+    fun setMediaButtonClickListener(listener: (String) -> Unit) {
+        this.mediaButtonClickListener = listener
     }
 }

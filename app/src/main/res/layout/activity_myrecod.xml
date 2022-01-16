@@ -107,7 +107,7 @@
                 android:paddingTop="8dp"
                 android:paddingEnd="24dp"
                 android:paddingBottom="10dp"
-                android:text="@string/start_score"
+                tools:text="@string/start_score"
                 android:textColor="@color/black200"
                 android:textSize="17sp"
                 app:layout_constraintStart_toEndOf="@+id/btn_media"

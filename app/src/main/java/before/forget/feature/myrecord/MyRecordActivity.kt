@@ -1,4 +1,5 @@
 package before.forget.feature.myrecord
+
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -20,13 +21,18 @@ class MyRecordActivity : AppCompatActivity() {
         setContentView(binding.root)
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        filterTermFragment.setTermButtonClickListener { term ->
-            binding.btnTerm.text = term
-        }
+        binding.btnScore.text = "별점"
 
+        filterTermFragment.setTermButtonClickListener {
+            binding.btnTerm.text = it
+        }
         filterStarFragment.setCallbackButtonClickListener {
             binding.btnScore.text = "선택되었다"
             Log.d("보내진걸까...?", "받았니?흑")
+        }
+        filterMediaFragment.setMediaButtonClickListener { media: String ->
+            binding.btnMedia.text = media
+            Log.d("미디어", "미디어 버튼 콜백")
         }
     }
 
@@ -70,6 +76,7 @@ class MyRecordActivity : AppCompatActivity() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
+
     private fun getMediaFromMainActivity() {
         // 메인뷰 완성된거 풀받으면 실행하기
         if (intent.hasExtra("media")) {
