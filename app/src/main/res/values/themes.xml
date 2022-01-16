@@ -20,4 +20,18 @@
         <item name="android:textSize">16sp</item>
 
     </style>
+
+    <style name="Pretendard.Body.1_Medium_17.EditText" parent="Widget.AppCompat.EditText">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:lineSpacingExtra">8dp</item>
+        <item name="colorControlActivated">@color/black200</item>
+        <item name="colorControlNormal">@color/gray300</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:paddingEnd">34dp</item>
+        <item name="android:textColor">@color/black200</item>
+        <item name="android:textColorHint">@color/gray200</item>
+    </style>
 </resources>

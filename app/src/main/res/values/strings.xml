@@ -116,5 +116,14 @@
     <string name="term_refresh">기간 초기화</string>
     <string name="media_refresh">미디어 초기화</string>
     <string name="start_score_refresh">별점 초기화</string>
+    <string name="login_start_email_login">이메일 로그인</string>
+    <string name="login_signup_text">가입하기</string>
+    <string name="email_sign_title">이메일 로그인</string>
+    <string name="email_signin_button">로그인</string>
+    <string name="email_signin_forget_password">비밀번호를 잊어버리셨나요?</string>
+    <string name="email_signin_hint_email_input">이메일</string>
+    <string name="login_apple_button">Apple로 로그인</string>
+    <string name="login_kakao_button">카카오로그인</string>
+    <string name="email_signin_password_input">비밀번호</string>
 
 </resources>
