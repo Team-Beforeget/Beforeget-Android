@@ -56,7 +56,6 @@ class ReportActivity : AppCompatActivity() {
 
     private fun initShareSheet() {
         val image: Bitmap = getBitmapFromView(binding.clReportArea)
-        // binding.imgResultImage.setImageBitmap(image)
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "image/*"
         intent.putExtra(Intent.EXTRA_STREAM, getImageUri(this, image))
@@ -68,7 +67,7 @@ class ReportActivity : AppCompatActivity() {
         val bytes = ByteArrayOutputStream()
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
         val path = MediaStore.Images.Media.insertImage(
-            context.getContentResolver(),
+            context.contentResolver,
             inImage,
             "Title",
             null
