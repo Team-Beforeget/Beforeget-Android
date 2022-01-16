@@ -84,6 +84,7 @@ class FilterTermFragment : Fragment() {
             }
         }
     }
+
     private fun activateBtnApplyFilterTerm() {
         binding.btnApplyTermFilter.isEnabled = checkDateData()
     }
@@ -128,7 +129,6 @@ class FilterTermFragment : Fragment() {
     }
 
     private fun focusedDatePicker() {
-
         binding.dpDatepikerEndFilter.init(
             LocalDate.now().year,
             LocalDate.now().monthValue,
@@ -147,13 +147,21 @@ class FilterTermFragment : Fragment() {
             activateBtnApplyFilterTerm()
         }
         binding.dpDatepikerEndFilter.setOnDateChangedListener { _, year, month, day ->
+            binding.tvSelectEndDateFilter.text =
+                year.toString() + "년" + " " + "${month + 1}" + "월" + " " + day.toString() + "일"
             if (binding.btnMonth.isSelected) {
-                var monthChangeOne = binding.dpDatepikerEndFilter.month
-                binding.tvSelectStartDateFilter.text =
-                    year.toString() + "년" + " " + monthChangeOne.toString() + "월" + " " + day.toString() + "일"
+                if (month == 0) {
+                    binding.tvSelectStartDateFilter.text =
+                        "${year - 1}" + "년" + " " + "12" + "월" + " " + day.toString() + "일"
+                } else {
+                    binding.tvSelectStartDateFilter.text =
+                        year.toString() + "년" + " " + month.toString() + "월" + " " + day.toString() + "일"
+                }
             }
 
             if (binding.btnThreeMonth.isSelected) {
+                binding.tvSelectEndDateFilter.text =
+                    year.toString() + "년" + " " + "${month + 1}" + "월" + " " + day.toString() + "일"
                 var monthChangeThree = binding.dpDatepikerEndFilter.month - 2
                 binding.tvSelectStartDateFilter.text =
                     year.toString() + "년" + " " + monthChangeThree.toString() + "월" + " " + day.toString() + "일"
@@ -161,17 +169,21 @@ class FilterTermFragment : Fragment() {
             if (binding.btnTwoWeek.isSelected) {
                 // var dayChange = day - 14
                 // val dayChange2 = if (dayChange < 14) dayChange + 31 : dayChange
-                if (day < 14) {
-                    binding.tvSelectStartDateFilter.text =
-                        year.toString() + "년" + " " + month.toString() + "월" + " " + "${day - 14 + 31}".toString() + "일"
+                binding.tvSelectEndDateFilter.text =
+                    year.toString() + "년" + " " + "${month + 1}" + "월" + " " + day.toString() + "일"
+                if (day <= 14) {
+                    if (month == 0) {
+                        binding.tvSelectStartDateFilter.text =
+                            year.toString() + "년" + " " + "12" + "월" + " " + "${day - 14 + 31}".toString() + "일"
+                    } else {
+                        binding.tvSelectStartDateFilter.text =
+                            year.toString() + "년" + " " + month.toString() + "월" + " " + "${day - 14 + 31}".toString() + "일"
+                    }
                 } else {
                     binding.tvSelectStartDateFilter.text =
-                        year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + "${day - 14}".toString() + "일"
+                        year.toString() + "년" + " " + "${month + 1}" + "월" + " " + "${day - 14}".toString() + "일"
                 }
             }
-
-            binding.tvSelectEndDateFilter.text =
-                year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
             checkDateData()
             activateBtnApplyFilterTerm()
         }
