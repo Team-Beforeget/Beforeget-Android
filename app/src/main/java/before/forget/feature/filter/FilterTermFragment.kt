@@ -37,6 +37,7 @@ class FilterTermFragment : Fragment() {
         binding.tvSelectEndDateFilter.setOnClickListener {
             showEndDatePicker()
         }
+        activateBtnApplyFilterTerm()
         focusedDatePicker()
         refreshTermFilter()
         clickBtnTermEvent()
@@ -96,8 +97,8 @@ class FilterTermFragment : Fragment() {
         // 무슨 버튼을 클릭한거랑 상관없이
         // 시작, 끝날짜가 둘 다 선택이 되어야 활성화됨
         // 시작, 끝날짜 text로 받고, date 상태면 활성화 되게끔 로직을 바꾸자
-        checkBtnTermSelected()
-        checkEnableApplyFilterTermBtn()
+        // checkEnableApplyFilterTermBtn()
+        binding.btnApplyTermFilter.isEnabled = checkDateData()
     }
 
     private fun refreshTermFilter() {
@@ -147,15 +148,21 @@ class FilterTermFragment : Fragment() {
         ) { _, year, month, day ->
             binding.tvSelectEndDateFilter.text =
                 year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
+            checkDateData()
+            activateBtnApplyFilterTerm()
         }
 
         binding.dpDatepikerStartFilter.setOnDateChangedListener { _, year, month, day ->
             binding.tvSelectStartDateFilter.text =
                 year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
+            checkDateData()
+            activateBtnApplyFilterTerm()
         }
         binding.dpDatepikerEndFilter.setOnDateChangedListener { _, year, month, day ->
             binding.tvSelectEndDateFilter.text =
                 year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
+            checkDateData()
+            activateBtnApplyFilterTerm()
         }
     }
 
@@ -166,4 +173,7 @@ class FilterTermFragment : Fragment() {
     fun setTermButtonClickListener(listener: (String) -> Unit) {
         this.termButtonClickListener = listener
     }
+
+    private fun checkDateData() =
+        binding.tvSelectEndDateFilter.text != "날짜를 선택해주세요." && binding.tvSelectStartDateFilter.text != "날짜를 선택해주세요."
 }
