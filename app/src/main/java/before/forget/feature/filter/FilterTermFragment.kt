@@ -134,54 +134,43 @@ class FilterTermFragment : Fragment() {
             LocalDate.now().monthValue,
             LocalDate.now().dayOfMonth
         ) { _, year, month, day ->
-            binding.tvSelectEndDateFilter.text =
-                year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
+            setEndDate(year.toString(), "${month + 1}", day.toString())
             checkDateData()
             activateBtnApplyFilterTerm()
         }
         binding.dpDatepikerStartFilter.setOnDateChangedListener { _, year, month, day ->
 
-            binding.tvSelectStartDateFilter.text =
-                year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
+            setStartDate(year.toString(), "${month + 1}", day.toString())
             checkDateData()
             activateBtnApplyFilterTerm()
         }
         binding.dpDatepikerEndFilter.setOnDateChangedListener { _, year, month, day ->
-            binding.tvSelectEndDateFilter.text =
-                year.toString() + "년" + " " + "${month + 1}" + "월" + " " + day.toString() + "일"
+            setEndDate(year.toString(), "${month + 1}", day.toString())
+
             if (binding.btnMonth.isSelected) {
                 if (month == 0) {
-                    binding.tvSelectStartDateFilter.text =
-                        "${year - 1}" + "년" + " " + "12" + "월" + " " + day.toString() + "일"
+                    setStartDate("${year - 1}", "12", day.toString())
                 } else {
-                    binding.tvSelectStartDateFilter.text =
-                        year.toString() + "년" + " " + month.toString() + "월" + " " + day.toString() + "일"
+                    setStartDate(year.toString(), month.toString(), day.toString())
                 }
             }
 
             if (binding.btnThreeMonth.isSelected) {
-                binding.tvSelectEndDateFilter.text =
-                    year.toString() + "년" + " " + "${month + 1}" + "월" + " " + day.toString() + "일"
-                var monthChangeThree = binding.dpDatepikerEndFilter.month - 2
-                binding.tvSelectStartDateFilter.text =
-                    year.toString() + "년" + " " + monthChangeThree.toString() + "월" + " " + day.toString() + "일"
+                if (month <= 3) {
+                    setStartDate("${year - 1}", "${month - 2 + 12}", day.toString())
+                } else {
+                    setStartDate(year.toString(), "${month - 2}", day.toString())
+                }
             }
             if (binding.btnTwoWeek.isSelected) {
-                // var dayChange = day - 14
-                // val dayChange2 = if (dayChange < 14) dayChange + 31 : dayChange
-                binding.tvSelectEndDateFilter.text =
-                    year.toString() + "년" + " " + "${month + 1}" + "월" + " " + day.toString() + "일"
                 if (day <= 14) {
                     if (month == 0) {
-                        binding.tvSelectStartDateFilter.text =
-                            year.toString() + "년" + " " + "12" + "월" + " " + "${day - 14 + 31}".toString() + "일"
+                        setStartDate("${year - 1}", "12", "${day - 14 + 31}")
                     } else {
-                        binding.tvSelectStartDateFilter.text =
-                            year.toString() + "년" + " " + month.toString() + "월" + " " + "${day - 14 + 31}".toString() + "일"
+                        setStartDate(year.toString(), month.toString(), "${day - 14 + 31}")
                     }
                 } else {
-                    binding.tvSelectStartDateFilter.text =
-                        year.toString() + "년" + " " + "${month + 1}" + "월" + " " + "${day - 14}".toString() + "일"
+                    setStartDate(year.toString(), "${month + 1}", "${day - 14}")
                 }
             }
             checkDateData()
@@ -199,4 +188,13 @@ class FilterTermFragment : Fragment() {
 
     private fun checkDateData() =
         binding.tvSelectEndDateFilter.text != "날짜를 선택해주세요." && binding.tvSelectStartDateFilter.text != "날짜를 선택해주세요."
+
+    private fun setStartDate(year: String, month: String, day: String) {
+        binding.tvSelectStartDateFilter.text =
+            year + "년" + " " + month + "월" + " " + day + "일"
+    }
+    private fun setEndDate(year: String, month: String, day: String) {
+        binding.tvSelectEndDateFilter.text =
+            year + "년" + " " + month + "월" + " " + day + "일"
+    }
 }
