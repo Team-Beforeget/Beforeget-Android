@@ -84,20 +84,7 @@ class FilterTermFragment : Fragment() {
             }
         }
     }
-
-    private fun checkEnableApplyFilterTermBtn() {
-        binding.btnApplyTermFilter.isEnabled = checkBtnTermSelected()
-    }
-
-    private fun checkBtnTermSelected() =
-        binding.btnMonth.isSelected || binding.btnThreeMonth.isSelected || binding.btnTwoWeek.isSelected
-
     private fun activateBtnApplyFilterTerm() {
-        // 아 여기 완전 바꿔야할듯
-        // 무슨 버튼을 클릭한거랑 상관없이
-        // 시작, 끝날짜가 둘 다 선택이 되어야 활성화됨
-        // 시작, 끝날짜 text로 받고, date 상태면 활성화 되게끔 로직을 바꾸자
-        // checkEnableApplyFilterTermBtn()
         binding.btnApplyTermFilter.isEnabled = checkDateData()
     }
 
@@ -112,6 +99,7 @@ class FilterTermFragment : Fragment() {
                 dpDatepikerStartFilter.visibility = View.GONE
                 dpDatepikerEndFilter.visibility = View.GONE
                 tvSelectStartDateFilter.text = "날짜를 선택해주세요."
+                tvSelectEndDateFilter.text = "날짜를 선택해주세요."
                 btnApplyTermFilter.isEnabled = false
             }
         }
@@ -151,14 +139,37 @@ class FilterTermFragment : Fragment() {
             checkDateData()
             activateBtnApplyFilterTerm()
         }
-
         binding.dpDatepikerStartFilter.setOnDateChangedListener { _, year, month, day ->
+
             binding.tvSelectStartDateFilter.text =
                 year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
             checkDateData()
             activateBtnApplyFilterTerm()
         }
         binding.dpDatepikerEndFilter.setOnDateChangedListener { _, year, month, day ->
+            if (binding.btnMonth.isSelected) {
+                var monthChangeOne = binding.dpDatepikerEndFilter.month
+                binding.tvSelectStartDateFilter.text =
+                    year.toString() + "년" + " " + monthChangeOne.toString() + "월" + " " + day.toString() + "일"
+            }
+
+            if (binding.btnThreeMonth.isSelected) {
+                var monthChangeThree = binding.dpDatepikerEndFilter.month - 2
+                binding.tvSelectStartDateFilter.text =
+                    year.toString() + "년" + " " + monthChangeThree.toString() + "월" + " " + day.toString() + "일"
+            }
+            if (binding.btnTwoWeek.isSelected) {
+                // var dayChange = day - 14
+                // val dayChange2 = if (dayChange < 14) dayChange + 31 : dayChange
+                if (day < 14) {
+                    binding.tvSelectStartDateFilter.text =
+                        year.toString() + "년" + " " + month.toString() + "월" + " " + "${day - 14 + 31}".toString() + "일"
+                } else {
+                    binding.tvSelectStartDateFilter.text =
+                        year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + "${day - 14}".toString() + "일"
+                }
+            }
+
             binding.tvSelectEndDateFilter.text =
                 year.toString() + "년" + " " + "${month + 1}".toString() + "월" + " " + day.toString() + "일"
             checkDateData()
