@@ -183,4 +183,10 @@ I\'m so polarized</string>
     <string name="monday">월요일</string>
     <string name="platform">플랫폼</string>
     <string name="input_user">사용자 입력 텍스트</string>
+
+    <!--나의기록 상세뷰 youtube-->
+    <string name="category">카테고리</string>
+    <string name="timestamp">타임스탬프</string>
+    <string name="channel">채널</string>
+    <string name="timestamp_contetn">13:45</string>
 </resources>

@@ -152,7 +152,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="@color/black200"
+            android:background="@drawable/ic_black_box_detail"
             android:drawableLeft="@drawable/ic_ost_detail_movie"
             android:drawablePadding="10dp"
             android:fontFamily="@font/pretendard_regular"
