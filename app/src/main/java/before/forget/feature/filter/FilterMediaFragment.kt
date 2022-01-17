@@ -12,7 +12,7 @@ import before.forget.databinding.FragmentFilterMediaBinding
 
 class FilterMediaFragment : Fragment() {
     private var mediaButtonClickListener: ((String) -> Unit)? = null
-    private var callbackButtonClickListener: ((Int) -> Unit)? = null
+    private var callbackButtonClickListener: ((Int, Int) -> Unit)? = null
     private var mediaList = mutableListOf<Boolean>(false, false, false, false, false, false)
     private lateinit var binding: FragmentFilterMediaBinding
     override fun onCreateView(
@@ -69,9 +69,17 @@ class FilterMediaFragment : Fragment() {
                         break
                     }
                 }
+
+                var trueCounting: Int = 0
+
+                for (j in 0 until mediaList.size) {
+                    if (mediaList[j]) {
+                        trueCounting += 1
+                    }
+                }
                 Log.d("selectNumber", "$selectNumber")
 
-                callbackButtonClickListener?.invoke(selectNumber)
+                callbackButtonClickListener?.invoke(selectNumber, trueCounting)
             }
         }
     }
@@ -102,9 +110,10 @@ class FilterMediaFragment : Fragment() {
         }
     }
 
-    fun setCallbackButtonClickListener(listener: (Int) -> Unit) {
+    fun setCallbackButtonClickListener(listener: (selectNumber: Int, trueCounting: Int) -> Unit) {
         this.callbackButtonClickListener = listener
     }
+
     fun setMediaButtonClickListener(listener: (String) -> Unit) {
         this.mediaButtonClickListener = listener
     }

@@ -6,8 +6,6 @@
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 x
 Happ/src/main/java/before/forget/feature/filter/FilterViewPagerAdapter.kt,e/f/ef4ce5cfa80f654f8d6e30419cfeb56984990528
-{
-Kapp/src/main/java/before/forget/feature/filter/FilterBottomSheetFragment.kt,2/b/2bedb6b270f7a5ec1f8d79f02ce4421cbf4baf44
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 <

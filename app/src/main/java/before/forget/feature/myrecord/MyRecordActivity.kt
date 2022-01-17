@@ -66,10 +66,17 @@ class MyRecordActivity : AppCompatActivity() {
 
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
-        filterBottomSheetFragment.setMediaCallback {
+        filterBottomSheetFragment.setMediaCallback { selectNumber, trueCounting ->
             var mediaList =
                 mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
-            binding.btnMedia.text = mediaList[it]
+            val selectedMedia = mediaList[selectNumber]
+
+            if (trueCounting >= 2) {
+                binding.btnMedia.text = selectedMedia + " " + "외" + " " + "${trueCounting - 1}"
+            } else {
+                binding.btnMedia.text = selectedMedia
+            }
+
             binding.btnMedia.isActivated = true
         }
         filterBottomSheetFragment.setStarScoreCallback {
