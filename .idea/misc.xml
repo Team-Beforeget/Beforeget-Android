@@ -49,6 +49,7 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_little_star_inactive_gray.xml" value="0.228125" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_rectangle_fill_white_border_black.xml" value="0.234375" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_rectangle_fill_white_border_gray.xml" value="0.234375" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_rectrangle_date_detail.xml" value="0.21574074074074073" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_selector_btn_filter.xml" value="0.1859375" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_selector_littlestar.xml" value="0.228125" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/ic_tab_indicator.xml" value="0.26614583333333336" />
@@ -57,16 +58,21 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/rectangle_fill_gray300_filter.xml" value="0.1962962962962963" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/rectangle_fill_green.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/selector_btn_apply_filter.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/selector_btn_filter.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/selector_filter_active_record.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/tab_selector_report.xml" value="0.228125" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/ppneuemachina.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/pretendard.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_media_select.xml" value="0.16979166666666667" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_my_record_detail.xml" value="0.6" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.176" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_book.xml" value="0.1" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_movie.xml" value="0.7138157894736842" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.6" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_media.xml" value="0.7401315789473685" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_star.xml" value="0.176" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.672645739910314" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.5221374045801527" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_content_list.xml" value="0.16979166666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.23020833333333332" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.4041666666666667" />
@@ -115,7 +121,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
