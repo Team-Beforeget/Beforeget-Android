@@ -49,6 +49,20 @@
     <string name="graph_title">개의 기록을 남겼어요</string>
     <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
         10월로, 30개의 기록을 남겼어요!\n다음 달, 나의 그래프는 어떤 모양일까요?</string>
+    
+    <string name="sentence">유형별 한 줄 리뷰 순위</string>
+    <string name="sentence_description">유형 카드를 탭하여 확인해보세요</string>
+    <string name="sentence_type1">Movie</string>
+    <string name="sentence_type2">Book</string>
+    <string name="sentence_type3">TV</string>
+    <string name="sentence_type4">Music</string>
+    <string name="sentence_type5">Webtoon</string>
+    <string name="sentence_type6">Youtube</string>
+    <string name="sentence1">너무 웃겨요</string>
+    <string name="sentence2">눈물 좔좔 호수수</string>
+    <string name="sentence3">시간순삭</string>
+    <string name="sentence_empty">해당 유형을\n기록해보세요</string>
+
 
     <!--메인뷰-->
     <string name="main_name">세훈</string>
