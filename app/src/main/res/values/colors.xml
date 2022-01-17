@@ -19,5 +19,7 @@
     <color name="gray200">#AFAFAF</color>
     <color name="gray300">#CFCFCF</color>
     <color name="gray400">#F3F3F3</color>
+    <color name="yellow100">#FEE500</color>
+
 
 </resources>
