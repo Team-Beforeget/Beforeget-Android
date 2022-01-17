@@ -1,33 +1,25 @@
 package before.forget.feature.myrecord
+
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.local.MyRecordData
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
-import before.forget.feature.filter.FilterMediaFragment
-import before.forget.feature.filter.FilterStarFragment
-import before.forget.feature.filter.FilterTermFragment
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
-    private val filterTermFragment = FilterTermFragment()
-    private val filterStarFragment = FilterStarFragment()
-    private val filterMediaFragment = FilterMediaFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnMedia.text = "미디어"
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
+        initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        filterTermFragment.setTermButtonClickListener { term ->
-            binding.btnTerm.text = term
-        }
-
-        filterStarFragment.setCallbackButtonClickListener {
-            binding.btnScore.text = "선택되었다"
-            Log.d("보내진걸까...?", "받았니?흑")
-        }
+        getMediaFromMainActivity()
     }
 
     private fun initClickFilterButtonEvent() {
@@ -68,13 +60,30 @@ class MyRecordActivity : AppCompatActivity() {
 
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
+        filterBottomSheetFragment.setMediaCallback {
+            var mediaList = mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
+            binding.btnMedia.text = mediaList[it]
+            binding.btnMedia.isActivated = true
+        }
+        filterBottomSheetFragment.setStarScoreCallback {
+            binding.btnScore.isActivated = true
+        }
+        filterBottomSheetFragment.setTermCallback {
+            binding.btnTerm.text = it
+            binding.btnTerm.isActivated = true
+        }
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
+
     private fun getMediaFromMainActivity() {
-        // 메인뷰 완성된거 풀받으면 실행하기
         if (intent.hasExtra("media")) {
             val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
         }
+    }
+    private fun initButtonFilter() {
+        binding.btnMedia.isActivated = false
+        binding.btnScore.isActivated = false
+        binding.btnTerm.isActivated = false
     }
 }
