@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beforeget">
         <activity
+            android:name=".feature.login.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".feature.login.email.EmailLoginActivity"
+            android:exported="true" />
+        <activity
             android:name=".feature.write.WriteActivity"
             android:exported="true" />
         <activity
