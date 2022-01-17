@@ -208,4 +208,8 @@ I\'m so polarized</string>
     <string name="timestamp">타임스탬프</string>
     <string name="channel">채널</string>
     <string name="timestamp_contetn">13:45</string>
+
+    <!--Dialog Button Text-->
+    <string name="okText">확인</string>
+    <string name="cancelText">취소</string>
 </resources>

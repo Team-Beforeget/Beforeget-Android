@@ -12,8 +12,6 @@ Happ/src/main/java/before/forget/feature/filter/FilterViewPagerAdapter.kt,e/f/e
 Kapp/src/main/java/before/forget/feature/filter/FilterBottomSheetFragment.kt,2/b/2bedb6b270f7a5ec1f8d79f02ce4421cbf4baf44
 t
 Dapp/src/main/java/before/forget/feature/filter/FilterTermFragment.kt,f/2/f27ed3d2ba875c06dd4bca99ba495dbe7617244d
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 x
