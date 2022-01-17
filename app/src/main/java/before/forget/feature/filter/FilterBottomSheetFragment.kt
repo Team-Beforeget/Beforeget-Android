@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import before.forget.R
 import before.forget.databinding.FragmentFilterBottomSheetBinding
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -77,11 +75,5 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         TabLayoutMediator(binding.tlMenu, binding.vpMenu) { tab, position ->
             tab.text = menuNameList[position]
         }.attach()
-    }
-
-    private fun test() {
-        val bottomSheetDialog = BottomSheetDialog(requireContext())
-        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 }

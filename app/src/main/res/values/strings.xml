@@ -120,4 +120,84 @@
     <string name="login_kakao_button">카카오로그인</string>
     <string name="email_signin_password_input">비밀번호</string>
 
+
+    <!--나의기록 상세뷰, 고정뷰-->
+    <string name="one_review">한 줄 리뷰</string>
+    <string name="review_1">흥미진진한 줄거리</string>
+    <string name="review_2">연기가 일품이에요!</string>
+    <string name="review_3">인생영화</string>
+    <string name="review_4">아름다운 영상미</string>
+    <string name="review_5">마음이 따듯해져요</string>
+    <string name="review_6">최고의 반전!</string>
+    <string name="comment_title">코멘트</string>
+    <string name="comment">꽤나 폭력적인 장면을 폭죽이 터진다거나, 슬로우\n모션 등으로 표현하여 폭력성을 영상미로 승화시\n킨 점이 인상깊다. 또한 영화 전반적으로 풍기는\n앤틱한 분위기가 내 취향을 저격해서 눈이 즐거웠\n던 영화다.</string>
+    <string name="kingsman">킹스맨</string>
+    <string name="date_detail">2022. 01. 10. MON</string>
+
+    <!--나의기록 상세뷰- 영화뷰-->
+    <string name="poster">포스터</string>
+    <string name="famous_line_title">명대사</string>
+    <string name="famous_line">Manners maketh man.</string>
+    <string name="genre_tilte">장르</string>
+    <string name="genre">액션, SF, 범죄, 스릴러, 코미디, 모험</string>
+    <string name="story_tilt">줄거리</string>
+    <string name="story">세상에서 가장 위험한 면접이 시작된다! 높은 IQ, 주\n니어 체조대회 2년 연속 우승! 그러나 학교 중퇴, 해\n병대 중도 하차.동네 패싸움에 직장은 가져본 적도\n없이 별볼일 없는 루저로 낙인 찍혔던 ‘그’가 ‘젠틀맨\n스파이’로 전격 스카우트 됐다!</string>
+    <string name="ost_tilte">OST</string>
+    <string name="ost">OST 이름</string>
+    <string name="director">감독</string>
+    <string name="director_name">매슈 본</string>
+    <string name="actor">배우</string>
+    <string name="actor_name">콜린 퍼스, 태런 에저튼, 마크\n스트롱, 마이클 케인, 사무엘 L. 잭슨</string>
+
+    <!--나의기록 상세뷰- book뷰-->
+    <string name="writer">작가</string>
+    <string name="writer_name">김송현이 작가예여</string>
+    <string name="publisher">출판사</string>
+    <string name="publisher_name">한샘 출판사</string>
+    <string name="cover">표지</string>
+    <string name="impressive_verse">인상깊은 구절</string>
+    <string name="impressive_verse_content">사실 이것은 다 빈치가 살짝 장난을 친 것입\n니다. 왼쪽에 있는 시골 풍경을 낮게 그려서,\n오른쪽보다 왼쪽의 모나리자가 더 커보이게\n한 겁니다.</string>
+
+    <!--나의기록 상세뷰 tv뷰-->
+    <string name="famous_scene">명장면</string>
+    <string name="ott">방송사\nOTT</string>
+    <string name="ost_content_tv">Polarised - Cosmo’s Midnight</string>
+
+    <!--나의기록 상세뷰 music뷰-->
+    <string name="album">앨범</string>
+    <string name="album_cover">앨범 커버</string>
+    <string name="lyrics">가사</string>
+    <string name="lyrics_content">I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n \'Cause you\'re on my mind\nI\'m feeling like, I\'m feeling like this time I wish\nI could be first\n
+\'Cause you\'re on my mind\nI\'m paralyzed\n
+I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n
+I\'m paralyzed\n
+I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n
+\'Cause you\'re on my mind\n
+And though you\'re right\n
+I\'m paralyzed\n
+I\'m so polarized\n
+I could be anywhere in the world\n
+You\'ll be floating in my head\n
+Like a rendezvous, very late in the night\n
+Bet you and I could really meet\n
+I just wanna cruise with you\n
+I just wanna travel with you\n
+I\'m so polarized\n
+I\'m so polarized</string>
+    <string name="link">링크</string>
+    <string name="singer">가수</string>
+    <string name="blockb">블락비</string>
+    <string name="link_contetn">https://www.youtube.com/watch?v=qZFo0PYkHFo</string>
+
+    <!--나의기록 상세 뷰 webtoon-->
+    <string name="day_week">요일</string>
+    <string name="monday">월요일</string>
+    <string name="platform">플랫폼</string>
+    <string name="input_user">사용자 입력 텍스트</string>
+
+    <!--나의기록 상세뷰 youtube-->
+    <string name="category">카테고리</string>
+    <string name="timestamp">타임스탬프</string>
+    <string name="channel">채널</string>
+    <string name="timestamp_contetn">13:45</string>
 </resources>
