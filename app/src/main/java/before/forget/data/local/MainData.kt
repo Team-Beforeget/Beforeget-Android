@@ -1,5 +1,4 @@
-package before.forget.data
-
+package before.forget.data.local
 
 data class MainData(
     val icon: Int,
