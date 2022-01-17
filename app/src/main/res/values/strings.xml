@@ -177,4 +177,10 @@ I\'m so polarized</string>
     <string name="singer">가수</string>
     <string name="blockb">블락비</string>
     <string name="link_contetn">https://www.youtube.com/watch?v=qZFo0PYkHFo</string>
+
+    <!--나의기록 상세 뷰 webtoon-->
+    <string name="day_week">요일</string>
+    <string name="monday">월요일</string>
+    <string name="platform">플랫폼</string>
+    <string name="input_user">사용자 입력 텍스트</string>
 </resources>
