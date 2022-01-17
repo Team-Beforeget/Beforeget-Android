@@ -11,7 +11,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="20dp">
+        android:paddingStart="20dp"
+        android:paddingBottom="48dp"
+        >
 
         <TextView
             android:id="@+id/tv_poster"
@@ -272,12 +274,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
-            android:layout_marginEnd="20dp"
             android:fontFamily="@font/pretendard_regular"
             android:text="@string/actor_name"
             android:textColor="@color/black200"
             android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_actor_detail_movie"
             app:layout_constraintTop_toTopOf="@id/tv_actor_detail_movie" />
 

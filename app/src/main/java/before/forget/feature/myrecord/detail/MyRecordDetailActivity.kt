@@ -3,11 +3,18 @@ package before.forget.feature.myrecord.detail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
+import before.forget.databinding.ActivityMyRecordDetailBinding
 
 class MyRecordDetailActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMyRecordDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_record_detail)
+        binding = ActivityMyRecordDetailBinding.inflate(layoutInflater)
+
+        binding.btnBackDetail.setOnClickListener {
+            finish()
+        }
+        setContentView(binding.root)
         changeFragment()
     }
 

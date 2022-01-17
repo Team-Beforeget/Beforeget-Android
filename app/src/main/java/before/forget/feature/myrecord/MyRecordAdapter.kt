@@ -32,6 +32,7 @@ class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>
         fun onBind(data: MyRecordData) {
             binding.myrecord = data
             itemView.setOnClickListener {
+                // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
                 val media = 6
                 val recordToDetailIntent =
                     Intent(itemView.context, MyRecordDetailActivity::class.java)
