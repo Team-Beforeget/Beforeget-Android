@@ -63,11 +63,13 @@
         <ImageView
             android:id="@+id/iv_scene_detail_webtoon"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="40dp"
-            android:background="@mipmap/ic_kinsman_poster_detail"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_kinsmane_big"
+            app:layout_constraintDimensionRatio="1:2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line_left_detail_webtoon" />
