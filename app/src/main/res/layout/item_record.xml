@@ -81,6 +81,7 @@
                 android:layout_marginStart="8dp"
                 android:textColor="@color/white"
                 android:textSize="13sp"
+                android:text="@{Integer.toString(myrecord.star)}"
                 android:fontFamily="@font/ppneuemachina_regular"
                 app:layout_constraintEnd_toEndOf="@id/tv_date"
                 app:layout_constraintTop_toTopOf="@id/iv_star"
