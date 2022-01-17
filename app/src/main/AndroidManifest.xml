@@ -13,6 +13,9 @@
             android:name=".feature.write.WritaAddItemActivity"
             android:exported="false" />
         <activity
+            android:name=".feature.myrecord.detail.MyRecordDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature.write.WriteActivity"
             android:exported="true" />
         <activity

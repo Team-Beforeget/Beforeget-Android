@@ -1,6 +1,7 @@
 package before.forget.feature.filter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,9 @@ import before.forget.R
 import before.forget.databinding.FragmentFilterMediaBinding
 
 class FilterMediaFragment : Fragment() {
-    private var callbackButtonClickListener: (() -> Unit)? = null
+    private var mediaButtonClickListener: ((String) -> Unit)? = null
+    private var callbackButtonClickListener: ((Int) -> Unit)? = null
+    private var mediaList = mutableListOf<Boolean>(false, false, false, false, false, false)
     private lateinit var binding: FragmentFilterMediaBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,7 +56,22 @@ class FilterMediaFragment : Fragment() {
                 activateApplyBtn()
             }
             btnApplyMediaFilter.setOnClickListener {
-                callbackButtonClickListener?.invoke()
+                if (btnMovie.isSelected) mediaList[0] = true
+                if (btnBook.isSelected) mediaList[1] = true
+                if (btnMusic.isSelected) mediaList[2] = true
+                if (btnYoutube.isSelected) mediaList[3] = true
+                if (btnWebtoon.isSelected) mediaList[4] = true
+                if (btnTv.isSelected) mediaList[5] = true
+                var selectNumber: Int = 6
+                for (i in 0 until mediaList.size) {
+                    if (mediaList[i]) {
+                        selectNumber = i
+                        break
+                    }
+                }
+                Log.d("selectNumber", "$selectNumber")
+
+                callbackButtonClickListener?.invoke(selectNumber)
             }
         }
     }
@@ -70,13 +88,6 @@ class FilterMediaFragment : Fragment() {
         checkEnableApplyBtn()
     }
 
-    fun test() {
-        binding.btnApplyMediaFilter.setOnClickListener {
-            val filterBottomSheetFragment = FilterBottomSheetFragment()
-            filterBottomSheetFragment.dismiss()
-        }
-    }
-
     private fun refreshMediaFilter() {
         binding.btnRefreshMediaFilter.setOnClickListener {
             binding.apply {
@@ -91,7 +102,10 @@ class FilterMediaFragment : Fragment() {
         }
     }
 
-    fun setCallbackButtonClickListener(listener: () -> Unit) {
+    fun setCallbackButtonClickListener(listener: (Int) -> Unit) {
         this.callbackButtonClickListener = listener
+    }
+    fun setMediaButtonClickListener(listener: (String) -> Unit) {
+        this.mediaButtonClickListener = listener
     }
 }
