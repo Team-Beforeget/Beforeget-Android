@@ -146,4 +146,9 @@
     <string name="cover">표지</string>
     <string name="impressive_verse">인상깊은 구절</string>
     <string name="impressive_verse_content">사실 이것은 다 빈치가 살짝 장난을 친 것입\n니다. 왼쪽에 있는 시골 풍경을 낮게 그려서,\n오른쪽보다 왼쪽의 모나리자가 더 커보이게\n한 겁니다.</string>
+
+    <!--나의기록 상세뷰 tv뷰-->
+    <string name="famous_scene">명장면</string>
+    <string name="ott">방송사\nOTT</string>
+    <string name="ost_content_tv">Polarised - Cosmo’s Midnight</string>
 </resources>
