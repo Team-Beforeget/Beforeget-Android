@@ -1,6 +1,7 @@
 package before.forget.feature.write
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
@@ -128,6 +129,14 @@ class WriteActivity : AppCompatActivity() {
                 ).show()
             }
             ivWriteBackbtn.setOnClickListener { finish() } // 엑티비티 종료
+            tvWriteAdditem.setOnClickListener {
+                startActivity(
+                    Intent(
+                        this@WriteActivity,
+                        WriteAddItemActivity::class.java
+                    )
+                )
+            }
         }
     }
 
