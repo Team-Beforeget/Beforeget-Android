@@ -11,6 +11,8 @@
     <string name="test_subtitle">흥미진진한 줄거리</string>
 
     <!-- 통계 -->
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
     <string name="report">Report</string>
     <string name="date">2021년 12월</string>
     <string name="month">12</string>
