@@ -1,10 +1,12 @@
 package before.forget.feature.myrecord
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.local.MyRecordData
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
+import before.forget.feature.write.MediaSelectActivity
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
@@ -13,6 +15,10 @@ class MyRecordActivity : AppCompatActivity() {
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnMedia.text = "미디어"
+
+        binding.btnPlus.setOnClickListener {
+            startActivity(Intent(this, MediaSelectActivity::class.java))
+        }
         binding.btnBack.setOnClickListener {
             finish()
         }
@@ -61,7 +67,8 @@ class MyRecordActivity : AppCompatActivity() {
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
         filterBottomSheetFragment.setMediaCallback {
-            var mediaList = mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
+            var mediaList =
+                mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
             binding.btnMedia.text = mediaList[it]
             binding.btnMedia.isActivated = true
         }
@@ -79,8 +86,10 @@ class MyRecordActivity : AppCompatActivity() {
         if (intent.hasExtra("media")) {
             val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
+            binding.btnMedia.isActivated = true
         }
     }
+
     private fun initButtonFilter() {
         binding.btnMedia.isActivated = false
         binding.btnScore.isActivated = false
