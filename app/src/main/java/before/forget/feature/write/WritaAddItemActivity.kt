@@ -1,12 +1,12 @@
-package before.forget.feature.myrecord.detail
+package before.forget.feature.write
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 
-class MyRecordDetailActivity : AppCompatActivity() {
+class WritaAddItemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_record_detail)
+        setContentView(R.layout.activity_writa_add_item)
     }
 }

@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.icu.util.Calendar
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -18,7 +19,6 @@ import before.forget.R
 import before.forget.databinding.ActivityReportBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 class ReportActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReportBinding
