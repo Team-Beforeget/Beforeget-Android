@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="20dp"
-        android:paddingBottom="48dp"
-        >
+        android:paddingBottom="48dp">
 
         <TextView
             android:id="@+id/tv_poster"
@@ -109,11 +108,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
+            android:layout_marginEnd="10dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/famous_line"
             android:textColor="@color/black200"
             android:textSize="16dp"
-            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toStartOf="@id/iv_quotes_right_detail_movie"
             app:layout_constraintStart_toEndOf="@id/iv_quotes_left_detail_movie"
             app:layout_constraintTop_toTopOf="@id/iv_quotes_left_detail_movie" />
@@ -174,6 +174,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/story"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -202,6 +203,7 @@
             android:drawableLeft="@drawable/ic_ost_detail_movie"
             android:drawablePadding="10dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="10dp"
             android:text="@string/ost"
@@ -239,6 +241,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/director_name"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -275,6 +278,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/actor_name"
             android:textColor="@color/black200"
             android:textSize="16dp"

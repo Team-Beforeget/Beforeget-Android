@@ -13,8 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="20dp"
-        android:paddingBottom="48dp"
-        >
+        android:paddingBottom="48dp">
 
         <TextView
             android:id="@+id/tv_famous_scene_detail_webtoon"
@@ -111,6 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/impressive_verse_content"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -146,6 +146,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/ic_gray400_box_detail"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="6dp"
             android:text="@string/genre"
@@ -183,6 +184,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -220,6 +222,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -256,6 +259,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"

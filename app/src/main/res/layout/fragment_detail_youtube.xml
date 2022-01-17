@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="20dp"
-        android:paddingBottom="48dp"
-        >
+        android:paddingBottom="48dp">
 
         <TextView
             android:id="@+id/tv_category_detail_youtube"
@@ -33,6 +32,7 @@
             android:layout_marginTop="15dp"
             android:background="@color/gray400"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="6dp"
             android:text="@string/genre"
@@ -123,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"
