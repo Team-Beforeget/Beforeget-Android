@@ -51,12 +51,12 @@
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toBottomOf="@id/tv_story_detail_tv" />
 
-       <androidx.appcompat.widget.AppCompatButton
+       <TextView
            android:id="@+id/tv_ost_name_detail_tv"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="15dp"
-           android:background="@color/black200"
+           android:background="@drawable/ic_black_box_detail"
            android:drawableLeft="@drawable/ic_ost_detail_movie"
            android:drawablePadding="10dp"
            android:fontFamily="@font/pretendard_regular"
@@ -68,12 +68,12 @@
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toBottomOf="@id/tv_ost_detail_tv" />
 
-       <androidx.appcompat.widget.AppCompatButton
+       <TextView
            android:id="@+id/tv_ost_name_detail_tv_2"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_marginTop="15dp"
-           android:background="@color/black200"
+           android:background="@drawable/ic_black_box_detail"
            android:drawableLeft="@drawable/ic_ost_detail_movie"
            android:drawablePadding="10dp"
            android:fontFamily="@font/pretendard_regular"
@@ -120,7 +120,6 @@
            android:text="@string/actor_name"
            app:layout_constraintStart_toEndOf="@id/tv_actor_detail_tv"
            app:layout_constraintTop_toTopOf="@id/tv_actor_detail_tv"
-           app:layout_constraintBottom_toBottomOf="@id/tv_actor_detail_tv"
            />
 
        <View
@@ -153,12 +152,11 @@
            android:layout_height="wrap_content"
            android:fontFamily="@font/pretendard_regular"
            android:textSize="16dp"
-           android:layout_marginStart="29dp"
+           android:layout_marginStart="12dp"
            android:textColor="@color/black200"
            android:text="@string/actor_name"
            app:layout_constraintStart_toEndOf="@id/tv_ott_detail_tv"
            app:layout_constraintTop_toTopOf="@id/tv_ott_detail_tv"
-           app:layout_constraintBottom_toBottomOf="@id/tv_ott_detail_tv"
            />
 
 

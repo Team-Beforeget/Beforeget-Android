@@ -152,17 +152,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_genre_detail_webtoon" />
 
+        <View
+            android:id="@+id/view_line3_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_genre_name_detail_webtoon" />
+
         <TextView
             android:id="@+id/tv_writer_detail_webtoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/writer"
             android:textColor="@color/black200"
             android:textSize="19dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_genre_name_detail_webtoon" />
+            app:layout_constraintTop_toBottomOf="@id/view_line3_detail_webtoon" />
 
         <TextView
             android:id="@+id/tv_writer_name_detail_webtoon"
@@ -241,7 +252,7 @@
             android:id="@+id/tv_platform_name_detail_webtoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="29dp"
+            android:layout_marginStart="12dp"
             android:fontFamily="@font/pretendard_regular"
             android:text="@string/input_user"
             android:textColor="@color/black200"

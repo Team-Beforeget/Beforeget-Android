@@ -111,6 +111,8 @@
             android:text="@string/famous_line"
             android:textColor="@color/black200"
             android:textSize="16dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@id/iv_quotes_right_detail_movie"
             app:layout_constraintStart_toEndOf="@id/iv_quotes_left_detail_movie"
             app:layout_constraintTop_toTopOf="@id/iv_quotes_left_detail_movie" />
 
@@ -189,7 +191,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_story_detail_movie" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/tv_ost_name_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -210,23 +212,22 @@
             android:id="@+id/view_line_detail_movie"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/gray300"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_ost_name_detail_movie"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ost_name_detail_movie" />
 
         <TextView
             android:id="@+id/tv_director_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/director"
             android:textColor="@color/black200"
             android:textSize="19dp"
-            android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line_detail_movie" />
 
@@ -234,37 +235,35 @@
             android:id="@+id/tv_director_name_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_regular"
-            android:textSize="16dp"
             android:layout_marginStart="29dp"
-            android:textColor="@color/black200"
+            android:fontFamily="@font/pretendard_regular"
             android:text="@string/director_name"
-            app:layout_constraintStart_toEndOf="@id/tv_director_detail_movie"
-            app:layout_constraintTop_toTopOf="@id/tv_director_detail_movie"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_director_detail_movie"
-            />
+            app:layout_constraintStart_toEndOf="@id/tv_director_detail_movie"
+            app:layout_constraintTop_toTopOf="@id/tv_director_detail_movie" />
 
         <View
             android:id="@+id/view_line2_detail_movie"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/gray300"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_director_detail_movie"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_director_detail_movie" />
 
         <TextView
             android:id="@+id/tv_actor_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/actor"
             android:textColor="@color/black200"
             android:textSize="19dp"
-            android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line2_detail_movie" />
 
@@ -272,15 +271,15 @@
             android:id="@+id/tv_actor_name_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_regular"
-            android:textSize="16dp"
             android:layout_marginStart="29dp"
-            android:textColor="@color/black200"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/pretendard_regular"
             android:text="@string/actor_name"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_actor_detail_movie"
-            app:layout_constraintTop_toTopOf="@id/tv_actor_detail_movie"
-            app:layout_constraintBottom_toBottomOf="@id/tv_actor_detail_movie"
-            />
+            app:layout_constraintTop_toTopOf="@id/tv_actor_detail_movie" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

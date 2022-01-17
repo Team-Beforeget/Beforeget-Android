@@ -8,7 +8,37 @@ class MyRecordDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_record_detail)
+        changeFragment()
     }
+
+    private fun changeFragment() {
+        // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
+        // supportFragmentManager.beginTransaction()
+        //   .add(R.id.fragment_container_detail, DetailBookFragment()).commit()
+        val transition = supportFragmentManager.beginTransaction()
+        when (getMediaFromRecordActivity()) {
+
+            1 -> {
+                transition.replace(R.id.fragment_container_detail, DetailMovieFragment()).commit()
+            }
+            2 -> {
+                transition.replace(R.id.fragment_container_detail, DetailBookFragment()).commit()
+            }
+            3 -> {
+                transition.replace(R.id.fragment_container_detail, DetailTvFragment()).commit()
+            }
+            4 -> {
+                transition.replace(R.id.fragment_container_detail, DetailMusicFragment()).commit()
+            }
+            5 -> {
+                transition.replace(R.id.fragment_container_detail, DetailWebtoonFragment()).commit()
+            }
+            else -> {
+                transition.replace(R.id.fragment_container_detail, DetailYoutubeFragment()).commit()
+            }
+        }
+    }
+
     private fun getMediaFromRecordActivity(): Int {
         var media = 0
         if (intent.hasExtra("media")) {
