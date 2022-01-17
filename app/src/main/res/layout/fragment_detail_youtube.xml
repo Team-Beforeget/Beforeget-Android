@@ -15,7 +15,6 @@
             android:id="@+id/tv_category_detail_youtube"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/category"
             android:textColor="@color/black200"
