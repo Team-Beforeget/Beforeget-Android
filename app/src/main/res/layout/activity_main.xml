@@ -70,7 +70,7 @@
                     android:lineHeight="16dp"
                     android:text="@string/main_name"
                     android:textColor="@color/black200"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -83,7 +83,7 @@
                     android:lineHeight="16dp"
                     android:text="@string/main_sublabel"
                     android:textColor="@color/black200"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_main_name"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -99,7 +99,7 @@
                 android:lineHeight="34dp"
                 android:text="@string/main_label"
                 android:textColor="@color/black200"
-                android:textSize="23sp"
+                android:textSize="23dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView4" />
@@ -121,7 +121,7 @@
                 android:paddingBottom="13dp"
                 android:text="@string/main_record"
                 android:textColor="@color/black200"
-                android:textSize="17sp"
+                android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,7 @@
             android:lineHeight="23dp"
             android:text="@string/main_reportlabel"
             android:textColor="@color/black200"
-            android:textSize="19sp"
+            android:textSize="19dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
 
@@ -162,7 +162,7 @@
             android:lineHeight="23dp"
             android:text="@string/main_countlabel"
             android:textColor="@color/gray200"
-            android:textSize="19sp"
+            android:textSize="19dp"
             app:layout_constraintStart_toEndOf="@+id/tv_main_reportlabel"
             app:layout_constraintTop_toTopOf="@+id/tv_main_reportlabel" />
 
@@ -196,7 +196,7 @@
             android:paddingBottom="6dp"
             android:text="@string/main_viewallbtn"
             android:textColor="@color/black200"
-            android:textSize="13sp"
+            android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
 

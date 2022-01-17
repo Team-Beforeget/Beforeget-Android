@@ -22,7 +22,7 @@ class WriteActivity : AppCompatActivity() {
 
         setContentView(binding.root)
 
-        val cal = Calendar.getInstance()
+        val cal = Calendar.getInstance() // 현재시각 기입 + 요일
         var day = ""
         var num = cal.get(Calendar.DAY_OF_WEEK)
         when (num) {
@@ -41,7 +41,12 @@ class WriteActivity : AppCompatActivity() {
         btnSetOnClickListener()
     }
 
-    private fun btnSetOnClickListener() {
+    private fun createBottomSheet() { // 바텀시트 프래그먼트 생성
+        val writeBottomSheetFragment = WriteBottomSheetFragment()
+        writeBottomSheetFragment.show(supportFragmentManager, writeBottomSheetFragment.tag)
+    }
+
+    private fun btnSetOnClickListener() { // 별점 구현
         with(binding) {
             ivWriteStar1.setOnClickListener {
                 ivWriteStar1.isSelected = true
@@ -78,7 +83,10 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar4.isSelected = true
                 ivWriteStar5.isSelected = true
             }
-            tvWriteDatepickerbtn.setOnClickListener {
+            tvWriteAddonelinebtn.setOnClickListener { // 바텀시트 생성
+                createBottomSheet()
+            }
+            tvWriteDatepickerbtn.setOnClickListener { // 데이트피커 + 요일
                 val cal = Calendar.getInstance()
                 var day = ""
 
@@ -119,11 +127,11 @@ class WriteActivity : AppCompatActivity() {
                     cal.get(Calendar.DAY_OF_MONTH)
                 ).show()
             }
-            ivWriteBackbtn.setOnClickListener { finish() }
+            ivWriteBackbtn.setOnClickListener { finish() } // 엑티비티 종료
         }
     }
 
-    private fun getMediaLabel() {
+    private fun getMediaLabel() { // 유형선택 뷰에서 미디어 불러오기
         if (intent.hasExtra("media")) {
             val media = intent.getStringExtra("media")
             binding.tvWriteMedialabel.text = media.toString()
