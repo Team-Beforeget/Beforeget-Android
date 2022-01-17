@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Title -->
+    <style name="Pretendard.Title.1_Medium_23" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">23dp</item>
+        <item name="android:lineSpacingExtra">11dp</item>
+    </style>
+
+    <style name="Pretendard.Title.6_Medium_17" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:lineSpacingExtra">3dp</item>
+    </style>
+
+
+    <!-- Body -->
+    <style name="Pretendard.Body.1_Medium_17" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:lineSpacingExtra">8dp</item>
+    </style>
+
+    <style name="Pretendard.Body.5_Medium_15" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:lineSpacingExtra">9dp</item>
+    </style>
+
+
+
+
+
+
+</resources>

@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Beforeget</string>
 
-
     <!--나의기록뷰-->
     <string name="record">Record</string>
     <string name="term">기간</string>
@@ -12,6 +11,8 @@
     <string name="test_subtitle">흥미진진한 줄거리</string>
 
     <!-- 통계 -->
+    <string name="cancel">취소</string>
+    <string name="confirm">확인</string>
     <string name="report">Report</string>
     <string name="date">2021년 12월</string>
     <string name="month">12</string>
@@ -49,6 +50,39 @@
     <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
         10월로, 30개의 기록을 남겼어요!\n다음 달, 나의 그래프는 어떤 모양일까요?</string>
 
+    <!--메인뷰-->
+    <string name="main_name">세훈</string>
+    <string name="main_sublabel">님, 잊기 전에 기록해보세요.</string>
+    <string name="main_label">오늘은 어떤 미디어를\n감상하셨나요?</string>
+    <string name="main_record">기록하기</string>
+    <string name="main_reportlabel">기록</string>
+    <string name="main_countlabel">N개</string>
+    <string name="main_viewallbtn">전체보기</string>
+
+    <!--유형선택뷰-->
+    <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>
+    <string name="media_movie">Movie</string>
+    <string name="media_tv">TV</string>
+    <string name="media_webtoon">Webtoon</string>
+    <string name="media_book">Book</string>
+    <string name="media_music">Music</string>
+    <string name="media_youtube">Youtube</string>
+    <string name="media_next">다음</string>
+
+
+    <!--글쓰기뷰-->
+    <string name="write_done">완료</string>
+    <string name="write_ratinglabel">이 영화의 별점은 몇 점인가요?</string>
+    <string name="write_title">영화 제목</string>
+    <string name="write_titleinput">영화의 제목은 무엇인가요?</string>
+    <string name="write_oneline">한 줄 리뷰</string>
+    <string name="write_addonelinebtn">한 줄 리뷰 추가</string>
+    <string name="write_comment">코멘트</string>
+    <string name="write_commentinput">영화를 보며 어떤 생각을 했나요?</string>
+    <string name="write_additem">기록항목 추가</string>
+    <string name="write_edit">기록항목 삭제</string>
+
+    write_title
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -76,5 +110,14 @@
     <string name="term_refresh">기간 초기화</string>
     <string name="media_refresh">미디어 초기화</string>
     <string name="start_score_refresh">별점 초기화</string>
+    <string name="login_start_email_login">이메일 로그인</string>
+    <string name="login_signup_text">가입하기</string>
+    <string name="email_sign_title">이메일 로그인</string>
+    <string name="email_signin_button">로그인</string>
+    <string name="email_signin_forget_password">비밀번호를 잊어버리셨나요?</string>
+    <string name="email_signin_hint_email_input">이메일</string>
+    <string name="login_apple_button">Apple로 로그인</string>
+    <string name="login_kakao_button">카카오로그인</string>
+    <string name="email_signin_password_input">비밀번호</string>
 
 </resources>
