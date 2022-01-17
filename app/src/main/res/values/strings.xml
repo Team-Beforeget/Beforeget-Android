@@ -137,7 +137,7 @@
     <string name="director_name">매슈 본</string>
     <string name="actor">배우</string>
     <string name="actor_name">콜린 퍼스, 태런 에저튼, 마크\n스트롱, 마이클 케인, 사무엘 L. 잭슨</string>
-    
+
     <!--나의기록 상세뷰- book뷰-->
     <string name="writer">작가</string>
     <string name="writer_name">김송현이 작가예여</string>
@@ -151,4 +151,30 @@
     <string name="famous_scene">명장면</string>
     <string name="ott">방송사\nOTT</string>
     <string name="ost_content_tv">Polarised - Cosmo’s Midnight</string>
+
+    <!--나의기록 상세뷰 music뷰-->
+    <string name="album">앨범</string>
+    <string name="album_cover">앨범 커버</string>
+    <string name="lyrics">가사</string>
+    <string name="lyrics_content">I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n \'Cause you\'re on my mind\nI\'m feeling like, I\'m feeling like this time I wish\nI could be first\n
+\'Cause you\'re on my mind\nI\'m paralyzed\n
+I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n
+I\'m paralyzed\n
+I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n
+\'Cause you\'re on my mind\n
+And though you\'re right\n
+I\'m paralyzed\n
+I\'m so polarized\n
+I could be anywhere in the world\n
+You\'ll be floating in my head\n
+Like a rendezvous, very late in the night\n
+Bet you and I could really meet\n
+I just wanna cruise with you\n
+I just wanna travel with you\n
+I\'m so polarized\n
+I\'m so polarized</string>
+    <string name="link">링크</string>
+    <string name="singer">가수</string>
+    <string name="blockb">블락비</string>
+    <string name="link_contetn">https://www.youtube.com/watch?v=qZFo0PYkHFo</string>
 </resources>
