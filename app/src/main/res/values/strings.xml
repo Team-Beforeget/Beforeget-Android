@@ -137,4 +137,13 @@
     <string name="director_name">매슈 본</string>
     <string name="actor">배우</string>
     <string name="actor_name">콜린 퍼스, 태런 에저튼, 마크\n스트롱, 마이클 케인, 사무엘 L. 잭슨</string>
+    
+    <!--나의기록 상세뷰- book뷰-->
+    <string name="writer">작가</string>
+    <string name="writer_name">김송현이 작가예여</string>
+    <string name="publisher">출판사</string>
+    <string name="publisher_name">한샘 출판사</string>
+    <string name="cover">표지</string>
+    <string name="impressive_verse">인상깊은 구절</string>
+    <string name="impressive_verse_content">사실 이것은 다 빈치가 살짝 장난을 친 것입\n니다. 왼쪽에 있는 시골 풍경을 낮게 그려서,\n오른쪽보다 왼쪽의 모나리자가 더 커보이게\n한 겁니다.</string>
 </resources>
