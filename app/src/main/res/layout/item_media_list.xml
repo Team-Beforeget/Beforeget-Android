@@ -6,7 +6,7 @@
 
         <variable
             name="main"
-            type="before.forget.data.MainData" />
+            type="before.forget.data.local.MainData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
