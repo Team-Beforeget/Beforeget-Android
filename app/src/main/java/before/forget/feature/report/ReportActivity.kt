@@ -45,8 +45,8 @@ class ReportActivity : AppCompatActivity() {
             ivBackBtn.setOnClickListener {
                 finish()
             }
-            ivDownloadBtn.setOnClickListener {
-                initShareSheet()
+            ivShareBtn.setOnClickListener {
+                initShareImg()
             }
             btnDatePicker.setOnClickListener {
                 setDatePicker()
@@ -54,7 +54,7 @@ class ReportActivity : AppCompatActivity() {
         }
     }
 
-    private fun initShareSheet() {
+    private fun initShareImg() {
         val image: Bitmap = getBitmapFromView(binding.clReportArea)
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "image/*"
