@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.ColorRes
 import androidx.annotation.StringRes
-import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
 import before.forget.R
 import before.forget.databinding.DialogBeforegetTwoButtonBinding
 
 class BeforegetDialog(
     context: Context,
-    private val subViewBinding: ViewDataBinding
+    private val subViewBinding: ViewBinding
 ) : AlertDialog(context) {
     private var onClickOkButton: ((View) -> Unit)? = null
     private var onClickCancelButton: ((View) -> Unit) = { dismiss() }
@@ -40,46 +40,51 @@ class BeforegetDialog(
             )
         }.also {
             setContentView(it.root)
+            setTransparentWindowBackground()
         }
     }
 
-    fun setOnClickOkButtonListener(
-        text: String = "확인",
-        @ColorRes textColor: Int = R.color.black200,
-        listener: (View) -> Unit
+    private fun setTransparentWindowBackground() {
+        window?.setBackgroundDrawableResource(R.color.transparent)
+    }
+
+    fun setOkButtonText(
+        @StringRes text: Int? = null,
+        @ColorRes textColor: Int? = null,
     ) {
-        this.okButtonText = text
-        this.okButtonTextColor = textColor
+        this.okButtonText = context.resources.getString(text ?: R.string.okText)
+        this.okButtonTextColor = textColor ?: R.color.black200
+    }
+
+    fun setOkButtonText(
+        text: String? = null,
+        @ColorRes textColor: Int? = null,
+    ) {
+        this.okButtonText = text ?: "확인"
+        this.okButtonTextColor = textColor ?: R.color.black200
+    }
+
+    fun setOnClickOkButtonListener(listener: (View) -> Unit) {
         this.onClickOkButton = listener
     }
 
-    fun setOnClickOkButtonListener(
-        @StringRes text: Int = R.string.okText,
-        @ColorRes textColor: Int = R.color.black200,
-        listener: (View) -> Unit
+    fun setCancelButtonText(
+        @StringRes text: Int? = null,
+        @ColorRes textColor: Int? = null
     ) {
-        this.okButtonText = context.resources.getString(text)
-        this.okButtonTextColor = textColor
-        this.onClickOkButton = listener
+        this.cancelButtonText = context.resources.getString(text ?: R.string.cancelText)
+        this.cancelButtonTextColor = textColor ?: R.color.gray200
     }
 
-    fun setOnClickCancelButtonListener(
-        text: String = "취소",
-        @ColorRes textColor: Int = R.color.gray200,
-        listener: (View) -> Unit
+    fun setCancelButtonText(
+        text: String? = null,
+        @ColorRes textColor: Int? = null,
     ) {
-        this.cancelButtonText = text
-        this.cancelButtonTextColor = textColor
-        this.onClickCancelButton = listener
+        this.cancelButtonText = text ?: "취소"
+        this.cancelButtonTextColor = textColor ?: R.color.gray200
     }
 
-    fun setOnClickCancelButtonListener(
-        @StringRes text: Int = R.string.cancelText,
-        @ColorRes textColor: Int = R.color.gray200,
-        listener: (View) -> Unit
-    ) {
-        this.cancelButtonText = context.resources.getString(text)
-        this.cancelButtonTextColor = textColor
+    fun setOnClickCancelButtonListener(listener: (View) -> Unit) {
         this.onClickCancelButton = listener
     }
 }

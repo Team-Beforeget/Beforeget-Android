@@ -15,8 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rectangle_beforeget_dialog_background_radius10dp"
-        android:backgroundTint="@color/white">
+        android:background="@drawable/rectangle_beforeget_dialog_background_radius10dp">
 
         <LinearLayout
             android:id="@+id/dialog_top_container"
@@ -38,10 +37,11 @@
             android:id="@+id/tv_cancel_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/selector_dialog_button_active_white_to_gray400"
+            android:background="@drawable/selector_dialog_cancel_button"
             android:gravity="center"
             android:onClick="@{(view)->uiState.onClickCancelButton.invoke(view)}"
             android:paddingVertical="13dp"
+            style="@style/Pretendard.Body.2_Semibold_16"
             android:text="@{uiState.cancelButtonText}"
             android:textColor="@{ContextCompat.getColor(context, uiState.cancelButtonTextColor)}"
             app:layout_constraintEnd_toStartOf="@id/tv_ok_button"
@@ -53,8 +53,9 @@
             android:id="@+id/tv_ok_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@color/selector_dialog_button_active_white_to_gray400"
+            android:background="@drawable/selector_dialog_ok_button"
             android:gravity="center"
+            style="@style/Pretendard.Body.2_Semibold_16"
             android:onClick="@{(view)->uiState.onClickOkButton.invoke(view)}"
             android:paddingVertical="13dp"
             android:text="@{uiState.okButtonText}"
