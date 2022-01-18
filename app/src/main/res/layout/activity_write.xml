@@ -83,7 +83,6 @@
                     android:paddingTop="10dp"
                     android:paddingRight="19dp"
                     android:paddingBottom="8dp"
-                    android:text="2022. 01. 08. SAT"
                     android:textColor="@color/black200"
                     android:textSize="13dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -189,22 +188,22 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="79dp"
                     android:layout_marginTop="44dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="33dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star3"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star1"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star5"
@@ -212,33 +211,33 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="44dp"
                     android:layout_marginEnd="79dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star4"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="33dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star5"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star3"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="44dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star4"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star2"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
 
                 <ImageView

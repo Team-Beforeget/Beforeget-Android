@@ -24,7 +24,14 @@ class FilterStarFragment : Fragment() {
         return binding.root
     }
 
+    fun setCallbackButtonClickListener(listener: () -> Unit) {
+        this.callbackButtonClickListener = listener
+    }
+
     private fun clickBtnStarEvent() {
+        binding.btnApplyStarFilter.setOnClickListener {
+            callbackButtonClickListener?.invoke()
+        }
         binding.apply {
             btnOneStar.setOnClickListener {
                 btnOneStar.isSelected = !btnOneStar.isSelected
@@ -45,9 +52,6 @@ class FilterStarFragment : Fragment() {
             btnFiveStar.setOnClickListener {
                 btnFiveStar.isSelected = !btnFiveStar.isSelected
                 activateBtnApplyFilterStarEnabled()
-            }
-            btnApplyStarFilter.setOnClickListener {
-                callbackButtonClickListener?.invoke()
             }
         }
     }
@@ -75,9 +79,5 @@ class FilterStarFragment : Fragment() {
                 btnApplyStarFilter.isEnabled = false
             }
         }
-    }
-
-    fun setCallbackButtonClickListener(listener: () -> Unit) {
-        this.callbackButtonClickListener = listener
     }
 }

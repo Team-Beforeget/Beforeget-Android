@@ -1,12 +1,11 @@
 package before.forget.feature.main
 
-
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.data.MainAdapter
-import before.forget.data.MainData
+import before.forget.data.local.MainData
 import before.forget.databinding.ActivityMainBinding
 import before.forget.feature.myrecord.MyRecordActivity
 import before.forget.feature.report.ReportActivity

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.myrecord.detail.DetailWebtoonFragment">
+
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp">
+
+        <TextView
+            android:id="@+id/tv_famous_scene_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/famous_scene"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view_line_left_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/black200"
+            app:layout_constraintEnd_toStartOf="@id/iv_star_detail_webtoon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_famous_scene_detail_webtoon" />
+
+
+        <View
+            android:id="@+id/view_line_right_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/black200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_star_detail_webtoon"
+            app:layout_constraintTop_toBottomOf="@id/tv_famous_scene_detail_webtoon" />
+
+        <ImageView
+            android:id="@+id/iv_star_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_littlestar_black_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_famous_scene_detail_webtoon" />
+
+        <ImageView
+            android:id="@+id/iv_scene_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="40dp"
+            android:background="@mipmap/ic_kinsman_poster_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line_left_detail_webtoon" />
+
+        <View
+            android:id="@+id/view_line_cover_bottom_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/black200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_scene_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_famous_line_title_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/famous_line_title"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line_cover_bottom_detail_webtoon" />
+
+        <ImageView
+            android:id="@+id/iv_quotes_left_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/ic_quotes_left_detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_famous_line_title_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_famous_line_content_detail_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="@string/impressive_verse_content"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@id/iv_quotes_left_detail_webtoon"
+            app:layout_constraintTop_toTopOf="@id/iv_quotes_left_detail_webtoon" />
+
+        <ImageView
+            android:id="@+id/iv_quotes_right_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_quotes_right_detail"
+            app:layout_constraintBottom_toBottomOf="@id/iv_quotes_left_detail_webtoon"
+            app:layout_constraintStart_toEndOf="@id/tv_famous_line_content_detail_book"
+            app:layout_constraintTop_toTopOf="@id/iv_quotes_left_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_genre_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/genre_tilte"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_famous_line_content_detail_book" />
+
+        <TextView
+            android:id="@+id/tv_genre_name_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ic_gray400_box_detail"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="6dp"
+            android:text="@string/genre"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_genre_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_writer_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/writer"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_genre_name_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_writer_name_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="@string/input_user"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_writer_detail_webtoon"
+            app:layout_constraintStart_toEndOf="@id/tv_writer_detail_webtoon"
+            app:layout_constraintTop_toTopOf="@id/tv_writer_detail_webtoon" />
+
+
+        <View
+            android:id="@+id/view_line_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_writer_name_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_day_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/day_week"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_day_content_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="@string/input_user"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_day_detail_webtoon"
+            app:layout_constraintStart_toEndOf="@id/tv_day_detail_webtoon"
+            app:layout_constraintTop_toTopOf="@id/tv_day_detail_webtoon" />
+
+        <View
+            android:id="@+id/view_line2_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_day_content_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_platform_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@string/platform"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line2_detail_webtoon" />
+
+        <TextView
+            android:id="@+id/tv_platform_name_detail_webtoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="@string/input_user"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_platform_detail_webtoon"
+            app:layout_constraintStart_toEndOf="@id/tv_platform_detail_webtoon"
+            app:layout_constraintTop_toTopOf="@id/tv_platform_detail_webtoon" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

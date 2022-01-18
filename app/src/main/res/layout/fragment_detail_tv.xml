@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.myrecord.detail.DetailTvFragment">
+
+    <data>
+
+    </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:paddingStart="20dp"
+       >
+
+       <TextView
+           android:id="@+id/tv_story_title_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/pretendard_medium"
+           android:text="@string/story_tilt"
+           android:textColor="@color/black200"
+           android:textSize="19dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <TextView
+           android:id="@+id/tv_story_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/pretendard_regular"
+           android:text="@string/story"
+           android:textColor="@color/black200"
+           android:textSize="16dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="15dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tv_story_title_detail_tv" />
+
+       <TextView
+           android:id="@+id/tv_ost_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="48dp"
+           android:fontFamily="@font/pretendard_medium"
+           android:text="@string/ost_tilte"
+           android:textColor="@color/black200"
+           android:textSize="19dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tv_story_detail_tv" />
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:id="@+id/tv_ost_name_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="15dp"
+           android:background="@color/black200"
+           android:drawableLeft="@drawable/ic_ost_detail_movie"
+           android:drawablePadding="10dp"
+           android:fontFamily="@font/pretendard_regular"
+           android:paddingHorizontal="16dp"
+           android:paddingVertical="10dp"
+           android:text="@string/ost_content_tv"
+           android:textColor="@color/white"
+           android:textSize="16dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tv_ost_detail_tv" />
+
+       <androidx.appcompat.widget.AppCompatButton
+           android:id="@+id/tv_ost_name_detail_tv_2"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="15dp"
+           android:background="@color/black200"
+           android:drawableLeft="@drawable/ic_ost_detail_movie"
+           android:drawablePadding="10dp"
+           android:fontFamily="@font/pretendard_regular"
+           android:paddingHorizontal="16dp"
+           android:paddingVertical="10dp"
+           android:text="@string/ost_content_tv"
+           android:textColor="@color/white"
+           android:textSize="16dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tv_ost_name_detail_tv" />
+
+       <View
+           android:id="@+id/view_line_detail_tv"
+           android:layout_width="0dp"
+           android:layout_height="1dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="48dp"
+           android:background="@color/gray300"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tv_ost_name_detail_tv_2"
+           />
+
+       <TextView
+           android:id="@+id/tv_actor_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/pretendard_medium"
+           android:text="@string/actor"
+           android:textColor="@color/black200"
+           android:textSize="19dp"
+           android:layout_marginTop="12dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/view_line_detail_tv" />
+
+       <TextView
+           android:id="@+id/tv_actor_name_detail_movie"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/pretendard_regular"
+           android:textSize="16dp"
+           android:layout_marginStart="29dp"
+           android:textColor="@color/black200"
+           android:text="@string/actor_name"
+           app:layout_constraintStart_toEndOf="@id/tv_actor_detail_tv"
+           app:layout_constraintTop_toTopOf="@id/tv_actor_detail_tv"
+           app:layout_constraintBottom_toBottomOf="@id/tv_actor_detail_tv"
+           />
+
+       <View
+           android:id="@+id/view_line2_detail_tv"
+           android:layout_width="0dp"
+           android:layout_height="1dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="48dp"
+           android:background="@color/gray300"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tv_actor_detail_tv"
+           />
+
+       <TextView
+           android:id="@+id/tv_ott_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/pretendard_medium"
+           android:text="@string/ott"
+           android:textColor="@color/black200"
+           android:textSize="19dp"
+           android:layout_marginTop="12dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/view_line2_detail_tv" />
+
+       <TextView
+           android:id="@+id/tv_ott_name_detail_tv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/pretendard_regular"
+           android:textSize="16dp"
+           android:layout_marginStart="29dp"
+           android:textColor="@color/black200"
+           android:text="@string/actor_name"
+           app:layout_constraintStart_toEndOf="@id/tv_ott_detail_tv"
+           app:layout_constraintTop_toTopOf="@id/tv_ott_detail_tv"
+           app:layout_constraintBottom_toBottomOf="@id/tv_ott_detail_tv"
+           />
+
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
