@@ -43,7 +43,7 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
             container,
             false
         )
-
+        binding.vpMenu.isSaveEnabled = false
         filterMediaFragment.setCallbackButtonClickListener { selectNumber, trueCounting ->
             mediaCallback?.invoke(selectNumber, trueCounting)
             dismiss()

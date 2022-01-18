@@ -14,7 +14,9 @@ import before.forget.util.callback
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
-    val myRecordDataAdapter = MyRecordAdapter()
+    private val filterBottomSheetFragment = FilterBottomSheetFragment()
+    private var selectedTerm = -1
+    private val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
@@ -32,7 +34,7 @@ class MyRecordActivity : AppCompatActivity() {
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        onAllDataNetwork()
+        test()
         getMediaFromMainActivity()
     }
 
@@ -56,7 +58,6 @@ class MyRecordActivity : AppCompatActivity() {
     }
 
     private fun showBottomSheet() {
-        val filterBottomSheetFragment = FilterBottomSheetFragment()
         filterBottomSheetFragment.setMediaCallback { selectNumber, trueCounting ->
             var mediaList =
                 mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
@@ -73,12 +74,20 @@ class MyRecordActivity : AppCompatActivity() {
         filterBottomSheetFragment.setStarScoreCallback {
             binding.btnScore.isActivated = true
         }
+        filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
+    }
+
+    private fun test() {
         filterBottomSheetFragment.setTermCallback {
             binding.btnTerm.text = it
+            when (it) {
+                "2주" -> selectedTerm = 0
+                "1개월" -> selectedTerm = 1
+                "3개월" -> selectedTerm = 2
+            }
             binding.btnTerm.isActivated = true
-            onFilterDataNetwork()
+            onFilterDataNetwork(selectedTerm, 1, -1)
         }
-        filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
 
     private fun getMediaFromMainActivity() {
@@ -106,12 +115,20 @@ class MyRecordActivity : AppCompatActivity() {
             .enqueue()
     }
 
-    private fun onFilterDataNetwork() {
+    private fun onFilterDataNetwork(selectedTerm: Int, selectedMedia: Int, selectedStar: Int) {
         BeforegetClient.postService
-            .getMyRecordFilterData(tempToken, "-1", "1", "-1")
+            .getMyRecordFilterData(
+                tempToken,
+                selectedTerm.toString(),
+                selectedMedia.toString(),
+                selectedStar.toString()
+            )
             .callback
             .onSuccess {
-                myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
+                myRecordDataAdapter.recordList = (it.data ?: listOf<ResponseMyRecordAll>()) as MutableList<ResponseMyRecordAll>
+                // recordList = mutableListOf<ResponseMyRecordAll>()
+                // myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
+                myRecordDataAdapter.notifyDataSetChanged()
             }
             .enqueue()
     }

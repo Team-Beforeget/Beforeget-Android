@@ -12,7 +12,7 @@ import before.forget.feature.myrecord.detail.MyRecordDetailActivity
 class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>() {
 
     // val recordList = mutableListOf<ResponseMyRecordAll>()
-    val recordList = mutableListOf<ResponseMyRecordAll>()
+    var recordList = mutableListOf<ResponseMyRecordAll>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyRecordViewHolder {
         val binding = ItemRecordBinding.inflate(
