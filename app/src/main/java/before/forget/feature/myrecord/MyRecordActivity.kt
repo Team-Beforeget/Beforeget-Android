@@ -3,10 +3,10 @@ package before.forget.feature.myrecord
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.remote.BeforegetClient
 import before.forget.data.remote.response.ResponseMyRecordAll
+import before.forget.data.remote.tempToken
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
 import before.forget.feature.write.MediaSelectActivity
@@ -32,7 +32,7 @@ class MyRecordActivity : AppCompatActivity() {
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        onNetwork()
+        onAllDataNetwork()
         getMediaFromMainActivity()
     }
 
@@ -53,21 +53,6 @@ class MyRecordActivity : AppCompatActivity() {
     private fun initMyRecordAdapter() {
 
         binding.rcvMyrecord.adapter = myRecordDataAdapter
-
-        /*myRecordDataAdapter.recordList.addAll(
-            listOf<MyRecordData>(
-                MyRecordData("내가 널 사랑할 수 없는 1가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 1),
-                MyRecordData("내가 널 사랑할 수 없는 2가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 2),
-                MyRecordData("내가 널 사랑할 수 없는 3가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
-                MyRecordData("내가 널 사랑할 수 없는 4가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
-                MyRecordData("내가 널 사랑할 수 없는 5가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 4),
-                MyRecordData("내가 널 사랑할 수 없는 6가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 5),
-                MyRecordData("내가 널 사랑할 수 없는 7가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 5),
-                MyRecordData("내가 널 사랑할 수 없는 8가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
-                MyRecordData("내가 널 사랑할 수 없는 9가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
-                MyRecordData("내가 널 사랑할 수 없는 10가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
-            )
-        )*/
     }
 
     private fun showBottomSheet() {
@@ -91,6 +76,7 @@ class MyRecordActivity : AppCompatActivity() {
         filterBottomSheetFragment.setTermCallback {
             binding.btnTerm.text = it
             binding.btnTerm.isActivated = true
+            onFilterDataNetwork()
         }
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
@@ -109,13 +95,23 @@ class MyRecordActivity : AppCompatActivity() {
         binding.btnTerm.isActivated = false
     }
 
-    private fun onNetwork() {
-        BeforegetClient.myRecordAllService
-            .getMyrordAllData()
+    private fun onAllDataNetwork() {
+        BeforegetClient.postService
+            .getMyrecordAllData()
             .callback
             .onSuccess {
                 myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
                 myRecordDataAdapter.notifyDataSetChanged()
+            }
+            .enqueue()
+    }
+
+    private fun onFilterDataNetwork() {
+        BeforegetClient.postService
+            .getMyRecordFilterData(tempToken, "-1", "1", "-1")
+            .callback
+            .onSuccess {
+                myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
             }
             .enqueue()
     }

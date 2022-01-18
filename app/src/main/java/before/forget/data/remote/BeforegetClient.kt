@@ -1,7 +1,7 @@
 package before.forget.data.remote
 
 import before.forget.data.remote.api.AuthService
-import before.forget.data.remote.api.MyRecordAllService
+import before.forget.data.remote.api.PostService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,8 +14,8 @@ object BeforegetClient {
         provideService(AuthService::class.java)
     }
 
-    val myRecordAllService: MyRecordAllService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
-        provideService(MyRecordAllService::class.java)
+    val postService: PostService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+        provideService(PostService::class.java)
     }
 
     private fun <T> provideService(clazz: Class<T>): T = Retrofit.Builder()
