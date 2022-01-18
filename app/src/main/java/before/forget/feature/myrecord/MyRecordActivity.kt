@@ -1,6 +1,7 @@
 package before.forget.feature.myrecord
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.local.MyRecordData
@@ -15,6 +16,8 @@ class MyRecordActivity : AppCompatActivity() {
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnMedia.text = "미디어"
+
+        window.statusBarColor = Color.parseColor("#FFFFFFFF")
 
         binding.btnPlus.setOnClickListener {
             startActivity(Intent(this, MediaSelectActivity::class.java))
