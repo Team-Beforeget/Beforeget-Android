@@ -12,7 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="20dp">
+        android:paddingStart="20dp"
+        android:paddingBottom="48dp">
 
         <TextView
             android:id="@+id/tv_famous_scene_detail_webtoon"
@@ -62,11 +63,13 @@
         <ImageView
             android:id="@+id/iv_scene_detail_webtoon"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="40dp"
-            android:background="@mipmap/ic_kinsman_poster_detail"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_kinsmane_big"
+            app:layout_constraintDimensionRatio="1:2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line_left_detail_webtoon" />
@@ -109,6 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/impressive_verse_content"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -144,6 +148,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/ic_gray400_box_detail"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="6dp"
             android:text="@string/genre"
@@ -152,17 +157,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_genre_detail_webtoon" />
 
+        <View
+            android:id="@+id/view_line3_detail_webtoon"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_genre_name_detail_webtoon" />
+
         <TextView
             android:id="@+id/tv_writer_detail_webtoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/writer"
             android:textColor="@color/black200"
             android:textSize="19dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_genre_name_detail_webtoon" />
+            app:layout_constraintTop_toBottomOf="@id/view_line3_detail_webtoon" />
 
         <TextView
             android:id="@+id/tv_writer_name_detail_webtoon"
@@ -170,6 +186,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -207,6 +224,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -241,8 +259,9 @@
             android:id="@+id/tv_platform_name_detail_webtoon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="29dp"
+            android:layout_marginStart="12dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
             android:textColor="@color/black200"
             android:textSize="16dp"

@@ -7,11 +7,12 @@
     <data>
 
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="20dp"
-        >
+        android:paddingBottom="48dp">
 
         <TextView
             android:id="@+id/tv_cover_book_detail"
@@ -61,11 +62,13 @@
         <ImageView
             android:id="@+id/iv_cover_detail_book"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="40dp"
-            android:background="@mipmap/ic_kinsman_poster_detail"
+            android:scaleType="fitXY"
+            android:src="@drawable/image_kinsmane_big"
+            app:layout_constraintDimensionRatio="1:2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line_left_detail_book" />
@@ -108,6 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="11dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/impressive_verse_content"
             android:textColor="@color/black200"
             android:textSize="16dp"
@@ -143,6 +147,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/ic_gray400_box_detail"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="6dp"
             android:text="@string/genre"
@@ -167,11 +172,13 @@
             android:id="@+id/tv_story_detail_book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/story"
             android:textColor="@color/black200"
             android:textSize="16dp"
-            android:layout_marginTop="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_story_title_detail_book" />
@@ -181,23 +188,22 @@
             android:id="@+id/view_line_detail_book"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/gray300"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_story_detail_book"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_story_detail_book" />
 
         <TextView
             android:id="@+id/tv_writer_detail_book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/writer"
             android:textColor="@color/black200"
             android:textSize="19dp"
-            android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line_detail_book" />
 
@@ -205,37 +211,36 @@
             android:id="@+id/tv_writer_name_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_regular"
-            android:textSize="16dp"
             android:layout_marginStart="29dp"
-            android:textColor="@color/black200"
+            android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/writer_name"
-            app:layout_constraintStart_toEndOf="@id/tv_writer_detail_book"
-            app:layout_constraintTop_toTopOf="@id/tv_writer_detail_book"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_writer_detail_book"
-            />
+            app:layout_constraintStart_toEndOf="@id/tv_writer_detail_book"
+            app:layout_constraintTop_toTopOf="@id/tv_writer_detail_book" />
 
         <View
             android:id="@+id/view_line2_detail_book"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/gray300"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_writer_detail_book"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_writer_detail_book" />
 
         <TextView
             android:id="@+id/tv_publisher_detail_book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/publisher"
             android:textColor="@color/black200"
             android:textSize="19dp"
-            android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line2_detail_book" />
 
@@ -243,18 +248,16 @@
             android:id="@+id/tv_publisher_name_detail_book"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:fontFamily="@font/pretendard_regular"
-            android:textSize="16dp"
-            android:layout_marginStart="29dp"
-            android:textColor="@color/black200"
+            android:lineSpacingExtra="9dp"
             android:text="@string/actor_name"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
             app:layout_constraintStart_toEndOf="@id/tv_publisher_detail_book"
-            app:layout_constraintTop_toTopOf="@id/tv_publisher_detail_book"
-            app:layout_constraintBottom_toBottomOf="@id/tv_publisher_detail_book"
-            />
+            app:layout_constraintTop_toTopOf="@id/tv_publisher_detail_book" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 </layout>
