@@ -91,18 +91,16 @@
             <TextView
                 android:id="@+id/tv_addwrite_cantext"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginBottom="9dp"
                 android:fontFamily="@font/pretendard_medium"
                 android:lineHeight="24dp"
                 android:text="@string/addwrite_cantext"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
                 android:textColor="@color/black200"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_addwrite_checkfalsebtn"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/iv_addwrite_checkfalsebtn" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -113,6 +111,7 @@
             android:layout_marginStart="21dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="21dp"
+            android:background="@drawable/writeadditem_itemborder"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
@@ -130,18 +129,16 @@
             <TextView
                 android:id="@+id/tv_addwrite_canimage"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginBottom="9dp"
                 android:fontFamily="@font/pretendard_medium"
                 android:lineHeight="24dp"
+                android:paddingTop="9dp"
+                android:paddingBottom="9dp"
                 android:text="@string/addwrite_canimage"
                 android:textColor="@color/black200"
                 android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_addwrite_checkfalsebtn2"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/iv_addwrite_checkfalsebtn2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

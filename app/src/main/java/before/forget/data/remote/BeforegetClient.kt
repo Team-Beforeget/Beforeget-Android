@@ -16,6 +16,7 @@ object BeforegetClient {
     private fun <T> provideService(clazz: Class<T>): T = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
+        .client(provideHttpLoggingClient())
         .build()
         .create(clazz)
 

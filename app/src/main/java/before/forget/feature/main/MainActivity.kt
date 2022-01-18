@@ -40,12 +40,12 @@ class MainActivity : AppCompatActivity() {
 
         mainAdapter.mediaList.addAll(
             listOf<MainData>(
-                MainData(R.drawable.ic_white, "5", "Movie"),
-                MainData(R.drawable.ic_white, "10", "Book"),
-                MainData(R.drawable.ic_white, "5", "TV"),
-                MainData(R.drawable.ic_white, "9", "Music"),
-                MainData(R.drawable.ic_white, "5", "Webtoon"),
-                MainData(R.drawable.ic_white, "7", "Youtube")
+                MainData(R.drawable.ic_white, 5, "Movie"),
+                MainData(R.drawable.ic_white, 10, "Book"),
+                MainData(R.drawable.ic_white, 5, "TV"),
+                MainData(R.drawable.ic_white, 9, "Music"),
+                MainData(R.drawable.ic_white, 5, "Webtoon"),
+                MainData(R.drawable.ic_white, 7, "Youtube")
             )
         )
         mainAdapter.notifyDataSetChanged()
