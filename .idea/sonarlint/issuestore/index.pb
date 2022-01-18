@@ -14,3 +14,5 @@ x
 Happ/src/main/java/before/forget/feature/report/ReportViewPagerAdapter.kt,e/8/e82f2fb85b36091bf59956aae976bba5383b51e0
 u
 Eapp/src/main/java/before/forget/feature/report/ReportGraphFragment.kt,a/5/a596326b840610745ada10642956c97c946328cb
+t
+Dapp/src/main/java/before/forget/feature/myrecord/MyRecordActivity.kt,b\f\bf0618927a4b80a67da6b457f418a8fc2d1c1879
