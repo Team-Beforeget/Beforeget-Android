@@ -114,10 +114,8 @@ class MyRecordActivity : AppCompatActivity() {
             .getMyrordAllData()
             .callback
             .onSuccess {
-                val dataSize = myRecordDataAdapter.itemCount
                 myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
                 myRecordDataAdapter.notifyDataSetChanged()
-                Log.d("서버통신 데이타 사이즈", "$dataSize")
             }
             .enqueue()
     }
