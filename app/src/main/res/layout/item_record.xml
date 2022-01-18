@@ -7,7 +7,7 @@
 
         <variable
             name="myrecord"
-            type="before.forget.data.remote.response.ResponseMyRecordAll.Data" />
+            type="before.forget.data.remote.response.ResponseMyRecordAll" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

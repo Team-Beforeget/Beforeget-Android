@@ -3,15 +3,18 @@ package before.forget.feature.myrecord
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import before.forget.data.local.MyRecordData
+import before.forget.data.remote.BeforegetClient
+import before.forget.data.remote.response.ResponseMyRecordAll
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
 import before.forget.feature.write.MediaSelectActivity
-import com.github.mikephil.charting.utils.Utils
+import before.forget.util.callback
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
+    val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
@@ -29,6 +32,7 @@ class MyRecordActivity : AppCompatActivity() {
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
+        onNetwork()
         getMediaFromMainActivity()
     }
 
@@ -48,10 +52,9 @@ class MyRecordActivity : AppCompatActivity() {
 
     private fun initMyRecordAdapter() {
 
-        val myRecordDataAdapter = MyRecordAdapter()
         binding.rcvMyrecord.adapter = myRecordDataAdapter
 
-        myRecordDataAdapter.recordList.addAll(
+        /*myRecordDataAdapter.recordList.addAll(
             listOf<MyRecordData>(
                 MyRecordData("내가 널 사랑할 수 없는 1가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 1),
                 MyRecordData("내가 널 사랑할 수 없는 2가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 2),
@@ -64,8 +67,7 @@ class MyRecordActivity : AppCompatActivity() {
                 MyRecordData("내가 널 사랑할 수 없는 9가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
                 MyRecordData("내가 널 사랑할 수 없는 10가지 이유", "흥미진진한 줄거리", "2022. 12. 11", 3),
             )
-        )
-        myRecordDataAdapter.notifyDataSetChanged()
+        )*/
     }
 
     private fun showBottomSheet() {
@@ -107,4 +109,16 @@ class MyRecordActivity : AppCompatActivity() {
         binding.btnTerm.isActivated = false
     }
 
+    private fun onNetwork() {
+        BeforegetClient.myRecordAllService
+            .getMyrordAllData()
+            .callback
+            .onSuccess {
+                val dataSize = myRecordDataAdapter.itemCount
+                myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
+                myRecordDataAdapter.notifyDataSetChanged()
+                Log.d("서버통신 데이타 사이즈", "$dataSize")
+            }
+            .enqueue()
+    }
 }
