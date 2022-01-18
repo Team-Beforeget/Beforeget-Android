@@ -3,14 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".feature.myrecord.detail.DetailYoutubeFragment">
+
     <data>
 
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="20dp"
-        >
+        android:paddingBottom="48dp">
+
         <TextView
             android:id="@+id/tv_category_detail_youtube"
             android:layout_width="wrap_content"
@@ -29,6 +32,7 @@
             android:layout_marginTop="15dp"
             android:background="@color/gray400"
             android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="6dp"
             android:text="@string/genre"
@@ -41,11 +45,11 @@
             android:id="@+id/tv_link_detail_youtube"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/link"
             android:textColor="@color/black200"
             android:textSize="19dp"
-            android:layout_marginTop="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_category_name_detail_youtube" />
 
@@ -54,10 +58,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
             android:fontFamily="@font/pretendard_regular"
             android:text="@string/link_contetn"
             android:textColor="@color/black200"
-            android:textSize="16dp"
+            android:textSize="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_link_detail_youtube" />
 
@@ -92,23 +98,22 @@
             android:id="@+id/view_line_detail_youtube"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginEnd="20dp"
             android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
             android:background="@color/gray300"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_timestamp_content_detail_youtube"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_timestamp_content_detail_youtube" />
 
         <TextView
             android:id="@+id/tv_channel_detail_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/pretendard_medium"
             android:text="@string/channel"
             android:textColor="@color/black200"
             android:textSize="19dp"
-            android:layout_marginTop="48dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view_line_detail_youtube" />
 
@@ -116,15 +121,15 @@
             android:id="@+id/tv_channel_name_detail_youtube"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/pretendard_regular"
-            android:textSize="16dp"
             android:layout_marginStart="29dp"
-            android:textColor="@color/black200"
+            android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
             android:text="@string/input_user"
-            app:layout_constraintStart_toEndOf="@id/tv_channel_detail_tv"
-            app:layout_constraintTop_toTopOf="@id/tv_channel_detail_tv"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="@id/tv_channel_detail_tv"
-            />
+            app:layout_constraintStart_toEndOf="@id/tv_channel_detail_tv"
+            app:layout_constraintTop_toTopOf="@id/tv_channel_detail_tv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

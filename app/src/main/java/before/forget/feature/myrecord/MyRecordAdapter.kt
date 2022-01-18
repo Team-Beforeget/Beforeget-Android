@@ -1,10 +1,13 @@
 package before.forget.feature.myrecord
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import before.forget.data.local.MyRecordData
 import before.forget.databinding.ItemRecordBinding
+import before.forget.feature.myrecord.detail.MyRecordDetailActivity
 
 class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>() {
 
@@ -28,6 +31,14 @@ class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>
 
         fun onBind(data: MyRecordData) {
             binding.myrecord = data
+            itemView.setOnClickListener {
+                // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
+                val media = 6
+                val recordToDetailIntent =
+                    Intent(itemView.context, MyRecordDetailActivity::class.java)
+                recordToDetailIntent.putExtra("media", media)
+                ContextCompat.startActivity(itemView.context, recordToDetailIntent, null)
+            }
         }
     }
 }

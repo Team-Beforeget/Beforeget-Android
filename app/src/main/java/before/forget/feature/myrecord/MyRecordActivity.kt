@@ -1,10 +1,13 @@
 package before.forget.feature.myrecord
 
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.local.MyRecordData
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
+import before.forget.feature.write.MediaSelectActivity
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
@@ -13,6 +16,12 @@ class MyRecordActivity : AppCompatActivity() {
         binding = ActivityMyrecodBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btnMedia.text = "미디어"
+
+        window.statusBarColor = Color.parseColor("#FFFFFFFF")
+
+        binding.btnPlus.setOnClickListener {
+            startActivity(Intent(this, MediaSelectActivity::class.java))
+        }
         binding.btnBack.setOnClickListener {
             finish()
         }
@@ -60,9 +69,17 @@ class MyRecordActivity : AppCompatActivity() {
 
     private fun showBottomSheet() {
         val filterBottomSheetFragment = FilterBottomSheetFragment()
-        filterBottomSheetFragment.setMediaCallback {
-            var mediaList = mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
-            binding.btnMedia.text = mediaList[it]
+        filterBottomSheetFragment.setMediaCallback { selectNumber, trueCounting ->
+            var mediaList =
+                mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
+            val selectedMedia = mediaList[selectNumber]
+
+            if (trueCounting >= 2) {
+                binding.btnMedia.text = selectedMedia + " " + "외" + " " + "${trueCounting - 1}"
+            } else {
+                binding.btnMedia.text = selectedMedia
+            }
+
             binding.btnMedia.isActivated = true
         }
         filterBottomSheetFragment.setStarScoreCallback {
@@ -79,8 +96,10 @@ class MyRecordActivity : AppCompatActivity() {
         if (intent.hasExtra("media")) {
             val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
+            binding.btnMedia.isActivated = true
         }
     }
+
     private fun initButtonFilter() {
         binding.btnMedia.isActivated = false
         binding.btnScore.isActivated = false
