@@ -7,7 +7,7 @@
 
         <variable
             name="myrecord"
-            type="before.forget.data.local.MyRecordData" />
+            type="before.forget.data.remote.response.ResponseMyRecordAll.Data" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="22dp"
-                android:text="@{myrecord.review}"
+                android:text="@{myrecord.oneline}"
                 android:fontFamily="@font/pretendard_regular"
                 android:textColor="@color/white"
                 android:textSize="14sp"

@@ -8,6 +8,7 @@ import before.forget.data.local.MyRecordData
 import before.forget.databinding.ActivityMyrecodBinding
 import before.forget.feature.filter.FilterBottomSheetFragment
 import before.forget.feature.write.MediaSelectActivity
+import com.github.mikephil.charting.utils.Utils
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
@@ -105,4 +106,5 @@ class MyRecordActivity : AppCompatActivity() {
         binding.btnScore.isActivated = false
         binding.btnTerm.isActivated = false
     }
+
 }
