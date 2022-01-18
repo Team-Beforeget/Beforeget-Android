@@ -20,13 +20,9 @@ X
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
 l
 <app/src/main/java/before/forget/feature/main/MainActivity.kt,0/2/021e0588ef4c17f41e5bd42b0a0ea2900b53e4a1
 j
 :app/src/main/java/before/forget/data/local/MyRecordData.kt,5/8/5825a0582505245363e28bb52672e07691f689d6
-p
-@app/src/main/java/before/forget/feature/report/ReportActivity.kt,5/2/525c107507759f6f5a2784e58297715629104a4f
 u
 Eapp/src/main/java/before/forget/feature/report/ReportGraphFragment.kt,a/5/a596326b840610745ada10642956c97c946328cb
