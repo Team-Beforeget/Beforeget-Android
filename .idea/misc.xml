@@ -48,32 +48,43 @@
         <entry key="app/src/main/res/drawable/ic_btn_download.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_icn_star.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_icn_star_false.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/drawable/ic_icn_star_green.xml" value="0.16041666666666668" />
+        <entry key="app/src/main/res/drawable/ic_img_sentence.xml" value="0.14322916666666666" />
+        <entry key="app/src/main/res/drawable/ic_img_sentence_back.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/ic_page1_active.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/drawable/ic_page1_inactive.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/drawable/ic_rectangle_5712.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/drawable/rectangle_border_black200_2px.xml" value="0.20208333333333334" />
         <entry key="app/src/main/res/drawable/rectangle_border_gray300.xml" value="0.20208333333333334" />
         <entry key="app/src/main/res/drawable/rectangle_border_gray_18.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/rectangle_border_green_1.xml" value="0.16041666666666668" />
+        <entry key="app/src/main/res/drawable/rectangle_border_green_3.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/selector_btn_filter.xml" value="0.20208333333333334" />
         <entry key="app/src/main/res/drawable/selector_report_indicator.xml" value="0.33796296296296297" />
         <entry key="app/src/main/res/drawable/tab_selector_report.xml" value="0.2328125" />
         <entry key="app/src/main/res/drawable/tab_selector_report_insert.xml" value="0.3574074074074074" />
         <entry key="app/src/main/res/font/beforeget_font.xml" value="0.27447916666666666" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_media_select.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_report.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.1625" />
+        <entry key="app/src/main/res/layout/ex.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_filter_media.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_filter_star.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_filter_term.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_report1.xml" value="0.15885416666666666" />
-        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/fragment_report_onepage.xml" value="0.3070652173913043" />
+        <entry key="app/src/main/res/layout/fragment_report_onepage.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_report_ranking.xml" value="0.21666666666666667" />
-        <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.21666666666666667" />
+        <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_card.xml" value="0.18177083333333333" />
+        <entry key="app/src/main/res/layout/item_card_back.xml" value="0.550737711147673" />
+        <entry key="app/src/main/res/layout/item_card_front.xml" value="0.19583333333333333" />
         <entry key="app/src/main/res/layout/item_content_list.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/item_media_list.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/item_record.xml" value="0.1234375" />
         <entry key="app/src/main/res/layout/layout_record_datepicker_dialog.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_report_datepicker_dialog.xml" value="0.20885416666666667" />
