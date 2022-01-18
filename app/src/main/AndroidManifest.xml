@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Beforeget">
         <activity
+            android:name=".feature.write.WriteAddItemActivity"
+            android:exported="true" />
+        <activity
             android:name=".feature.myrecord.detail.MyRecordDetailActivity"
             android:exported="false" />
         <activity

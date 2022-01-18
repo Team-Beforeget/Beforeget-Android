@@ -6,56 +6,84 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import before.forget.R
+import before.forget.databinding.FragmentReportSentenceBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReportSentenceFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ReportSentenceFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentReportSentenceBinding? = null
+    private val binding get() = _binding ?: error("Binding이 초기화되지 않았습니다.")
+    var isFront1 = false
+    var isFront2 = false
+    var isFront3 = false
+    var isFront4 = false
+    var isFront5 = false
+    var isFront6 = false
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report_sentence, container, false)
+        _binding = FragmentReportSentenceBinding.inflate(layoutInflater, container, false)
+        initCardFront(R.id.sentence_type1)
+        initCardFront(R.id.sentence_type2)
+        initCardFront(R.id.sentence_type3)
+        initCardFront(R.id.sentence_type4)
+        initCardFront(R.id.sentence_type5)
+        initCardFront(R.id.sentence_type6)
+        cardClickListener()
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReportSentenceFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReportSentenceFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun cardClickListener() {
+        binding.sentenceType1.setOnClickListener {
+            isFront1 = !isFront1
+            initAnimation(R.id.sentence_type1, isFront1)
+        }
+        binding.sentenceType2.setOnClickListener {
+            isFront2 = !isFront2
+            initAnimation(R.id.sentence_type2, isFront2)
+        }
+        binding.sentenceType3.setOnClickListener {
+            isFront3 = !isFront3
+            initAnimation(R.id.sentence_type3, isFront3)
+        }
+        binding.sentenceType4.setOnClickListener {
+            isFront4 = !isFront4
+            initAnimation(R.id.sentence_type4, isFront4)
+        }
+        binding.sentenceType5.setOnClickListener {
+            isFront5 = !isFront5
+            initAnimation(R.id.sentence_type5, isFront5)
+        }
+        binding.sentenceType6.setOnClickListener {
+            isFront6 = !isFront6
+            initAnimation(R.id.sentence_type6, isFront6)
+        }
+    }
+
+    private fun initAnimation(containerViewId: Int, isFront: Boolean) {
+        if (isFront) {
+            childFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    R.animator.cardflip_right_in, R.animator.cardflip_right_out,
+                    R.animator.cardflip_left_in, R.animator.cardflip_left_out
+                )
+                .replace(containerViewId, CardFlipBack())
+                .commit()
+        } else {
+            childFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    R.animator.cardflip_right_in, R.animator.cardflip_right_out,
+                    R.animator.cardflip_left_in, R.animator.cardflip_left_out
+                )
+                .replace(containerViewId, CardFlipFront())
+                .commit()
+        }
+    }
+
+    private fun initCardFront(containerViewId: Int) {
+        childFragmentManager.beginTransaction()
+            .replace(containerViewId, CardFlipFront())
+            .commit()
     }
 }

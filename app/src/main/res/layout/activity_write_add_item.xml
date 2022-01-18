@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.write.WriteAddItemActivity">
+
+    <data>
+
+
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/iv_addwrite_closebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_btn_close" />
+
+        <TextView
+            android:id="@+id/tv_addwrite_mainlabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="27dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:lineHeight="24dp"
+            android:text="@string/addwrite_mainlabel1"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_addwrite_closebtn" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_writeadditem_itemlist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="19dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/tv_addwrite_mainlabel1"
+            app:spanCount="3"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_item_list" />
+
+        <TextView
+            android:id="@+id/tv_addwrite_mainlabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="33dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:lineHeight="24dp"
+            android:text="@string/addwrite_mainlabel2"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_writeadditem_itemlist" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="21dp"
+            android:background="@drawable/writeadditem_itemborder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_addwrite_mainlabel2">
+
+            <ImageView
+                android:id="@+id/iv_addwrite_checkfalsebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/writeadditem_checkbtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_addwrite_cantext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineHeight="24dp"
+                android:text="@string/addwrite_cantext"
+                android:textColor="@color/black200"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_addwrite_checkfalsebtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="21dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <ImageView
+                android:id="@+id/iv_addwrite_checkfalsebtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/writeadditem_checkbtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_addwrite_canimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:lineHeight="24dp"
+                android:text="@string/addwrite_canimage"
+                android:textColor="@color/black200"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_addwrite_checkfalsebtn2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_addwrite_nextbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/writeadditem_nextbtn"
+            android:fontFamily="@font/pretendard_semibold"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:paddingLeft="145dp"
+            android:paddingTop="16dp"
+            android:paddingRight="145dp"
+            android:paddingBottom="16dp"
+            android:text="@string/addwrite_nextbtn"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
