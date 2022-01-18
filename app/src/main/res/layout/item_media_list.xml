@@ -7,6 +7,7 @@
         <variable
             name="main"
             type="before.forget.data.local.MainData" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,10 +27,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:lineHeight="42dp"
-                android:text="@{main.count}"
+                android:text="@{Integer.toString(main.count)}"
                 android:textColor="@color/white"
                 android:textSize="43dp"
-                android:textStyle="normal"
+                android:fontFamily="@font/ppneuemachina_ultrabold"
                 app:layout_constraintBottom_toTopOf="@+id/tv_main_rvmedia"
                 app:layout_constraintStart_toStartOf="parent" />
 
