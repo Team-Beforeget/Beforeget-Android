@@ -40,7 +40,21 @@ class WriteActivity : AppCompatActivity() {
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
         getMediaLabel()
         btnSetOnClickListener()
+        binding.chipGroup.apply {
+        }
     }
+
+    /*fun ConstraintLayout.addChip(chipText: String) {
+        val chip = LayoutInflater.from(context).inflate(R.layout.view_chip, null) as Chip
+
+        val layoutParams = ViewGroup.MarginLayoutParams(
+            ViewGroup.MarginLayoutParams.WRAP_CONTENT,
+            ViewGroup.MarginLayoutParams.WRAP_CONTENT
+        )
+        chip.text = chipText
+        layoutParams.rightMargin = context.dpToPixel(4)
+        addView(chip, layoutParams)
+    }*/
 
     private fun createBottomSheet() { // 바텀시트 프래그먼트 생성
         val writeBottomSheetFragment = WriteBottomSheetFragment()
