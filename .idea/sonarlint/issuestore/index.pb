@@ -13,24 +13,14 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
-l
-<app/src/main/java/before/forget/feature/main/MainActivity.kt,0/2/021e0588ef4c17f41e5bd42b0a0ea2900b53e4a1
 t
 Dapp/src/main/java/before/forget/feature/filter/FilterTermFragment.kt,f/2/f27ed3d2ba875c06dd4bca99ba495dbe7617244d
-w
-Gapp/src/main/java/before/forget/feature/report/ReportRankingFragment.kt,d/3/d3fd0406ab84c54ae911463cbf234ca2ee10af48
-n
->app/src/main/java/before/forget/data/remote/api/AuthService.kt,6/d/6d8c49d357e60c46ee2b645c71c36b566ee63336
-j
-:app/src/main/java/before/forget/data/local/MyRecordData.kt,5/8/5825a0582505245363e28bb52672e07691f689d6
 n
 >app/src/main/java/before/forget/data/local/WriteAddItemData.kt,8/9/89b7bd2cc6ecac81225d88cf8c08abbb77570755
 n
 >app/src/main/java/before/forget/feature/report/CardFlipBack.kt,5/d/5d73022c78d78353baaaf17531f0f3b3f79ea073
 o
 ?app/src/main/java/before/forget/feature/report/CardFlipFront.kt,9/c/9ce7587b11db6c05975acbd6054584ea54b7e1fd
-x
-Happ/src/main/java/before/forget/feature/report/ReportSentenceFragment.kt,2/d/2da11d20f2af3f9c22260253e9ab62bf182e0007
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 w

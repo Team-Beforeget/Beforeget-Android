@@ -40,8 +40,8 @@ class WriteActivity : AppCompatActivity() {
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
         getMediaLabel()
         btnSetOnClickListener()
-        binding.chipGroup.apply {
-        }
+        /*binding.chipGroup.apply {
+        }*/
     }
 
     /*fun ConstraintLayout.addChip(chipText: String) {
