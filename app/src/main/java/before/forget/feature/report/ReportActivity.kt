@@ -142,6 +142,7 @@ class ReportActivity : AppCompatActivity() {
             selectMonth = month.value
             selectYear = year.value
             binding.btnDatePicker.text = "${selectYear}년 ${selectMonth}월"
+            //  "${selectYear}-${selectMonth}"
 
             dialog.dismiss()
             dialog.cancel()
