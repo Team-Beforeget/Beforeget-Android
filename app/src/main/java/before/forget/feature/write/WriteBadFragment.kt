@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import before.forget.R
 import before.forget.databinding.FragmentWriteGoodBinding
 
-class WriteGoodFragment : Fragment() {
+class WriteBadFragment : Fragment() {
     private var callbackButtonClickListener: (() -> Unit)? = null
     private lateinit var binding: FragmentWriteGoodBinding
     override fun onCreateView(
@@ -19,11 +19,11 @@ class WriteGoodFragment : Fragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_write_good, container, false)
-        /*  binding.btnWriteApply.isEnabled = false
-          clickWriteButtonEvent()
-          checkEnableApplyBtn()
-          resetSelectedOneLine()*/
-
+        // binding.btnWriteApply.isEnabled = false
+        clickWriteButtonEvent()
+        checkEnableApplyBtn()
+        resetSelectedOneLine()
+        test()
         return binding.root
     }
 
@@ -66,17 +66,24 @@ class WriteGoodFragment : Fragment() {
                 tvWriteOnelinereview6.isSelected
         }
 
-    /*  private fun checkEnableApplyBtn() {
-          binding.btnWriteApply.isEnabled = checkBtnSelected()
-      }*/
+    private fun checkEnableApplyBtn() {
+        // binding.btnWriteApply.isEnabled = checkBtnSelected()
+    }
 
     private fun btnApplyActivate() {
         checkBtnSelected()
-        // checkEnableApplyBtn()
+        checkEnableApplyBtn()
     }
 
-    /* private fun resetSelectedOneLine() {
-         binding.clWriteResetbtn.setOnClickListener {
+    fun test() {
+        /* binding.btnWriteApply.setOnClickListener {
+             val writeBottomSheetFragment = WriteBottomSheetFragment()
+             writeBottomSheetFragment.dismiss()
+         }*/
+    }
+
+    private fun resetSelectedOneLine() {
+        /* binding.clWriteResetbtn.setOnClickListener {
              with(binding) {
                  tvWriteOnelinereview1.isSelected = false
                  tvWriteOnelinereview2.isSelected = false
@@ -85,10 +92,10 @@ class WriteGoodFragment : Fragment() {
                  tvWriteOnelinereview5.isSelected = false
                  tvWriteOnelinereview6.isSelected = false
              }
-         }
-     }*/
-
-    fun setCallbackButtonClickListener(listener: () -> Unit) {
-        this.callbackButtonClickListener = listener
+         }*/
     }
+
+    /*fun setCallbackButtonClickListener(listener: () -> Unit) {
+        this.callbackButtonClickListener = listener
+    }*/
 }

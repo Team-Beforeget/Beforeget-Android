@@ -26,6 +26,7 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_star.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_star_green.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_star.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_tab_indicator.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/main_rectanglefillgreen.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/main_undercorner.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/mediaselect_borderselecter.xml" value="0.26979166666666665" />
@@ -41,6 +42,7 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_datepickerbtn.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_datepickerbtn_black.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_datepickerselector.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_indicator.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_onelineborder.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_rectangle_1dp.xml" value="0.26564102564102565" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/write_rectanglebuttonselector.xml" value="0.26979166666666665" />
@@ -49,6 +51,7 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/writeadditem_checkbtn.xml" value="0.2601851851851852" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/writeadditem_itemborder.xml" value="0.2601851851851852" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/writeadditem_nextbrn.xml" value="0.25092592592592594" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/writebottomsheet_topcorner.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/font/beforeget_font.xml" value="0.2838541666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activitiy_email_signin.xml" value="0.20923913043478262" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_login.xml" value="0.1" />
@@ -58,7 +61,7 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_report.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_writa_add_item.xml" value="0.8" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write.xml" value="0.7457886676875957" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write.xml" value="0.4" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write_add_item.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/dialog_beforeget_two_button.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_detail_book.xml" value="0.11354166666666667" />
@@ -77,8 +80,8 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_onepage.xml" value="0.1" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_ranking.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_sentence.xml" value="0.1" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.152" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_good.xml" value="0.72" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.264" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_good.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_card_back.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_card_front.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_category_list.xml" value="0.4" />

@@ -124,14 +124,14 @@
                     android:id="@+id/tv_write_addonelinebtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="160dp"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:gravity="center"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:gravity="right"
                     android:lineHeight="16dp"
                     android:text="@string/write_addonelinebtn"
-                    android:textColor="@color/black200"
+                    android:textColor="@color/selector_text_active_black_white"
                     android:textSize="14dp"
-                    app:layout_constraintStart_toEndOf="@+id/iv_write_textstar2"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/tv_write_oneline" />
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -322,7 +322,7 @@
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chip_group"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     app:layout_constraintBottom_toTopOf="@+id/tv_write_comment"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
