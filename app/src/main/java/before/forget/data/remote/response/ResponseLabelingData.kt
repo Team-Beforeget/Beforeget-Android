@@ -1,6 +1,6 @@
 package before.forget.data.remote.response
 
-data class ReportLabelingData(
+data class ResponseLabelingData(
     val title: String,
     val poster: String,
     val start: String,

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import before.forget.data.remote.BeforegetClient
+import before.forget.data.local.tempToken
 import before.forget.databinding.FragmentReportLabelingBinding
 import before.forget.util.callback
 import com.bumptech.glide.Glide
@@ -27,7 +28,7 @@ class ReportLabelingFragment : Fragment() {
 
     private fun initNetwork() {
         BeforegetClient.statisticService.requestReportLabelingData(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdWJpbjA3MjNAYmVmb3JlZ2V0LmNvbSIsIm5pY2siOiLtj6zrppAiLCJpZEZpcmViYXNlIjoiaXNRM1kzVU4xSVlqdmQzMXpsZk5Bd2FHejFtMSIsImlhdCI6MTY0MjQzNTEzMSwiZXhwIjoxNjQzNjQ0NzMxLCJpc3MiOiJjaGFud29vIn0.zIK0c8Gq1f_GcJ_UjkwABWfXQ5UbVSU5M69uEqZhKkc",
+            tempToken,
             "2021-12"
         )
             .callback
@@ -39,7 +40,7 @@ class ReportLabelingFragment : Fragment() {
                 Glide.with(this).load(it.data?.poster).into(binding.ivLabeling)
             }
             .onError {
-                Log.d("####ReportLabelingFragment", "ReportLabelingFragment 서버 오류")
+                Log.d("####ReportLabelingFragment", "서버 오류")
             }
             .enqueue()
     }
