@@ -1,61 +1,51 @@
 package before.forget.feature.report
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import before.forget.R
+import before.forget.data.local.tempToken
+import before.forget.data.remote.BeforegetClient
+import before.forget.databinding.FragmentReportRankingBinding
+import before.forget.util.callback
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReportRankingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ReportRankingFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentReportRankingBinding? = null
+    private val binding get() = _binding ?: error("Binding이 초기화되지 않았습니다.")
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report_ranking, container, false)
+        _binding = FragmentReportRankingBinding.inflate(layoutInflater, container, false)
+        initNetwork()
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReportRankingFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReportRankingFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun initNetwork() {
+        BeforegetClient.statisticService.responseRankingData(
+            tempToken,
+            "2021-12"
+        )
+            .callback
+            .onSuccess {
+                Log.d("#######ReportLabelingFragment", "서버 통신 성공")
+                var startDate = it.data?.start
+                binding.tvRank1Name.text = it.data?.arr?.get(0)?.type
+                binding.tvRank1Count.text = it.data?.arr?.get(0)?.count.toString()
+                binding.tvRank2Name.text = it.data?.arr?.get(1)?.type
+                binding.tvRank2Count.text = it.data?.arr?.get(1)?.count.toString()
+                binding.tvRank3Name.text = it.data?.arr?.get(2)?.type
+                binding.tvRank3Count.text = it.data?.arr?.get(2)?.count.toString()
+                binding.tvTitle.text = it.data?.title
+                binding.tvSubtitle.text = (it.data?.label)?.replace("\n", "\n")
             }
+            .onError {
+                Log.d("####ReportLabelingFragment", "서버 오류")
+            }
+            .enqueue()
     }
 }
