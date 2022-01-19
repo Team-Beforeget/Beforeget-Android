@@ -3,6 +3,7 @@ package before.forget.feature.myrecord
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.remote.BeforegetClient
 import before.forget.data.remote.response.ResponseMyRecordAll
@@ -16,6 +17,8 @@ class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
     private val filterBottomSheetFragment = FilterBottomSheetFragment()
     private var selectedTerm = -1
+    private var selectedStar = -1
+    private var selectedMedia = "-1"
     private val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,22 +61,6 @@ class MyRecordActivity : AppCompatActivity() {
     }
 
     private fun showBottomSheet() {
-        filterBottomSheetFragment.setMediaCallback { selectNumber, trueCounting ->
-            var mediaList =
-                mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
-            val selectedMedia = mediaList[selectNumber]
-
-            if (trueCounting >= 2) {
-                binding.btnMedia.text = selectedMedia + " " + "외" + " " + "${trueCounting - 1}"
-            } else {
-                binding.btnMedia.text = selectedMedia
-            }
-
-            binding.btnMedia.isActivated = true
-        }
-        filterBottomSheetFragment.setStarScoreCallback {
-            binding.btnScore.isActivated = true
-        }
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
 
@@ -86,8 +73,48 @@ class MyRecordActivity : AppCompatActivity() {
                 "3개월" -> selectedTerm = 2
             }
             binding.btnTerm.isActivated = true
-            onFilterDataNetwork(selectedTerm, 1, -1)
+            Log.d("term 실행됨", "{$selectedTerm}")
+            onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
         }
+
+        filterBottomSheetFragment.setStarScoreCallback {
+            binding.btnScore.isActivated = true
+            Log.d("star실행됨", "{$selectedStar")
+            onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
+        }
+
+        filterBottomSheetFragment.setMediaCallback { mediaListWithSelection, trueCounting, selectedMediaFistNumber ->
+            var mediaList =
+                mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
+
+            val selectedFirstMediaText = mediaList[selectedMediaFistNumber]
+            var selectedMediaText = ""
+
+            when (trueCounting) {
+                0 -> selectedMediaText = "-1"
+                1 -> selectedMediaText = "${mediaListWithSelection.indexOf(true) + 1}"
+                else -> {
+                    for (i in 0 until mediaListWithSelection.size) {
+                        if (mediaListWithSelection[i]) {
+                            selectedMediaText += "${i + 1}" + ","
+                        }
+                    }
+                    selectedMediaText = selectedMediaText.dropLast(1)
+                }
+            }
+            if (trueCounting >= 2) {
+                binding.btnMedia.text =
+                    selectedFirstMediaText + " " + "외" + " " + "${trueCounting - 1}"
+            } else {
+                binding.btnMedia.text = selectedFirstMediaText
+            }
+            binding.btnMedia.isActivated = true
+            selectedMedia = selectedMediaText
+            Log.d("어떻게 오는거야", selectedMediaText)
+            onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
+        }
+        Log.d("여기까지", "안오나...?")
+        onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
     }
 
     private fun getMediaFromMainActivity() {
@@ -115,17 +142,18 @@ class MyRecordActivity : AppCompatActivity() {
             .enqueue()
     }
 
-    private fun onFilterDataNetwork(selectedTerm: Int, selectedMedia: Int, selectedStar: Int) {
+    private fun onFilterDataNetwork(term: Int, media: String, star: Int) {
         BeforegetClient.postService
             .getMyRecordFilterData(
                 tempToken,
-                selectedTerm.toString(),
-                selectedMedia.toString(),
-                selectedStar.toString()
+                term.toString(),
+                media,
+                star.toString(),
             )
             .callback
             .onSuccess {
-                myRecordDataAdapter.recordList = (it.data ?: listOf<ResponseMyRecordAll>()) as MutableList<ResponseMyRecordAll>
+                myRecordDataAdapter.recordList =
+                    (it.data ?: listOf<ResponseMyRecordAll>()) as MutableList<ResponseMyRecordAll>
                 // recordList = mutableListOf<ResponseMyRecordAll>()
                 // myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
                 myRecordDataAdapter.notifyDataSetChanged()
