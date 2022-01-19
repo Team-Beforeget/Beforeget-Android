@@ -165,7 +165,7 @@ class MyRecordActivity : AppCompatActivity() {
                 tempToken,
                 term.toString(),
                 media,
-                star.toString(),
+                star,
             )
             .callback
             .onSuccess {

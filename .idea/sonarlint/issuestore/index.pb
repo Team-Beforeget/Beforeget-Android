@@ -15,8 +15,6 @@ X
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 l
 <app/src/main/java/before/forget/feature/main/MainActivity.kt,0/2/021e0588ef4c17f41e5bd42b0a0ea2900b53e4a1
-t
-Dapp/src/main/java/before/forget/feature/filter/FilterTermFragment.kt,f/2/f27ed3d2ba875c06dd4bca99ba495dbe7617244d
 w
 Gapp/src/main/java/before/forget/feature/report/ReportRankingFragment.kt,d/3/d3fd0406ab84c54ae911463cbf234ca2ee10af48
 n
