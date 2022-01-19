@@ -6,7 +6,6 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.data.MainAdapter
-import before.forget.data.local.MainData
 import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.ActivityMainBinding
 import before.forget.feature.myrecord.MyRecordActivity

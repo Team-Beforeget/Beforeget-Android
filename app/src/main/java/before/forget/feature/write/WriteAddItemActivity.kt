@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.data.WriteAddItemAdapter
-import before.forget.data.local.WriteAddItemData
 import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.ActivityWriteAddItemBinding
 import before.forget.util.callback
@@ -21,24 +20,25 @@ class WriteAddItemActivity : AppCompatActivity() {
     }
 
     private fun initMainAdapter() {
-
         binding.rvWriteadditemItemlist.adapter = writeadditemAdapter
     }
 
     private fun onNetwork() {
         BeforegetClient.categoryService
-            .getAddItem()
+            .getAddItem(id = 1)
             .callback
             .onSuccess { response ->
-                response.data?.let {
+                response.data?.let { data ->
                     writeadditemAdapter.itemList.addAll(
-                        it.additional.map { category -> WriteAddItemData(category) }
+                        data.additional.map {
+                            WriteAddItemData(it)
+                        }
                     )
                 }
 
                 writeadditemAdapter.notifyDataSetChanged()
 
-                Log.d("dd", "$(int)")
+                Log.d("dd", "$response")
             }.onError {
             }.enqueue()
     }

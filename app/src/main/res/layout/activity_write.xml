@@ -9,7 +9,7 @@
 
         <variable
             name="write"
-            type="before.forget.data.local.WriteData" />
+            type="before.forget.feature.write.WriteData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

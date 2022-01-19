@@ -1,4 +1,4 @@
-package before.forget.data.local
+package before.forget.feature.write
 
 data class WriteData(
     val itemtitle: String,
