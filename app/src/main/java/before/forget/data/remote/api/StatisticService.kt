@@ -1,5 +1,6 @@
 package before.forget.data.remote.api
 
+import ResponseRankingData
 import before.forget.data.remote.response.ResponseGraphData
 import before.forget.data.remote.response.ResponseLabelingData
 import before.forget.data.remote.response.ResponseWrapper
@@ -22,4 +23,10 @@ interface StatisticService {
         @Path("date") date: String,
         @Path("count") count: Int
     ): Call<ResponseWrapper<ResponseGraphData>>
+
+    @GET("statistic/third/{date}")
+    fun responseRankingData(
+        @Header("accesstoken") token: String? = tempToken,
+        @Path("date") date: String
+    ): Call<ResponseWrapper<ResponseRankingData>>
 }
