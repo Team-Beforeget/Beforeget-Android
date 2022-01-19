@@ -40,7 +40,7 @@
         각각 10개, 7개 기록했어요.</string>
 
     <string name="graph">월별 그래프</string>
-    <string name="graph_description">가장 많은 기록은 한 달을 확인해보세요</string>
+    <string name="graph_description">가장 많은 기록을 한 달을 확인해보세요</string>
     <string name="graph_month">12</string>
     <string name="graph_month_unit">월</string>
     <string name="graph_3_month">3M</string>

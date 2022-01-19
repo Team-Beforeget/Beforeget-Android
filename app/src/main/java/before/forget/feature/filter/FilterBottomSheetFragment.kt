@@ -1,12 +1,14 @@
 package before.forget.feature.filter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import before.forget.R
 import before.forget.databinding.FragmentFilterBottomSheetBinding
+import before.forget.feature.myrecord.MyRecordActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -18,9 +20,9 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
     private val filterStarFragment = FilterStarFragment()
     private var startCallback: ((List<Boolean>, Int) -> Unit)? = null
     private var mediaCallback: ((List<Boolean>, Int, Int) -> Unit)? = null
-    private var termCallback: ((String) -> Unit)? = null
+    private var termCallback: ((String, String) -> Unit)? = null
 
-    fun setTermCallback(listener: (String) -> Unit) {
+    fun setTermCallback(listener: (String, String) -> Unit) {
         this.termCallback = listener
     }
 
@@ -52,9 +54,14 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
             startCallback?.invoke(starListWithSelection, starTrueCounting)
             dismiss()
         }
-        filterTermFragment.setCallbackButtonClickListener {
-            termCallback?.invoke(it)
+        filterTermFragment.setCallbackButtonClickListener { selectedTerm, startToEndDate ->
+            termCallback?.invoke(selectedTerm, startToEndDate)
             dismiss()
+        }
+
+        MyRecordActivity().setCallBackButtonListener { selectedButtonNumber ->
+            Log.d("액비티티에서", "오긴온거니 흑")
+            binding.vpMenu.setCurrentItem(selectedButtonNumber, true)
         }
         initAdapter()
         initTabLayout()
@@ -66,7 +73,6 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         val fragmentList = listOf(filterTermFragment, filterMediaFragment, filterStarFragment)
         filterViewPagerAdapter = FilterViewPagerAdapter(this)
         filterViewPagerAdapter.fragments.addAll(fragmentList)
-
         binding.vpMenu.adapter = filterViewPagerAdapter
     }
 

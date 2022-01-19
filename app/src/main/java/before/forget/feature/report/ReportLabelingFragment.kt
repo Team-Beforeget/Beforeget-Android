@@ -27,7 +27,7 @@ class ReportLabelingFragment : Fragment() {
     }
 
     private fun initNetwork() {
-        BeforegetClient.statisticService.requestReportLabelingData(
+        BeforegetClient.statisticService.responseLabelingData(
             tempToken,
             "2021-12"
         )

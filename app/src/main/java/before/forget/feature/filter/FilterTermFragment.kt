@@ -13,7 +13,13 @@ import java.time.LocalDate
 
 class FilterTermFragment : Fragment() {
     private lateinit var binding: FragmentFilterTermBinding
-    private var callbackButtonClickListener: ((String) -> Unit)? = null
+    var startYear = ""
+    var startMonth = ""
+    var startDay = ""
+    var endYear = ""
+    var endMonth = ""
+    var endDay = ""
+    private var callbackButtonClickListener: ((String, String) -> Unit)? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -67,10 +73,15 @@ class FilterTermFragment : Fragment() {
                 btnMonth.isSelected = false
             }
             btnApplyTermFilter.setOnClickListener {
-                if (binding.btnThreeMonth.isSelected) callbackButtonClickListener?.invoke(binding.btnThreeMonth.text.toString())
-                if (binding.btnTwoWeek.isSelected) callbackButtonClickListener?.invoke(binding.btnTwoWeek.text.toString())
-                if (binding.btnMonth.isSelected) callbackButtonClickListener?.invoke(binding.btnMonth.text.toString())
-                if (binding.btnDirectInput.isSelected) callbackButtonClickListener?.invoke("기간")
+                if (btnThreeMonth.isSelected) callbackButtonClickListener?.invoke(btnThreeMonth.text.toString(), "")
+                if (btnTwoWeek.isSelected) callbackButtonClickListener?.invoke(btnTwoWeek.text.toString(), "")
+                if (btnMonth.isSelected) callbackButtonClickListener?.invoke(btnMonth.text.toString(), "")
+
+                if (btnDirectInput.isSelected) {
+                    val endDate = "$endYear-$endMonth-$endDay"
+                    val startDate = "$startYear-$startMonth-$startDay"
+                    callbackButtonClickListener?.invoke("기간", "$startDate,$endDate")
+                }
             }
         }
     }
@@ -180,7 +191,7 @@ class FilterTermFragment : Fragment() {
         }
     }
 
-    fun setCallbackButtonClickListener(listener: (String) -> Unit) {
+    fun setCallbackButtonClickListener(listener: (String, String) -> Unit) {
         this.callbackButtonClickListener = listener
     }
 
@@ -188,11 +199,17 @@ class FilterTermFragment : Fragment() {
         binding.tvSelectEndDateFilter.text != "날짜를 선택해주세요." && binding.tvSelectStartDateFilter.text != "날짜를 선택해주세요."
 
     private fun setStartDate(year: String, month: String, day: String) {
+        startYear = year
+        startMonth = month
+        startDay = day
         binding.tvSelectStartDateFilter.text =
             year + "년" + " " + month + "월" + " " + day + "일"
     }
 
     private fun setEndDate(year: String, month: String, day: String) {
+        endYear = year
+        endMonth = month
+        endDay = day
         binding.tvSelectEndDateFilter.text =
             year + "년" + " " + month + "월" + " " + day + "일"
     }
