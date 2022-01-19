@@ -5,8 +5,6 @@ x
 Happ/src/main/java/before/forget/feature/filter/FilterViewPagerAdapter.kt,e/f/ef4ce5cfa80f654f8d6e30419cfeb56984990528
 {
 Kapp/src/main/java/before/forget/feature/filter/FilterBottomSheetFragment.kt,2/b/2bedb6b270f7a5ec1f8d79f02ce4421cbf4baf44
-x
-Happ/src/main/java/before/forget/feature/report/ReportViewPagerAdapter.kt,e/8/e82f2fb85b36091bf59956aae976bba5383b51e0
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 X
@@ -17,13 +15,7 @@ t
 Dapp/src/main/java/before/forget/feature/filter/FilterTermFragment.kt,f/2/f27ed3d2ba875c06dd4bca99ba495dbe7617244d
 n
 >app/src/main/java/before/forget/data/local/WriteAddItemData.kt,8/9/89b7bd2cc6ecac81225d88cf8c08abbb77570755
-n
->app/src/main/java/before/forget/feature/report/CardFlipBack.kt,5/d/5d73022c78d78353baaaf17531f0f3b3f79ea073
-o
-?app/src/main/java/before/forget/feature/report/CardFlipFront.kt,9/c/9ce7587b11db6c05975acbd6054584ea54b7e1fd
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-w
-Gapp/src/main/java/before/forget/data/remote/response/ResponseWrapper.kt,7/8/782b8112b6e7db94996ff51c30458dd065f548d5
 n
 >app/src/test/java/before/forget/util/RequestInfoWrapperTest.kt,0/5/051fd38ac74d9e3842aa764bbe88dd5d2302f920
