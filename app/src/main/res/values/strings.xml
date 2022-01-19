@@ -74,7 +74,7 @@
     <string name="main_viewallbtn">전체보기</string>
 
     <!--유형선택뷰-->
-    <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>
+    <string name="media_intro">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="media_movie">Movie</string>
     <string name="media_tv">TV</string>
     <string name="media_webtoon">Webtoon</string>
