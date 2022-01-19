@@ -19,6 +19,7 @@
             android:layout_height="0dp"
             android:background="@drawable/main_undercorner"
             android:elevation="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -68,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="16dp"
-                    android:text="@string/main_name"
+                    tools:text="@string/main_name"
                     android:textColor="@color/black200"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +110,6 @@
                 android:id="@+id/btn_main_record"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
                 android:layout_marginBottom="34dp"
                 android:background="@drawable/main_rectanglefillgreen"
                 android:fontFamily="@font/pretendard_semibold"
@@ -124,8 +124,7 @@
                 android:textSize="17dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_main_text" />
+                app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -199,6 +198,14 @@
             android:textSize="13dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cl_main_top" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

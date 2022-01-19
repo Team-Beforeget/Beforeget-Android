@@ -17,7 +17,12 @@
         <entry key="..\:/Beforeget/app/src/main/res/layout/activity_main.xml" value="0.3695652173913043" />
         <entry key="..\:/Beforeget/app/src/main/res/layout/activity_media_select.xml" value="1.1" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_additem.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_kakao.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_media_book.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_media_movie.xml" value="0.1" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_media_music.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_media_tv.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_media_webtoon.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_star.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_icn_star_green.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/drawable/ic_star.xml" value="0.26979166666666665" />
@@ -47,13 +52,13 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/font/beforeget_font.xml" value="0.2838541666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activitiy_email_signin.xml" value="0.20923913043478262" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.6" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_media_select.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_my_record_detail.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_report.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_writa_add_item.xml" value="0.8" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write.xml" value="0.6211734693877551" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write.xml" value="0.7457886676875957" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/activity_write_add_item.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/dialog_beforeget_two_button.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_detail_book.xml" value="0.11354166666666667" />

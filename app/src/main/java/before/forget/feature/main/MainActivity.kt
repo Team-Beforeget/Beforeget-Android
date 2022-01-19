@@ -48,12 +48,12 @@ class MainActivity : AppCompatActivity() {
                 response.data?.let {
                     mainAdapter.mediaList.addAll( // TODO 함수분리
                         listOf<MainData>(
-                            MainData(R.drawable.ic_white, "Movie", it.Movie),
-                            MainData(R.drawable.ic_white, "Book", it.Book),
-                            MainData(R.drawable.ic_white, "TV", it.Tv),
-                            MainData(R.drawable.ic_white, "Music", it.Music),
-                            MainData(R.drawable.ic_white, "Webtoon", it.Webtoon),
-                            MainData(R.drawable.ic_white, "Youtube", it.Youtube)
+                            MainData(R.drawable.ic_icn_media_movie, "Movie", it.Movie),
+                            MainData(R.drawable.ic_icn_media_book, "Book", it.Book),
+                            MainData(R.drawable.ic_icn_media_tv, "TV", it.Tv),
+                            MainData(R.drawable.ic_icn_media_music, "Music", it.Music),
+                            MainData(R.drawable.ic_icn_media_webtoon, "Webtoon", it.Webtoon),
+                            MainData(R.drawable.ic_icn_media_youtube, "Youtube", it.Youtube)
                         )
                     )
                 }
