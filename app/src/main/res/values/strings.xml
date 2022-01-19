@@ -65,7 +65,7 @@
 
 
     <!--메인뷰-->
-    <string name="main_name">세훈</string>
+    <string name="main_name">포릐</string>
     <string name="main_sublabel">님, 잊기 전에 기록해보세요.</string>
     <string name="main_label">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="main_record">기록하기</string>

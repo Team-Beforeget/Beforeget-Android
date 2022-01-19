@@ -47,8 +47,8 @@
 
         <ImageView
             android:id="@+id/iv_media_movieicon"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="38dp"
             android:layout_marginBottom="9dp"
             android:paddingLeft="65dp"
@@ -57,7 +57,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star" />
+            app:srcCompat="@drawable/ic_media_movie_black" />
 
         <TextView
             android:id="@+id/tv_media_movie"
@@ -100,7 +100,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star" />
+            app:srcCompat="@drawable/ic_media_tv_black" />
 
         <TextView
             android:id="@+id/tv_media_tv"
@@ -143,7 +143,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star" />
+            app:srcCompat="@drawable/ic_media_webtoon_black" />
 
         <TextView
             android:id="@+id/tv_media_webtoon"
@@ -185,7 +185,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star" />
+            app:srcCompat="@drawable/ic_media_book_black" />
 
         <TextView
             android:id="@+id/tv_media_book"
@@ -227,7 +227,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star" />
+            app:srcCompat="@drawable/ic_media_music_black" />
 
         <TextView
             android:id="@+id/tv_media_music"
@@ -269,7 +269,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_star" />
+            app:srcCompat="@drawable/ic_media_youtube_black" />
 
         <TextView
             android:id="@+id/tv_media_youtube"

@@ -44,7 +44,7 @@
                 android:text="@{main.media}"
                 android:textColor="@color/white"
                 android:textSize="17dp"
-                android:textStyle="normal"
+                android:fontFamily="@font/pretendard_regular"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
