@@ -16,7 +16,7 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
     private val filterMediaFragment = FilterMediaFragment()
     private val filterTermFragment = FilterTermFragment()
     private val filterStarFragment = FilterStarFragment()
-    private var startCallback: (() -> Unit)? = null
+    private var startCallback: ((List<Boolean>, Int) -> Unit)? = null
     private var mediaCallback: ((List<Boolean>, Int, Int) -> Unit)? = null
     private var termCallback: ((String) -> Unit)? = null
 
@@ -28,7 +28,7 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         this.mediaCallback = listener
     }
 
-    fun setStarScoreCallback(listener: () -> Unit) {
+    fun setStarScoreCallback(listener: (List<Boolean>, Int) -> Unit) {
         this.startCallback = listener
     }
 
@@ -48,8 +48,8 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
             mediaCallback?.invoke(mediaListWithSelection, trueCounting, selectedMediaFistNumber)
             dismiss()
         }
-        filterStarFragment.setCallbackButtonClickListener {
-            startCallback?.invoke()
+        filterStarFragment.setCallbackButtonClickListener { starListWithSelection, starTrueCounting ->
+            startCallback?.invoke(starListWithSelection, starTrueCounting)
             dismiss()
         }
         filterTermFragment.setCallbackButtonClickListener {

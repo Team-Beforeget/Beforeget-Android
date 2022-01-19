@@ -17,7 +17,7 @@ class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
     private val filterBottomSheetFragment = FilterBottomSheetFragment()
     private var selectedTerm = -1
-    private var selectedStar = -1
+    private var selectedStar = "-1"
     private var selectedMedia = "-1"
     private val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,9 +77,26 @@ class MyRecordActivity : AppCompatActivity() {
             onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
         }
 
-        filterBottomSheetFragment.setStarScoreCallback {
+        filterBottomSheetFragment.setStarScoreCallback { starListWithSelection, starTrueCounting ->
             binding.btnScore.isActivated = true
-            Log.d("star실행됨", "{$selectedStar")
+            val starList = mutableListOf<Int>(1, 2, 3, 4, 5)
+
+            var selectedStarText = ""
+
+            when (starTrueCounting) {
+                0 -> selectedStarText = "-1"
+                1 -> selectedStarText = "${starListWithSelection.indexOf(true) + 1}"
+                else -> {
+                    for (i in 0 until starListWithSelection.size) {
+                        if (starListWithSelection[i]) {
+                            selectedStarText += "${i + 1}" + ","
+                        }
+                    }
+                    selectedStarText = selectedStarText.dropLast(1)
+                }
+            }
+            selectedStar = selectedStarText
+            Log.d("선택된 별점", selectedStar)
             onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
         }
 
@@ -142,7 +159,7 @@ class MyRecordActivity : AppCompatActivity() {
             .enqueue()
     }
 
-    private fun onFilterDataNetwork(term: Int, media: String, star: Int) {
+    private fun onFilterDataNetwork(term: Int, media: String, star: String) {
         BeforegetClient.postService
             .getMyRecordFilterData(
                 tempToken,
@@ -154,8 +171,6 @@ class MyRecordActivity : AppCompatActivity() {
             .onSuccess {
                 myRecordDataAdapter.recordList =
                     (it.data ?: listOf<ResponseMyRecordAll>()) as MutableList<ResponseMyRecordAll>
-                // recordList = mutableListOf<ResponseMyRecordAll>()
-                // myRecordDataAdapter.recordList.addAll(it.data ?: listOf<ResponseMyRecordAll>())
                 myRecordDataAdapter.notifyDataSetChanged()
             }
             .enqueue()
