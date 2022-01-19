@@ -1,12 +1,14 @@
 package before.forget.feature.filter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import before.forget.R
 import before.forget.databinding.FragmentFilterBottomSheetBinding
+import before.forget.feature.myrecord.MyRecordActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -56,6 +58,11 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
             termCallback?.invoke(selectedTerm, startToEndDate)
             dismiss()
         }
+
+        MyRecordActivity().setCallBackButtonListener { selectedButtonNumber ->
+            Log.d("액비티티에서", "오긴온거니 흑")
+            binding.vpMenu.setCurrentItem(selectedButtonNumber, true)
+        }
         initAdapter()
         initTabLayout()
 
@@ -66,7 +73,6 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         val fragmentList = listOf(filterTermFragment, filterMediaFragment, filterStarFragment)
         filterViewPagerAdapter = FilterViewPagerAdapter(this)
         filterViewPagerAdapter.fragments.addAll(fragmentList)
-
         binding.vpMenu.adapter = filterViewPagerAdapter
     }
 

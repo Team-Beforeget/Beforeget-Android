@@ -15,6 +15,7 @@ import before.forget.util.callback
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
+    var callbackButtonClickListener: ((Int) -> Unit)? = null
     private val filterBottomSheetFragment = FilterBottomSheetFragment()
     private var selectedTerm = "-1"
     private var selectedStar = "-1"
@@ -44,14 +45,17 @@ class MyRecordActivity : AppCompatActivity() {
 
     private fun initClickFilterButtonEvent() {
         binding.btnMedia.setOnClickListener {
+            callbackButtonClickListener?.invoke(2)
             showBottomSheet()
         }
 
         binding.btnTerm.setOnClickListener {
+            callbackButtonClickListener?.invoke(1)
             showBottomSheet()
         }
 
         binding.btnScore.setOnClickListener {
+            callbackButtonClickListener?.invoke(3)
             showBottomSheet()
         }
     }
@@ -181,5 +185,9 @@ class MyRecordActivity : AppCompatActivity() {
                 myRecordDataAdapter.notifyDataSetChanged()
             }
             .enqueue()
+    }
+
+    fun setCallBackButtonListener(listener: (Int) -> Unit) {
+        this.callbackButtonClickListener = listener
     }
 }
