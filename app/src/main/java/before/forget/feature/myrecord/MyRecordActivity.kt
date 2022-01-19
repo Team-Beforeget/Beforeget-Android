@@ -19,6 +19,8 @@ class MyRecordActivity : AppCompatActivity() {
     private var selectedTerm = "-1"
     private var selectedStar = "-1"
     private var selectedMedia = "-1"
+    var mediaList =
+        mutableListOf<String>("Movie", "Book", "Music", "Youtube", "Webtoon", "TV")
     private val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +39,7 @@ class MyRecordActivity : AppCompatActivity() {
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        test()
-        getMediaFromMainActivity()
+        showFilterData()
     }
 
     private fun initClickFilterButtonEvent() {
@@ -64,7 +65,7 @@ class MyRecordActivity : AppCompatActivity() {
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
 
-    private fun test() {
+    private fun showFilterData() {
         filterBottomSheetFragment.setTermCallback { term, starToEndDate ->
             binding.btnTerm.text = term
             when (term) {
@@ -80,7 +81,6 @@ class MyRecordActivity : AppCompatActivity() {
 
         filterBottomSheetFragment.setStarScoreCallback { starListWithSelection, starTrueCounting ->
             binding.btnScore.isActivated = true
-            val starList = mutableListOf<Int>(1, 2, 3, 4, 5)
 
             var selectedStarText = ""
 
@@ -102,8 +102,6 @@ class MyRecordActivity : AppCompatActivity() {
         }
 
         filterBottomSheetFragment.setMediaCallback { mediaListWithSelection, trueCounting, selectedMediaFistNumber ->
-            var mediaList =
-                mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
 
             val selectedFirstMediaText = mediaList[selectedMediaFistNumber]
             var selectedMediaText = ""
@@ -131,16 +129,24 @@ class MyRecordActivity : AppCompatActivity() {
             Log.d("어떻게 오는거야", selectedMediaText)
             onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
         }
-        Log.d("여기까지", "안오나...?")
+        selectedMedia = when (getMediaFromMainActivity()) {
+            "Movie", "Book", "TV", "Music", "Webtoon", "Youtube" -> {
+                var mediaNumber = mediaList.indexOf(getMediaFromMainActivity()) + 1
+                mediaNumber.toString()
+            }
+            else -> "-1"
+        }
+        Log.d("selectedMedia", selectedMedia)
         onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
     }
 
-    private fun getMediaFromMainActivity() {
+    private fun getMediaFromMainActivity(): String {
+        val media = intent.getStringExtra("media")
         if (intent.hasExtra("media")) {
-            val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
             binding.btnMedia.isActivated = true
         }
+        return media.toString()
     }
 
     private fun initButtonFilter() {
