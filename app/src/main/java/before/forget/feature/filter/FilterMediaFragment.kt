@@ -57,10 +57,10 @@ class FilterMediaFragment : Fragment() {
             btnApplyMediaFilter.setOnClickListener {
                 mediaListWithSelection[0] = btnMovie.isSelected
                 mediaListWithSelection[1] = btnBook.isSelected
-                mediaListWithSelection[2] = btnMusic.isSelected
-                mediaListWithSelection[3] = btnYoutube.isSelected
+                mediaListWithSelection[2] = btnTv.isSelected
+                mediaListWithSelection[3] = btnMusic.isSelected
                 mediaListWithSelection[4] = btnWebtoon.isSelected
-                mediaListWithSelection[5] = btnTv.isSelected
+                mediaListWithSelection[5] = btnYoutube.isSelected
                 var selectedMediaFistNumber = 6
                 for (i in 0 until mediaListWithSelection.size) {
                     if (mediaListWithSelection[i]) {
