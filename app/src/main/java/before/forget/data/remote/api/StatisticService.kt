@@ -10,7 +10,7 @@ import retrofit2.http.Path
 
 interface StatisticService {
     @GET("statistic/first/{date}")
-    fun requestReportLabelingData(
+    fun responseLabelingData(
         @Header("accesstoken") token: String? = tempToken,
         @Path("date") date: String,
     ): Call<ResponseWrapper<ResponseLabelingData>>
