@@ -20,7 +20,7 @@ class MyRecordActivity : AppCompatActivity() {
     private var selectedStar = "-1"
     private var selectedMedia = "-1"
     var mediaList =
-        mutableListOf<String>("Movie", "Book", "Music", "Youtube", "Webtoon", "TV")
+        mutableListOf<String>("Movie", "Book", "TV", "Music", "Webtoon", "Youtube")
     private val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
