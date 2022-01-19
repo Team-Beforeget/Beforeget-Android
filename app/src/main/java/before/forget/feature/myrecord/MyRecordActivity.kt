@@ -16,7 +16,7 @@ import before.forget.util.callback
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
     private val filterBottomSheetFragment = FilterBottomSheetFragment()
-    private var selectedTerm = -1
+    private var selectedTerm = "-1"
     private var selectedStar = "-1"
     private var selectedMedia = "-1"
     private val myRecordDataAdapter = MyRecordAdapter()
@@ -65,12 +65,13 @@ class MyRecordActivity : AppCompatActivity() {
     }
 
     private fun test() {
-        filterBottomSheetFragment.setTermCallback {
-            binding.btnTerm.text = it
-            when (it) {
-                "2주" -> selectedTerm = 0
-                "1개월" -> selectedTerm = 1
-                "3개월" -> selectedTerm = 2
+        filterBottomSheetFragment.setTermCallback { term, starToEndDate ->
+            binding.btnTerm.text = term
+            when (term) {
+                "2주" -> selectedTerm = "0"
+                "1개월" -> selectedTerm = "1"
+                "3개월" -> selectedTerm = "2"
+                "기간" -> selectedTerm = starToEndDate
             }
             binding.btnTerm.isActivated = true
             Log.d("term 실행됨", "{$selectedTerm}")
@@ -159,7 +160,7 @@ class MyRecordActivity : AppCompatActivity() {
             .enqueue()
     }
 
-    private fun onFilterDataNetwork(term: Int, media: String, star: String) {
+    private fun onFilterDataNetwork(term: String, media: String, star: String) {
         BeforegetClient.postService
             .getMyRecordFilterData(
                 tempToken,
