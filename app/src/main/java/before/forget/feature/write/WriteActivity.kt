@@ -7,7 +7,9 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import before.forget.R
 import before.forget.databinding.ActivityWriteBinding
+import com.google.android.material.chip.Chip
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -40,7 +42,10 @@ class WriteActivity : AppCompatActivity() {
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
         getMediaLabel()
         btnSetOnClickListener()
-        binding.chipGroup.apply {
+        (1..6).forEach {
+            val chip = layoutInflater.inflate(R.layout.view_chip, null) as Chip
+            chip.text = it.toString() + "looooooooooooong"
+            binding.chipGroup.addView(chip)
         }
     }
 
