@@ -16,7 +16,7 @@ data class ResponseDetail(
         val star: Int,
         val oneline: List<String>,
         val comment: String,
-        val additional: List<Additional>,
+        val additional: List<Additional>?,
 
     ) {
         data class Additional(
