@@ -3,8 +3,8 @@ package before.forget.data
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import before.forget.data.local.WriteAddItemData
 import before.forget.databinding.ItemItemListBinding
+import before.forget.feature.write.WriteAddItemData
 
 class WriteAddItemAdapter : RecyclerView.Adapter<WriteAddItemAdapter.WriteAddItemViewHolder>() {
 
