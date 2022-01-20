@@ -1,10 +1,5 @@
 package before.forget.data.remote.response
 
-import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Path
-
 data class ResponseOnepageData(
     val start: String,
     val graphic: String,
