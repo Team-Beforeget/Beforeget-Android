@@ -18,6 +18,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // initDetailAdapter()
+        initOneReview()
         test()
     }
 
@@ -31,9 +32,19 @@ class DetailActivity : AppCompatActivity() {
         detailAdapter.notifyDataSetChanged()
     }
 
+    private fun initOneReview() {
+        binding.apply {
+            isReviewExist2 = false
+            isReviewExist3 = false
+            isReviewExist4 = false
+            isReviewExist5 = false
+            isReviewExist6 = false
+        }
+    }
+
     private fun test() {
         BeforegetClient.postService
-            .getDetailFilterData(tempToken, 23)
+            .getDetailFilterData(tempToken, 40)
             .callback
             .onSuccess {
                 // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
@@ -48,9 +59,37 @@ class DetailActivity : AppCompatActivity() {
                     }
                     tvTitleDetail.text = it.data!![0].title
                     tvDateDetail.text = it.data!![0].date
-                    tvReview1.text = it.data!![0].oneline[0]
 
-                    tvReview2.text = it.data!![0].oneline[1]
+                    Log.d("online size", it.data!![0].oneline.size.toString())
+
+                    for (i in it.data!![0].oneline.indices) {
+
+                        when (i) {
+                            0 -> tvReview1.text = it.data!![0].oneline[0]
+
+                            1 -> {
+                                tvReview2.text = it.data!![0].oneline[1]
+                                isReviewExist2 = true
+                            }
+                            2 -> {
+                                tvReview3.text = it.data!![0].oneline[2]
+                                isReviewExist3 = true
+                            }
+                            3 -> {
+                                tvReview4.text = it.data!![0].oneline[3]
+                                isReviewExist4 = true
+                            }
+                            4 -> {
+                                tvReview5.text = it.data!![0].oneline[4]
+                                isReviewExist5 = true
+                            }
+                            5 -> {
+                                tvReview6.text = it.data!![0].oneline[5]
+                                isReviewExist6 = true
+                            }
+                        }
+                    }
+
                     // tvReview3.text = it.data!![0].oneline[2]
                     // tvReview4.text = it.data!![0].oneline[3]
                     // tvReview5.text = it.data!![0].oneline[4]
