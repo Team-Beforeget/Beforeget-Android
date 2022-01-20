@@ -25,7 +25,7 @@ class WriteAdapter : RecyclerView.Adapter<WriteAdapter.WriteViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: WriteData) {
-            // binding.write 어댑터붙이는곳까지함
+            // binding.write 기록항목추가 in 글쓰기뷰 어댑터붙이는곳까지함
         }
     }
 }

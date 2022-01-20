@@ -12,6 +12,7 @@ import before.forget.feature.myrecord.MyRecordActivity
 import before.forget.feature.report.ReportActivity
 import before.forget.feature.write.MediaSelectActivity
 import before.forget.util.callback
+import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,7 +34,13 @@ class MainActivity : AppCompatActivity() {
         }
         setContentView(binding.root)
         initMainAdapter()
+        initImage()
         onNetwork()
+    }
+
+    private fun initImage() {
+        Glide.with(this).load(R.drawable.icn_main_img).override(900, 900)
+            .into(binding.ivMainImage)
     }
 
     private fun initMainAdapter() {

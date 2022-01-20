@@ -29,6 +29,8 @@
 
     </style>
 
+
+
     <style name="Pretendard.Body.1_Medium_17.EditText" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/pretendard_medium</item>
         <item name="android:textSize">17dp</item>
