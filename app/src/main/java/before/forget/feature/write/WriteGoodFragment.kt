@@ -89,8 +89,8 @@ class WriteGoodFragment : Fragment() {
             .onSuccess { response ->
                 response.data?.let { data ->
                     val a: List<String> = data.good
-                    data.good.forEachIndexed { index, s ->
-                        oneline[index].text = s
+                    data.good.forEachIndexed { index, server ->
+                        oneline[index].text = server
                     }
                     Log.d("dd", "a")
                 }
