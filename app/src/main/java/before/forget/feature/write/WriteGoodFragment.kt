@@ -23,10 +23,10 @@ class WriteGoodFragment : Fragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_write_good, container, false)
-        /*  binding.btnWriteApply.isEnabled = false
-          clickWriteButtonEvent()
-          checkEnableApplyBtn()
-          resetSelectedOneLine()*/
+        binding.btnWriteGoodapply.isEnabled = false
+        clickWriteButtonEvent()
+        checkEnableApplyBtn()
+        resetSelectedOneLine()
         onNetwork()
         return binding.root
     }
@@ -70,9 +70,14 @@ class WriteGoodFragment : Fragment() {
                 tvWriteOnelinereview6.isSelected
         }
 
-    /*  private fun checkEnableApplyBtn() {
-          binding.btnWriteApply.isEnabled = checkBtnSelected()
-      }*/
+    private fun btnApplyActivate() {
+        checkBtnSelected()
+        checkEnableApplyBtn()
+    }
+
+    private fun checkEnableApplyBtn() {
+        binding.btnWriteGoodapply.isEnabled = checkBtnSelected()
+    }
 
     private fun onNetwork() {
         val oneline = listOf<TextView>(
@@ -83,39 +88,34 @@ class WriteGoodFragment : Fragment() {
             binding.tvWriteOnelinereview5,
             binding.tvWriteOnelinereview6
         )
+
         BeforegetClient.categoryService
             .getOneLine(id = 1)
             .callback
             .onSuccess { response ->
                 response.data?.let { data ->
-                    val a: List<String> = data.good
                     data.good.forEachIndexed { index, server ->
                         oneline[index].text = server
                     }
-                    Log.d("dd", "a")
+                    Log.d("성공", "${response.data.good}")
                 }
             }
             .onError { }
             .enqueue()
     }
 
-    private fun btnApplyActivate() {
-        checkBtnSelected()
-        // checkEnableApplyBtn()
+    private fun resetSelectedOneLine() {
+        binding.clWriteGoodresetbtn.setOnClickListener {
+            with(binding) {
+                tvWriteOnelinereview1.isSelected = false
+                tvWriteOnelinereview2.isSelected = false
+                tvWriteOnelinereview3.isSelected = false
+                tvWriteOnelinereview4.isSelected = false
+                tvWriteOnelinereview5.isSelected = false
+                tvWriteOnelinereview6.isSelected = false
+            }
+        }
     }
-
-    /* private fun resetSelectedOneLine() {
-         binding.clWriteResetbtn.setOnClickListener {
-             with(binding) {
-                 tvWriteOnelinereview1.isSelected = false
-                 tvWriteOnelinereview2.isSelected = false
-                 tvWriteOnelinereview3.isSelected = false
-                 tvWriteOnelinereview4.isSelected = false
-                 tvWriteOnelinereview5.isSelected = false
-                 tvWriteOnelinereview6.isSelected = false
-             }
-         }
-     }*/
 
     fun setCallbackButtonClickListener(listener: () -> Unit) {
         this.callbackButtonClickListener = listener

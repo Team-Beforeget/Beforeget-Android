@@ -15,6 +15,8 @@ import com.google.android.material.tabs.TabLayoutMediator
 class WriteBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentWriteBottomSheetBinding
     private lateinit var writeViewPagerAdapter: WriteViewPagerAdapter
+    val writeGoodFragment = WriteGoodFragment()
+    val writeBadFragment = WriteBadFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,18 +30,22 @@ class WriteBottomSheetFragment : BottomSheetDialogFragment() {
             false
         )
 
-        /*   writeGoodFragment.setCallbackButtonClickListener {
-               dismiss()
-           }
+        binding.btnWriteApply.visibility = View.INVISIBLE
+        binding.clWriteResetbtn.visibility = View.INVISIBLE
 
-           writeBadFragment.setCallbackButtonClickListener {
-               dismiss()
-           }*/
+        writeGoodFragment.setCallbackButtonClickListener {
+            dismiss()
+        }
+
+      /*  writeBadFragment.setCallbackButtonClickListener {
+            dismiss()
+        }*/
 
         initAdapter()
         initTabLayout()
         test()
         initDialog()
+
         return binding.root
     }
 
@@ -61,6 +67,7 @@ class WriteBottomSheetFragment : BottomSheetDialogFragment() {
         binding.btnWriteApply.setOnClickListener {
             val writeBottomSheetFragment = WriteBottomSheetFragment()
             writeBottomSheetFragment.dismiss()
+            // 데이터전달
         }
     }
 
