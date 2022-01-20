@@ -2,11 +2,17 @@ package before.forget.feature.report
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import before.forget.R
+import before.forget.data.local.tempToken
+import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.FragmentReportGraphBinding
+import before.forget.util.callback
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -23,6 +29,8 @@ class ReportGraphFragment : Fragment() {
     private var MAX_X_VALUE = 5 // bar count
     private var MAX_Y_VALUE = 0
     private var COUNT_X_LABEL = 5
+    private var recordCount = ArrayList<String>()
+    private var monthCount = ArrayList<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,14 +41,46 @@ class ReportGraphFragment : Fragment() {
 
         chart = binding.bcGraph
 
-        initBarChart()
+        initNetwork()
         initMonthClickEvent()
 
         return binding.root
     }
 
-    private fun initBarChart() {
-        val data: BarData = createBarChartData()
+    private fun initNetwork() {
+        recordCount.clear()
+        monthCount.clear()
+        BeforegetClient.statisticService.responseGraphData(
+            tempToken,
+            "2021-12",
+            MAX_X_VALUE
+        )
+            .callback
+            .onSuccess {
+                Log.d("#######ReportGraphFragment", "서버 통신 성공")
+                var startDate = it.data?.start
+                for (i in 0 until MAX_X_VALUE) {
+                    recordCount.add(it.data?.recordCount?.get(MAX_X_VALUE - 1 - i)?.count.toString())
+                    monthCount.add(it.data?.recordCount?.get(MAX_X_VALUE - 1 - i)?.month.toString())
+                }
+                if (MAX_X_VALUE == 3) {
+                    monthCount.add(3, "1")
+                    monthCount.add(4, "1")
+                }
+                Log.d("##########MONTH", monthCount.toString())
+                binding.tvGraphTitle.text = it.data?.title
+                binding.tvGraphSubtitle.text = (it.data?.comment)?.replace("\n", "\n")
+
+                initBarChart(recordCount)
+            }
+            .onError {
+                Log.d("####ReportGraphgFragment", "서버 오류")
+            }
+            .enqueue()
+    }
+
+    private fun initBarChart(recordCount: ArrayList<String>) {
+        val data: BarData = createBarChartData(recordCount)
         // set bar width
         data.barWidth = 0.1f
         configureChartAppearance()
@@ -54,25 +94,27 @@ class ReportGraphFragment : Fragment() {
                 COUNT_X_LABEL = 3
                 tvGraph5Month.setTextColor(Color.GRAY)
                 tvGraph3Month.setTextColor(Color.WHITE)
-                initBarChart()
+                initNetwork()
             }
             tvGraph5Month.setOnClickListener {
                 MAX_X_VALUE = 5
                 COUNT_X_LABEL = 5
                 tvGraph5Month.setTextColor(Color.WHITE)
                 tvGraph3Month.setTextColor(Color.GRAY)
-                initBarChart()
+                initNetwork()
             }
         }
     }
 
-    private fun createBarChartData(): BarData {
+    private fun createBarChartData(recordCount: ArrayList<String>): BarData {
         val values: ArrayList<BarEntry> = ArrayList()
-        val record_count = arrayOf("8", "21", "25", "15", "18") // TODO: Server에서 받아오기
+        var colors: ArrayList<Int> = ArrayList()
         for (i in 0 until MAX_X_VALUE) {
             val x = i.toFloat()
-            val y: Float = record_count[i].toFloat()
-            if (record_count[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = record_count[i].toInt()
+            val y: Float = recordCount[i].toFloat()
+            if (recordCount[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = recordCount[i].toInt()
+            if (i == MAX_X_VALUE - 1) colors.add(ContextCompat.getColor(requireContext(), R.color.green100))
+            else colors.add(Color.WHITE)
             values.add(BarEntry(x, y))
         }
         val set1 = BarDataSet(values, "")
@@ -81,7 +123,8 @@ class ReportGraphFragment : Fragment() {
         // showing the value of the bar
         set1.setDrawValues(false)
         set1.barShadowColor = Color.BLACK
-        set1.color = Color.WHITE
+        // set1.color = Color.WHITE
+        set1.colors = colors
         return BarData(dataSets)
     }
 
@@ -124,8 +167,7 @@ class ReportGraphFragment : Fragment() {
             setDrawGridLines(false)
             valueFormatter = object : ValueFormatter() {
                 override fun getFormattedValue(value: Float): String {
-                    val DAYS = arrayOf("8", "9", "10", "11", "12") // TODO: datepicker 기반으로 계산하기
-                    return DAYS[value.toInt()] + "월"
+                    return monthCount[value.toInt()] + "월"
                 }
             }
         }

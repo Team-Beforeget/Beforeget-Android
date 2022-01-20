@@ -1,14 +1,14 @@
 package before.forget.feature.filter
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import before.forget.R
 import before.forget.databinding.FragmentFilterBottomSheetBinding
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
+import before.forget.feature.myrecord.MyRecordActivity
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -18,6 +18,21 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
     private val filterMediaFragment = FilterMediaFragment()
     private val filterTermFragment = FilterTermFragment()
     private val filterStarFragment = FilterStarFragment()
+    private var startCallback: ((List<Boolean>, Int) -> Unit)? = null
+    private var mediaCallback: ((List<Boolean>, Int, Int) -> Unit)? = null
+    private var termCallback: ((String, String) -> Unit)? = null
+
+    fun setTermCallback(listener: (String, String) -> Unit) {
+        this.termCallback = listener
+    }
+
+    fun setMediaCallback(listener: (List<Boolean>, Int, Int) -> Unit) {
+        this.mediaCallback = listener
+    }
+
+    fun setStarScoreCallback(listener: (List<Boolean>, Int) -> Unit) {
+        this.startCallback = listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,15 +45,23 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
             container,
             false
         )
+        binding.vpMenu.isSaveEnabled = false
+        filterMediaFragment.setCallbackButtonClickListener { mediaListWithSelection, trueCounting, selectedMediaFistNumber ->
+            mediaCallback?.invoke(mediaListWithSelection, trueCounting, selectedMediaFistNumber)
+            dismiss()
+        }
+        filterStarFragment.setCallbackButtonClickListener { starListWithSelection, starTrueCounting ->
+            startCallback?.invoke(starListWithSelection, starTrueCounting)
+            dismiss()
+        }
+        filterTermFragment.setCallbackButtonClickListener { selectedTerm, startToEndDate ->
+            termCallback?.invoke(selectedTerm, startToEndDate)
+            dismiss()
+        }
 
-        filterMediaFragment.setCallbackButtonClickListener {
-            dismiss()
-        }
-        filterStarFragment.setCallbackButtonClickListener {
-            dismiss()
-        }
-        filterTermFragment.setCallbackButtonClickListener {
-            dismiss()
+        MyRecordActivity().setCallBackButtonListener { selectedButtonNumber ->
+            Log.d("액비티티에서", "오긴온거니 흑")
+            binding.vpMenu.setCurrentItem(selectedButtonNumber, true)
         }
         initAdapter()
         initTabLayout()
@@ -50,7 +73,6 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         val fragmentList = listOf(filterTermFragment, filterMediaFragment, filterStarFragment)
         filterViewPagerAdapter = FilterViewPagerAdapter(this)
         filterViewPagerAdapter.fragments.addAll(fragmentList)
-
         binding.vpMenu.adapter = filterViewPagerAdapter
     }
 
@@ -60,11 +82,5 @@ class FilterBottomSheetFragment : BottomSheetDialogFragment() {
         TabLayoutMediator(binding.tlMenu, binding.vpMenu) { tab, position ->
             tab.text = menuNameList[position]
         }.attach()
-    }
-
-    private fun test() {
-        val bottomSheetDialog = BottomSheetDialog(requireContext())
-        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        bottomSheetDialog.behavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 }

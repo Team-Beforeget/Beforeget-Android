@@ -17,7 +17,7 @@
     <string name="date">2021년 12월</string>
     <string name="month">12</string>
     <string name="month_sub">월의</string>
-    <string name="nickname">땅콩</string>
+    <string name="nickname">포릐</string>
     <string name="nick_sub">님은?</string>
     <string name="report1_description">이번 달 나의 소비 유형을 알아보세요</string>
     <string name="report1_title">티키타카 뮤지션</string>
@@ -40,7 +40,7 @@
         각각 10개, 7개 기록했어요.</string>
 
     <string name="graph">월별 그래프</string>
-    <string name="graph_description">가장 많은 기록은 한 달을 확인해보세요</string>
+    <string name="graph_description">가장 많은 기록을 한 달을 확인해보세요</string>
     <string name="graph_month">12</string>
     <string name="graph_month_unit">월</string>
     <string name="graph_3_month">3M</string>
@@ -50,8 +50,22 @@
     <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
         10월로, 30개의 기록을 남겼어요!\n다음 달, 나의 그래프는 어떤 모양일까요?</string>
 
+    <string name="sentence">유형별 한 줄 리뷰 순위</string>
+    <string name="sentence_description">유형 카드를 탭하여 확인해보세요</string>
+    <string name="sentence_type1">Movie</string>
+    <string name="sentence_type2">Book</string>
+    <string name="sentence_type3">TV</string>
+    <string name="sentence_type4">Music</string>
+    <string name="sentence_type5">Webtoon</string>
+    <string name="sentence_type6">Youtube</string>
+    <string name="sentence1">너무 웃겨요</string>
+    <string name="sentence2">눈물 좔좔 호수수</string>
+    <string name="sentence3">시간순삭</string>
+    <string name="sentence_empty">해당 유형을\n기록해보세요</string>
+
+
     <!--메인뷰-->
-    <string name="main_name">세훈</string>
+    <string name="main_name">포릐</string>
     <string name="main_sublabel">님, 잊기 전에 기록해보세요.</string>
     <string name="main_label">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="main_record">기록하기</string>
@@ -60,7 +74,7 @@
     <string name="main_viewallbtn">전체보기</string>
 
     <!--유형선택뷰-->
-    <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>
+    <string name="media_intro">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="media_movie">Movie</string>
     <string name="media_tv">TV</string>
     <string name="media_webtoon">Webtoon</string>
@@ -76,15 +90,28 @@
     <string name="write_title">영화 제목</string>
     <string name="write_titleinput">영화의 제목은 무엇인가요?</string>
     <string name="write_oneline">한 줄 리뷰</string>
-    <string name="write_addonelinebtn">한 줄 리뷰 추가</string>
+    <string name="write_addonelinebtn">+ 리뷰 추가</string>
     <string name="write_comment">코멘트</string>
     <string name="write_commentinput">영화를 보며 어떤 생각을 했나요?</string>
     <string name="write_additem">기록항목 추가</string>
     <string name="write_edit">기록항목 삭제</string>
+    <string name="write_resetall">전체 초기화</string>
+    <string name="write_apply">적용</string>
+    <string name="write_onelinereview1">아름다운 영상미</string>
+    <string name="write_onelinereview2">연기가 훌륭해요</string>
+    <string name="write_onelinereview3">흥미진진한 줄거리</string>
+    <string name="write_onelinereview4">OST 맛집</string>
+    <string name="write_onelinereview5">최고의 반전!</string>
+    <string name="write_onelinereview6">마음이 따듯해져요</string>
 
-    write_title
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--기록항목 추가뷰-->
+    <string name="addwrite_mainlabel1">이런 내용을 기록해 보는 건 어때요?</string>
+    <string name="addwrite_mainlabel2">더 기록해보고 싶은 내용이 있나요?</string>
+    <string name="addwrite_cantext">직접 텍스트 항목을 추가할 수 있어요.</string>
+    <string name="addwrite_canimage">직접 이미지 항목을 추가할 수 있어요.</string>
+    <string name="addwrite_nextbtn">다음</string>
+
 
     <!--나의기록 필터뷰-->
     <string name="second_week">2주</string>
@@ -120,4 +147,90 @@
     <string name="login_kakao_button">카카오로그인</string>
     <string name="email_signin_password_input">비밀번호</string>
 
+
+    <!--나의기록 상세뷰, 고정뷰-->
+    <string name="one_review">한 줄 리뷰</string>
+    <string name="review_1">흥미진진한 줄거리</string>
+    <string name="review_2">연기가 일품이에요!</string>
+    <string name="review_3">인생영화</string>
+    <string name="review_4">아름다운 영상미</string>
+    <string name="review_5">마음이 따듯해져요</string>
+    <string name="review_6">최고의 반전!</string>
+    <string name="comment_title">코멘트</string>
+    <string name="comment">꽤나 폭력적인 장면을 폭죽이 터진다거나, 슬로우\n모션 등으로 표현하여 폭력성을 영상미로 승화시\n킨 점이 인상깊다. 또한 영화 전반적으로 풍기는\n앤틱한 분위기가 내 취향을 저격해서 눈이 즐거웠\n던 영화다.</string>
+    <string name="kingsman">킹스맨</string>
+    <string name="date_detail">2022. 01. 10. MON</string>
+
+    <!--나의기록 상세뷰- 영화뷰-->
+    <string name="poster">포스터</string>
+    <string name="famous_line_title">명대사</string>
+    <string name="famous_line">Manners maketh man.</string>
+    <string name="genre_tilte">장르</string>
+    <string name="genre">액션, SF, 범죄, 스릴러, 코미디, 모험</string>
+    <string name="story_tilt">줄거리</string>
+    <string name="story">세상에서 가장 위험한 면접이 시작된다! 높은 IQ, 주\n니어 체조대회 2년 연속 우승! 그러나 학교 중퇴, 해\n병대 중도 하차.동네 패싸움에 직장은 가져본 적도\n없이 별볼일 없는 루저로 낙인 찍혔던 ‘그’가 ‘젠틀맨\n스파이’로 전격 스카우트 됐다!</string>
+    <string name="ost_tilte">OST</string>
+    <string name="ost">OST 이름</string>
+    <string name="director">감독</string>
+    <string name="director_name">매슈 본</string>
+    <string name="actor">배우</string>
+    <string name="actor_name">콜린 퍼스, 태런 에저튼, 마크\n스트롱, 마이클 케인, 사무엘 L. 잭슨</string>
+
+    <!--나의기록 상세뷰- book뷰-->
+    <string name="writer">작가</string>
+    <string name="writer_name">김송현이 작가예여</string>
+    <string name="publisher">출판사</string>
+    <string name="publisher_name">한샘 출판사</string>
+    <string name="cover">표지</string>
+    <string name="impressive_verse">인상깊은 구절</string>
+    <string name="impressive_verse_content">사실 이것은 다 빈치가 살짝 장난을 친 것입\n니다. 왼쪽에 있는 시골 풍경을 낮게 그려서,\n오른쪽보다 왼쪽의 모나리자가 더 커보이게\n한 겁니다.</string>
+
+    <!--나의기록 상세뷰 tv뷰-->
+    <string name="famous_scene">명장면</string>
+    <string name="ott">방송사\nOTT</string>
+    <string name="ost_content_tv">Polarised - Cosmo’s Midnight</string>
+
+    <!--나의기록 상세뷰 music뷰-->
+    <string name="album">앨범</string>
+    <string name="album_cover">앨범 커버</string>
+    <string name="lyrics">가사</string>
+    <string name="lyrics_content">I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n \'Cause you\'re on my mind\nI\'m feeling like, I\'m feeling like this time I wish\nI could be first\n
+\'Cause you\'re on my mind\nI\'m paralyzed\n
+I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n
+I\'m paralyzed\n
+I\'m feeling like, I\'m feeling like I might have\nbeen the wrong time\n
+\'Cause you\'re on my mind\n
+And though you\'re right\n
+I\'m paralyzed\n
+I\'m so polarized\n
+I could be anywhere in the world\n
+You\'ll be floating in my head\n
+Like a rendezvous, very late in the night\n
+Bet you and I could really meet\n
+I just wanna cruise with you\n
+I just wanna travel with you\n
+I\'m so polarized\n
+I\'m so polarized</string>
+    <string name="link">링크</string>
+    <string name="singer">가수</string>
+    <string name="blockb">블락비</string>
+    <string name="link_contetn">https://www.youtube.com/watch?v=qZFo0PYkHFo</string>
+
+    <!--나의기록 상세 뷰 webtoon-->
+    <string name="day_week">요일</string>
+    <string name="monday">월요일</string>
+    <string name="platform">플랫폼</string>
+    <string name="input_user">사용자 입력 텍스트</string>
+
+    <!--나의기록 상세뷰 youtube-->
+    <string name="category">카테고리</string>
+    <string name="timestamp">타임스탬프</string>
+    <string name="channel">채널</string>
+    <string name="timestamp_contetn">13:45</string>
+
+    <!--Dialog Button Text-->
+    <string name="okText">확인</string>
+    <string name="cancelText">취소</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -6,7 +6,8 @@
 
         <variable
             name="main"
-            type="before.forget.data.MainData" />
+            type="before.forget.feature.main.MainData" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,10 +27,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:lineHeight="42dp"
-                android:text="@{main.count}"
+                android:text="@{Integer.toString(main.count)}"
                 android:textColor="@color/white"
-                android:textSize="43sp"
-                android:textStyle="normal"
+                android:textSize="43dp"
+                android:fontFamily="@font/ppneuemachina_ultrabold"
                 app:layout_constraintBottom_toTopOf="@+id/tv_main_rvmedia"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -42,8 +43,8 @@
                 android:lineHeight="25dp"
                 android:text="@{main.media}"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                android:textStyle="normal"
+                android:textSize="17dp"
+                android:fontFamily="@font/pretendard_regular"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -54,7 +55,7 @@
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="17dp"
                 android:layout_marginEnd="80dp"
-                android:background="@{main.icon}"
+                imageResId="@{main.icon}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

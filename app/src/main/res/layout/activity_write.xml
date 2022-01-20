@@ -7,6 +7,9 @@
 
     <data>
 
+        <variable
+            name="write"
+            type="before.forget.feature.write.WriteData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,7 +64,7 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:fillViewport="true"
             app:layout_constraintBottom_toTopOf="@+id/tv_write_edit"
             app:layout_constraintTop_toBottomOf="@+id/tv_write_medialabel">
@@ -83,7 +86,6 @@
                     android:paddingTop="10dp"
                     android:paddingRight="19dp"
                     android:paddingBottom="8dp"
-                    android:text="2022. 01. 08. SAT"
                     android:textColor="@color/black200"
                     android:textSize="13dp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -122,21 +124,15 @@
                     android:id="@+id/tv_write_addonelinebtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/write_rectangle_1dp"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:gravity="center"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/pretendard_semibold"
+                    android:gravity="right"
                     android:lineHeight="16dp"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="9dp"
-                    android:paddingRight="15dp"
-                    android:paddingBottom="9dp"
                     android:text="@string/write_addonelinebtn"
-                    android:textColor="@color/black200"
+                    android:textColor="@color/selector_text_active_black_white"
                     android:textSize="14dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline" />
+                    app:layout_constraintTop_toTopOf="@+id/tv_write_oneline" />
 
                 <com.google.android.material.textfield.TextInputLayout
 
@@ -189,22 +185,22 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="79dp"
                     android:layout_marginTop="44dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="33dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star3"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star1"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star5"
@@ -212,33 +208,33 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="44dp"
                     android:layout_marginEnd="79dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star4"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="33dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star5"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star3"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
                 <ImageView
                     android:id="@+id/iv_write_star3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="44dp"
+                    android:background="@drawable/write_countingstar"
                     app:layout_constraintEnd_toStartOf="@+id/iv_write_star4"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/iv_write_star2"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn"
-                    app:srcCompat="@drawable/ic_icn_star_false" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_datepickerbtn" />
 
 
                 <ImageView
@@ -312,6 +308,27 @@
                         android:textSize="15dp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_write_itemlist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/til_write_commentinput" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_write_comment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline">
+
+                </com.google.android.material.chip.ChipGroup>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 

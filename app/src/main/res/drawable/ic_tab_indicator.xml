@@ -3,8 +3,10 @@
     android:shape="rectangle">
     <item android:gravity="center">
         <shape>
-            <size android:width="50dp" android:height="2dp"/>
-            <solid android:color="@color/black200"/>
+            <size
+                android:width="50dp"
+                android:height="2dp" />
+            <solid android:color="@color/black200" />
         </shape>
     </item>
 </layer-list>

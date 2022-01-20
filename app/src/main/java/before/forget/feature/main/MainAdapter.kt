@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import before.forget.databinding.ItemMediaListBinding
+import before.forget.feature.main.MainData
 import before.forget.feature.myrecord.MyRecordActivity
-
 
 class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
@@ -41,5 +41,3 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
         }
     }
 }
-
-

@@ -1,61 +1,182 @@
 package before.forget.feature.report
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import before.forget.R
+import before.forget.data.local.tempToken
+import before.forget.data.remote.BeforegetClient
+import before.forget.databinding.FragmentReportOnepageBinding
+import before.forget.util.callback
+import com.bumptech.glide.Glide
+import com.github.mikephil.charting.charts.BarChart
+import com.github.mikephil.charting.components.XAxis
+import com.github.mikephil.charting.data.BarData
+import com.github.mikephil.charting.data.BarDataSet
+import com.github.mikephil.charting.data.BarEntry
+import com.github.mikephil.charting.formatter.ValueFormatter
+import com.github.mikephil.charting.interfaces.datasets.IBarDataSet
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ReportOnepageFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ReportOnepageFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentReportOnepageBinding? = null
+    private val binding get() = _binding ?: error("Binding이 초기화되지 않았습니다.")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var chart: BarChart? = null
+    private var MAX_X_VALUE = 5 // bar count
+    private var MAX_Y_VALUE = 0
+    private var COUNT_X_LABEL = 5
+    private var recordCount = ArrayList<String>()
+    private var monthCount = ArrayList<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_report_onepage, container, false)
+        _binding = FragmentReportOnepageBinding.inflate(layoutInflater, container, false)
+
+        chart = binding.bcGraphOnepage
+
+        initNetwork()
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ReportOnepageFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ReportOnepageFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun initNetwork() {
+        BeforegetClient.statisticService.responseOnepageData(
+            tempToken,
+            "2021-12",
+            5
+        )
+            .callback
+            .onSuccess {
+                Log.d("#######ReportOnepageFragment", "서버 통신 성공")
+                var startDate = it.data?.start
+                Glide.with(this).load(it.data?.graphic).into(binding.ivOnepageGraphic)
+                binding.tvOnepageSentence1.text = it.data?.oneline?.get(0)
+                binding.tvOnepageSentence2.text = it.data?.oneline?.get(1)
+                binding.tvOnepageSentence3.text = it.data?.oneline?.get(2)
+                for (i in 0 until MAX_X_VALUE) {
+                    recordCount.add(it.data?.monthly?.get(MAX_X_VALUE - 1 - i)?.count.toString())
+                    monthCount.add(it.data?.monthly?.get(MAX_X_VALUE - 1 - i)?.month.toString())
+                }
+                binding.tvOnepageRank1Type.text = it.data?.media?.get(0)?.type
+                binding.tvOnepageRank2Type.text = it.data?.media?.get(1)?.type
+                binding.tvOnepageRank3Type.text = it.data?.media?.get(2)?.type
+                binding.tvOnepageRank1Count.text = it.data?.media?.get(0)?.count.toString()
+                binding.tvOnepageRank2Count.text = it.data?.media?.get(1)?.count.toString()
+                binding.tvOnepageRank3Count.text = it.data?.media?.get(2)?.count.toString()
+
+                initBarChart(recordCount)
+            }
+            .onError {
+                Log.d("####ReportOnepageFragment", "서버 오류")
+            }
+            .enqueue()
+    }
+
+    private fun initBarChart(recordCount: ArrayList<String>) {
+        val data: BarData = createBarChartData(recordCount)
+        // set bar width
+        data.barWidth = 0.1f
+        configureChartAppearance()
+        prepareChartData(data)
+    }
+
+    private fun createBarChartData(recordCount: ArrayList<String>): BarData {
+        val values: ArrayList<BarEntry> = ArrayList()
+        var colors: ArrayList<Int> = ArrayList()
+        for (i in 0 until MAX_X_VALUE) {
+            val x = i.toFloat()
+            val y: Float = recordCount[i].toFloat()
+            if (recordCount[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = recordCount[i].toInt()
+            if (i == MAX_X_VALUE - 1) colors.add(ContextCompat.getColor(requireContext(), R.color.green100))
+            else colors.add(Color.WHITE)
+            values.add(BarEntry(x, y))
+        }
+        val set1 = BarDataSet(values, "")
+        val dataSets: ArrayList<IBarDataSet> = ArrayList()
+        dataSets.add(set1)
+        // showing the value of the bar
+        set1.setDrawValues(false)
+        set1.barShadowColor = Color.BLACK
+        set1.colors = colors
+        return BarData(dataSets)
+    }
+
+    private fun configureChartAppearance() {
+        setChart()
+        setChartxAis()
+        setChartAxisLeftAndRight()
+    }
+
+    private fun setChart() {
+        chart!!.run {
+            description.isEnabled = false
+            setDrawValueAboveBar(false)
+            // hiding the grey background of the chart, default false if not set
+            setDrawGridBackground(false)
+            // x, y space
+            extraLeftOffset = 20f
+            extraRightOffset = 30f
+            extraTopOffset = 45f
+            extraBottomOffset = 45f
+
+            // X, Y 바의 애니메이션 효과
+            animateY(2000)
+            // bar background
+            setDrawBarShadow(true)
+            // bar touch
+            setTouchEnabled(false)
+            // chart label
+            getLegend().isEnabled = false
+        }
+    }
+
+    private fun setChartxAis() {
+        val xAxis = chart!!.xAxis
+        // xAxis position
+        xAxis.run {
+            position = XAxis.XAxisPosition.BOTTOM
+            textColor = Color.WHITE
+            labelCount = COUNT_X_LABEL
+            textSize = 14f
+
+            setDrawGridLines(false)
+            valueFormatter = object : ValueFormatter() {
+                override fun getFormattedValue(value: Float): String {
+                    return monthCount[value.toInt()] + "월"
                 }
             }
+        }
+    }
+
+    private fun setChartAxisLeftAndRight() {
+        val axisLeft = chart!!.axisLeft
+        // axisLeft
+        axisLeft.run {
+            setLabelCount(3, true)
+            textColor = Color.WHITE
+            axisLineColor = Color.TRANSPARENT
+            textSize = 14f
+            // axisleft max, min
+            axisMinimum = 0f
+            axisMaximum = MAX_Y_VALUE.toFloat()
+        }
+        // y축 격자
+        // TODO : 축 색상 axisLeft.gridColor = Color
+        // 오른쪽 축 색상
+        val axisRight = chart!!.axisRight
+        axisRight.isEnabled = false
+    }
+
+    private fun prepareChartData(data: BarData) {
+        chart!!.data = data
+        chart!!.invalidate()
     }
 }

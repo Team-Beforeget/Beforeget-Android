@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.icu.util.Calendar
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -18,7 +19,6 @@ import before.forget.R
 import before.forget.databinding.ActivityReportBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 class ReportActivity : AppCompatActivity() {
     private lateinit var binding: ActivityReportBinding
@@ -45,8 +45,8 @@ class ReportActivity : AppCompatActivity() {
             ivBackBtn.setOnClickListener {
                 finish()
             }
-            ivDownloadBtn.setOnClickListener {
-                initShareSheet()
+            ivShareBtn.setOnClickListener {
+                initShareImg()
             }
             btnDatePicker.setOnClickListener {
                 setDatePicker()
@@ -54,7 +54,7 @@ class ReportActivity : AppCompatActivity() {
         }
     }
 
-    private fun initShareSheet() {
+    private fun initShareImg() {
         val image: Bitmap = getBitmapFromView(binding.clReportArea)
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "image/*"
@@ -142,6 +142,7 @@ class ReportActivity : AppCompatActivity() {
             selectMonth = month.value
             selectYear = year.value
             binding.btnDatePicker.text = "${selectYear}년 ${selectMonth}월"
+            //  "${selectYear}-${selectMonth}"
 
             dialog.dismiss()
             dialog.cancel()
