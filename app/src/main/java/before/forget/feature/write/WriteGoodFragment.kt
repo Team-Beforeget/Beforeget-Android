@@ -1,13 +1,17 @@
 package before.forget.feature.write
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import before.forget.R
+import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.FragmentWriteGoodBinding
+import before.forget.util.callback
 
 class WriteGoodFragment : Fragment() {
     private var callbackButtonClickListener: (() -> Unit)? = null
@@ -23,7 +27,7 @@ class WriteGoodFragment : Fragment() {
           clickWriteButtonEvent()
           checkEnableApplyBtn()
           resetSelectedOneLine()*/
-
+        onNetwork()
         return binding.root
     }
 
@@ -69,6 +73,31 @@ class WriteGoodFragment : Fragment() {
     /*  private fun checkEnableApplyBtn() {
           binding.btnWriteApply.isEnabled = checkBtnSelected()
       }*/
+
+    private fun onNetwork() {
+        val oneline = listOf<TextView>(
+            binding.tvWriteOnelinereview1,
+            binding.tvWriteOnelinereview2,
+            binding.tvWriteOnelinereview3,
+            binding.tvWriteOnelinereview4,
+            binding.tvWriteOnelinereview5,
+            binding.tvWriteOnelinereview6
+        )
+        BeforegetClient.categoryService
+            .getOneLine(id = 1)
+            .callback
+            .onSuccess { response ->
+                response.data?.let { data ->
+                    val a: List<String> = data.good
+                    data.good.forEachIndexed { index, s ->
+                        oneline[index].text = s
+                    }
+                    Log.d("dd", "a")
+                }
+            }
+            .onError { }
+            .enqueue()
+    }
 
     private fun btnApplyActivate() {
         checkBtnSelected()
