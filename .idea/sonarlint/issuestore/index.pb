@@ -43,8 +43,6 @@ g
 7app/src/main/java/before/forget/data/local/TempToken.kt,9/a/9a9f8c6be7088645e3b90b984ff8c23eb48f6493
 n
 >app/src/main/java/before/forget/data/remote/api/PostService.kt,7/8/78d55401ca4900cc74724e02a25bb981bbf7e9c9
-x
-Happ/src/main/java/before/forget/feature/report/ReportViewPagerAdapter.kt,e/8/e82f2fb85b36091bf59956aae976bba5383b51e0
 |
 Lapp/src/main/java/before/forget/data/remote/response/CategoryResponseData.kt,5/d/5d7e5138a5fdddb791259bb8c7d276a12d29047c
 w
