@@ -63,3 +63,5 @@ Bapp/src/main/java/before/forget/data/remote/api/CategoryService.kt,0/9/093ec54
 Kapp/src/main/java/before/forget/data/remote/response/OneLineResponseData.kt,6/7/67a344350fe7797059783ea47a14f1b1772fac15
 x
 Happ/src/main/java/before/forget/data/remote/response/MainResponseData.kt,2/c/2ce9e2f542c765f4737a0597584a97759004875e
+@
+app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164

@@ -6,7 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import before.forget.R
 import before.forget.data.local.tempToken
 import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.FragmentReportOnepageBinding
@@ -88,10 +90,13 @@ class ReportOnepageFragment : Fragment() {
 
     private fun createBarChartData(recordCount: ArrayList<String>): BarData {
         val values: ArrayList<BarEntry> = ArrayList()
+        var colors: ArrayList<Int> = ArrayList()
         for (i in 0 until MAX_X_VALUE) {
             val x = i.toFloat()
             val y: Float = recordCount[i].toFloat()
             if (recordCount[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = recordCount[i].toInt()
+            if (i == MAX_X_VALUE - 1) colors.add(ContextCompat.getColor(requireContext(), R.color.green100))
+            else colors.add(Color.WHITE)
             values.add(BarEntry(x, y))
         }
         val set1 = BarDataSet(values, "")
@@ -100,7 +105,7 @@ class ReportOnepageFragment : Fragment() {
         // showing the value of the bar
         set1.setDrawValues(false)
         set1.barShadowColor = Color.BLACK
-        set1.color = Color.WHITE
+        set1.colors = colors
         return BarData(dataSets)
     }
 

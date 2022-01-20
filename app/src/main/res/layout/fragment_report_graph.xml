@@ -11,8 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:src="@drawable/ic_icn_star"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_graph_graph"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/tv_graph_graph" />
 
     <TextView
         android:id="@+id/tv_graph_graph"
