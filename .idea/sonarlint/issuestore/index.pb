@@ -13,8 +13,6 @@ X
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
 t
 Dapp/src/main/java/before/forget/feature/filter/FilterTermFragment.kt,f/2/f27ed3d2ba875c06dd4bca99ba495dbe7617244d
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 n
 >app/src/test/java/before/forget/util/RequestInfoWrapperTest.kt,0/5/051fd38ac74d9e3842aa764bbe88dd5d2302f920
 P
@@ -63,5 +61,3 @@ Bapp/src/main/java/before/forget/data/remote/api/CategoryService.kt,0/9/093ec54
 Kapp/src/main/java/before/forget/data/remote/response/OneLineResponseData.kt,6/7/67a344350fe7797059783ea47a14f1b1772fac15
 x
 Happ/src/main/java/before/forget/data/remote/response/MainResponseData.kt,2/c/2ce9e2f542c765f4737a0597584a97759004875e
-@
-app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
