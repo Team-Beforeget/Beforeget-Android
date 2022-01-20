@@ -35,8 +35,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <ScrollView
             android:id="@+id/sc_detail"
@@ -175,125 +174,138 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/iv_star_detail" />
 
-                <TextView
-                    android:id="@+id/tv_review_1"
-                    android:layout_width="wrap_content"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_onereviewList_detail"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="18dp"
-                    android:background="@color/black200"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@{DetailData.oneline[1]}"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="47dp"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tv_comment_title_detail"
                     app:layout_constraintTop_toBottomOf="@id/tv_one_review_detail"
-                    tools:text="@string/review_1" />
+                    >
 
-                <TextView
-                    android:id="@+id/tv_review_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:background="@color/gray400"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@{DetailData.oneline[2]}"
-                    android:textColor="@color/black200"
-                    android:textSize="15dp"
-                    android:visibility="@{isReviewExist2? View.VISIBLE : View.INVISIBLE}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_review_1"
-                    app:layout_constraintStart_toEndOf="@id/tv_review_1"
-                    app:layout_constraintTop_toTopOf="@id/tv_review_1"
-                    tools:text="@string/review_2" />
+                    <TextView
+                        android:id="@+id/tv_review_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:background="@color/black200"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@{DetailData.oneline[1]}"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="@string/review_1" />
 
-                <TextView
-                    android:id="@+id/tv_review_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@color/gray300"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@{DetailData.oneline[3]}"
-                    android:textColor="@color/black200"
-                    android:textSize="15dp"
-                    android:visibility="@{isReviewExist3? View.VISIBLE : View.INVISIBLE}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_review_1"
-                    tools:text="@string/review_3" />
+                    <TextView
+                        android:id="@+id/tv_review_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:background="@color/gray400"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@{DetailData.oneline[2]}"
+                        android:textColor="@color/black200"
+                        android:textSize="15dp"
+                        android:visibility="@{isReviewExist2? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_review_1"
+                        app:layout_constraintStart_toEndOf="@id/tv_review_1"
+                        app:layout_constraintTop_toTopOf="@id/tv_review_1"
+                        tools:text="@string/review_2" />
 
-                <TextView
-                    android:id="@+id/tv_review_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:background="@color/black200"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@{DetailData.oneline[4]}"
-                    android:textColor="@color/white"
-                    android:textSize="15dp"
-                    android:visibility="@{isReviewExist4? View.VISIBLE : View.INVISIBLE}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_review_3"
-                    app:layout_constraintStart_toEndOf="@id/tv_review_3"
-                    app:layout_constraintTop_toTopOf="@id/tv_review_3"
-                    tools:text="@string/review_4" />
+                    <TextView
+                        android:id="@+id/tv_review_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@color/gray300"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@{DetailData.oneline[3]}"
+                        android:textColor="@color/black200"
+                        android:textSize="15dp"
+                        android:visibility="@{isReviewExist3? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_review_1"
+                        tools:text="@string/review_3" />
 
-                <TextView
-                    android:id="@+id/tv_review_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@color/gray400"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@{DetailData.oneline[5]}"
-                    android:textColor="@color/black200"
-                    android:textSize="15dp"
-                    android:visibility="@{isReviewExist5? View.VISIBLE : View.INVISIBLE}"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_review_3"
-                    tools:text="@string/review_5" />
+                    <TextView
+                        android:id="@+id/tv_review_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:background="@color/black200"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@{DetailData.oneline[4]}"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:visibility="@{isReviewExist4? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_review_3"
+                        app:layout_constraintStart_toEndOf="@id/tv_review_3"
+                        app:layout_constraintTop_toTopOf="@id/tv_review_3"
+                        tools:text="@string/review_4" />
 
-                <TextView
-                    android:id="@+id/tv_review_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:background="@color/gray300"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="8dp"
-                    android:text="@{DetailData.oneline[6]}"
-                    android:textColor="@color/black200"
-                    android:textSize="15dp"
-                    android:visibility="@{isReviewExist6? View.VISIBLE : View.INVISIBLE}"
-                    app:layout_constraintBottom_toBottomOf="@+id/tv_review_5"
-                    app:layout_constraintStart_toEndOf="@id/tv_review_5"
-                    app:layout_constraintTop_toTopOf="@id/tv_review_5"
-                    tools:text="@string/review_6" />
+                    <TextView
+                        android:id="@+id/tv_review_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="6dp"
+                        android:background="@color/gray400"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@{DetailData.oneline[5]}"
+                        android:textColor="@color/black200"
+                        android:textSize="15dp"
+                        android:visibility="@{isReviewExist5? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_review_3"
+                        tools:text="@string/review_5" />
+
+                    <TextView
+                        android:id="@+id/tv_review_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:background="@color/gray300"
+                        android:fontFamily="@font/pretendard_regular"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="@{DetailData.oneline[6]}"
+                        android:textColor="@color/black200"
+                        android:textSize="15dp"
+                        android:visibility="@{isReviewExist6? View.VISIBLE : View.INVISIBLE}"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_review_5"
+                        app:layout_constraintStart_toEndOf="@id/tv_review_5"
+                        app:layout_constraintTop_toTopOf="@id/tv_review_5"
+                        tools:text="@string/review_6" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <TextView
                     android:id="@+id/tv_comment_title_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="47dp"
                     android:fontFamily="@font/pretendard_medium"
                     android:text="@string/comment_title"
                     android:textColor="@color/black200"
                     android:textSize="19dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_review_5" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_onereviewList_detail" />
 
                 <View
                     android:id="@+id/veiw_comment_line_detail"
@@ -310,12 +322,12 @@
                     android:id="@+id/tv_comment_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:fontFamily="@font/pretendard_regular"
                     android:lineSpacingExtra="9dp"
                     android:text="@{DetailData.comment}"
                     android:textColor="@color/black200"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
                     android:textSize="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/veiw_comment_line_detail"

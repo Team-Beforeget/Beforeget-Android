@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun test() {
         BeforegetClient.postService
-            .getDetailFilterData(tempToken, 40)
+            .getDetailFilterData(tempToken, 12)
             .callback
             .onSuccess {
                 // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
@@ -89,11 +89,6 @@ class DetailActivity : AppCompatActivity() {
                             }
                         }
                     }
-
-                    // tvReview3.text = it.data!![0].oneline[2]
-                    // tvReview4.text = it.data!![0].oneline[3]
-                    // tvReview5.text = it.data!![0].oneline[4]
-
                     tvCommentDetail.text = it.data!![0].comment
                 }
 
@@ -101,8 +96,8 @@ class DetailActivity : AppCompatActivity() {
                 Log.d("Test", it.data.toString())
                 // Log.d("냥냥냥", it.data!![1].additional!![1].type.toString())
                 // it.data!![23].additional!![1].type
-                Log.d("냥냥", it.data!![0].additional!![0].type)
-                Log.d("additional의 사이즈", it.data!![0].additional?.size.toString())
+                // Log.d("냥냥", it.data!![0].additional!![0].type)
+                // Log.d("additional의 사이즈", it.data!![0].additional?.size.toString())
             }
             .enqueue()
     }
