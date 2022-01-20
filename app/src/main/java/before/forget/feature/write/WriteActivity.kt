@@ -8,6 +8,7 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.databinding.ActivityWriteBinding
+import before.forget.databinding.ViewChipBinding
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -40,21 +41,12 @@ class WriteActivity : AppCompatActivity() {
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
         getMediaLabel()
         btnSetOnClickListener()
-        /*binding.chipGroup.apply {
-        }*/
+        (1..6).forEach {
+            val a = ViewChipBinding.inflate(layoutInflater).root
+            a.text = it.toString() + "looooooooooooong"
+            binding.chipGroup.addView(a)
+        }
     }
-
-    /*fun ConstraintLayout.addChip(chipText: String) {
-        val chip = LayoutInflater.from(context).inflate(R.layout.view_chip, null) as Chip
-
-        val layoutParams = ViewGroup.MarginLayoutParams(
-            ViewGroup.MarginLayoutParams.WRAP_CONTENT,
-            ViewGroup.MarginLayoutParams.WRAP_CONTENT
-        )
-        chip.text = chipText
-        layoutParams.rightMargin = context.dpToPixel(4)
-        addView(chip, layoutParams)
-    }*/
 
     private fun createBottomSheet() { // 바텀시트 프래그먼트 생성
         val writeBottomSheetFragment = WriteBottomSheetFragment()

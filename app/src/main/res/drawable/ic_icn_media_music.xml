@@ -1,23 +1,25 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="34dp"
-    android:height="34dp"
-    android:viewportWidth="34"
-    android:viewportHeight="34">
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
   <path
-      android:pathData="M17,17m-15,0a15,15 0,1 1,30 0a15,15 0,1 1,-30 0"
-      android:strokeWidth="2"
-      android:fillColor="#00000000"
-      android:strokeColor="#ffffff"/>
+      android:pathData="M0,0h36v36h-36z"
+      android:fillColor="#202020"/>
   <path
-      android:pathData="M17,17m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"
-      android:strokeWidth="2"
-      android:fillColor="#00000000"
-      android:strokeColor="#ffffff"/>
+      android:pathData="M33.9998,18C33.9998,26.8366 26.8363,34 17.9998,34C9.1632,34 1.9998,26.8366 1.9998,18C1.9998,9.1634 9.1632,2 17.9998,2C26.8363,2 33.9998,9.1634 33.9998,18ZM17.9998,32C25.7317,32 31.9998,25.732 31.9998,18C31.9998,10.268 25.7317,4 17.9998,4C10.2678,4 3.9998,10.268 3.9998,18C3.9998,25.732 10.2678,32 17.9998,32Z"
+      android:fillColor="#ffffff"
+      android:fillType="evenOdd"/>
+  <path
+      android:pathData="M17.9998,16C16.8952,16 15.9998,16.8954 15.9998,18C15.9998,19.1046 16.8952,20 17.9998,20C19.1043,20 19.9998,19.1046 19.9998,18C19.9998,16.8954 19.1043,16 17.9998,16ZM13.9998,18C13.9998,15.7909 15.7906,14 17.9998,14C20.2089,14 21.9998,15.7909 21.9998,18C21.9998,20.2091 20.2089,22 17.9998,22C15.7906,22 13.9998,20.2091 13.9998,18Z"
+      android:fillColor="#ffffff"
+      android:fillType="evenOdd"/>
   <group>
     <clip-path
-        android:pathData="M17,17.0018m-7.7782,-7.7782a11,11 57.8836,1 1,15.5563 15.5563a11,11 57.8836,1 1,-15.5563 -15.5563"/>
+        android:pathData="M10.9287,25.0714C14.8339,28.9767 21.1656,28.9767 25.0708,25.0714C28.9761,21.1662 28.9761,14.8345 25.0708,10.9293C21.1656,7.024 14.8339,7.024 10.9287,10.9293C7.0234,14.8345 7.0234,21.1662 10.9287,25.0714ZM9.5145,26.4856C14.2008,31.1719 21.7987,31.1719 26.485,26.4856C31.1713,21.7993 31.1713,14.2014 26.485,9.5151C21.7987,4.8288 14.2008,4.8288 9.5145,9.5151C4.8282,14.2014 4.8282,21.7993 9.5145,26.4856Z"
+        android:fillType="evenOdd"/>
     <path
-        android:pathData="M7.8086,7.8086l18.3848,18.3848l-8.4853,8.4853l-18.3848,-18.3848z"
+        android:pathData="M8.8074,8.8081L27.1921,27.1929L18.7069,35.6782L0.3221,17.2934L8.8074,8.8081Z"
         android:fillColor="#ffffff"/>
   </group>
 </vector>

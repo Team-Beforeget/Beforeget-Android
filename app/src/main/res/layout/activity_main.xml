@@ -17,7 +17,7 @@
             android:id="@+id/cl_main_top"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/main_undercorner"
+            android:background="@drawable/main_bottomcorner"
             android:elevation="2dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
                 android:id="@+id/cl_main_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_main_label">
@@ -69,11 +69,11 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="16dp"
-                    tools:text="@string/main_name"
                     android:textColor="@color/black200"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/main_name" />
 
                 <TextView
                     android:id="@+id/tv_main_sublabel"
@@ -94,7 +94,7 @@
                 android:id="@+id/tv_main_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="17dp"
                 android:fontFamily="@font/pretendard_medium"
                 android:gravity="center"
                 android:lineHeight="34dp"
@@ -103,14 +103,14 @@
                 android:textSize="23dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+                app:layout_constraintTop_toBottomOf="@+id/iv_main_image" />
 
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_main_record"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="34dp"
+                android:layout_marginBottom="43dp"
                 android:background="@drawable/main_rectanglefillgreen"
                 android:fontFamily="@font/pretendard_semibold"
                 android:gravity="center"
@@ -127,10 +127,10 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="73dp"
-                android:layout_height="130dp"
-                android:layout_marginTop="13dp"
+                android:id="@+id/iv_main_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_main_beforeget"
@@ -204,7 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.6"
+            app:layout_constraintGuide_percent="0.63"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
