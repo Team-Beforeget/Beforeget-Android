@@ -159,11 +159,11 @@
         <entry key="app/src/main/res/layout/fragment_filter_star.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_filter_term.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_report1.xml" value="0.15885416666666666" />
-        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_report_graph.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_report_labeling.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_report_onepage.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_report_ranking.xml" value="0.375" />
-        <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_report_sentence.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.18020833333333333" />
         <entry key="app/src/main/res/layout/item_card.xml" value="0.18177083333333333" />
         <entry key="app/src/main/res/layout/item_card_back.xml" value="0.1" />
