@@ -15,10 +15,13 @@ import before.forget.util.callback
 
 class MyRecordActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyrecodBinding
+    var callbackButtonClickListener: ((Int) -> Unit)? = null
     private val filterBottomSheetFragment = FilterBottomSheetFragment()
-    private var selectedTerm = -1
+    private var selectedTerm = "-1"
     private var selectedStar = "-1"
     private var selectedMedia = "-1"
+    var mediaList =
+        mutableListOf<String>("Movie", "Book", "TV", "Music", "Webtoon", "Youtube")
     private val myRecordDataAdapter = MyRecordAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,20 +40,22 @@ class MyRecordActivity : AppCompatActivity() {
         initButtonFilter()
         initClickFilterButtonEvent()
         initMyRecordAdapter()
-        test()
-        getMediaFromMainActivity()
+        showFilterData()
     }
 
     private fun initClickFilterButtonEvent() {
         binding.btnMedia.setOnClickListener {
+            callbackButtonClickListener?.invoke(2)
             showBottomSheet()
         }
 
         binding.btnTerm.setOnClickListener {
+            callbackButtonClickListener?.invoke(1)
             showBottomSheet()
         }
 
         binding.btnScore.setOnClickListener {
+            callbackButtonClickListener?.invoke(3)
             showBottomSheet()
         }
     }
@@ -64,13 +69,14 @@ class MyRecordActivity : AppCompatActivity() {
         filterBottomSheetFragment.show(supportFragmentManager, filterBottomSheetFragment.tag)
     }
 
-    private fun test() {
-        filterBottomSheetFragment.setTermCallback {
-            binding.btnTerm.text = it
-            when (it) {
-                "2주" -> selectedTerm = 0
-                "1개월" -> selectedTerm = 1
-                "3개월" -> selectedTerm = 2
+    private fun showFilterData() {
+        filterBottomSheetFragment.setTermCallback { term, starToEndDate ->
+            binding.btnTerm.text = term
+            when (term) {
+                "2주" -> selectedTerm = "0"
+                "1개월" -> selectedTerm = "1"
+                "3개월" -> selectedTerm = "2"
+                "기간" -> selectedTerm = starToEndDate
             }
             binding.btnTerm.isActivated = true
             Log.d("term 실행됨", "{$selectedTerm}")
@@ -79,7 +85,6 @@ class MyRecordActivity : AppCompatActivity() {
 
         filterBottomSheetFragment.setStarScoreCallback { starListWithSelection, starTrueCounting ->
             binding.btnScore.isActivated = true
-            val starList = mutableListOf<Int>(1, 2, 3, 4, 5)
 
             var selectedStarText = ""
 
@@ -101,8 +106,6 @@ class MyRecordActivity : AppCompatActivity() {
         }
 
         filterBottomSheetFragment.setMediaCallback { mediaListWithSelection, trueCounting, selectedMediaFistNumber ->
-            var mediaList =
-                mutableListOf<String>("MOVIE", "BOOK", "MUSIC", "YOUTUBE", "WEBTOON", "TV")
 
             val selectedFirstMediaText = mediaList[selectedMediaFistNumber]
             var selectedMediaText = ""
@@ -130,16 +133,24 @@ class MyRecordActivity : AppCompatActivity() {
             Log.d("어떻게 오는거야", selectedMediaText)
             onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
         }
-        Log.d("여기까지", "안오나...?")
+        selectedMedia = when (getMediaFromMainActivity()) {
+            "Movie", "Book", "TV", "Music", "Webtoon", "Youtube" -> {
+                var mediaNumber = mediaList.indexOf(getMediaFromMainActivity()) + 1
+                mediaNumber.toString()
+            }
+            else -> "-1"
+        }
+        Log.d("selectedMedia", selectedMedia)
         onFilterDataNetwork(selectedTerm, selectedMedia, selectedStar)
     }
 
-    private fun getMediaFromMainActivity() {
+    private fun getMediaFromMainActivity(): String {
+        val media = intent.getStringExtra("media")
         if (intent.hasExtra("media")) {
-            val media = intent.getStringExtra("media")
             binding.btnMedia.text = media.toString()
             binding.btnMedia.isActivated = true
         }
+        return media.toString()
     }
 
     private fun initButtonFilter() {
@@ -159,13 +170,13 @@ class MyRecordActivity : AppCompatActivity() {
             .enqueue()
     }
 
-    private fun onFilterDataNetwork(term: Int, media: String, star: String) {
+    private fun onFilterDataNetwork(term: String, media: String, star: String) {
         BeforegetClient.postService
             .getMyRecordFilterData(
                 tempToken,
                 term.toString(),
                 media,
-                star.toString(),
+                star,
             )
             .callback
             .onSuccess {
@@ -174,5 +185,9 @@ class MyRecordActivity : AppCompatActivity() {
                 myRecordDataAdapter.notifyDataSetChanged()
             }
             .enqueue()
+    }
+
+    fun setCallBackButtonListener(listener: (Int) -> Unit) {
+        this.callbackButtonClickListener = listener
     }
 }

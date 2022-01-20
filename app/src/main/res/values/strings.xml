@@ -49,7 +49,7 @@
     <string name="graph_title">개의 기록을 남겼어요</string>
     <string name="graph_subtitle">지난달 보다 4개가 늘었네요\n8월부터 5개월간 가장 많은 기록은 남긴 달은\n
         10월로, 30개의 기록을 남겼어요!\n다음 달, 나의 그래프는 어떤 모양일까요?</string>
-    
+
     <string name="sentence">유형별 한 줄 리뷰 순위</string>
     <string name="sentence_description">유형 카드를 탭하여 확인해보세요</string>
     <string name="sentence_type1">Movie</string>
@@ -65,7 +65,7 @@
 
 
     <!--메인뷰-->
-    <string name="main_name">세훈</string>
+    <string name="main_name">포릐</string>
     <string name="main_sublabel">님, 잊기 전에 기록해보세요.</string>
     <string name="main_label">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="main_record">기록하기</string>
@@ -74,7 +74,7 @@
     <string name="main_viewallbtn">전체보기</string>
 
     <!--유형선택뷰-->
-    <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>
+    <string name="media_intro">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="media_movie">Movie</string>
     <string name="media_tv">TV</string>
     <string name="media_webtoon">Webtoon</string>
@@ -90,7 +90,7 @@
     <string name="write_title">영화 제목</string>
     <string name="write_titleinput">영화의 제목은 무엇인가요?</string>
     <string name="write_oneline">한 줄 리뷰</string>
-    <string name="write_addonelinebtn">한 줄 리뷰 추가</string>
+    <string name="write_addonelinebtn">+ 리뷰 추가</string>
     <string name="write_comment">코멘트</string>
     <string name="write_commentinput">영화를 보며 어떤 생각을 했나요?</string>
     <string name="write_additem">기록항목 추가</string>
@@ -231,4 +231,6 @@ I\'m so polarized</string>
     <!--Dialog Button Text-->
     <string name="okText">확인</string>
     <string name="cancelText">취소</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
