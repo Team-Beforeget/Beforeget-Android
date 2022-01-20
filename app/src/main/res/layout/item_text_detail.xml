@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="textData"
+            type="before.forget.data.remote.response.ResponseDetail.Additional" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingBottom="48dp"
+        android:paddingTop="48dp"
+        >
+
+        <View
+            android:id="@+id/view_line_detail_movie"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/gray300"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_director_detail_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@{textData.type}"
+            tools:text="@string/director"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line_detail_movie" />
+
+        <TextView
+            android:id="@+id/tv_director_name_detail_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
+            android:text="@{textData.content}"
+            tools:text="@string/director_name"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_director_detail_movie"
+            app:layout_constraintStart_toEndOf="@id/tv_director_detail_movie"
+            app:layout_constraintTop_toTopOf="@id/tv_director_detail_movie" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

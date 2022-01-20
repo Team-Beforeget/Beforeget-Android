@@ -41,14 +41,15 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/drawable/tab_selector_report.xml" value="0.228125" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/ppneuemachina.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/font/pretendard.xml" value="0.2682291666666667" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_detail.xml" value="0.72" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_media_select.xml" value="0.16979166666666667" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_my_record_detail.xml" value="0.2" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_my_record_detail.xml" value="0.4" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.176" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_book.xml" value="0.6" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_movie.xml" value="0.4519774011299435" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_music.xml" value="0.72" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_book.xml" value="0.34057341442224154" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_movie.xml" value="0.136" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_music.xml" value="0.3306801736613603" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_tv.xml" value="0.34404865334491747" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_webtoon.xml" value="0.72" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_youtube.xml" value="0.41702867072111205" />
@@ -56,9 +57,18 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_media.xml" value="0.321830985915493" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_star.xml" value="0.264" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.5221374045801527" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_album_detail.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_content_list.xml" value="0.16979166666666667" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_gener_detail.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_genre_detail.xml" value="0.14175724637681159" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_image_detail.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_link_detail.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_media_list.xml" value="0.20969202898550723" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_ost_detail.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_qutoe_detail.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.3736842105263158" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_text_detail.xml" value="0.23802083333333332" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_timestamp_detail.xml" value="0.23802083333333332" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.4041666666666667" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_media_list.xml" value="0.15208333333333332" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.15208333333333332" />

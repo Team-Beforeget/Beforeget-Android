@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="linkData"
+            type="before.forget.data.remote.response.ResponseDetail.Additional" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingBottom="48dp"
+        android:paddingTop="48dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_link_detail_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@{linkData.type}"
+            tools:text="@string/link"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="48dp" />
+
+        <TextView
+            android:id="@+id/tv_link_content_detail_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/pretendard_regular"
+            tools:text="@string/link_contetn"
+            android:textColor="@color/black200"
+            android:textSize="14dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_link_detail_music" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

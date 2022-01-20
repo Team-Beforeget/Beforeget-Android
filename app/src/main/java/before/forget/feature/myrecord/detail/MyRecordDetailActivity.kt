@@ -7,6 +7,8 @@ import before.forget.databinding.ActivityMyRecordDetailBinding
 
 class MyRecordDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyRecordDetailBinding
+    var postId = 0
+    val bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyRecordDetailBinding.inflate(layoutInflater)
@@ -16,15 +18,15 @@ class MyRecordDetailActivity : AppCompatActivity() {
         }
         setContentView(binding.root)
         changeFragment()
+        getPostIdFromRecordActivity()
+        // Log.d("postId", getPostIdFromRecordActivity().toString())
+        bundle.putInt("postId", postId)
     }
 
     private fun changeFragment() {
         // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
-        // supportFragmentManager.beginTransaction()
-        //   .add(R.id.fragment_container_detail, DetailBookFragment()).commit()
         val transition = supportFragmentManager.beginTransaction()
         when (getMediaFromRecordActivity()) {
-
             1 -> {
                 transition.replace(R.id.fragment_container_detail, DetailMovieFragment()).commit()
             }
@@ -41,6 +43,7 @@ class MyRecordDetailActivity : AppCompatActivity() {
                 transition.replace(R.id.fragment_container_detail, DetailWebtoonFragment()).commit()
             }
             else -> {
+                DetailYoutubeFragment().arguments = bundle
                 transition.replace(R.id.fragment_container_detail, DetailYoutubeFragment()).commit()
             }
         }
@@ -51,6 +54,14 @@ class MyRecordDetailActivity : AppCompatActivity() {
         if (intent.hasExtra("media")) {
             media = intent.getIntExtra("media", 0)
         }
+
         return media
+    }
+
+    private fun getPostIdFromRecordActivity(): Int {
+        if (intent.hasExtra("postId")) {
+            postId = intent.getIntExtra("postId", 0)
+        }
+        return postId
     }
 }

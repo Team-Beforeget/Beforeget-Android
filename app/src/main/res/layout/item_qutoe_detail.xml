@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="quotesData"
+            type="before.forget.data.remote.response.ResponseDetail.Additional" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="20dp"
+        android:paddingBottom="48dp"
+        android:paddingTop="48dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_famous_title_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="@{quotesData.type}"
+            tools:text="@string/famous_line_title"
+            android:textColor="@color/black200"
+            android:textSize="19dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_quotes_left_detail_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_quotes_left_detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_famous_title_detail"
+            android:layout_marginTop="15dp" />
+
+        <TextView
+            android:id="@+id/tv_famous_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
+            android:text="@{quotesData.content}"
+            tools:text="@string/famous_line"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toStartOf="@id/iv_quotes_right_detail_movie"
+            app:layout_constraintStart_toEndOf="@id/iv_quotes_left_detail_movie"
+            app:layout_constraintTop_toTopOf="@id/iv_quotes_left_detail_movie" />
+
+        <ImageView
+            android:id="@+id/iv_quotes_right_detail_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_quotes_right_detail"
+            app:layout_constraintBottom_toBottomOf="@id/iv_quotes_left_detail_movie"
+            app:layout_constraintStart_toEndOf="@id/tv_famous_line"
+            app:layout_constraintTop_toTopOf="@id/iv_quotes_left_detail_movie" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

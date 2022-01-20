@@ -27,8 +27,15 @@ class DetailYoutubeFragment : Fragment() {
     }
 
     private fun test() {
+        // val media = intent.getStringExtra("media")
+        /* if (intent.hasExtra("media")) {
+            binding.btnMedia.text = media.toString()
+            binding.btnMedia.isActivated = true
+        } */
+        val postId: Int = requireArguments().getInt("postId")
+        Log.d("postId", postId.toString())
         BeforegetClient.postService
-            .getDetailFilterData(tempToken, 23)
+            .getDetailFilterData(tempToken, postId)
             .callback
             .onSuccess {
                 Log.d("성공", "성공")

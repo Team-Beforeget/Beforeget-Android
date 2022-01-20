@@ -5,7 +5,9 @@
     tools:context=".feature.myrecord.detail.DetailYoutubeFragment">
 
     <data>
-
+        <variable
+            name="youtubeDetailData"
+            type="before.forget.data.remote.response.ResponseDetail" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
