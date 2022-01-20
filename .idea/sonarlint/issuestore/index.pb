@@ -15,7 +15,5 @@ t
 Dapp/src/main/java/before/forget/feature/filter/FilterTermFragment.kt,f/2/f27ed3d2ba875c06dd4bca99ba495dbe7617244d
 n
 >app/src/main/java/before/forget/data/local/WriteAddItemData.kt,8/9/89b7bd2cc6ecac81225d88cf8c08abbb77570755
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 n
 >app/src/test/java/before/forget/util/RequestInfoWrapperTest.kt,0/5/051fd38ac74d9e3842aa764bbe88dd5d2302f920
