@@ -33,4 +33,11 @@ interface StatisticService {
         @Header("accesstoken") token: String? = tempToken,
         @Path("date") date: String
     ): Call<ResponseWrapper<ReponseSentenceData>>
+
+    @GET("statistic/total/{date}/{count}")
+    fun responseOnepageData(
+        @Header("accesstoken") token: String? = tempToken,
+        @Path("date") date: String,
+        @Path("count") count: Int
+    ): Call<ResponseWrapper<ResponseOnepageData>>
 }
