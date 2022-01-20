@@ -31,6 +31,7 @@ class ReportGraphFragment : Fragment() {
     private var COUNT_X_LABEL = 5
     private var recordCount = ArrayList<String>()
     private var monthCount = ArrayList<String>()
+    private var isFirst = true
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,7 +83,11 @@ class ReportGraphFragment : Fragment() {
     private fun initBarChart(recordCount: ArrayList<String>) {
         val data: BarData = createBarChartData(recordCount)
         // set bar width
-        data.barWidth = 0.1f
+        if (MAX_X_VALUE < 5) {
+            data.barWidth = 0.06f
+        } else {
+            data.barWidth = 0.1f
+        }
         configureChartAppearance()
         prepareChartData(data)
     }
@@ -92,6 +97,7 @@ class ReportGraphFragment : Fragment() {
             tvGraph3Month.setOnClickListener {
                 MAX_X_VALUE = 3
                 COUNT_X_LABEL = 3
+                isFirst = false
                 tvGraph5Month.setTextColor(Color.GRAY)
                 tvGraph3Month.setTextColor(Color.WHITE)
                 initNetwork()
@@ -99,6 +105,7 @@ class ReportGraphFragment : Fragment() {
             tvGraph5Month.setOnClickListener {
                 MAX_X_VALUE = 5
                 COUNT_X_LABEL = 5
+                isFirst = false
                 tvGraph5Month.setTextColor(Color.WHITE)
                 tvGraph3Month.setTextColor(Color.GRAY)
                 initNetwork()
@@ -145,13 +152,14 @@ class ReportGraphFragment : Fragment() {
             extraBottomOffset = 20f
 
             // X, Y 바의 애니메이션 효과
-            animateY(2000)
+            if (isFirst) animateY(300)
             // bar background
             setDrawBarShadow(true)
             // bar touch
             setTouchEnabled(false)
+
             // chart label
-            getLegend().isEnabled = false
+            legend.isEnabled = false
         }
     }
 

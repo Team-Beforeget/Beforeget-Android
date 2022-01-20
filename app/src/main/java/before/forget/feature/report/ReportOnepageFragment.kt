@@ -128,7 +128,7 @@ class ReportOnepageFragment : Fragment() {
             extraBottomOffset = 45f
 
             // X, Y 바의 애니메이션 효과
-            animateY(2000)
+            animateY(1000)
             // bar background
             setDrawBarShadow(true)
             // bar touch
