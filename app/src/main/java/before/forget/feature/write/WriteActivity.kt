@@ -3,9 +3,8 @@ package before.forget.feature.write
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.icu.util.Calendar
-import android.os.Build
 import android.os.Bundle
-import androidx.annotation.RequiresApi
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.databinding.ActivityWriteBinding
 import before.forget.databinding.ViewChipBinding
@@ -15,7 +14,12 @@ import java.time.format.DateTimeFormatter
 class WriteActivity : AppCompatActivity() {
     var dateString = ""
 
-    @RequiresApi(Build.VERSION_CODES.N)
+    val getAddItemResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            /*if (it.resultCode == RESULT_OK) {
+
+            }*/
+        }
 
     private lateinit var binding: ActivityWriteBinding
     override fun onCreate(savedInstanceState: Bundle?) {
