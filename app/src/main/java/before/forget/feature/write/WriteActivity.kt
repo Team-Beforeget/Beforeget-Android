@@ -1,7 +1,10 @@
 package before.forget.feature.write
 
+import before.forget.R
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
@@ -89,12 +92,19 @@ class WriteActivity : AppCompatActivity() {
         writeBottomSheetFragment.setOneLineCallback { oneLine ->
             postOneLine = oneLine
             for (i in oneLine) {
-
                 binding.chipGroup.addView(
                     Chip(this).apply {
                         text = i
                         Log.d("qt", i)
                         isCloseIconVisible = true
+                        chipStrokeWidth = 3f
+                        chipStrokeColor = ColorStateList.valueOf(
+                            Color.BLACK
+                        )
+                        chipBackgroundColor = ColorStateList.valueOf(
+                            Color.WHITE
+                        )
+                        setCloseIconResource(R.drawable.ic_btn_review_delete)
                         setOnCloseIconClickListener { binding.chipGroup.removeView(this) }
                     }
                 )
