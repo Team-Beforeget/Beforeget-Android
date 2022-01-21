@@ -231,6 +231,7 @@ I\'m so polarized</string>
     <!--Dialog Button Text-->
     <string name="okText">확인</string>
     <string name="cancelText">취소</string>
+    <string name="delete">정말로 삭제하시겠어요? </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
