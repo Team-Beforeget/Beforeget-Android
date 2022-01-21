@@ -8,8 +8,9 @@ class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initBtnClickListener()
         binding = ActivitySettingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        initBtnClickListener()
     }
 
     private fun initBtnClickListener() {

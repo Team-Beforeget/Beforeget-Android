@@ -6,10 +6,13 @@ import before.forget.R
 import before.forget.data.remote.BeforegetClient
 import before.forget.data.remote.tempToken
 import before.forget.databinding.ActivityMyRecordDetailBinding
+import before.forget.databinding.DialogRecordDetailDeleteBinding
+import before.forget.feature.dialog.BeforegetDialog
 import before.forget.util.callback
 
 class MyRecordDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyRecordDetailBinding
+    private lateinit var subViewBinding: DialogRecordDetailDeleteBinding
     var postId = 0
     val bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,12 +23,30 @@ class MyRecordDetailActivity : AppCompatActivity() {
             finish()
         }
         setContentView(binding.root)
+        initBtnListener()
+        setContentView(binding.root)
         changeFragment()
         getPostIdFromRecordActivity()
         initOneReview()
         onDetailNetwork()
         // Log.d("postId", getPostIdFromRecordActivity().toString())
         bundle.putInt("postId", postId)
+    }
+
+    private fun initBtnListener() {
+        binding.btnBackDetail.setOnClickListener {
+            finish()
+        }
+
+        binding.btnDetailDetail.setOnClickListener {
+            setDialog()
+        }
+    }
+
+    private fun setDialog() {
+        subViewBinding = DialogRecordDetailDeleteBinding.inflate(layoutInflater)
+        val dialog = BeforegetDialog(this, subViewBinding)
+        dialog.show()
     }
 
     private fun changeFragment() {
