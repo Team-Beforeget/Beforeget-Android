@@ -26,11 +26,5 @@ u
 Eapp/src/main/java/before/forget/feature/filter/FilterMediaFragment.kt,1/6/1661deceb8727d3cde1c2624a43275ffbdf4a069
 i
 9app/src/main/java/before/forget/feature/SplashActivity.kt,6/6/66157377e945631f0bdfc3661e6f719c016a2323
-r
-Bapp/src/main/java/before/forget/feature/setting/SettingActivity.kt,c/2/c23a2dce51e3ece5c650b37fba16eaeafe71cc58
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-l
-<app/src/main/java/before/forget/feature/main/MainActivity.kt,0/2/021e0588ef4c17f41e5bd42b0a0ea2900b53e4a1
-p
-@app/src/main/java/before/forget/feature/report/ReportActivity.kt,5/2/525c107507759f6f5a2784e58297715629104a4f
