@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Widget.MaterialComponents.Chip.Action"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:includeFontPadding="false"
-    android:textSize="12sp"
-    android:textAlignment="center"
-    android:theme="@style/Widget.MaterialComponents.Chip.Choice"
-    app:chipStrokeColor="@color/white" />
+
+    <com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/chip_write"
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:theme="@style/Widget.MaterialComponents.Chip.Choice"
+        app:chipStrokeColor="@color/white"
+        tools:text="@string/write_oneline" />

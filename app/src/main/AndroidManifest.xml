@@ -16,7 +16,7 @@
             android:name=".feature.setting.SettingActivity"
             android:exported="true" />
         <activity
-            android:name=".feature.write.WriteAddItemActivity"
+            android:name=".feature.write.writeadditem.WriteAddItemActivity"
             android:exported="true" />
         <activity
             android:name=".feature.myrecord.detail.MyRecordDetailActivity"

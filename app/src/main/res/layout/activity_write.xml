@@ -6,7 +6,6 @@
     tools:context="before.forget.feature.write.WriteActivity">
 
     <data>
-
         <variable
             name="write"
             type="before.forget.feature.write.WriteData" />
@@ -277,7 +276,7 @@
                     android:textColor="@color/black200"
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_addonelinebtn" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_addoneline" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_write_commentinput"
@@ -314,6 +313,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_category_list"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -321,14 +322,34 @@
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chip_group"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     app:layout_constraintBottom_toTopOf="@+id/tv_write_comment"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline">
 
                 </com.google.android.material.chip.ChipGroup>
+
+                <TextView
+                    android:id="@+id/tv_write_addoneline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/write_rectanglebuttonselector_20dp"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:gravity="center"
+                    android:lineHeight="16dp"
+                    android:paddingLeft="34dp"
+                    android:paddingTop="9dp"
+                    android:paddingRight="34dp"
+                    android:paddingBottom="9dp"
+                    android:text="@string/write_addoneline"
+                    android:textColor="@color/selector_write_onelinebtn_font"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
