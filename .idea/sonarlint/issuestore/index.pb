@@ -32,12 +32,8 @@ h
 8app/src/main/java/before/forget/feature/main/MainData.kt,8/b/8b9a300a954dfbf0473502cdb040bcc2f2713d44
 r
 Bapp/src/main/java/before/forget/feature/main/MainBindingAdapter.kt,5/e/5eb573e09db9cd8a4b6066a40d771380611618b0
-r
-Bapp/src/main/java/before/forget/feature/setting/SettingActivity.kt,c/2/c23a2dce51e3ece5c650b37fba16eaeafe71cc58
 l
 <app/src/main/java/before/forget/feature/main/MainActivity.kt,0/2/021e0588ef4c17f41e5bd42b0a0ea2900b53e4a1
-n
->app/src/main/java/before/forget/feature/write/WriteActivity.kt,c/9/c9cd140c3991c47aed43715d595f31cc2455a6b5
 q
 Aapp/src/main/java/before/forget/feature/dialog/BeforegetDialog.kt,d/4/d489c73e5ae13c3a152e1a3f2d36bdd8bb0c866d
 x
@@ -48,7 +44,5 @@ o
 ?app/src/main/java/before/forget/feature/report/CardFlipFront.kt,9/c/9ce7587b11db6c05975acbd6054584ea54b7e1fd
 n
 >app/src/main/java/before/forget/feature/report/CardFlipBack.kt,5/d/5d73022c78d78353baaaf17531f0f3b3f79ea073
-p
-@app/src/main/java/before/forget/feature/report/ReportActivity.kt,5/2/525c107507759f6f5a2784e58297715629104a4f
 {
 Kapp/src/main/java/before/forget/data/remote/response/ResponseMyRecordAll.kt,4/2/429601e8d0cf31cf2f487df748fafb2cf1b66ebf
