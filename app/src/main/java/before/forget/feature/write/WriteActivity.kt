@@ -236,6 +236,7 @@ class WriteActivity : AppCompatActivity() {
             }
             tvWriteDone.setOnClickListener {
 
+                /*
                 val requestPost = RequestPost(
                     media = postMedia,
                     date = binding.tvWriteDatepickerbtn.text.toString(), // 데이터포맷변환필요
@@ -254,8 +255,10 @@ class WriteActivity : AppCompatActivity() {
                     }
                 )
 
-                // startActivity(Intent(this, WriteCompleteActivity::class.java))
-                Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
+                 */
+
+                startActivity(Intent(this@WriteActivity, WriteCompleteActivity::class.java))
+                //Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
             }
         }
     }
