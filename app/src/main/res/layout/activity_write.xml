@@ -6,7 +6,6 @@
     tools:context="before.forget.feature.write.WriteActivity">
 
     <data>
-
         <variable
             name="write"
             type="before.forget.feature.write.WriteData" />
@@ -314,6 +313,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_category_list"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

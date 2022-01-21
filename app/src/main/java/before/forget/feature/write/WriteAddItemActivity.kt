@@ -20,6 +20,7 @@ class WriteAddItemActivity : AppCompatActivity() {
         }
         setContentView(binding.root)
         initMainAdapter()
+        //activeNextButton()
     }
 
     private fun initMainAdapter() {
@@ -30,17 +31,17 @@ class WriteAddItemActivity : AppCompatActivity() {
                 WriteAddItemData(
                     it.category,
                     ObservableBoolean(it.isSelected)
-                ) { activeNextButton() }
+                )
             }.also {
                 writeadditemAdapter.itemList.addAll(it)
             }
         }
     }
 
-    private fun activeNextButton() {
+    /*private fun activeNextButton() {
         val enableCondition = writeadditemAdapter.hasSelectedItem()
         binding.btnAddwriteNextbtn.isEnabled = enableCondition
-    }
+    }*/
 
     private fun onClickNextButton() {
         writeadditemAdapter.itemList.mapIndexed { index, writeAddItemData ->

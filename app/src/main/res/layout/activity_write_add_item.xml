@@ -151,7 +151,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="24dp"
-            android:enabled="false"
             android:background="@drawable/writeadditem_nextbtn"
             android:fontFamily="@font/pretendard_semibold"
             android:gravity="center"

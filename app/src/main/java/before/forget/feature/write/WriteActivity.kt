@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.ObservableField
 import before.forget.data.remote.BeforegetClient
 import before.forget.data.remote.response.CategoryResponseData
 import before.forget.databinding.ActivityWriteBinding
@@ -18,6 +19,7 @@ import java.time.format.DateTimeFormatter
 class WriteActivity : AppCompatActivity() {
     var dateString = ""
 
+    private val writeAdapter = WriteAdapter()
     private val writeCategories = arrayListOf<WriteCategory>()
     private val getAddItemResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -29,6 +31,7 @@ class WriteActivity : AppCompatActivity() {
                     writeCategories.addAll(list)
                 }
                 Log.d("TEST111", writeCategories.toString())
+                updateWriteAdapter()
             }
         }
 
@@ -39,7 +42,6 @@ class WriteActivity : AppCompatActivity() {
 
         setContentView(binding.root)
         onNetwork()
-
         val cal = Calendar.getInstance() // 현재시각 기입 + 요일
         var day = ""
         var num = cal.get(Calendar.DAY_OF_WEEK)
@@ -62,6 +64,9 @@ class WriteActivity : AppCompatActivity() {
             a.text = it.toString() + "looooooooooooong"
             binding.chipGroup.addView(a)
         }
+
+        binding.rvWriteItemlist.adapter = writeAdapter
+        updateWriteAdapter()
     }
 
     private fun createBottomSheet() { // 바텀시트 프래그먼트 생성
@@ -160,6 +165,9 @@ class WriteActivity : AppCompatActivity() {
                     getAddItemResult.launch(it)
                 }
             }
+            tvWriteDone.setOnClickListener {
+                Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
+            }
         }
     }
 
@@ -185,6 +193,14 @@ class WriteActivity : AppCompatActivity() {
         }
         writeCategories.clear()
         writeCategories.addAll(categories)
+    }
+
+    private fun updateWriteAdapter() {
+        val additionalData = writeCategories.filter { it.isSelected }.map {
+            val mediaInfo = MediaInputInfo.findHintById(it.id)
+            WriteData(mediaInfo.title, ObservableField(""), mediaInfo.hint)
+        }
+        writeAdapter.addAllDataOf(additionalData)
     }
 
     companion object {
