@@ -5,19 +5,26 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.databinding.ActivityWriteBinding
-import before.forget.databinding.ViewChipBinding
+import before.forget.feature.write.writeadditem.WriteAddItemActivity
+import com.google.android.material.chip.Chip
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class WriteActivity : AppCompatActivity() {
     var dateString = ""
+    var check: Int = 0
+    var test: Boolean = false
 
     @RequiresApi(Build.VERSION_CODES.N)
 
+    private val writeBottomSheetFragment = WriteBottomSheetFragment() // 전역변수로 인스턴스생성
     private lateinit var binding: ActivityWriteBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWriteBinding.inflate(layoutInflater)
@@ -36,24 +43,47 @@ class WriteActivity : AppCompatActivity() {
             6 -> day = ". FRI"
             7 -> day = ". SAT"
         }
+        binding.tvWriteAddonelinebtn.visibility = View.INVISIBLE
 
         binding.tvWriteDatepickerbtn.text =
             LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
+
+        /*if (binding.tvWriteDatepickerbtn.text != LocalDateTime.now()
+            .format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
+        ) {
+            check += 1
+            Log.d("ffffff달력fs","${check}")
+        }*/
+
         getMediaLabel()
+        getOneLineData()
         btnSetOnClickListener()
-        (1..6).forEach {
-            val a = ViewChipBinding.inflate(layoutInflater).root
-            a.text = it.toString() + "looooooooooooong"
-            binding.chipGroup.addView(a)
+    }
+
+    private fun getOneLineData() {
+        writeBottomSheetFragment.setOneLineCallback { oneLine ->
+            for (i in oneLine) {
+
+                binding.chipGroup.addView(
+                    Chip(this).apply {
+                        text = i
+                        Log.d("qt", i)
+                        isCloseIconVisible = true
+                        setOnCloseIconClickListener { binding.chipGroup.removeView(this) }
+                    }
+                )
+            }
+            Log.d("ㅅㄱ", "123")
         }
     }
 
     private fun createBottomSheet() { // 바텀시트 프래그먼트 생성
-        val writeBottomSheetFragment = WriteBottomSheetFragment()
+// 전역변수로 이미 초기화 해줬기 때문에 여기는 지워도 됨, 다른 인스턴스 생성
         writeBottomSheetFragment.show(supportFragmentManager, writeBottomSheetFragment.tag)
     }
 
     private fun btnSetOnClickListener() { // 별점 구현
+
         with(binding) {
             ivWriteStar1.setOnClickListener {
                 ivWriteStar1.isSelected = true
@@ -61,6 +91,11 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = false
                 ivWriteStar4.isSelected = false
                 ivWriteStar5.isSelected = false
+                if (test == false) {
+                    check += 1
+                    test = true
+                }
+                Log.d("111111111111111111111", "$check")
             }
             ivWriteStar2.setOnClickListener {
                 ivWriteStar1.isSelected = true
@@ -68,6 +103,11 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = false
                 ivWriteStar4.isSelected = false
                 ivWriteStar5.isSelected = false
+                if (test == false) {
+                    check += 1
+                    test = true
+                }
+                Log.d("222222222222222222222", "$check")
             }
             ivWriteStar3.setOnClickListener {
                 ivWriteStar1.isSelected = true
@@ -75,6 +115,11 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = true
                 ivWriteStar4.isSelected = false
                 ivWriteStar5.isSelected = false
+                if (test == false) {
+                    check += 1
+                    test = true
+                }
+                Log.d("33333333333333333333333333", "$check")
             }
             ivWriteStar4.setOnClickListener {
                 ivWriteStar1.isSelected = true
@@ -82,6 +127,11 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = true
                 ivWriteStar4.isSelected = true
                 ivWriteStar5.isSelected = false
+                if (test == false) {
+                    check += 1
+                    test = true
+                }
+                Log.d("4444444444444444444444", "$check")
             }
             ivWriteStar5.setOnClickListener {
                 ivWriteStar1.isSelected = true
@@ -89,6 +139,11 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = true
                 ivWriteStar4.isSelected = true
                 ivWriteStar5.isSelected = true
+                if (test == false) {
+                    check += 1
+                    test = true
+                }
+                Log.d("55555555555555555555", "$check")
             }
             tvWriteAddonelinebtn.setOnClickListener { // 바텀시트 생성
                 createBottomSheet()
@@ -135,6 +190,11 @@ class WriteActivity : AppCompatActivity() {
                 ).show()
             }
             ivWriteBackbtn.setOnClickListener { finish() } // 엑티비티 종료
+            tvWriteAddoneline.setOnClickListener {
+                createBottomSheet()
+                tvWriteAddoneline.visibility = View.GONE
+                tvWriteAddonelinebtn.visibility = View.VISIBLE
+            }
             tvWriteAdditem.setOnClickListener {
                 startActivity(
                     Intent(

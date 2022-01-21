@@ -1,9 +1,8 @@
-package before.forget.feature.write
+package before.forget.feature.write.writeadditem
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import before.forget.data.WriteAddItemAdapter
 import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.ActivityWriteAddItemBinding
 import before.forget.util.callback

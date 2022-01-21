@@ -1,6 +1,7 @@
 package before.forget.feature.write
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +18,11 @@ class WriteBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var writeViewPagerAdapter: WriteViewPagerAdapter
     val writeGoodFragment = WriteGoodFragment()
     val writeBadFragment = WriteBadFragment()
+    private var oneLineCallback: ((List<String>) -> Unit)? = null
+
+    fun setOneLineCallback(listener: (List<String>) -> Unit) {
+        this.oneLineCallback = listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,27 +36,28 @@ class WriteBottomSheetFragment : BottomSheetDialogFragment() {
             false
         )
 
-        binding.btnWriteApply.visibility = View.INVISIBLE
-        binding.clWriteResetbtn.visibility = View.INVISIBLE
+        binding.btnWriteApply.visibility = View.GONE
+        binding.clWriteResetbtn.visibility = View.GONE
 
-        writeGoodFragment.setCallbackButtonClickListener {
-            dismiss()
-        }
-
-      /*  writeBadFragment.setCallbackButtonClickListener {
-            dismiss()
-        }*/
+        /*  writeBadFragment.setCallbackButtonClickListener {
+              dismiss()
+          }*/
 
         initAdapter()
         initTabLayout()
         test()
         initDialog()
+        writeGoodFragment.setCallbackButtonClickListener { oneLine ->
+            oneLineCallback?.invoke(oneLine)
+            Log.d("액비티티에서", "오긴온거니 흑")
+            dismiss()
+        }
 
         return binding.root
     }
 
     private fun initAdapter() { // 뷰페이저 어댑터
-        val fragmentList = listOf(WriteGoodFragment(), WriteBadFragment())
+        val fragmentList = listOf(writeGoodFragment, writeBadFragment)
         writeViewPagerAdapter = WriteViewPagerAdapter(this)
         writeViewPagerAdapter.fragments.addAll(fragmentList)
         binding.vpWriteMenu.adapter = writeViewPagerAdapter

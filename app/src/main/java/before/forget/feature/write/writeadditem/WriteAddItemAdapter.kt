@@ -1,10 +1,9 @@
-package before.forget.data
+package before.forget.feature.write.writeadditem
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import before.forget.databinding.ItemItemListBinding
-import before.forget.feature.write.WriteAddItemData
 
 class WriteAddItemAdapter : RecyclerView.Adapter<WriteAddItemAdapter.WriteAddItemViewHolder>() {
 

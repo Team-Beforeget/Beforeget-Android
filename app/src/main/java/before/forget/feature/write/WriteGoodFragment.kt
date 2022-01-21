@@ -14,7 +14,8 @@ import before.forget.databinding.FragmentWriteGoodBinding
 import before.forget.util.callback
 
 class WriteGoodFragment : Fragment() {
-    private var callbackButtonClickListener: (() -> Unit)? = null
+    private var callbackButtonClickListener: ((List<String>) -> Unit)? = null
+    var oneLine = mutableListOf<String>()
     private lateinit var binding: FragmentWriteGoodBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,26 +37,38 @@ class WriteGoodFragment : Fragment() {
             tvWriteOnelinereview1.setOnClickListener {
                 tvWriteOnelinereview1.isSelected = !tvWriteOnelinereview1.isSelected
                 btnApplyActivate()
+                oneLine.add(tvWriteOnelinereview1.text.toString())
             }
             tvWriteOnelinereview2.setOnClickListener {
                 tvWriteOnelinereview2.isSelected = !tvWriteOnelinereview2.isSelected
                 btnApplyActivate()
+                oneLine.add(tvWriteOnelinereview2.text.toString())
             }
             tvWriteOnelinereview3.setOnClickListener {
                 tvWriteOnelinereview3.isSelected = !tvWriteOnelinereview3.isSelected
                 btnApplyActivate()
+                oneLine.add(tvWriteOnelinereview3.text.toString())
             }
             tvWriteOnelinereview4.setOnClickListener {
                 tvWriteOnelinereview4.isSelected = !tvWriteOnelinereview4.isSelected
                 btnApplyActivate()
+                oneLine.add(tvWriteOnelinereview4.text.toString())
             }
             tvWriteOnelinereview5.setOnClickListener {
                 tvWriteOnelinereview5.isSelected = !tvWriteOnelinereview5.isSelected
                 btnApplyActivate()
+                oneLine.add(tvWriteOnelinereview5.text.toString())
             }
             tvWriteOnelinereview6.setOnClickListener {
                 tvWriteOnelinereview6.isSelected = !tvWriteOnelinereview6.isSelected
                 btnApplyActivate()
+                oneLine.add(tvWriteOnelinereview6.text.toString())
+            }
+            btnWriteGoodapply.setOnClickListener() {
+                // 기록추가 활성화
+                // tvWriteAddoneline.visibility = View.GONE
+                callbackButtonClickListener?.invoke(oneLine)
+                oneLine = mutableListOf<String>()
             }
         }
     }
@@ -80,7 +93,7 @@ class WriteGoodFragment : Fragment() {
     }
 
     private fun onNetwork() {
-        val oneline = listOf<TextView>(
+        val oneLine = listOf<TextView>(
             binding.tvWriteOnelinereview1,
             binding.tvWriteOnelinereview2,
             binding.tvWriteOnelinereview3,
@@ -95,7 +108,8 @@ class WriteGoodFragment : Fragment() {
             .onSuccess { response ->
                 response.data?.let { data ->
                     data.good.forEachIndexed { index, server ->
-                        oneline[index].text = server
+                        oneLine[index].text = server
+                        Log.d("성공", "${response.data.good}")
                     }
                     Log.d("성공", "${response.data.good}")
                 }
@@ -106,7 +120,9 @@ class WriteGoodFragment : Fragment() {
 
     private fun resetSelectedOneLine() {
         binding.clWriteGoodresetbtn.setOnClickListener {
+            oneLine = mutableListOf<String>()
             with(binding) {
+                btnWriteGoodapply.isEnabled = false
                 tvWriteOnelinereview1.isSelected = false
                 tvWriteOnelinereview2.isSelected = false
                 tvWriteOnelinereview3.isSelected = false
@@ -117,7 +133,8 @@ class WriteGoodFragment : Fragment() {
         }
     }
 
-    fun setCallbackButtonClickListener(listener: () -> Unit) {
+    fun setCallbackButtonClickListener(listener: (oneLine: List<String>) -> Unit) {
         this.callbackButtonClickListener = listener
+        Log.d("함수 실행", "wpqkf")
     }
 }

@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingStart="10dp"
         android:paddingBottom="20dp">
 
@@ -28,7 +28,7 @@
             android:paddingTop="12dp"
             android:paddingRight="20dp"
             android:paddingBottom="12dp"
-            android:textColor="@color/gray200"
+            android:textColor="@color/selector_writebottomsheet_font"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +47,7 @@
             android:paddingTop="12dp"
             android:paddingRight="20dp"
             android:paddingBottom="12dp"
-            android:textColor="@color/gray200"
+            android:textColor="@color/selector_writebottomsheet_font"
             android:textSize="14dp"
             app:layout_constraintStart_toEndOf="@+id/tv_write_onelinereview1"
             app:layout_constraintTop_toTopOf="@+id/tv_write_onelinereview1"
@@ -67,7 +67,7 @@
             android:paddingTop="12dp"
             android:paddingRight="20dp"
             android:paddingBottom="12dp"
-            android:textColor="@color/gray200"
+            android:textColor="@color/selector_writebottomsheet_font"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview1"
@@ -86,7 +86,7 @@
             android:paddingTop="12dp"
             android:paddingRight="20dp"
             android:paddingBottom="12dp"
-            android:textColor="@color/gray200"
+            android:textColor="@color/selector_writebottomsheet_font"
             android:textSize="14dp"
             app:layout_constraintStart_toEndOf="@+id/tv_write_onelinereview3"
             app:layout_constraintTop_toTopOf="@+id/tv_write_onelinereview3"
@@ -106,7 +106,7 @@
             android:paddingTop="12dp"
             android:paddingRight="20dp"
             android:paddingBottom="12dp"
-            android:textColor="@color/gray200"
+            android:textColor="@color/selector_writebottomsheet_font"
             android:textSize="14dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview3"
@@ -126,7 +126,7 @@
             android:paddingTop="12dp"
             android:paddingRight="20dp"
             android:paddingBottom="12dp"
-            android:textColor="@color/gray200"
+            android:textColor="@color/selector_writebottomsheet_font"
             android:textSize="14dp"
             app:layout_constraintStart_toEndOf="@+id/tv_write_onelinereview5"
             app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview4"
@@ -137,9 +137,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
+            android:layout_marginTop="47dp"
             android:layout_marginBottom="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview5">
 
             <ImageView
                 android:id="@+id/iv_write_goodreset"
@@ -171,8 +173,9 @@
             android:id="@+id/btn_write_goodapply"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="47dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="26dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/write_rectanglebuttonselector"
             android:fontFamily="@font/pretendard_semibold"
             android:gravity="center"
@@ -185,7 +188,8 @@
             android:textColor="@color/white"
             android:textSize="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview6" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

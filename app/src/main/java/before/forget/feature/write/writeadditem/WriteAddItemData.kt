@@ -1,4 +1,4 @@
-package before.forget.feature.write
+package before.forget.feature.write.writeadditem
 
 data class WriteAddItemData(
     val item: String
