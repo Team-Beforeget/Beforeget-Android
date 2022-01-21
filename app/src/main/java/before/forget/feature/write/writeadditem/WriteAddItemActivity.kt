@@ -1,14 +1,17 @@
-package before.forget.feature.write
+package before.forget.feature.write.writeadditem
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ObservableBoolean
 import before.forget.databinding.ActivityWriteAddItemBinding
+import before.forget.feature.write.WriteActivity
+import before.forget.feature.write.WriteCategory
 
 class WriteAddItemActivity : AppCompatActivity() {
     private val categories by lazy {
-        intent.getParcelableArrayListExtra<WriteCategory>(WriteActivity.EXTRA_CATEGORIES) ?: arrayListOf()
+        intent.getParcelableArrayListExtra<WriteCategory>(WriteActivity.EXTRA_CATEGORIES)
+            ?: arrayListOf()
     }
     private lateinit var binding: ActivityWriteAddItemBinding
     private val writeadditemAdapter = WriteAddItemAdapter()
@@ -20,7 +23,7 @@ class WriteAddItemActivity : AppCompatActivity() {
         }
         setContentView(binding.root)
         initMainAdapter()
-        //activeNextButton()
+        // activeNextButton()
     }
 
     private fun initMainAdapter() {

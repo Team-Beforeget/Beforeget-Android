@@ -7,7 +7,7 @@
 
         <variable
             name="writeadditem"
-            type="before.forget.feature.write.WriteAddItemData" />
+            type="before.forget.feature.write.writeadditem.WriteAddItemData" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

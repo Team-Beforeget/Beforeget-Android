@@ -1,6 +1,7 @@
 package before.forget.feature.write
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,13 @@ import com.google.android.material.tabs.TabLayoutMediator
 class WriteBottomSheetFragment : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentWriteBottomSheetBinding
     private lateinit var writeViewPagerAdapter: WriteViewPagerAdapter
+    val writeGoodFragment = WriteGoodFragment()
+    val writeBadFragment = WriteBadFragment()
+    private var oneLineCallback: ((List<String>) -> Unit)? = null
+
+    fun setOneLineCallback(listener: (List<String>) -> Unit) {
+        this.oneLineCallback = listener
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,23 +36,28 @@ class WriteBottomSheetFragment : BottomSheetDialogFragment() {
             false
         )
 
-        /*   writeGoodFragment.setCallbackButtonClickListener {
-               dismiss()
-           }
+        binding.btnWriteApply.visibility = View.GONE
+        binding.clWriteResetbtn.visibility = View.GONE
 
-           writeBadFragment.setCallbackButtonClickListener {
-               dismiss()
-           }*/
+        /*  writeBadFragment.setCallbackButtonClickListener {
+              dismiss()
+          }*/
 
         initAdapter()
         initTabLayout()
         test()
         initDialog()
+        writeGoodFragment.setCallbackButtonClickListener { oneLine ->
+            oneLineCallback?.invoke(oneLine)
+            Log.d("액비티티에서", "오긴온거니 흑")
+            dismiss()
+        }
+
         return binding.root
     }
 
     private fun initAdapter() { // 뷰페이저 어댑터
-        val fragmentList = listOf(WriteGoodFragment(), WriteBadFragment())
+        val fragmentList = listOf(writeGoodFragment, writeBadFragment)
         writeViewPagerAdapter = WriteViewPagerAdapter(this)
         writeViewPagerAdapter.fragments.addAll(fragmentList)
         binding.vpWriteMenu.adapter = writeViewPagerAdapter
@@ -61,6 +74,7 @@ class WriteBottomSheetFragment : BottomSheetDialogFragment() {
         binding.btnWriteApply.setOnClickListener {
             val writeBottomSheetFragment = WriteBottomSheetFragment()
             writeBottomSheetFragment.dismiss()
+            // 데이터전달
         }
     }
 

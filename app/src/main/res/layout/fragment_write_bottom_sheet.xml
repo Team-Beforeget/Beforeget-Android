@@ -11,8 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_write_bottomsheet"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/writebottomsheet_topcorner">
+        android:layout_height="wrap_content">
 
         <View
             android:id="@+id/vw_write_indicator"
@@ -32,18 +31,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
+            android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/vw_write_indicator"
             app:tabGravity="fill"
             app:tabIndicator="@drawable/write_indicator"
+            app:tabIndicatorFullWidth="false"
             app:tabSelectedTextColor="@color/black200"
-            app:tabTextColor="@color/gray300" />
+            app:tabTextColor="@color/gray300"
+
+            />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_write_menu"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
+            android:saveEnabled="false"
             app:layout_constraintBottom_toTopOf="@+id/btn_write_apply"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +63,7 @@
             android:layout_marginTop="47dp"
             android:layout_marginBottom="29dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview5">
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
                 android:id="@+id/iv_write_reset"
