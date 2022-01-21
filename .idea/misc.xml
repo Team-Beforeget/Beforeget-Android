@@ -72,6 +72,7 @@
         <entry key="app/src/main/res/drawable/ic_btn_detail.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_btn_download.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_btn_look.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/drawable/ic_btn_nameedit.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/ic_btn_setting.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_btn_share.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/drawable/ic_btn_stats.xml" value="0.17916666666666667" />
@@ -134,10 +135,19 @@
         <entry key="app/src/main/res/drawable/mediaselect_borderselecter.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/mediaselect_rectanglebuttonselector.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/rectangle_beforeget_dialog_background_radius10dp.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/drawable/rectangle_border_gray300.xml" value="0.140625" />
         <entry key="app/src/main/res/drawable/rectangle_border_gray_18.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rectangle_border_green_1.xml" value="0.16041666666666668" />
         <entry key="app/src/main/res/drawable/rectangle_border_green_3.xml" value="0.14322916666666666" />
+        <entry key="app/src/main/res/drawable/rectangle_dialog_cancel_button.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/rectangle_dialog_cancel_button_pressed.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/rectangle_dialog_ok_button_pressed.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/rectangle_email_signin_button_radius4dp_border1dp.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/rectangle_email_signin_button_radius_4dp.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/rectangle_fill_black.xml" value="0.140625" />
+        <entry key="app/src/main/res/drawable/rectangle_fill_gray300_filter.xml" value="0.140625" />
         <entry key="app/src/main/res/drawable/selector_btn_filter.xml" value="0.20208333333333334" />
+        <entry key="app/src/main/res/drawable/selector_littlestar.xml" value="0.140625" />
         <entry key="app/src/main/res/drawable/selector_report_indicator.xml" value="0.33796296296296297" />
         <entry key="app/src/main/res/drawable/splash.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/splash_v31.xml" value="0.17916666666666667" />
@@ -152,6 +162,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_myrecod.xml" value="0.16302083333333334" />
         <entry key="app/src/main/res/layout/activity_report.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.33194444444444443" />
         <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.1625" />
         <entry key="app/src/main/res/layout/ex.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.1859375" />
