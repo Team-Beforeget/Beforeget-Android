@@ -6,7 +6,9 @@
 
 
     <data>
-
+        <variable
+            name="webtoonDetailData"
+            type="before.forget.data.remote.response.ResponseDetail" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

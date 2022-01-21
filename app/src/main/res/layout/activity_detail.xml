@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".feature.myrecord.detail.MyRecordDetailActivity">
+    tools:context=".feature.myrecord.detail.DetailActivity">
 
     <data>
 
@@ -175,7 +175,7 @@
                     app:layout_constraintTop_toBottomOf="@id/iv_star_detail" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cl_onereviewList_detail_myrecord"
+                    android:id="@+id/cl_onereviewList_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
@@ -189,7 +189,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="18dp"
                         android:background="@color/black200"
                         android:fontFamily="@font/pretendard_regular"
                         android:paddingHorizontal="16dp"
@@ -198,7 +197,7 @@
                         android:textColor="@color/white"
                         android:textSize="15dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cl_onereviewList_detail_myrecord"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:text="@string/review_1" />
 
                     <TextView
@@ -291,20 +290,21 @@
                         app:layout_constraintTop_toTopOf="@id/tv_review_5"
                         tools:text="@string/review_6" />
 
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <TextView
                     android:id="@+id/tv_comment_title_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="47dp"
                     android:fontFamily="@font/pretendard_medium"
                     android:text="@string/comment_title"
                     android:textColor="@color/black200"
                     android:textSize="19dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_onereviewList_detail_myrecord" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_onereviewList_detail" />
 
                 <View
                     android:id="@+id/veiw_comment_line_detail"
@@ -333,15 +333,19 @@
                     app:layout_constraintTop_toTopOf="@id/veiw_comment_line_detail"
                     tools:text="@string/comment" />
 
-                <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/fragment_container_detail"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_addtional_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="48dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_comment_detail" />
+                    app:layout_constraintTop_toBottomOf="@id/tv_comment_detail"
+
+                    />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

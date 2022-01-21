@@ -5,6 +5,9 @@
     tools:context=".feature.myrecord.detail.DetailMusicFragment">
 
     <data>
+        <variable
+            name="musicDetailData"
+            type="before.forget.data.remote.response.ResponseDetail" />
 
     </data>
 

@@ -5,6 +5,9 @@
     tools:context=".feature.myrecord.detail.DetailBookFragment">
 
     <data>
+        <variable
+            name="bookDetailData"
+            type="before.forget.data.remote.response.ResponseDetail" />
 
     </data>
 
