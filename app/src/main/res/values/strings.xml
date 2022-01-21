@@ -244,4 +244,9 @@ I\'m so polarized</string>
     <string name="setting_logout">로그아웃</string>
     <string name="setting_withdrawal">서비스 탈퇴</string>
     <string name="setting_info">about Beforeget</string>
+
+    <!-- write complete -->
+    <string name="complete_title">새로운 기록이 쌓였어요.\n확인해 보세요!</string>
+    <string name="complete_go">작성한 글 보러가기</string>
+    <string name="complete_main">메인으로 돌아가기</string>
 </resources>
