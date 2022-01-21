@@ -15,7 +15,9 @@ import before.forget.data.remote.response.CategoryResponseData
 import before.forget.databinding.ActivityWriteBinding
 import before.forget.feature.write.writeadditem.WriteAddItemActivity
 import before.forget.util.callback
+import before.forget.util.enqueueUtil
 import com.google.android.material.chip.Chip
+import retrofit2.Call
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -236,24 +238,22 @@ class WriteActivity : AppCompatActivity() {
                 val requestPost = RequestPost(
                     media = postMedia,
                     date = binding.tvWriteDatepickerbtn.text.split(". ")[0] + "-" +
-                        binding.tvWriteDatepickerbtn.text.split(". ")[1],
+                        binding.tvWriteDatepickerbtn.text.split(". ")[1] + "-" +
+                        binding.tvWriteDatepickerbtn.text.split(". ")[2],
                     star = postStar,
                     title = binding.tvWriteTitleinput.text.toString(),
-                    oneLine = postOneLine,
+                    oneline = postOneLine,
                     additional = writeAdapter.getCategoryToAdditional()
 
                 )
 
-                /*
-                val call: Call<PostResponseData> =
+                val call: Call<RequestPost> =
                     BeforegetClient.postService.postUpload(body = requestPost)
                 call.enqueueUtil(
                     onSuccess = {
                         Log.d("좀", "돼라")
                     }
                 )
-
-                 */
 
                 startActivity(Intent(this@WriteActivity, WriteCompleteActivity::class.java))
                 // Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
