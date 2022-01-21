@@ -43,10 +43,10 @@ class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>
             }
             itemView.setOnClickListener {
                 // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
-                val media = 6
                 val recordToDetailIntent =
                     Intent(itemView.context, MyRecordDetailActivity::class.java)
-                recordToDetailIntent.putExtra("media", media)
+                recordToDetailIntent.putExtra("media", data.category)
+                recordToDetailIntent.putExtra("postId", data.id)
                 ContextCompat.startActivity(itemView.context, recordToDetailIntent, null)
             }
         }

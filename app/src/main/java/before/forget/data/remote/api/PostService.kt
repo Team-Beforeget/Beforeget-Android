@@ -1,11 +1,13 @@
 package before.forget.data.remote.api
 
+import before.forget.data.remote.response.ResponseDetail
 import before.forget.data.remote.response.ResponseMyRecordAll
 import before.forget.data.remote.response.ResponseWrapper
 import before.forget.data.remote.tempToken
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface PostService {
@@ -21,4 +23,10 @@ interface PostService {
         @Query("media") media: String,
         @Query("star") star: String
     ): Call<ResponseWrapper<List<ResponseMyRecordAll>>>
+
+    @GET("post/{postId}")
+    fun getDetailFilterData(
+        @Header("accesstoken") token: String? = tempToken,
+        @Path("postId") postId: Int
+    ): Call<ResponseWrapper<List<ResponseDetail>>>
 }
