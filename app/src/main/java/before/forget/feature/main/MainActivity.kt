@@ -22,26 +22,28 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-
-        binding.ivMainStats.setOnClickListener {
-            startActivity(Intent(this, ReportActivity::class.java))
-        }
-
-        binding.btnMainRecord.setOnClickListener {
-            startActivity(Intent(this, MediaSelectActivity::class.java))
-        }
-
-        binding.tvMainViewallbtn.setOnClickListener {
-            startActivity(Intent(this, MyRecordActivity::class.java))
-        }
-
-        binding.ivMainSetting.setOnClickListener {
-            startActivity(Intent(this, SettingActivity::class.java))
-        }
         setContentView(binding.root)
         initMainAdapter()
         initImage()
         onNetwork()
+        setOnClickListener()
+    }
+
+    private fun setOnClickListener() {
+        with(binding) {
+            ivMainStats.setOnClickListener {
+                startActivity(Intent(this@MainActivity, ReportActivity::class.java))
+            }
+            btnMainRecord.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MediaSelectActivity::class.java))
+            }
+            tvMainViewallbtn.setOnClickListener {
+                startActivity(Intent(this@MainActivity, MyRecordActivity::class.java))
+            }
+            ivMainSetting.setOnClickListener {
+                startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+            }
+        }
     }
 
     private fun initImage() {

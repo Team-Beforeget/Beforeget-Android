@@ -99,7 +99,7 @@
                     android:layout_marginTop="32dp"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="24dp"
-                    android:text="@string/write_title"
+                    tools:text="@string/write_title"
                     android:textColor="@color/black200"
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -269,14 +269,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="47dp"
+                    android:layout_marginTop="178dp"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="24dp"
                     android:text="@string/write_comment"
                     android:textColor="@color/black200"
                     android:textSize="16dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_write_addoneline" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_write_commentinput"
@@ -322,8 +322,12 @@
 
                 <com.google.android.material.chip.ChipGroup
                     android:id="@+id/chip_group"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginBottom="20dp"
                     app:layout_constraintBottom_toTopOf="@+id/tv_write_comment"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
