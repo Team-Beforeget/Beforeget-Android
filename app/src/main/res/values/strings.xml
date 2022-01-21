@@ -233,4 +233,13 @@ I\'m so polarized</string>
     <string name="cancelText">취소</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Setting -->
+    <string name="setting">Setting</string>
+    <string name="setting_email">subin0723@beforeget.com</string>
+    <string name="setting_change_pw">비밀번호 변경</string>
+    <string name="setting_service">서비스 이용약관</string>
+    <string name="setting_logout">로그아웃</string>
+    <string name="setting_withdrawal">서비스 탈퇴</string>
+    <string name="setting_info">about Beforeget</string>
 </resources>
