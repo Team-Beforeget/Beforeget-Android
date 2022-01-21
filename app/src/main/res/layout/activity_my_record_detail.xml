@@ -156,10 +156,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:background="@drawable/ic_star_4_detail"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_top_detail" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_top_detail"
+                    tools:background="@drawable/ic_star_4_detail" />
 
                 <TextView
                     android:id="@+id/tv_one_review_detail"
@@ -189,7 +189,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="18dp"
                         android:background="@color/black200"
                         android:fontFamily="@font/pretendard_regular"
                         android:paddingHorizontal="16dp"
@@ -198,7 +197,7 @@
                         android:textColor="@color/white"
                         android:textSize="15dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/cl_onereviewList_detail_myrecord"
+                        app:layout_constraintTop_toTopOf="@id/cl_onereviewList_detail_myrecord"
                         tools:text="@string/review_1" />
 
                     <TextView
@@ -298,7 +297,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="47dp"
                     android:fontFamily="@font/pretendard_medium"
                     android:text="@string/comment_title"
                     android:textColor="@color/black200"

@@ -87,6 +87,14 @@ class DetailActivity : AppCompatActivity() {
                             }
                         }
                     }
+
+                    when (it.data!![0].star) {
+                        1 -> ivStarDetail.setImageResource(R.drawable.ic_star_1_detail)
+                        2 -> ivStarDetail.setImageResource(R.drawable.ic_star_2_detail)
+                        3 -> ivStarDetail.setImageResource(R.drawable.ic_star_3_detail)
+                        4 -> ivStarDetail.setImageResource(R.drawable.ic_star_4_detail)
+                        5 -> ivStarDetail.setImageResource(R.drawable.ic_star_5_detail)
+                    }
                     tvCommentDetail.text = it.data!![0].comment
                 }
 
