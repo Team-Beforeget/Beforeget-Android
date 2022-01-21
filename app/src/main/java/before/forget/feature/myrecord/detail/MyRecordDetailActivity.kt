@@ -1,6 +1,7 @@
 package before.forget.feature.myrecord.detail
 
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
@@ -29,7 +30,8 @@ class MyRecordDetailActivity : AppCompatActivity() {
         initOneReview()
         getPostIdFromRecordActivity()
         onDetailNetwork()
-        changeFragment()
+        setMovieFragment()
+        // changeFragment()
         // Log.d("postId", getPostIdFromRecordActivity().toString())
         // bundle.putInt("postId", postId)
     }
@@ -74,6 +76,11 @@ class MyRecordDetailActivity : AppCompatActivity() {
                 transition.replace(R.id.fragment_container_detail, DetailYoutubeFragment()).commit()
             }
         }
+    }
+
+    private fun setMovieFragment() {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container_detail, DetailMovieFragment()).commit()
     }
 
     private fun initOneReview() {

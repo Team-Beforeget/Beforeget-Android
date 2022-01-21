@@ -211,7 +211,7 @@
             android:lineSpacingExtra="9dp"
             android:paddingHorizontal="16dp"
             android:paddingVertical="10dp"
-            android:text="@string/ost"
+            android:text="Ed Sheeran - Bad Habits"
             android:textColor="@color/white"
             android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"

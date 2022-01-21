@@ -30,8 +30,6 @@ k
 ;app/src/main/java/before/forget/feature/main/MainAdapter.kt,d/5/d5e70bc1781674c40e39b0c6bd589fa74b38dd55
 h
 8app/src/main/java/before/forget/feature/main/MainData.kt,8/b/8b9a300a954dfbf0473502cdb040bcc2f2713d44
-Å
-Qapp/src/main/java/before/forget/feature/myrecord/detail/MyRecordDetailActivity.kt,a/6/a64fd2e252f47dcbf7d9ca52e3e860bedf81f33f
 r
 Bapp/src/main/java/before/forget/feature/main/MainBindingAdapter.kt,5/e/5eb573e09db9cd8a4b6066a40d771380611618b0
 r
