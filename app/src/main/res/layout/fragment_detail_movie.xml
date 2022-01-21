@@ -4,9 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".feature.myrecord.detail.DetailMovieFragment">
 
-    <data>
+        <data>
+            <variable
+                name="movieDetailData"
+                type="before.forget.data.remote.response.ResponseDetail" />
 
-    </data>
+        </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -18,3 +18,13 @@ Gapp/src/main/java/before/forget/feature/report/ReportRankingFragment.kt,d/3/d3
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
+x
+Happ/src/main/java/before/forget/feature/report/ReportViewPagerAdapter.kt,e/8/e82f2fb85b36091bf59956aae976bba5383b51e0
+{
+Kapp/src/main/java/before/forget/feature/filter/FilterBottomSheetFragment.kt,2/b/2bedb6b270f7a5ec1f8d79f02ce4421cbf4baf44
+u
+Eapp/src/main/java/before/forget/feature/filter/FilterMediaFragment.kt,1/6/1661deceb8727d3cde1c2624a43275ffbdf4a069
+i
+9app/src/main/java/before/forget/feature/SplashActivity.kt,6/6/66157377e945631f0bdfc3661e6f719c016a2323
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
