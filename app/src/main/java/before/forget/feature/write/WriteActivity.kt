@@ -16,6 +16,7 @@ import before.forget.databinding.ActivityWriteBinding
 import before.forget.feature.write.writeadditem.WriteAddItemActivity
 import before.forget.util.callback
 import before.forget.util.enqueueUtil
+import before.forget.util.shortToast
 import com.google.android.material.chip.Chip
 import retrofit2.Call
 import java.time.LocalDateTime
@@ -23,13 +24,13 @@ import java.time.format.DateTimeFormatter
 
 class WriteActivity : AppCompatActivity() {
     var dateString = ""
-    var check: Int = 0
-    var test: Boolean = false
+    var check: Int = 0 // 체크포인트 0
+    var starClickCheckUp: Boolean = false
 
     // 리퀘스트 전역변수
     var postMedia: Int = 0
     var postStar: Int = 0
-    lateinit var postOneLine: List<String>
+    var postOneLine: List<String> = emptyList()
 
     private val writeAdapter = WriteAdapter()
     private val writeCategories = arrayListOf<WriteCategory>()
@@ -42,7 +43,6 @@ class WriteActivity : AppCompatActivity() {
                 )?.let { list ->
                     writeCategories.addAll(list)
                 }
-                Log.d("TEST111", writeCategories.toString())
                 updateWriteAdapter()
             }
         }
@@ -68,17 +68,12 @@ class WriteActivity : AppCompatActivity() {
             6 -> day = ". FRI"
             7 -> day = ". SAT"
         }
-        binding.tvWriteAddonelinebtn.visibility = View.INVISIBLE
 
-        binding.tvWriteDatepickerbtn.text =
-            LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
-
-        /*if (binding.tvWriteDatepickerbtn.text != LocalDateTime.now()
-            .format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
-        ) {
-            check += 1
-            Log.d("ffffff달력fs","${check}")
-        }*/
+        with(binding) {
+            tvWriteAddonelinebtn.visibility = View.INVISIBLE
+            tvWriteDatepickerbtn.text =
+                LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
+        }
 
         getMediaLabel()
         getOneLineData()
@@ -120,9 +115,10 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = false
                 ivWriteStar4.isSelected = false
                 ivWriteStar5.isSelected = false
-                if (test == false) {
+                if (starClickCheckUp == false) {
                     check += 1
-                    test = true
+                    starClickCheckUp = true
+                    Log.d("ㅇㅇ", "$check")
                 }
                 postStar = 1
             }
@@ -132,9 +128,10 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = false
                 ivWriteStar4.isSelected = false
                 ivWriteStar5.isSelected = false
-                if (test == false) {
+                if (starClickCheckUp == false) {
                     check += 1
-                    test = true
+                    starClickCheckUp = true
+                    Log.d("ㅇㅇ", "$check")
                 }
                 postStar = 2
             }
@@ -144,9 +141,10 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = true
                 ivWriteStar4.isSelected = false
                 ivWriteStar5.isSelected = false
-                if (test == false) {
+                if (starClickCheckUp == false) {
                     check += 1
-                    test = true
+                    starClickCheckUp = true
+                    Log.d("ㅇㅇ", "$check")
                 }
                 postStar = 3
             }
@@ -156,9 +154,10 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = true
                 ivWriteStar4.isSelected = true
                 ivWriteStar5.isSelected = false
-                if (test == false) {
+                if (starClickCheckUp == false) {
                     check += 1
-                    test = true
+                    starClickCheckUp = true
+                    Log.d("ㅇㅇ", "$check")
                 }
                 postStar = 4
             }
@@ -168,12 +167,16 @@ class WriteActivity : AppCompatActivity() {
                 ivWriteStar3.isSelected = true
                 ivWriteStar4.isSelected = true
                 ivWriteStar5.isSelected = true
-                if (test == false) {
+                if (starClickCheckUp == false) {
                     check += 1
-                    test = true
+                    starClickCheckUp = true
+                    Log.d("ㅇㅇ", "$check")
                 }
                 postStar = 5
             }
+
+            // 체크포인트 1
+
             tvWriteAddonelinebtn.setOnClickListener { // 바텀시트 생성
                 createBottomSheet()
             }
@@ -222,7 +225,7 @@ class WriteActivity : AppCompatActivity() {
             tvWriteAddoneline.setOnClickListener {
                 createBottomSheet()
                 tvWriteAddoneline.visibility = View.GONE
-                // 한줄리뷰 한번만 가능하게tvWriteAddonelinebtn.visibility = View.VISIBLE
+                tvWriteAddonelinebtn.visibility = View.VISIBLE
             }
             tvWriteAdditem.setOnClickListener {
                 Intent(
@@ -233,30 +236,33 @@ class WriteActivity : AppCompatActivity() {
                     getAddItemResult.launch(it)
                 }
             }
+
             tvWriteDone.setOnClickListener {
+                if (check == 1 && postOneLine.size > 0 && tvWriteTitleinput.text?.isEmpty() == false) {
+                    val requestPost = RequestPost(
+                        media = postMedia,
+                        date = binding.tvWriteDatepickerbtn.text.split(". ")[0] + "-" +
+                            binding.tvWriteDatepickerbtn.text.split(". ")[1] + "-" +
+                            binding.tvWriteDatepickerbtn.text.split(". ")[2],
+                        star = postStar,
+                        title = binding.tvWriteTitleinput.text.toString(),
+                        oneline = postOneLine,
+                        additional = writeAdapter.getCategoryToAdditional()
 
-                val requestPost = RequestPost(
-                    media = postMedia,
-                    date = binding.tvWriteDatepickerbtn.text.split(". ")[0] + "-" +
-                        binding.tvWriteDatepickerbtn.text.split(". ")[1] + "-" +
-                        binding.tvWriteDatepickerbtn.text.split(". ")[2],
-                    star = postStar,
-                    title = binding.tvWriteTitleinput.text.toString(),
-                    oneline = postOneLine,
-                    additional = writeAdapter.getCategoryToAdditional()
+                    )
 
-                )
-
-                val call: Call<RequestPost> =
-                    BeforegetClient.postService.postUpload(body = requestPost)
-                call.enqueueUtil(
-                    onSuccess = {
-                        Log.d("좀", "돼라")
-                    }
-                )
-
-                startActivity(Intent(this@WriteActivity, WriteCompleteActivity::class.java))
-                // Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
+                    val call: Call<RequestPost> =
+                        BeforegetClient.postService.postUpload(body = requestPost)
+                    call.enqueueUtil(
+                        onSuccess = {
+                            Log.d("좀", "돼라")
+                        }
+                    )
+                    startActivity(Intent(this@WriteActivity, WriteCompleteActivity::class.java))
+                } else {
+                    shortToast("필수 항목을 입력해주세요!")
+                    Log.d("ㅇㅇ", "$check")
+                }
             }
         }
     }
@@ -265,14 +271,22 @@ class WriteActivity : AppCompatActivity() {
         if (intent.hasExtra("media")) {
             val media = intent.getStringExtra("media")
             binding.tvWriteMedialabel.text = media.toString()
-
             when (media.toString()) {
                 "Movie" -> postMedia = 1
                 "Book" -> postMedia = 2
-                "Tv" -> postMedia = 3
+                "Tv" -> postMedia = 3 // ㅈ버그
                 "Music" -> postMedia = 4
                 "Webtoon" -> postMedia = 5
                 "Youtube" -> postMedia = 6
+            }
+
+            when (postMedia) {
+                1 -> binding.tvWriteTitle.text = "영화 제목"
+                2 -> binding.tvWriteTitle.text = "책 제목"
+                3 -> binding.tvWriteTitle.text = "프로그램 제목"
+                4 -> binding.tvWriteTitle.text = "음악 제목"
+                5 -> binding.tvWriteTitle.text = "웹툰 제목"
+                6 -> binding.tvWriteTitle.text = "유튜브 제목"
             }
         }
     }

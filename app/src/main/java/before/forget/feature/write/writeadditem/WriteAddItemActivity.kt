@@ -18,12 +18,17 @@ class WriteAddItemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWriteAddItemBinding.inflate(layoutInflater)
-        binding.btnAddwriteNextbtn.setOnClickListener {
-            onClickNextButton()
+        with(binding) {
+            btnAddwriteNextbtn.setOnClickListener {
+                onClickNextButton()
+            }
+            ivAddwriteCheckfalsebtn.setOnClickListener {
+                finish()
+            }
         }
+
         setContentView(binding.root)
         initMainAdapter()
-        // activeNextButton()
     }
 
     private fun initMainAdapter() {
@@ -40,11 +45,6 @@ class WriteAddItemActivity : AppCompatActivity() {
             }
         }
     }
-
-    /*private fun activeNextButton() {
-        val enableCondition = writeadditemAdapter.hasSelectedItem()
-        binding.btnAddwriteNextbtn.isEnabled = enableCondition
-    }*/
 
     private fun onClickNextButton() {
         writeadditemAdapter.itemList.mapIndexed { index, writeAddItemData ->

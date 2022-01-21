@@ -138,7 +138,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginTop="47dp"
-            android:layout_marginBottom="26dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_write_onelinereview5">
@@ -175,7 +174,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="47dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginBottom="24dp"
             android:background="@drawable/write_rectanglebuttonselector"
             android:fontFamily="@font/pretendard_semibold"
             android:gravity="center"
