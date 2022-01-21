@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Beforeget"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".feature.write.WriteCompleteActivity"
+            android:exported="false" />
+        <activity
             android:name=".feature.setting.SettingActivity"
             android:exported="true" />
         <activity
