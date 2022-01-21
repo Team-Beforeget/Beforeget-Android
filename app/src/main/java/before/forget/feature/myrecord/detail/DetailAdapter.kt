@@ -11,7 +11,7 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var dataList = mutableListOf<ResponseDetail.Additional>()
 
     override fun getItemViewType(position: Int): Int {
-        return super.getItemViewType(position)
+        return dataList[position].viewType
     }
 
     override fun onCreateViewHolder(
@@ -19,7 +19,7 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         viewType: Int
     ): RecyclerView.ViewHolder {
         val binding: ViewDataBinding
-        return when (dataList[0]?.viewType) {
+        return when (viewType) {
             multi_album -> {
                 binding = ItemAlbumDetailBinding.inflate(
                     LayoutInflater.from(parent.context), parent, false

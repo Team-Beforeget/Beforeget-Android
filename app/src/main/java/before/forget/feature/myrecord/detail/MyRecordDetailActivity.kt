@@ -3,7 +3,10 @@ package before.forget.feature.myrecord.detail
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
+import before.forget.data.remote.BeforegetClient
+import before.forget.data.remote.tempToken
 import before.forget.databinding.ActivityMyRecordDetailBinding
+import before.forget.util.callback
 
 class MyRecordDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyRecordDetailBinding
@@ -19,6 +22,8 @@ class MyRecordDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         changeFragment()
         getPostIdFromRecordActivity()
+        initOneReview()
+        onDetailNetwork()
         // Log.d("postId", getPostIdFromRecordActivity().toString())
         bundle.putInt("postId", postId)
     }
@@ -43,9 +48,19 @@ class MyRecordDetailActivity : AppCompatActivity() {
                 transition.replace(R.id.fragment_container_detail, DetailWebtoonFragment()).commit()
             }
             else -> {
-                DetailYoutubeFragment().arguments = bundle
+                // DetailYoutubeFragment().arguments = bundle
                 transition.replace(R.id.fragment_container_detail, DetailYoutubeFragment()).commit()
             }
+        }
+    }
+
+    private fun initOneReview() {
+        binding.apply {
+            isReviewExist2 = false
+            isReviewExist3 = false
+            isReviewExist4 = false
+            isReviewExist5 = false
+            isReviewExist6 = false
         }
     }
 
@@ -63,5 +78,56 @@ class MyRecordDetailActivity : AppCompatActivity() {
             postId = intent.getIntExtra("postId", 0)
         }
         return postId
+    }
+
+    private fun onDetailNetwork() {
+        BeforegetClient.postService
+            .getDetailFilterData(tempToken, postId)
+            .callback
+            .onSuccess {
+                binding.apply {
+                    when (it.data!![0].category) {
+                        1 -> ivMediaDetail.setImageResource(R.drawable.ic_movie_detail)
+                        2 -> ivMediaDetail.setImageResource(R.drawable.ic_book_myrecord)
+                        3 -> ivMediaDetail.setImageResource(R.drawable.ic_tv_detail)
+                        4 -> ivMediaDetail.setImageResource(R.drawable.ic_music_detail)
+                        5 -> ivMediaDetail.setImageResource(R.drawable.ic_webtoon_detail)
+                        6 -> ivMediaDetail.setImageResource(R.drawable.ic_youtube_detail)
+                    }
+
+                    tvTitleDetail.text = it.data!![0].title
+                    tvDateDetail.text = it.data!![0].date
+
+                    for (i in it.data!![0].oneline.indices) {
+
+                        when (i) {
+                            0 -> tvReview1.text = it.data!![0].oneline[0]
+
+                            1 -> {
+                                tvReview2.text = it.data!![0].oneline[1]
+                                isReviewExist2 = true
+                            }
+                            2 -> {
+                                tvReview3.text = it.data!![0].oneline[2]
+                                isReviewExist3 = true
+                            }
+                            3 -> {
+                                tvReview4.text = it.data!![0].oneline[3]
+                                isReviewExist4 = true
+                            }
+                            4 -> {
+                                tvReview5.text = it.data!![0].oneline[4]
+                                isReviewExist5 = true
+                            }
+                            5 -> {
+                                tvReview6.text = it.data!![0].oneline[5]
+                                isReviewExist6 = true
+                            }
+                        }
+                    }
+                    tvCommentDetail.text = it.data!![0].comment
+                }
+            }
+            .enqueue()
     }
 }

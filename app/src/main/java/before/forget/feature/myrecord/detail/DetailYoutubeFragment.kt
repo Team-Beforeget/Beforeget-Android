@@ -22,7 +22,7 @@ class DetailYoutubeFragment : Fragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_detail_youtube, container, false)
-        test()
+        // test()
         return binding.root
     }
 

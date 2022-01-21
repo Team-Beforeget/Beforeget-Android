@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import before.forget.R
 import before.forget.data.remote.response.ResponseMyRecordAll
 import before.forget.databinding.ItemRecordBinding
-import before.forget.feature.myrecord.detail.DetailActivity
+import before.forget.feature.myrecord.detail.MyRecordDetailActivity
 
 class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>() {
 
@@ -44,7 +44,7 @@ class MyRecordAdapter : RecyclerView.Adapter<MyRecordAdapter.MyRecordViewHolder>
             itemView.setOnClickListener {
                 // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
                 val recordToDetailIntent =
-                    Intent(itemView.context, DetailActivity::class.java)
+                    Intent(itemView.context, MyRecordDetailActivity::class.java)
                 recordToDetailIntent.putExtra("media", data.category)
                 recordToDetailIntent.putExtra("postId", data.id)
                 ContextCompat.startActivity(itemView.context, recordToDetailIntent, null)
