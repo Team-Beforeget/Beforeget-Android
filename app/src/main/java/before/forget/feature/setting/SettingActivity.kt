@@ -1,7 +1,7 @@
 package before.forget.feature.setting
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 
 class SettingActivity : AppCompatActivity() {
