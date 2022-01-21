@@ -123,7 +123,8 @@ class DetailActivity : AppCompatActivity() {
         if (additionalSize >= 1) {
             for (i in 0 until additionalSize) {
                 when (additionalData!![i].type) {
-                    "감독", "배우", "작가", "출판사", "배우", "방송사OTT", "가수", "요일", "플랫폼", "채널" -> {
+                    "감독", "배우", "작가", "출판사", "배우", "방송사OTT", "가수", "요일", "플랫폼", "채널", "명대사", "장르",
+                    "줄거리", "OST", "인상 깊은 구절", "앨범", "가사", "링크", "타임스탬프", "카테고리" -> {
                         Log.d("실행된거 맞냐", "아닌가?")
                         detailAdapter.dataList.addAll(
                             listOf<ResponseDetail.Additional>(
@@ -139,37 +140,7 @@ class DetailActivity : AppCompatActivity() {
                         Log.d("viewType", additionalData!![i].viewType.toString())
                         detailAdapter.notifyDataSetChanged()
                     }
-                    "명대사", "인상 깊은 구절" -> {
-                        detailAdapter.dataList.addAll(
-                            listOf<ResponseDetail.Additional>(
-                                ResponseDetail.Additional(
-                                    6,
-                                    additionalData!![i].type,
-                                    "",
-                                    additionalData!![i].content,
-                                    ""
-                                )
-                            )
-                        )
-                        Log.d("viewType", additionalData!![i].viewType.toString())
-                        detailAdapter.notifyDataSetChanged()
-                    }
-                    "장르", "카테고리" -> {
-                        detailAdapter.dataList.addAll(
-                            listOf<ResponseDetail.Additional>(
-                                ResponseDetail.Additional(
-                                    2,
-                                    additionalData!![i].type,
-                                    "",
-                                    additionalData!![i].content,
-                                    ""
-                                )
-                            )
-                        )
-                        Log.d("viewType", additionalData!![i].viewType.toString())
-                        detailAdapter.notifyDataSetChanged()
-                    }
-                    "링크" -> {
+                    /*"링크" -> {
                         detailAdapter.dataList.addAll(
                             listOf<ResponseDetail.Additional>(
                                 ResponseDetail.Additional(
@@ -183,8 +154,8 @@ class DetailActivity : AppCompatActivity() {
                         )
                         Log.d("viewType", additionalData!![i].viewType.toString())
                         detailAdapter.notifyDataSetChanged()
-                    }
-                    "OST", "앨범" -> {
+                    }*/
+                    /*"OST", "앨범" -> {
                         detailAdapter.dataList.addAll(
                             listOf<ResponseDetail.Additional>(
                                 ResponseDetail.Additional(
@@ -198,8 +169,8 @@ class DetailActivity : AppCompatActivity() {
                         )
                         Log.d("viewType", additionalData!![i].viewType.toString())
                         detailAdapter.notifyDataSetChanged()
-                    }
-                    "타임스탬프" -> {
+                    }*/
+                    /* "타임스탬프" -> {
                         detailAdapter.dataList.addAll(
                             listOf<ResponseDetail.Additional>(
                                 ResponseDetail.Additional(
@@ -231,7 +202,7 @@ class DetailActivity : AppCompatActivity() {
                         )
                         Log.d("viewType", additionalData!![i].viewType.toString())
                         detailAdapter.notifyDataSetChanged()
-                    }
+                    }*/
                 }
             }
         }
