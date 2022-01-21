@@ -1,9 +1,7 @@
 package before.forget.data.remote.api
 
 import ResponseRankingData
-import before.forget.data.remote.response.ResponseGraphData
-import before.forget.data.remote.response.ResponseLabelingData
-import before.forget.data.remote.response.ResponseWrapper
+import before.forget.data.remote.response.* // ktlint-disable no-wildcard-imports
 import before.forget.data.remote.tempToken
 import retrofit2.Call
 import retrofit2.http.GET
@@ -29,4 +27,17 @@ interface StatisticService {
         @Header("accesstoken") token: String? = tempToken,
         @Path("date") date: String
     ): Call<ResponseWrapper<ResponseRankingData>>
+
+    @GET("statistic/fourth/{date}")
+    fun responseSentenceData(
+        @Header("accesstoken") token: String? = tempToken,
+        @Path("date") date: String
+    ): Call<ResponseWrapper<ReponseSentenceData>>
+
+    @GET("statistic/total/{date}/{count}")
+    fun responseOnepageData(
+        @Header("accesstoken") token: String? = tempToken,
+        @Path("date") date: String,
+        @Path("count") count: Int
+    ): Call<ResponseWrapper<ResponseOnepageData>>
 }

@@ -14,12 +14,22 @@
         <item name="android:includeFontPadding">false</item>
     </style>
 
+    <style name="Theme.Beforeget.Splash" parent="Theme.SplashScreen">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="windowSplashScreenBackground">@color/black200</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_v31</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.Beforeget</item>
+    </style>
+
 
     <style name="TabLayout" parent="Widget.Design.TabLayout">
         <item name="fontFamily">@font/pretendard_semibold</item>
         <item name="android:textSize">16sp</item>
 
     </style>
+
+
 
     <style name="Pretendard.Body.1_Medium_17.EditText" parent="Widget.AppCompat.EditText">
         <item name="android:fontFamily">@font/pretendard_medium</item>

@@ -17,7 +17,7 @@
     <string name="date">2021년 12월</string>
     <string name="month">12</string>
     <string name="month_sub">월의</string>
-    <string name="nickname">땅콩</string>
+    <string name="nickname">포릐</string>
     <string name="nick_sub">님은?</string>
     <string name="report1_description">이번 달 나의 소비 유형을 알아보세요</string>
     <string name="report1_title">티키타카 뮤지션</string>
@@ -65,7 +65,7 @@
 
 
     <!--메인뷰-->
-    <string name="main_name">세훈</string>
+    <string name="main_name">포릐</string>
     <string name="main_sublabel">님, 잊기 전에 기록해보세요.</string>
     <string name="main_label">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="main_record">기록하기</string>
@@ -74,7 +74,7 @@
     <string name="main_viewallbtn">전체보기</string>
 
     <!--유형선택뷰-->
-    <string name="media_intro">오늘도 어떤 미디어를\n감상하셨나요?</string>
+    <string name="media_intro">오늘은 어떤 미디어를\n감상하셨나요?</string>
     <string name="media_movie">Movie</string>
     <string name="media_tv">TV</string>
     <string name="media_webtoon">Webtoon</string>
@@ -90,7 +90,7 @@
     <string name="write_title">영화 제목</string>
     <string name="write_titleinput">영화의 제목은 무엇인가요?</string>
     <string name="write_oneline">한 줄 리뷰</string>
-    <string name="write_addonelinebtn">한 줄 리뷰 추가</string>
+    <string name="write_addonelinebtn">+ 리뷰 추가</string>
     <string name="write_comment">코멘트</string>
     <string name="write_commentinput">영화를 보며 어떤 생각을 했나요?</string>
     <string name="write_additem">기록항목 추가</string>
@@ -103,6 +103,7 @@
     <string name="write_onelinereview4">OST 맛집</string>
     <string name="write_onelinereview5">최고의 반전!</string>
     <string name="write_onelinereview6">마음이 따듯해져요</string>
+    <string name="write_addoneline">리뷰 추가</string>
 
 
     <!--기록항목 추가뷰-->
@@ -231,4 +232,16 @@ I\'m so polarized</string>
     <!--Dialog Button Text-->
     <string name="okText">확인</string>
     <string name="cancelText">취소</string>
+    <string name="delete">정말로 삭제하시겠어요? </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Setting -->
+    <string name="setting">Setting</string>
+    <string name="setting_email">subin0723@beforeget.com</string>
+    <string name="setting_change_pw">비밀번호 변경</string>
+    <string name="setting_service">서비스 이용약관</string>
+    <string name="setting_logout">로그아웃</string>
+    <string name="setting_withdrawal">서비스 탈퇴</string>
+    <string name="setting_info">about Beforeget</string>
 </resources>

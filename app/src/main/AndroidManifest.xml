@@ -16,7 +16,10 @@
             android:name=".feature.myrecord.detail.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.write.WriteAddItemActivity"
+            android:name=".feature.setting.SettingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".feature.write.writeadditem.WriteAddItemActivity"
             android:exported="true" />
         <activity
             android:name=".feature.myrecord.detail.MyRecordDetailActivity"
@@ -35,7 +38,11 @@
             android:exported="true" />
         <activity
             android:name=".feature.main.MainActivity"
-            android:exported="true">
+            android:exported="true" />
+        <activity
+            android:name=".feature.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Beforeget.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

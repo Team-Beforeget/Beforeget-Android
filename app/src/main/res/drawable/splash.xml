@@ -2,5 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/black200" />
     <item android:drawable="@drawable/ic_icn_splash"
+        android:width="82dp"
+        android:height="66dp"
         android:gravity="center"/>
 </layer-list>
