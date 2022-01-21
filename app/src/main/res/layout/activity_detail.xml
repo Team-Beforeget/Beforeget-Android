@@ -156,10 +156,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    tools:background="@drawable/ic_star_4_detail"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_top_detail" />
+                    app:layout_constraintTop_toBottomOf="@id/cl_top_detail"
+                    tools:background="@drawable/ic_star_4_detail" />
 
                 <TextView
                     android:id="@+id/tv_one_review_detail"

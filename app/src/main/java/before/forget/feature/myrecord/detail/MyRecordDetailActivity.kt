@@ -1,6 +1,7 @@
 package before.forget.feature.myrecord.detail
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.data.remote.BeforegetClient
@@ -127,7 +128,10 @@ class MyRecordDetailActivity : AppCompatActivity() {
                     tvTitleDetail.text = it.data!![0].title
                     tvDateDetail.text = it.data!![0].date
 
+                    Log.d("onLine size", it.data!![0].oneline.size.toString())
+
                     for (i in it.data!![0].oneline.indices) {
+                        Log.d("ㅇㅇ", it.data!![0].toString())
 
                         when (i) {
                             0 -> tvReview1.text = it.data!![0].oneline[0]
