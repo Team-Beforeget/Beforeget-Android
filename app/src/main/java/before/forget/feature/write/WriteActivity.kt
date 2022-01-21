@@ -254,7 +254,7 @@ class WriteActivity : AppCompatActivity() {
                     }
                 )
 
-                startActivity(Intent(this, WriteCompleteActivity::class.java))
+                // startActivity(Intent(this, WriteCompleteActivity::class.java))
                 Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
             }
         }
