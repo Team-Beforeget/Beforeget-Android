@@ -4,18 +4,37 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.databinding.ActivityMyRecordDetailBinding
+import before.forget.databinding.DialogRecordDetailDeleteBinding
+import before.forget.feature.dialog.BeforegetDialog
 
 class MyRecordDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyRecordDetailBinding
+    private lateinit var subViewBinding: DialogRecordDetailDeleteBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyRecordDetailBinding.inflate(layoutInflater)
 
+        initBtnListener()
+
+        setContentView(binding.root)
+        changeFragment()
+    }
+
+    private fun initBtnListener() {
         binding.btnBackDetail.setOnClickListener {
             finish()
         }
-        setContentView(binding.root)
-        changeFragment()
+
+        binding.btnDetailDetail.setOnClickListener {
+            setDialog()
+        }
+    }
+
+    private fun setDialog() {
+        subViewBinding = DialogRecordDetailDeleteBinding.inflate(layoutInflater)
+        val dialog = BeforegetDialog(this, subViewBinding)
+        dialog.show()
     }
 
     private fun changeFragment() {
