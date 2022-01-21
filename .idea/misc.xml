@@ -97,6 +97,7 @@
         <entry key="app/src/main/res/drawable/ic_icn_star_green.xml" value="0.16041666666666668" />
         <entry key="app/src/main/res/drawable/ic_icn_star_true.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_icn_text_star.xml" value="0.17916666666666667" />
+        <entry key="app/src/main/res/drawable/ic_img_delete.xml" value="0.15052083333333333" />
         <entry key="app/src/main/res/drawable/ic_img_sentence.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/ic_img_sentence_back.xml" value="0.14322916666666666" />
         <entry key="app/src/main/res/drawable/ic_kingsman_bigsize_background.xml" value="0.17916666666666667" />
@@ -160,10 +161,16 @@
         <entry key="app/src/main/res/font/beforeget_font.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_my_record_detail.xml" value="0.134375" />
         <entry key="app/src/main/res/layout/activity_myrecod.xml" value="0.16302083333333334" />
         <entry key="app/src/main/res/layout/activity_report.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_setting.xml" value="0.33194444444444443" />
         <entry key="app/src/main/res/layout/activity_statistics.xml" value="0.1625" />
+        <entry key="app/src/main/res/layout/activity_write_add_item.xml" value="0.134375" />
+        <entry key="app/src/main/res/layout/dialog_beforeget_two_button.xml" value="0.134375" />
+        <entry key="app/src/main/res/layout/dialog_record_detail.xml" value="0.134375" />
+        <entry key="app/src/main/res/layout/dialog_record_detail_delete.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/dialog_test.xml" value="0.335" />
         <entry key="app/src/main/res/layout/ex.xml" value="0.14427083333333332" />
         <entry key="app/src/main/res/layout/fragment_filter_bottom_sheet.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/fragment_filter_media.xml" value="0.1859375" />
