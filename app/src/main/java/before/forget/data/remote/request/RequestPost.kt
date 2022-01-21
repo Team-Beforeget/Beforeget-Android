@@ -5,7 +5,7 @@ data class RequestPost(
     val date: String,
     val star: Int,
     val title: String,
-    val oneLine: List<String>,
+    val oneline: List<String>,
     val additional: List<Additional>
 ) {
     data class Additional(
