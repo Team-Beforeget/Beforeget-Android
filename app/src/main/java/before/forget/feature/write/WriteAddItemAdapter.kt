@@ -1,10 +1,9 @@
-package before.forget.data
+package before.forget.feature.write
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import before.forget.databinding.ItemItemListBinding
-import before.forget.feature.write.WriteAddItemData
 
 class WriteAddItemAdapter : RecyclerView.Adapter<WriteAddItemAdapter.WriteAddItemViewHolder>() {
 
@@ -22,6 +21,8 @@ class WriteAddItemAdapter : RecyclerView.Adapter<WriteAddItemAdapter.WriteAddIte
     }
 
     override fun getItemCount(): Int = itemList.size
+
+    fun hasSelectedItem() = !itemList.none { it.isSelected.get() }
 
     class WriteAddItemViewHolder(private val binding: ItemItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {

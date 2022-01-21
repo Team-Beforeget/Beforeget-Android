@@ -80,13 +80,13 @@
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_onepage.xml" value="0.1" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_ranking.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_report_sentence.xml" value="0.1" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.264" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.1" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/fragment_write_good.xml" value="0.264" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_card_back.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_card_front.xml" value="0.11354166666666667" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_category_list.xml" value="0.4" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_content_list.xml" value="0.2259963768115942" />
-        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_item_list.xml" value="0.1" />
+        <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_item_list.xml" value="0.2" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_media_list.xml" value="0.23550724637681159" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/82109/Desktop/and/Beforeget-Android/app/src/main/res/layout/layout_report_datepicker_dialog.xml" value="0.11354166666666667" />
@@ -118,6 +118,16 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.672645739910314" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_content_list.xml" value="0.16979166666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.23020833333333332" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/drawable/writeadditem_nextbtn.xml" value="0.18125" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/activity_media_select.xml" value="0.16510416666666666" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/activity_write.xml" value="0.20092592592592592" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/activity_write_add_item.xml" value="0.16510416666666666" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/fragment_write_bottom_sheet.xml" value="0.10092592592592593" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_card_front.xml" value="0.25052083333333336" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_category_list.xml" value="0.25052083333333336" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_item_list.xml" value="0.264" />
+        <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.20092592592592592" />
         <entry key="app/src/main/res/drawable/ic_btn_back.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_btn_download.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_icn_star.xml" value="0.1" />

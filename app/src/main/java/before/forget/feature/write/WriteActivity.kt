@@ -4,21 +4,32 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import before.forget.data.remote.BeforegetClient
+import before.forget.data.remote.response.CategoryResponseData
 import before.forget.databinding.ActivityWriteBinding
 import before.forget.databinding.ViewChipBinding
+import before.forget.util.callback
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class WriteActivity : AppCompatActivity() {
     var dateString = ""
 
-    val getAddItemResult =
+    private val writeCategories = arrayListOf<WriteCategory>()
+    private val getAddItemResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-            /*if (it.resultCode == RESULT_OK) {
-
-            }*/
+            if (it.resultCode == RESULT_OK) {
+                writeCategories.clear()
+                it.data?.getParcelableArrayListExtra<WriteCategory>(
+                    EXTRA_CATEGORIES
+                )?.let { list ->
+                    writeCategories.addAll(list)
+                }
+                Log.d("TEST111", writeCategories.toString())
+            }
         }
 
     private lateinit var binding: ActivityWriteBinding
@@ -27,6 +38,7 @@ class WriteActivity : AppCompatActivity() {
         binding = ActivityWriteBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+        onNetwork()
 
         val cal = Calendar.getInstance() // 현재시각 기입 + 요일
         var day = ""
@@ -140,12 +152,13 @@ class WriteActivity : AppCompatActivity() {
             }
             ivWriteBackbtn.setOnClickListener { finish() } // 엑티비티 종료
             tvWriteAdditem.setOnClickListener {
-                startActivity(
-                    Intent(
-                        this@WriteActivity,
-                        WriteAddItemActivity::class.java
-                    )
-                )
+                Intent(
+                    this@WriteActivity,
+                    WriteAddItemActivity::class.java
+                ).also {
+                    it.putParcelableArrayListExtra(EXTRA_CATEGORIES, writeCategories)
+                    getAddItemResult.launch(it)
+                }
             }
         }
     }
@@ -155,5 +168,26 @@ class WriteActivity : AppCompatActivity() {
             val media = intent.getStringExtra("media")
             binding.tvWriteMedialabel.text = media.toString()
         }
+    }
+
+    private fun onNetwork() {
+        BeforegetClient.categoryService
+            .getAddItem(id = 1)
+            .callback
+            .onSuccess {
+                it.data?.let { data -> onNetworkSuccess(data) }
+            }.enqueue()
+    }
+
+    private fun onNetworkSuccess(data: CategoryResponseData) {
+        val categories = data.additional.mapIndexed { index, s ->
+            WriteCategory(index, s, false)
+        }
+        writeCategories.clear()
+        writeCategories.addAll(categories)
+    }
+
+    companion object {
+        const val EXTRA_CATEGORIES = "categories"
     }
 }
