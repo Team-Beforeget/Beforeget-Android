@@ -5,13 +5,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher3"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round3"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Beforeget">
+        android:theme="@style/Theme.Beforeget"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".feature.setting.SettingActivity"
+            android:exported="true" />
         <activity
             android:name=".feature.write.WriteAddItemActivity"
             android:exported="true" />
@@ -32,10 +35,11 @@
             android:exported="true" />
         <activity
             android:name=".feature.main.MainActivity"
-            android:exported="true"/>
-        <activity android:name=".feature.SplashActivity"
-            android:theme="@style/Theme.Beforeget.Splash"
-            android:exported="true">
+            android:exported="true" />
+        <activity
+            android:name=".feature.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Beforeget.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

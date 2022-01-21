@@ -11,6 +11,7 @@ import before.forget.data.remote.response.MainResponseData
 import before.forget.databinding.ActivityMainBinding
 import before.forget.feature.myrecord.MyRecordActivity
 import before.forget.feature.report.ReportActivity
+import before.forget.feature.setting.SettingActivity
 import before.forget.feature.write.MediaSelectActivity
 import before.forget.util.callback
 import com.bumptech.glide.Glide
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.tvMainViewallbtn.setOnClickListener {
             startActivity(Intent(this, MyRecordActivity::class.java))
+        }
+
+        binding.ivMainSetting.setOnClickListener {
+            startActivity(Intent(this, SettingActivity::class.java))
         }
         setContentView(binding.root)
         initMainAdapter()
