@@ -17,7 +17,7 @@
     <string name="date">2021년 12월</string>
     <string name="month">12</string>
     <string name="month_sub">월의</string>
-    <string name="nickname">땅콩</string>
+    <string name="nickname">포릐</string>
     <string name="nick_sub">님은?</string>
     <string name="report1_description">이번 달 나의 소비 유형을 알아보세요</string>
     <string name="report1_title">티키타카 뮤지션</string>
@@ -234,4 +234,13 @@ I\'m so polarized</string>
     <string name="cancelText">취소</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Setting -->
+    <string name="setting">Setting</string>
+    <string name="setting_email">subin0723@beforeget.com</string>
+    <string name="setting_change_pw">비밀번호 변경</string>
+    <string name="setting_service">서비스 이용약관</string>
+    <string name="setting_logout">로그아웃</string>
+    <string name="setting_withdrawal">서비스 탈퇴</string>
+    <string name="setting_info">about Beforeget</string>
 </resources>

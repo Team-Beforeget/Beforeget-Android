@@ -2,11 +2,18 @@ package before.forget.feature.report
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import before.forget.R
+import before.forget.data.local.tempToken
+import before.forget.data.remote.BeforegetClient
 import before.forget.databinding.FragmentReportOnepageBinding
+import before.forget.util.callback
+import com.bumptech.glide.Glide
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
@@ -23,6 +30,8 @@ class ReportOnepageFragment : Fragment() {
     private var MAX_X_VALUE = 5 // bar count
     private var MAX_Y_VALUE = 0
     private var COUNT_X_LABEL = 5
+    private var recordCount = ArrayList<String>()
+    private var monthCount = ArrayList<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,26 +42,61 @@ class ReportOnepageFragment : Fragment() {
 
         chart = binding.bcGraphOnepage
 
-        initBarChart()
+        initNetwork()
 
         return binding.root
     }
 
-    private fun initBarChart() {
-        val data: BarData = createBarChartData()
+    private fun initNetwork() {
+        BeforegetClient.statisticService.responseOnepageData(
+            tempToken,
+            "2021-12",
+            5
+        )
+            .callback
+            .onSuccess {
+                Log.d("#######ReportOnepageFragment", "서버 통신 성공")
+                var startDate = it.data?.start
+                Glide.with(this).load(it.data?.graphic).into(binding.ivOnepageGraphic)
+                binding.tvOnepageSentence1.text = it.data?.oneline?.get(0)
+                binding.tvOnepageSentence2.text = it.data?.oneline?.get(1)
+                binding.tvOnepageSentence3.text = it.data?.oneline?.get(2)
+                for (i in 0 until MAX_X_VALUE) {
+                    recordCount.add(it.data?.monthly?.get(MAX_X_VALUE - 1 - i)?.count.toString())
+                    monthCount.add(it.data?.monthly?.get(MAX_X_VALUE - 1 - i)?.month.toString())
+                }
+                binding.tvOnepageRank1Type.text = it.data?.media?.get(0)?.type
+                binding.tvOnepageRank2Type.text = it.data?.media?.get(1)?.type
+                binding.tvOnepageRank3Type.text = it.data?.media?.get(2)?.type
+                binding.tvOnepageRank1Count.text = it.data?.media?.get(0)?.count.toString()
+                binding.tvOnepageRank2Count.text = it.data?.media?.get(1)?.count.toString()
+                binding.tvOnepageRank3Count.text = it.data?.media?.get(2)?.count.toString()
+
+                initBarChart(recordCount)
+            }
+            .onError {
+                Log.d("####ReportOnepageFragment", "서버 오류")
+            }
+            .enqueue()
+    }
+
+    private fun initBarChart(recordCount: ArrayList<String>) {
+        val data: BarData = createBarChartData(recordCount)
         // set bar width
         data.barWidth = 0.1f
         configureChartAppearance()
         prepareChartData(data)
     }
 
-    private fun createBarChartData(): BarData {
+    private fun createBarChartData(recordCount: ArrayList<String>): BarData {
         val values: ArrayList<BarEntry> = ArrayList()
-        val record_count = arrayOf("8", "21", "25", "15", "18") // TODO: Server에서 받아오기
+        var colors: ArrayList<Int> = ArrayList()
         for (i in 0 until MAX_X_VALUE) {
             val x = i.toFloat()
-            val y: Float = record_count[i].toFloat()
-            if (record_count[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = record_count[i].toInt()
+            val y: Float = recordCount[i].toFloat()
+            if (recordCount[i].toInt() > MAX_Y_VALUE) MAX_Y_VALUE = recordCount[i].toInt()
+            if (i == MAX_X_VALUE - 1) colors.add(ContextCompat.getColor(requireContext(), R.color.green100))
+            else colors.add(Color.WHITE)
             values.add(BarEntry(x, y))
         }
         val set1 = BarDataSet(values, "")
@@ -61,7 +105,7 @@ class ReportOnepageFragment : Fragment() {
         // showing the value of the bar
         set1.setDrawValues(false)
         set1.barShadowColor = Color.BLACK
-        set1.color = Color.WHITE
+        set1.colors = colors
         return BarData(dataSets)
     }
 
@@ -84,7 +128,7 @@ class ReportOnepageFragment : Fragment() {
             extraBottomOffset = 45f
 
             // X, Y 바의 애니메이션 효과
-            animateY(2000)
+            animateY(1000)
             // bar background
             setDrawBarShadow(true)
             // bar touch
@@ -106,8 +150,7 @@ class ReportOnepageFragment : Fragment() {
             setDrawGridLines(false)
             valueFormatter = object : ValueFormatter() {
                 override fun getFormattedValue(value: Float): String {
-                    val DAYS = arrayOf("8", "9", "10", "11", "12") // TODO: datepicker 기반으로 계산하기
-                    return DAYS[value.toInt()] + "월"
+                    return monthCount[value.toInt()] + "월"
                 }
             }
         }
