@@ -11,6 +11,7 @@ import before.forget.util.callback
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
+    var postId = 0
     val detailAdapter = DetailAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +20,7 @@ class DetailActivity : AppCompatActivity() {
 
         // initDetailAdapter()
         initOneReview()
+        getPostIdFromRecordActivity()
         test()
     }
 
@@ -44,7 +46,7 @@ class DetailActivity : AppCompatActivity() {
 
     private fun test() {
         BeforegetClient.postService
-            .getDetailFilterData(tempToken, 12)
+            .getDetailFilterData(tempToken, postId)
             .callback
             .onSuccess {
                 // 1: Movie , 2: Book, 3:  TV , 4: Music, 5: Webtoon, 6: Youtube
@@ -100,5 +102,12 @@ class DetailActivity : AppCompatActivity() {
                 // Log.d("additional의 사이즈", it.data!![0].additional?.size.toString())
             }
             .enqueue()
+    }
+
+    private fun getPostIdFromRecordActivity(): Int {
+        if (intent.hasExtra("postId")) {
+            postId = intent.getIntExtra("postId", 0)
+        }
+        return postId
     }
 }
