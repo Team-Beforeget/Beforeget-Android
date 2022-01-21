@@ -28,3 +28,15 @@ i
 9app/src/main/java/before/forget/feature/SplashActivity.kt,6/6/66157377e945631f0bdfc3661e6f719c016a2323
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+l
+<app/src/main/java/before/forget/util/RetrofitCallbackUtil.kt,7/8/78e2d7f22c5f2a50778fa539f5313f9c9b4c0b4e
+k
+;app/src/main/java/before/forget/feature/main/MainAdapter.kt,d/5/d5e70bc1781674c40e39b0c6bd589fa74b38dd55
+h
+8app/src/main/java/before/forget/feature/main/MainData.kt,8/b/8b9a300a954dfbf0473502cdb040bcc2f2713d44
+
+Qapp/src/main/java/before/forget/feature/myrecord/detail/MyRecordDetailActivity.kt,a/6/a64fd2e252f47dcbf7d9ca52e3e860bedf81f33f
+r
+Bapp/src/main/java/before/forget/feature/main/MainBindingAdapter.kt,5/e/5eb573e09db9cd8a4b6066a40d771380611618b0
+r
+Bapp/src/main/java/before/forget/feature/setting/SettingActivity.kt,c/2/c23a2dce51e3ece5c650b37fba16eaeafe71cc58
