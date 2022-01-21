@@ -73,6 +73,7 @@
         <entry key="app/src/main/res/drawable/ic_btn_download.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_btn_look.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_btn_nameedit.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/ic_btn_review_delete.xml" value="0.31574074074074077" />
         <entry key="app/src/main/res/drawable/ic_btn_setting.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_btn_share.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/drawable/ic_btn_stats.xml" value="0.17916666666666667" />
@@ -193,6 +194,7 @@
         <entry key="app/src/main/res/layout/item_record.xml" value="0.1234375" />
         <entry key="app/src/main/res/layout/layout_record_datepicker_dialog.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_report_datepicker_dialog.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/res/layout/view_chip.xml" value="0.335" />
       </map>
     </option>
   </component>
