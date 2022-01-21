@@ -44,7 +44,7 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_media_select.xml" value="0.16979166666666667" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_my_record_detail.xml" value="0.2" />
-        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.176" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/activity_myrecod.xml" value="0.8800000000000001" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_book.xml" value="0.6" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_movie.xml" value="0.4519774011299435" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_detail_music.xml" value="0.72" />
@@ -56,7 +56,15 @@
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_star.xml" value="0.264" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/fragment_filter_term.xml" value="0.5221374045801527" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_content_list.xml" value="0.16979166666666667" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_genre_detail.xml" value="0.1" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_image_detail.xml" value="0.10764944275582573" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_link_detail.xml" value="0.10764944275582573" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_ost_detail.xml" value="0.10764944275582573" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_qutoe_detail.xml" value="0.10764944275582573" />
         <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.4" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_text_detail.xml" value="0.10764944275582573" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_textnoline_data.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/PS42/AndroidStudioProjects/Beforeget-Android/app/src/main/res/layout/item_timestamp_detail.xml" value="0.10764944275582573" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/drawable/ic_beforeget_image.xml" value="0.4041666666666667" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_media_list.xml" value="0.15208333333333332" />
         <entry key="..\:/programming/AndroidProject/Beforeget-Android/app/src/main/res/layout/item_record.xml" value="0.15208333333333332" />
@@ -74,6 +82,7 @@
         <entry key="app/src/main/res/drawable/ic_btn_download.xml" value="0.175" />
         <entry key="app/src/main/res/drawable/ic_btn_look.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_btn_nameedit.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/ic_btn_review_delete.xml" value="0.31574074074074077" />
         <entry key="app/src/main/res/drawable/ic_btn_setting.xml" value="0.17916666666666667" />
         <entry key="app/src/main/res/drawable/ic_btn_share.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/drawable/ic_btn_stats.xml" value="0.17916666666666667" />
@@ -194,6 +203,7 @@
         <entry key="app/src/main/res/layout/item_record.xml" value="0.1234375" />
         <entry key="app/src/main/res/layout/layout_record_datepicker_dialog.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_report_datepicker_dialog.xml" value="0.20885416666666667" />
+        <entry key="app/src/main/res/layout/view_chip.xml" value="0.335" />
       </map>
     </option>
   </component>

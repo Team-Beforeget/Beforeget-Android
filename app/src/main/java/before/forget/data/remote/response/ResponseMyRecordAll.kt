@@ -1,6 +1,6 @@
 package before.forget.data.remote.response
 
-data class ResponseMyRecordAll(
+data class ResponseMyRecordAll (
     val id: Int,
     val userId: Int,
     val category: Int,

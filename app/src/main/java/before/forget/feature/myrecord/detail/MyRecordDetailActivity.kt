@@ -1,6 +1,8 @@
 package before.forget.feature.myrecord.detail
 
 import android.os.Bundle
+import android.text.TextUtils.replace
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.data.remote.BeforegetClient
@@ -14,23 +16,24 @@ class MyRecordDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyRecordDetailBinding
     private lateinit var subViewBinding: DialogRecordDetailDeleteBinding
     var postId = 0
-    val bundle = Bundle()
+
+    // val bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyRecordDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.btnBackDetail.setOnClickListener {
             finish()
         }
-        setContentView(binding.root)
         initBtnListener()
-        setContentView(binding.root)
-        changeFragment()
-        getPostIdFromRecordActivity()
         initOneReview()
+        getPostIdFromRecordActivity()
         onDetailNetwork()
+        setMovieFragment()
+        // changeFragment()
         // Log.d("postId", getPostIdFromRecordActivity().toString())
-        bundle.putInt("postId", postId)
+        // bundle.putInt("postId", postId)
     }
 
     private fun initBtnListener() {
@@ -75,6 +78,11 @@ class MyRecordDetailActivity : AppCompatActivity() {
         }
     }
 
+    private fun setMovieFragment() {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.fragment_container_detail, DetailMovieFragment()).commit()
+    }
+
     private fun initOneReview() {
         binding.apply {
             isReviewExist2 = false
@@ -116,10 +124,21 @@ class MyRecordDetailActivity : AppCompatActivity() {
                         6 -> ivMediaDetail.setImageResource(R.drawable.ic_youtube_detail)
                     }
 
+                    when (it.data!![0].star) {
+                        1 -> ivStarDetail.setImageResource(R.drawable.ic_star_1_detail)
+                        2 -> ivStarDetail.setImageResource(R.drawable.ic_star_2_detail)
+                        3 -> ivStarDetail.setImageResource(R.drawable.ic_star_3_detail)
+                        4 -> ivStarDetail.setImageResource(R.drawable.ic_star_4_detail)
+                        5 -> ivStarDetail.setImageResource(R.drawable.ic_star_5_detail)
+                    }
+
                     tvTitleDetail.text = it.data!![0].title
                     tvDateDetail.text = it.data!![0].date
 
+                    Log.d("onLine size", it.data!![0].oneline.size.toString())
+
                     for (i in it.data!![0].oneline.indices) {
+                        Log.d("ㅇㅇ", it.data!![0].toString())
 
                         when (i) {
                             0 -> tvReview1.text = it.data!![0].oneline[0]
