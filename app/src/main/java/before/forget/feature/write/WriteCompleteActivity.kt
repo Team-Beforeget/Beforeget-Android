@@ -24,6 +24,7 @@ class WriteCompleteActivity : AppCompatActivity() {
         }
         binding.btnCompleteRecord.setOnClickListener {
             ActivityCompat.finishAffinity(this)
+            startActivity(Intent(this, MainActivity::class.java))
             startActivity(Intent(this, MyRecordActivity::class.java))
         }
     }
