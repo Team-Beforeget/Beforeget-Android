@@ -14,23 +14,23 @@ class MyRecordDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyRecordDetailBinding
     private lateinit var subViewBinding: DialogRecordDetailDeleteBinding
     var postId = 0
-    val bundle = Bundle()
+
+    // val bundle = Bundle()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyRecordDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.btnBackDetail.setOnClickListener {
             finish()
         }
-        setContentView(binding.root)
         initBtnListener()
-        setContentView(binding.root)
-        changeFragment()
-        getPostIdFromRecordActivity()
         initOneReview()
+        getPostIdFromRecordActivity()
         onDetailNetwork()
+        changeFragment()
         // Log.d("postId", getPostIdFromRecordActivity().toString())
-        bundle.putInt("postId", postId)
+        // bundle.putInt("postId", postId)
     }
 
     private fun initBtnListener() {
@@ -114,6 +114,14 @@ class MyRecordDetailActivity : AppCompatActivity() {
                         4 -> ivMediaDetail.setImageResource(R.drawable.ic_music_detail)
                         5 -> ivMediaDetail.setImageResource(R.drawable.ic_webtoon_detail)
                         6 -> ivMediaDetail.setImageResource(R.drawable.ic_youtube_detail)
+                    }
+
+                    when (it.data!![0].star) {
+                        1 -> ivStarDetail.setImageResource(R.drawable.ic_star_1_detail)
+                        2 -> ivStarDetail.setImageResource(R.drawable.ic_star_2_detail)
+                        3 -> ivStarDetail.setImageResource(R.drawable.ic_star_3_detail)
+                        4 -> ivStarDetail.setImageResource(R.drawable.ic_star_4_detail)
+                        5 -> ivStarDetail.setImageResource(R.drawable.ic_star_5_detail)
                     }
 
                     tvTitleDetail.text = it.data!![0].title

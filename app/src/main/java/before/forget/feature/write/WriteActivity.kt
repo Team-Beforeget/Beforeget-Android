@@ -12,13 +12,13 @@ import androidx.databinding.ObservableField
 import before.forget.data.remote.BeforegetClient
 import before.forget.data.remote.request.RequestPost
 import before.forget.data.remote.response.CategoryResponseData
-import before.forget.data.remote.response.PostResponseData
+// import before.forget.data.remote.response.PostResponseData
 import before.forget.databinding.ActivityWriteBinding
 import before.forget.feature.write.writeadditem.WriteAddItemActivity
 import before.forget.util.callback
-import before.forget.util.enqueueUtil
+// import before.forget.util.enqueueUtil
 import com.google.android.material.chip.Chip
-import retrofit2.Call
+// import retrofit2.Call
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -246,13 +246,13 @@ class WriteActivity : AppCompatActivity() {
 
                 )
 
-                val call: Call<PostResponseData> =
+                /*val call: Call<PostResponseData> =
                     BeforegetClient.postService.postUpload(body = requestPost)
                 call.enqueueUtil(
                     onSuccess = {
                         Log.d("좀", "돼라")
                     }
-                )
+                )*/
 
                 // startActivity(Intent(this, WriteCompleteActivity::class.java))
                 Log.d("addi", writeAdapter.getCategoryToAdditional().toString())
