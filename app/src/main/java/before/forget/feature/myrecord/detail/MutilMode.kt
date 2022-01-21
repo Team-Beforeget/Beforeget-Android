@@ -8,3 +8,4 @@ const val multi_ost = 5
 const val multi_qutoe = 6
 const val multi_text = 7
 const val multi_timestamp = 8
+const val multi_textNoLine = 9

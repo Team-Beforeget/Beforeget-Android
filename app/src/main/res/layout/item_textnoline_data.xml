@@ -1,52 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
         <variable
-            name="albumData"
+            name="textNoLineData"
             type="before.forget.data.remote.response.ResponseDetail.Additional" />
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="20dp"
-        android:paddingBottom="48dp"
         android:paddingTop="48dp"
-        >
+        android:paddingBottom="48dp">
+
 
         <TextView
-            android:id="@+id/tv_album_detail_music"
+            android:id="@+id/tv_story_title_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/pretendard_medium"
-            tools:text="@string/album"
-            android:text="@{albumData.type}"
+            android:text="@{textNoLineData.type}"
+            tools:text="@string/story_tilt"
             android:textColor="@color/black200"
             android:textSize="19dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent
+" />
 
         <TextView
-            android:id="@+id/tv_album_name_detail_music"
+            android:id="@+id/tv_story_detail_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_black_box_detail"
-            android:drawableLeft="@drawable/ic_ost_detail_movie"
-            android:drawablePadding="10dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="6dp"
-            tools:text="@string/ost"
-            android:text="@{albumData.content}"
-            android:textColor="@color/white"
-            android:textSize="16dp"
             android:layout_marginTop="15dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:lineSpacingExtra="9dp"
+            android:text="@{textNoLineData.content}"
+            tools:text="@string/story"
+            android:textColor="@color/black200"
+            android:textSize="16dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_album_detail_music"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_story_title_detail_movie" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

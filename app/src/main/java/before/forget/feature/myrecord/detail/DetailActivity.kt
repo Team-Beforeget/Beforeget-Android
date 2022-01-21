@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import before.forget.R
 import before.forget.data.remote.BeforegetClient
+import before.forget.data.remote.response.ResponseDetail
 import before.forget.data.remote.tempToken
 import before.forget.databinding.ActivityDetailBinding
 import before.forget.util.callback
@@ -18,7 +19,7 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // initDetailAdapter()
+        initDetailAdapter()
         initOneReview()
         getPostIdFromRecordActivity()
         test()
@@ -26,12 +27,6 @@ class DetailActivity : AppCompatActivity() {
 
     private fun initDetailAdapter() {
         binding.rcvAddtionalDetail.adapter = detailAdapter
-        // detailAdapter.dataList.addAll(
-        // listOf<ResponseDetail.Additional>(
-        // ResponseDetail.Additional("dd","ddd","dd","dd")
-        // )
-        // )
-        detailAdapter.notifyDataSetChanged()
     }
 
     private fun initOneReview() {
@@ -57,12 +52,13 @@ class DetailActivity : AppCompatActivity() {
                         3 -> ivMediaDetail.setImageResource(R.drawable.ic_tv_detail)
                         4 -> ivMediaDetail.setImageResource(R.drawable.ic_music_detail)
                         5 -> ivMediaDetail.setImageResource(R.drawable.ic_webtoon_detail)
-                        6 -> ivMediaDetail.setImageResource(R.drawable.ic_icn_media_youtube)
+                        6 -> ivMediaDetail.setImageResource(R.drawable.ic_youtube_detail)
                     }
                     tvTitleDetail.text = it.data!![0].title
                     tvDateDetail.text = it.data!![0].date
 
-                    Log.d("online size", it.data!![0].oneline.size.toString())
+                    val additionalData = it.data!![0].additional
+                    setMutliData(additionalData)
 
                     for (i in it.data!![0].oneline.indices) {
 
@@ -109,5 +105,133 @@ class DetailActivity : AppCompatActivity() {
             postId = intent.getIntExtra("postId", 0)
         }
         return postId
+    }
+
+    private fun setMutliData(additionalData: List<ResponseDetail.Additional>?) {
+
+        var additionalSize = 0
+        additionalSize = additionalData?.size ?: 0
+
+        if (additionalSize >= 1) {
+            for (i in 0 until additionalSize) {
+                when (additionalData!![i].type) {
+                    "감독", "배우", "작가", "출판사", "배우", "방송사OTT", "가수", "요일", "플랫폼", "채널" -> {
+                        Log.d("실행된거 맞냐", "아닌가?")
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    7,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                    "명대사", "인상 깊은 구절" -> {
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    6,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                    "장르", "카테고리" -> {
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    2,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                    "링크" -> {
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    4,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                    "OST", "앨범" -> {
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    5,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                    "타임스탬프" -> {
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    8,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                    "포스터", "표지", "명장면", "앨범 커버" -> {
+                        Log.d("아직", "하지말자")
+                    }
+                    "줄거리", "가사" -> {
+                        detailAdapter.dataList.addAll(
+                            listOf<ResponseDetail.Additional>(
+                                ResponseDetail.Additional(
+                                    9,
+                                    additionalData!![i].type,
+                                    "",
+                                    additionalData!![i].content,
+                                    ""
+                                )
+                            )
+                        )
+                        Log.d("viewType", additionalData!![i].viewType.toString())
+                        detailAdapter.notifyDataSetChanged()
+                    }
+                }
+            }
+        }
+
+        // for(i in 0 until limit)
+        // val additionalData = it.data!![0].additional
+        // it.data!![0].additional?.size.toString()
+        // for (i in it.data!![0].oneline.indices) {
+        // additionalData!![0].type
     }
 }

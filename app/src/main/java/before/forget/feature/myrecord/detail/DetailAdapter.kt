@@ -19,7 +19,7 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         viewType: Int
     ): RecyclerView.ViewHolder {
         val binding: ViewDataBinding
-        return when (viewType) {
+        return when (dataList[0]?.viewType) {
             multi_album -> {
                 binding = ItemAlbumDetailBinding.inflate(
                     LayoutInflater.from(parent.context), parent, false
@@ -62,6 +62,12 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 )
                 TextViewHolder(binding)
             }
+            multi_textNoLine -> {
+                binding = ItemTextnolineDataBinding.inflate(
+                    LayoutInflater.from(parent.context), parent, false
+                )
+                TextNoLineViewHolder(binding)
+            }
             else -> {
                 binding = ItemTimestampDetailBinding.inflate(
                     LayoutInflater.from(parent.context), parent, false
@@ -72,7 +78,7 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when (super.getItemViewType(position)) {
+        when (dataList[0]?.viewType) {
             multi_album -> {
                 (holder as AlbumViewHolder).onBind(dataList[position])
                 holder.setIsRecyclable(false)
@@ -103,6 +109,10 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             }
             multi_timestamp -> {
                 (holder as TimeStampViewHolder).onBind(dataList[position])
+                holder.setIsRecyclable(false)
+            }
+            multi_textNoLine -> {
+                (holder as TextNoLineViewHolder).onBind(dataList[position])
                 holder.setIsRecyclable(false)
             }
         }
@@ -165,6 +175,13 @@ class DetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(data: ResponseDetail.Additional) {
             binding.timestampData = data
+        }
+    }
+
+    inner class TextNoLineViewHolder(val binding: ItemTextnolineDataBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun onBind(data: ResponseDetail.Additional) {
+            binding.textNoLineData = data
         }
     }
 }

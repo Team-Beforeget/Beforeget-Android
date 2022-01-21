@@ -1,5 +1,4 @@
 package before.forget.data.remote.response
-import java.net.URL
 
 data class ResponseDetail(
     val id: Int,
@@ -14,9 +13,10 @@ data class ResponseDetail(
 
 ) {
     data class Additional(
+        var viewType: Int,
         val type: String,
-        val imgUrl1: URL,
+        val imgUrl1: String,
         val content: String,
-        val imgUrl2: URL,
+        val imgUrl2: String,
     )
 }
