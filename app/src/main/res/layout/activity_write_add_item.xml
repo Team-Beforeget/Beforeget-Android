@@ -154,6 +154,7 @@
             android:background="@drawable/writeadditem_nextbtn"
             android:fontFamily="@font/pretendard_semibold"
             android:gravity="center"
+            android:enabled="false"
             android:lineHeight="20dp"
             android:paddingLeft="145dp"
             android:paddingTop="16dp"

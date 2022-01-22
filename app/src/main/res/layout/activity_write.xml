@@ -274,7 +274,7 @@
                     android:lineHeight="24dp"
                     android:text="@string/write_comment"
                     android:textColor="@color/black200"
-                    android:textSize="16dp"
+                    android:textSize="15dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_write_oneline" />
 
