@@ -22,13 +22,14 @@ class WriteAddItemActivity : AppCompatActivity() {
             btnAddwriteNextbtn.setOnClickListener {
                 onClickNextButton()
             }
-            ivAddwriteCheckfalsebtn.setOnClickListener {
+            ivAddwriteClosebtn.setOnClickListener {
                 finish()
             }
         }
 
         setContentView(binding.root)
         initMainAdapter()
+        enableNextButton()
     }
 
     private fun initMainAdapter() {
@@ -39,7 +40,9 @@ class WriteAddItemActivity : AppCompatActivity() {
                 WriteAddItemData(
                     it.category,
                     ObservableBoolean(it.isSelected)
-                )
+                ) {
+                    enableNextButton()
+                }
             }.also {
                 writeadditemAdapter.itemList.addAll(it)
             }
@@ -54,5 +57,9 @@ class WriteAddItemActivity : AppCompatActivity() {
         intent.putParcelableArrayListExtra(WriteActivity.EXTRA_CATEGORIES, categories)
         setResult(RESULT_OK, intent)
         finish()
+    }
+
+    private fun enableNextButton() {
+        binding.btnAddwriteNextbtn.isEnabled = writeadditemAdapter.hasSelectedItem()
     }
 }

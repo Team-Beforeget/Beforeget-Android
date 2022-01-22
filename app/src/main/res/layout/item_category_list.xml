@@ -20,6 +20,9 @@
             android:id="@+id/tv_write_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            tools:text="fghjkl;"
+            android:layout_marginStart="20dp"
+            style="@style/Pretendard.Body.2_Semibold_16"
             android:text="@{data.itemtitle}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
