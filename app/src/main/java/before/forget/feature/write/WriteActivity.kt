@@ -1,6 +1,5 @@
 package before.forget.feature.write
 
-import before.forget.R
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.content.res.ColorStateList
@@ -12,6 +11,7 @@ import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ObservableField
+import before.forget.R
 import before.forget.data.remote.BeforegetClient
 import before.forget.data.remote.request.RequestPost
 import before.forget.data.remote.response.CategoryResponseData
@@ -270,7 +270,7 @@ class WriteActivity : AppCompatActivity() {
                     )
                     startActivity(Intent(this@WriteActivity, WriteCompleteActivity::class.java))
                 } else {
-                    shortToast("필수 항목을 입력해주세요!")
+                    shortToast("필수 항목을 입력해주세요")
                     Log.d("ㅇㅇ", "$check")
                 }
             }
