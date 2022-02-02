@@ -58,6 +58,8 @@ class WriteActivity : AppCompatActivity() {
         binding = ActivityWriteBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        Log.d("티비쇼", "$postMedia")
         onNetwork()
         val cal = Calendar.getInstance() // 현재시각 기입 + 요일
         var day = ""
@@ -77,7 +79,7 @@ class WriteActivity : AppCompatActivity() {
             tvWriteDatepickerbtn.text =
                 LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy. MM. dd")) + day
         }
-
+        Log.d("티비쇼", "$postMedia")
         getMediaLabel()
         getOneLineData()
         btnSetOnClickListener()
@@ -284,11 +286,13 @@ class WriteActivity : AppCompatActivity() {
             when (media.toString()) {
                 "Movie" -> postMedia = 1
                 "Book" -> postMedia = 2
-                "Tv" -> postMedia = 3 // ㅈ버그
+                "TV" -> postMedia = 3
                 "Music" -> postMedia = 4
                 "Webtoon" -> postMedia = 5
                 "Youtube" -> postMedia = 6
             }
+
+            Log.d("티비쇼", "$postMedia")
 
             when (postMedia) {
                 1 -> binding.tvWriteTitle.text = "영화 제목"

@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
                 mainAdapter.notifyDataSetChanged()
 
-                Log.d("dd", "$(int)") // isSuccess = it.success
+                Log.d("dd", "$(int)")
             }.onError {
             }.enqueue()
     }
