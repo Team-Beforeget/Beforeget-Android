@@ -60,6 +60,7 @@ class MediaSelectActivity : AppCompatActivity() {
                 media = tvMediaTv.text.toString()
                 btnMediaNextActivate()
             }
+
             clMediaWebtoon.setOnClickListener {
                 clMediaWebtoon.isSelected = !clMediaWebtoon.isSelected
                 clMediaBook.isSelected = false
