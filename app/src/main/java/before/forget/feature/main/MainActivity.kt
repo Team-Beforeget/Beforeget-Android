@@ -18,12 +18,14 @@ import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     private val mainAdapter = MainAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        initMainAdapter()
+        binding = ActivityMainBinding.inflate(layoutInflater) // 실제 레이아웃 인플레이트 하는부분
+        setContentView(binding.root) // 반환부분
+        initMainAdapter() // 레이아웃 동작들 정의
         initImage()
         onNetwork()
         setOnClickListener()
@@ -81,5 +83,5 @@ class MainActivity : AppCompatActivity() {
             }.enqueue()
     }
 
-    fun MainResponseData.totalString() = "${Movie + Book + TV + Music + Webtoon + Youtube}개"
+    private fun MainResponseData.totalString() = "${Movie + Book + TV + Music + Webtoon + Youtube}개"
 }

@@ -26,8 +26,9 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     override fun getItemCount(): Int = mediaList.size
 
-    class MainViewHolder(private val binding: ItemMediaListBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MainViewHolder(
+        private val binding: ItemMediaListBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: MainData) {
             binding.main = data
