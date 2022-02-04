@@ -1,6 +1,7 @@
 package before.forget.feature.main
 
 import android.content.Intent
+import android.graphics.Movie
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -64,23 +65,26 @@ class MainActivity : AppCompatActivity() {
             .onSuccess { response ->
                 response.data?.let {
                     binding.tvMainCountlabel.text = it.totalString()
-                    mainAdapter.mediaList.addAll( // TODO 함수분리
-                        listOf<MainData>(
-                            MainData(R.drawable.ic_icn_media_movie, "Movie", it.Movie),
-                            MainData(R.drawable.ic_icn_media_book, "Book", it.Book),
-                            MainData(R.drawable.ic_icn_media_tv, "TV", it.TV),
-                            MainData(R.drawable.ic_icn_media_music, "Music", it.Music),
-                            MainData(R.drawable.ic_icn_media_webtoon, "Webtoon", it.Webtoon),
-                            MainData(R.drawable.ic_icn_media_youtube, "Youtube", it.Youtube)
-                        )
-                    )
+                    addAll()
                 }
 
                 mainAdapter.notifyDataSetChanged()
 
-                Log.d("dd", "$(int)")
             }.onError {
             }.enqueue()
+    }
+
+    private fun addAll() {
+        mainAdapter.mediaList.addAll(
+            listOf<MainData>(
+                MainData(R.drawable.ic_icn_media_movie, "Movie", Movie),
+                MainData(R.drawable.ic_icn_media_book, "Book", it.Book),
+                MainData(R.drawable.ic_icn_media_tv, "TV", it.TV),
+                MainData(R.drawable.ic_icn_media_music, "Music", it.Music),
+                MainData(R.drawable.ic_icn_media_webtoon, "Webtoon", it.Webtoon),
+                MainData(R.drawable.ic_icn_media_youtube, "Youtube", it.Youtube)
+            )
+        )
     }
 
     private fun MainResponseData.totalString() = "${Movie + Book + TV + Music + Webtoon + Youtube}개"
