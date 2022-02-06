@@ -32,9 +32,14 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
-            ss()
+            MainViewController.
         }
+    }
 
+
+    class MainViewController( // 클래스 만들기, 참조하기
+        private val binding: ItemMediaListBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
         fun ss() {
             itemView.setOnClickListener {
                 val media = binding.tvMainRvmedia.text.toString()
