@@ -32,22 +32,19 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
-            MainViewController.
+            controller()
         }
+
     }
 
-
-    class MainViewController( // 클래스 만들기, 참조하기
-        private val binding: ItemMediaListBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-        fun ss() {
-            itemView.setOnClickListener {
-                val media = binding.tvMainRvmedia.text.toString()
-                val mainToMyRecordIntent =
-                    Intent(itemView.context, MyRecordActivity::class.java)
-                mainToMyRecordIntent.putExtra("media", media)
-                ContextCompat.startActivity(itemView.context, mainToMyRecordIntent, null)
-            }
+    interface controller() {
+        itemView.setOnClickListener
+        {
+            val media = binding.tvMainRvmedia.text.toString()
+            val mainToMyRecordIntent =
+                Intent(itemView.context, MyRecordActivity::class.java)
+            mainToMyRecordIntent.putExtra("media", media)
+            ContextCompat.startActivity(itemView.context, mainToMyRecordIntent, null)
         }
     }
 }
