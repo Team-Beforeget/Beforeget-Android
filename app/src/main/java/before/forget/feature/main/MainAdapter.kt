@@ -32,11 +32,16 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
-            controller()
+            itemView.setOnClickListener
+            {
+                val media = binding.tvMainRvmedia.text.toString()
+                val mainToMyRecordIntent =
+                    Intent(itemView.context, MyRecordActivity::class.java)
+                mainToMyRecordIntent.putExtra("media", media)
+                ContextCompat.startActivity(itemView.context, mainToMyRecordIntent, null)
+            }
         }
-
     }
 
 
-    }
 }
