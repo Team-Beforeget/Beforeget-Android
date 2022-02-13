@@ -7,6 +7,7 @@
         <variable
             name="main"
             type="before.forget.feature.main.MainData" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/ppneuemachina_ultrabold"
+                android:lineHeight="42dp"
                 android:text="@{Integer.toString(main.count)}"
                 android:textColor="@color/white"
                 android:textSize="43dp"
@@ -39,6 +41,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@font/pretendard_regular"
+                android:lineHeight="24dp"
                 android:text="@{main.media}"
                 android:textColor="@color/white"
                 android:textSize="17dp"
@@ -56,6 +59,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

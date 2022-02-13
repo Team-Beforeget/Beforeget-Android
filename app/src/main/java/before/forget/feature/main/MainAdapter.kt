@@ -26,12 +26,13 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     override fun getItemCount(): Int = mediaList.size
 
-    class MainViewHolder(private val binding: ItemMediaListBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    class MainViewHolder(
+        private val binding: ItemMediaListBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(data: MainData) {
             binding.main = data
-            itemView.setOnClickListener {
+            itemView.setOnClickListener { // 수정
                 val media = binding.tvMainRvmedia.text.toString()
                 val mainToMyRecordIntent =
                     Intent(itemView.context, MyRecordActivity::class.java)

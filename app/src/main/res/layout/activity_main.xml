@@ -69,11 +69,11 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/pretendard_semibold"
                     android:lineHeight="16dp"
+                    android:text="@string/main_name"
                     android:textColor="@color/black200"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:text="@string/main_name" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/tv_main_sublabel"
@@ -204,8 +204,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.63"
-            />
+            app:layout_constraintGuide_percent="0.63" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
