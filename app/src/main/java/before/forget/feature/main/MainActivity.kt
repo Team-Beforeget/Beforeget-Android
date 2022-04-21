@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
     private fun addAll() {
         mainAdapter.mediaList.addAll(
             listOf<MainData>(
-                MainData(R.drawable.ic_icn_media_movie, "Movie", Movie),
+                MainData(R.drawable.ic_icn_media_movie, "Movie", it.Movie),
                 MainData(R.drawable.ic_icn_media_book, "Book", it.Book),
                 MainData(R.drawable.ic_icn_media_tv, "TV", it.TV),
                 MainData(R.drawable.ic_icn_media_music, "Music", it.Music),
