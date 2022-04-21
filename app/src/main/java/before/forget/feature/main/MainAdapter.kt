@@ -13,7 +13,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
     val mediaList = mutableListOf<MainData>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+    override fun onCreateViewHolder(parent:   ViewGroup, viewType: Int): MainViewHolder {
         val binding = ItemMediaListBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
@@ -32,7 +32,7 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
-            itemView.setOnClickListener
+            itemView.setOnClickListener()
             {
                 val media = binding.tvMainRvmedia.text.toString()
                 val mainToMyRecordIntent =
