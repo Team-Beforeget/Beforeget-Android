@@ -32,8 +32,12 @@ class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
         fun onBind(data: MainData) {
             binding.main = data
+<<<<<<< HEAD
             itemView.setOnClickListener()
             {
+=======
+            itemView.setOnClickListener { // 수정
+>>>>>>> af0f75712962e25f0a7a78bb169ca721b6d2fcc3
                 val media = binding.tvMainRvmedia.text.toString()
                 val mainToMyRecordIntent =
                     Intent(itemView.context, MyRecordActivity::class.java)
